@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using Microsoft.AspNet.SignalR.Messaging;
 using Org.BouncyCastle.Ocsp;
 
@@ -33,12 +32,12 @@ namespace Authentication.Service
 			{
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand insertCommand = new SqlCommand("Insert into Employee(Name,Gender,Religion,BirthDate," +
-								"JoiningDate,Email,MobileNo,IsConfirmed,Status,AccountNo,Department,MaritalStatus,Designation,BasicSalary,ChangePasswordAtNextLogon," +
-								"Password,PasswordHints,Salt,TempStatus) values " +
+					SqlCommand insertCommand = new SqlCommand("Insert into EMPLOYEE(Name,Gender,Religion,BirthDate," +
+								"JoiningDate,Email,MobileNo,IsConfirmed,Status,AccountNo,Department,MaritalStatus,Designation,BasicSalary,AuthorizedDate,ChangePasswordAtNextLogon," +
+								"Password,PasswordHints,Salt,TempStatus,PasswordResetByAdmin) values " +
 								"('" + e.Name + "','" + e.Gender + "','" + e.Religion + "','" + e.BirthDate + "','" + e.JoiningDate + "','" + e.Email + "','" + e.MobileNo + "'," +
-								"'" + e.IsConfirmed + "','" + (int)e.Status + "','" + e.AccountNo + "','" + e.Department + "','" + e.MaritalStatus + "','" + e.Designation + "','" + e.BasicSalary + "'," +
-								"'" + e.ChangePasswordNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "')", conn, tc);
+								"'" + e.IsConfirmed + "','" + (int)e.Status + "','" + e.AccountNo + "','" + e.Department + "','" + e.MaritalStatus + "','" + e.Designation + "','" + e.BasicSalary + "','" + e.AuthorizedDate + "'," +
+								"'" + e.ChangePasswordNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "','" +e.PasswordResetByAdmin+ "')", conn, tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -51,10 +50,11 @@ namespace Authentication.Service
 				{
 					empID = dr.GetString(0);
 				}
+				dr.Close();
 				conn.Close();
 			}
 			catch(Exception ex) { 
-
+				conn.Close();
 			}
 			finally
 			{

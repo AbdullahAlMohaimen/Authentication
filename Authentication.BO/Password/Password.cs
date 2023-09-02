@@ -48,7 +48,7 @@ namespace Authentication.BO.Password
 		#region Random Password
 		public string GenerateRandomPassword()
 		{
-			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*";
+			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()?><+";
 			Random random = new Random();
 			int length = random.Next(10, 12);
 			StringBuilder password = new StringBuilder();
@@ -64,7 +64,7 @@ namespace Authentication.BO.Password
 		#region Random Password withLength
 		public string GenerateRandomPasswordByLength(int length)
 		{
-			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*";
+			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()?><+";
 			Random random = new Random();
 			//int length = random.Next(8, 12);
 			StringBuilder password = new StringBuilder();
@@ -77,7 +77,7 @@ namespace Authentication.BO.Password
 		}
 		#endregion
 
-		#region Random Password withLength
+		#region Random Password withLength(HARD)
 		public string GenerateRandomPassword(int length)
 		{
 			const string numbers = "0123456789";
@@ -123,6 +123,22 @@ namespace Authentication.BO.Password
 			}
 
 			return sb.ToString();
+		}
+		#endregion
+
+		#region Random Password
+		public string GenerateRandomLoginID()
+		{
+			const string validChars = "0123456789";
+			Random random = new Random();
+			int length = random.Next(6);
+			StringBuilder password = new StringBuilder();
+			for (int i = 0; i < length; i++)
+			{
+				int index = random.Next(validChars.Length);
+				password.Append(validChars[index]);
+			}
+			return password.ToString();
 		}
 		#endregion
 	}

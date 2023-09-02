@@ -15,14 +15,17 @@ namespace Authentication.Employee
 {
 	public partial class EmployeeEntry : Form
 	{
-		string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
 		EmployeeService employeeService = new EmployeeService();
-		
+
+		#region Constructor
 		public EmployeeEntry()
 		{
 			InitializeComponent();
 			this.Load();
 		}
+		#endregion
+
+		#region Employee Data
 		public void Load()
 		{
 			this.txt_EmpGender.SelectedIndex = 0;
@@ -32,21 +35,30 @@ namespace Authentication.Employee
 			this.txt_EmpDesignation.SelectedIndex = 0;
 			this.txt_EmpDesignation.AutoCompleteMode = AutoCompleteMode.None;
 		}
+		#endregion
+
+		#region Minimize Button
 		private void Minimize_Click(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
 		}
+		#endregion
 
+		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Cancel Button
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Save Employee
 		private void SaveEmployee_Click(object sender, EventArgs e)
 		{
 			BO.Employee.Employee employee = new BO.Employee.Employee();
@@ -71,12 +83,11 @@ namespace Authentication.Employee
 					{
 						employee.IsConfirmed = txt_EmpIsConfirm.Checked;
 					}
-
 					string employeeNo = employeeService.Save(employee);
 					if (!string.IsNullOrEmpty(employeeNo))
 					{
 						this.Clear();
-						MessageBox.Show("Employee information save successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						MessageBox.Show("Employee information save successfully\nA temporary password has been send user's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 					}
 					else
 					{
@@ -90,17 +101,31 @@ namespace Authentication.Employee
 			}
 			catch(Exception ex)
 			{
-				MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message);
+				//MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		#endregion
 
+		#region Clear Method
 		public void Clear()
 		{
 			txt_EmpName.Text = string.Empty;
 			txt_EmpGender.SelectedIndex = 0;
 			txt_EmpReligion.SelectedIndex = 0;
 			txt_EmpDOB.Text = DateTime.Now.ToString();
+			txt_EmpMStatus.SelectedIndex = 0;
+			txt_EmpMobileNo.Text = string.Empty;
+			txt_EmpAccountNo.Text = string.Empty;
+			txt_EmpDepartment.SelectedIndex = 0;
+			txt_EmpDesignation.SelectedIndex = 0;
+			txt_EmpEmail.Text = string.Empty;
+			txt_EmpSalary.Text = string.Empty;
+			txt_EmpIsConfirm.Checked = false;
 		}
+		#endregion
+
+		#region Validation
 		public string isValidate()
 		{
 			string invalidMessage = "";
@@ -151,5 +176,6 @@ namespace Authentication.Employee
 			}
 			return invalidMessage;
 		}
+		#endregion
 	}
 }

@@ -5,7 +5,7 @@ USE AuthenticationDB;
 --HardPasswordSetup TABLE
 Create Table HardPasswordSetup(
 	PolicyID INT IDENTITY(1,1) not null PRIMARY KEY,
-	PolicyNO AS ('P' + right('000' + cast(PolicyID AS VARCHAR(8)),8)) PERSISTED,
+	PolicyNO AS ('P' + right('00' + cast(PolicyID AS VARCHAR(8)),8)) PERSISTED,
 	MaxLength INT not null,
 	MinLength INT not null,
 	SuperuserPassMinLength INT not null,
@@ -24,11 +24,9 @@ Create Table HardPasswordSetup(
 --ROLE Table
 Create Table Role(
 	RoleID INT	IDENTITY(1,1) not null PRIMARY KEY,
+	Code AS ('R' + right('00' + cast(RoleID AS VARCHAR(15)),15)) PERSISTED,
 	Name VARCHAR(200),
-	Code AS ('R' + right('000' + cast(RoleID AS VARCHAR(15)),15)) PERSISTED,
-	PermissionCode VARCHAR(20),
 	Status INT,
-	RoleType INT,
 	Description VARCHAR(255) null,
 );
 
@@ -50,14 +48,16 @@ Create Table Employee(
 	MaritalStatus VARCHAR(20) null,
 	Designation VARCHAR(256),
 	BasicSalary INT,
-	ChangePasswordAtNextLogon INT null,
+	AuthorizedDate DATETIME null,
 	Password VARCHAR(100),
 	PasswordHints VARCHAR(100) null,
 	Salt varchar(256),
 	ForgetPasswordDate  DATETIME null,
 	LastChangedDate DATETIME null,
 	TempStatus int null,
-	TempStatusTime DATETIME NULL
+	TempStatusTime DATETIME NULL,
+	ChangePasswordAtNextLogon INT null,
+	PasswordResetByAdmin BIT null,
 );
 
 
@@ -66,22 +66,22 @@ Create Table Users(
 	UserID INT IDENTITY(1,1) not null PRIMARY KEY,
 	LoginID VARCHAR(15) unique,
 	UserName VARCHAR(100),
-	UserType VARCHAR(100),
 	Status INT,
 	Email VARCHAR(100),
-	OwnerID INT,
 	RoleID INT NOT NULL FOREIGN KEY REFERENCES Role(RoleID),
 	MasterID INT NOT NULL FOREIGN KEY REFERENCES Employee(EmployeeID),
 	AuthorizedDate DATETIME null,
-	ChangePasswordAtNextLogon INT null,
 	Password VARCHAR(100),
 	PasswordHints VARCHAR(100) null,
 	Salt varchar(255),
 	ForgetPasswordDate  DATETIME null,
 	LastChangedDate DATETIME null,
 	TempStatus int null,
-	TempStatusTime DATETIME NULL
+	TempStatusTime DATETIME NULL,
+	ChangePasswordAtNextLogon INT null,
+	PasswordResetByAdmin BIT null,
 );
+
 
 
 --Employee PasswordHistory TABLE
@@ -107,7 +107,9 @@ Create Table UserPasswordHistory(
 --LoginInfo TABLE
 Create Table LoginInfo(
 	LoginInfoID INT IDENTITY(1,1) not null PRIMARY KEY,
-	UserID INT not null FOREIGN KEY REFERENCES Users(UserID),
+	LoginID VARCHAR(100),
+	UserName VARCHAR(200),
+	Type VARCHAR(100),
 	PCNumber VARCHAR(256),
 	LoginTime DATETIME,
 	LogoutTime DATETIME,
@@ -117,7 +119,8 @@ Create Table LoginInfo(
 --BadLoginAttemptInfo TABLE
 Create Table BadLoginAttemptInfo(
 	AttemptID INT IDENTITY(1,1) not null PRIMARY KEY,
-	UserID INT not null FOREIGN KEY REFERENCES Users(UserID),
+	LoginID VARCHAR(100),
+	Type VARCHAR(100),
 	AttemptTime DATETIME,
 	PCNumber VARCHAR(256)
 );
@@ -130,5 +133,8 @@ select * from UserPasswordHistory;
 select * from LoginInfo;
 select * from Role;
 select * from BadLoginAttemptInfo;
+
+
+
 
 

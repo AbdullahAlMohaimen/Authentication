@@ -10,6 +10,7 @@ using Authentication.BO;
 using Authentication.Service.Model;
 using Authentication.BO.Employee;
 using Authentication.BO.Password;
+using Authentication.BO.SendEmail;
 using System.Net.Mail;
 using System.Data.SqlClient;
 
@@ -24,7 +25,6 @@ namespace Authentication.Service
 		public EmployeeService() { }
 
 		private void MapObject(Employee oEmployee, DataReader oReader)
-
 		{
 			base.SetObjectID(oEmployee, oReader.GetInt32("EmployeeID").Value);
 			oEmployee.EmployeeNo = oReader.GetString("EmployeeNo", string.Empty);
@@ -60,9 +60,9 @@ namespace Authentication.Service
 		}
 		protected Employee CreateObject(DataReader oReader)
 		{
-			Employee oUser = new Employee();
-			MapObject(oUser, oReader);
-			return oUser;
+			Employee oEmployee = new Employee();
+			MapObject(oEmployee, oReader);
+			return oEmployee;
 		}
 		#endregion
 
@@ -70,17 +70,25 @@ namespace Authentication.Service
 		string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
 		#endregion
 
-		#region Service implementation
+		#region Service Implementation
+
+		#region Get Employee By ID
 		public Employee GetEmployee(int ID)
 		{
 			Employee oEmployee = new Employee();
 			return oEmployee;
 		}
+		#endregion
+
+		#region Get All Employee
 		public List<Employee> GetEmployees()
 		{
 			List<Employee> oEmployees = new List<Employee>();
 			return oEmployees;
 		}
+		#endregion
+
+		#region Save Employee
 		public string Save(Employee employee)
 		{
 			string employeeNo = string.Empty;
@@ -94,41 +102,32 @@ namespace Authentication.Service
 				employeeNo = EmployeeDA.Insert(employee);
 				if (!string.IsNullOrEmpty(employeeNo))
 				{
-					string fromMail = "authenticationmh@gmail.com";
-					string fromMailPassword = "qdxflaqoohshyocn";
-
-					MailMessage mailSender = new MailMessage();
-					mailSender.From = new MailAddress(fromMail);
-					mailSender.To.Add(new MailAddress(employee.Email));
-					mailSender.Subject = "Employee Login Password (Do not replay this mail)";
-
-					mailSender.Body = $@"<html><body><p><b>Dear</b> {employee.Name},</p>
+					SendEmail sendEmail = new SendEmail();
+					sendEmail.To = employee.Email;
+					sendEmail.Subject = "Employee Login Password (Do not replay this mail)";
+					sendEmail.Body = $@"<html><body><p><b>Dear</b> {employee.Name},</p>
 								 <p><b>Your Employee ID : </b>{employeeNo}</p>
 			                     <p><b>This is system generated password : </b>{randomPassword}</p>
 			                     <p>Regards,</p>
 			                     <p>Authentication Team</p></body></html>";
-					mailSender.IsBodyHtml = true;
-
-					var client = new SmtpClient("smtp.gmail.com")
-					{
-						Port = 587,
-						Credentials = new System.Net.NetworkCredential(fromMail, fromMailPassword),
-						EnableSsl = true,
-					};
-					client.Send(mailSender);
+					sendEmail.NewUserSendigEmail(sendEmail);
 				}
 			}
 			catch(Exception e)
 			{
 
 			}
-
 			return employeeNo;
 		}
+		#endregion
+
+		#region Delete Employee
 		public void Delete(int ID)
 		{
 
 		}
+		#endregion
+
 		#endregion
 	}
 }

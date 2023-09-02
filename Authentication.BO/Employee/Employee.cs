@@ -22,6 +22,8 @@ namespace Authentication.BO.Employee
 			_changePasswordNextLogon = 0;
 			_passwordHints = string.Empty;
 			_tempStatus = EnumStatus.Active;
+			_authorizedDate = DateTime.Now;
+			_passwordResetByAdmin = false;
 		}
 		#endregion
 
@@ -165,6 +167,15 @@ namespace Authentication.BO.Employee
 		}
 		#endregion
 
+		#region AuthorizedDate : DateTime
+		public DateTime? _authorizedDate;
+		public DateTime? AuthorizedDate
+		{
+			get { return _authorizedDate; }
+			set { _authorizedDate = value; }
+		}
+		#endregion
+
 		#region ChangePasswordNextLogon : INT
 		public int _changePasswordNextLogon;
 		public int ChangePasswordNextLogon
@@ -240,6 +251,15 @@ namespace Authentication.BO.Employee
 		{
 			get { return _tempStatusTime; }
 			set { _tempStatusTime = value; }
+		}
+		#endregion
+
+		#region PasswordResetByAdmin : Bool
+		public bool? _passwordResetByAdmin;
+		public bool? PasswordResetByAdmin
+		{
+			get { return _passwordResetByAdmin; }
+			set { _passwordResetByAdmin = value; }
 		}
 		#endregion
 
