@@ -134,6 +134,10 @@ select * from LoginInfo;
 select * from Role;
 select * from BadLoginAttemptInfo;
 
+update Employee set Religion = 'Islam' where EmployeeID = 3
+
+
+
 
 
 

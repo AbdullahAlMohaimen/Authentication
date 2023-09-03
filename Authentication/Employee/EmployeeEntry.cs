@@ -16,6 +16,7 @@ namespace Authentication.Employee
 	public partial class EmployeeEntry : Form
 	{
 		EmployeeService employeeService = new EmployeeService();
+		BO.Employee.Employee employee = new BO.Employee.Employee();
 
 		#region Constructor
 		public EmployeeEntry()
@@ -61,7 +62,6 @@ namespace Authentication.Employee
 		#region Save Employee
 		private void SaveEmployee_Click(object sender, EventArgs e)
 		{
-			BO.Employee.Employee employee = new BO.Employee.Employee();
 			string invalidMessage;
 			try
 			{
@@ -87,7 +87,7 @@ namespace Authentication.Employee
 					if (!string.IsNullOrEmpty(employeeNo))
 					{
 						this.Clear();
-						MessageBox.Show("Employee information save successfully\nA temporary password has been send user's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						MessageBox.Show("Employee information save successfully\nA temporary password has been send Employee's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 					}
 					else
 					{
@@ -134,12 +134,12 @@ namespace Authentication.Employee
 				invalidMessage = "Please Enter Employee's Name";
 				return invalidMessage;
 			}
-			if (txt_EmpGender.Text == "")
+			if (txt_EmpGender.SelectedIndex == 0)
 			{
 				invalidMessage = "Please Enter Employee's Gender";
 				return invalidMessage;
 			}
-			if (txt_EmpReligion.Text == "")
+			if (txt_EmpReligion.SelectedIndex == 0)
 			{
 				invalidMessage = "Please Enter Employee's Religion";
 				return invalidMessage;

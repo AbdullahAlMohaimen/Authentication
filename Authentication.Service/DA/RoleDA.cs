@@ -14,6 +14,7 @@ using System.IO;
 using Authentication.BO.Role;
 using MailKit;
 using iTextSharp.text.pdf.security;
+using System.Data;
 
 namespace Authentication.Service
 {
@@ -27,7 +28,7 @@ namespace Authentication.Service
 		public RoleDA() { }
 		#endregion
 
-		#region  Get Code
+		#region  GET Code
 		public int GetCode()
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -93,6 +94,27 @@ namespace Authentication.Service
 			}
 
 			return status;
+		}
+		#endregion
+
+		#region  GET
+		internal static IDataReader Get()
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from Role", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex) { 
+				conn.Close();
+			}
+			return dr;
 		}
 		#endregion
 	}

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Data.SqlClient;
 using Authentication.BO.Role;
+using Authentication.BO.Users;
 
 namespace Authentication.Service
 {
@@ -73,6 +74,16 @@ namespace Authentication.Service
 		public List<Role> GetRole()
 		{
 			List<Role> roles = new List<Role>();
+			try
+			{
+				DataReader dr = new DataReader(RoleDA.Get());
+				roles = this.CreateObjects<Role>(dr);
+				dr.Close();
+			}
+			catch(Exception ex)
+			{
+
+			}
 
 			return roles;
 		}

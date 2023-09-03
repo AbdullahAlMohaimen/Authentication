@@ -19,7 +19,7 @@ namespace Authentication.BO.Employee
 			_isConfirmed = false;
 			_status = EnumStatus.Active;
 			_maritalStatus = string.Empty;
-			_changePasswordNextLogon = 0;
+			_changePasswordAtNextLogon = 0;
 			_passwordHints = string.Empty;
 			_tempStatus = EnumStatus.Active;
 			_authorizedDate = DateTime.Now;
@@ -176,12 +176,12 @@ namespace Authentication.BO.Employee
 		}
 		#endregion
 
-		#region ChangePasswordNextLogon : INT
-		public int _changePasswordNextLogon;
-		public int ChangePasswordNextLogon
+		#region ChangePasswordAtNextLogon : INT
+		public int _changePasswordAtNextLogon;
+		public int ChangePasswordAtNextLogon
 		{
-			get { return _changePasswordNextLogon; }
-			set { _changePasswordNextLogon = value; }
+			get { return _changePasswordAtNextLogon; }
+			set { _changePasswordAtNextLogon = value; }
 		}
 
 		#endregion

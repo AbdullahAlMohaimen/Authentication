@@ -28,7 +28,7 @@ namespace Authentication.Service
 		{
 			base.SetObjectID(oEmployee, oReader.GetInt32("EmployeeID").Value);
 			oEmployee.EmployeeNo = oReader.GetString("EmployeeNo", string.Empty);
-			oEmployee.Name = oReader.GetString("EmployeeNo", string.Empty);
+			oEmployee.Name = oReader.GetString("Name", string.Empty);
 			oEmployee.Gender = oReader.GetString("Gender", string.Empty);
 			oEmployee.Religion = oReader.GetString("Religion", string.Empty);
 			oEmployee.BirthDate = oReader.GetDateTime("BirthDate", DateTime.MinValue);
@@ -42,7 +42,7 @@ namespace Authentication.Service
 			oEmployee.MaritalStatus = oReader.GetString("MaritalStatus", string.Empty);
 			oEmployee.Designation = oReader.GetString("Designation", string.Empty);
 			oEmployee.BasicSalary = oReader.GetInt32("BasicSalary").Value;
-			oEmployee.ChangePasswordNextLogon = oReader.GetInt32("ChangePasswordNextLogon",1);
+			oEmployee.ChangePasswordAtNextLogon = oReader.GetInt32("ChangePasswordAtNextLogon",1);
 			oEmployee.Password = oReader.GetString("Password");
 			oEmployee.PasswordHints = oReader.GetString("PasswordHints",string.Empty);
 			oEmployee.Salt = oReader.GetString("Salt");
@@ -125,6 +125,27 @@ namespace Authentication.Service
 		public void Delete(int ID)
 		{
 
+		}
+		#endregion
+
+		#region SearchEmployee Employee
+		public Employee SearchEmployee(string empNo, string empName)
+		{
+			Employee oEmployee = null;
+			try
+			{
+				DataReader oreader = new DataReader(EmployeeDA.GetSearchEmpoyee(empNo,empName));
+				if (oreader.Read())
+				{
+					oEmployee = this.CreateObject<Employee>(oreader);
+				}
+				
+			}
+			catch(Exception e)
+			{
+
+			}
+			return oEmployee;
 		}
 		#endregion
 

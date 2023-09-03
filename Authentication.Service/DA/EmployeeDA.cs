@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Messaging;
 using Org.BouncyCastle.Ocsp;
+using System.Data;
 
 namespace Authentication.Service
 {
@@ -37,7 +38,7 @@ namespace Authentication.Service
 								"Password,PasswordHints,Salt,TempStatus,PasswordResetByAdmin) values " +
 								"('" + e.Name + "','" + e.Gender + "','" + e.Religion + "','" + e.BirthDate + "','" + e.JoiningDate + "','" + e.Email + "','" + e.MobileNo + "'," +
 								"'" + e.IsConfirmed + "','" + (int)e.Status + "','" + e.AccountNo + "','" + e.Department + "','" + e.MaritalStatus + "','" + e.Designation + "','" + e.BasicSalary + "','" + e.AuthorizedDate + "'," +
-								"'" + e.ChangePasswordNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "','" +e.PasswordResetByAdmin+ "')", conn, tc);
+								"'" + e.ChangePasswordAtNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "','" +e.PasswordResetByAdmin+ "')", conn, tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -61,6 +62,39 @@ namespace Authentication.Service
 				conn.Close();
 			}
 			return empID;
+		}
+		#endregion
+
+		#region  Search Employee
+		internal static IDataReader GetSearchEmpoyee(string empNo, string empName)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if(!string.IsNullOrEmpty(empNo) && !string.IsNullOrEmpty(empName))
+				{
+					getCommand = new SqlCommand("Select * from Employee where EmployeeNo = '" + empNo + "' and Name = '"+empName+"'", conn);
+				}
+				if (!string.IsNullOrEmpty(empNo) && string.IsNullOrEmpty(empName))
+				{
+					getCommand = new SqlCommand("Select * from Employee where EmployeeNo = '" + empNo + "'", conn);
+				}
+				if (string.IsNullOrEmpty(empNo) && !string.IsNullOrEmpty(empName))
+				{
+					getCommand = new SqlCommand("Select * from Employee where Name = '" + empName + "'", conn);
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			dr = getCommand.ExecuteReader();
+			return dr;
 		}
 		#endregion
 	}

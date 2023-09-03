@@ -406,12 +406,6 @@
 			this.txt_UserRoleID.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txt_UserRoleID.IntegralHeight = false;
 			this.txt_UserRoleID.ItemHeight = 28;
-			this.txt_UserRoleID.Items.AddRange(new object[] {
-            "Select Religion",
-            "Islam",
-            "Hinduism",
-            "Buddhism",
-            "Christianity"});
 			this.txt_UserRoleID.Location = new System.Drawing.Point(196, 112);
 			this.txt_UserRoleID.MaxDropDownItems = 5;
 			this.txt_UserRoleID.Name = "txt_UserRoleID";
