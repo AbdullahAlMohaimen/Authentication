@@ -12,6 +12,9 @@ using Authentication.BO.Employee;
 using Authentication.BO.Password;
 using Authentication.BO.SendEmail;
 using Authentication.BO.Users;
+using Authentication.Service.DA;
+using System.Net.Mail;
+using System.Data.SqlClient;
 
 namespace Authentication.Service
 {
@@ -94,9 +97,36 @@ namespace Authentication.Service
 		#endregion
 
 		#region Save User
-		public void Save(Users user)
+		public string Save(Users user)
 		{
+			Password password = new Password();
+			string result;
+			try
+			{
+				string randomPassword = password.GenerateRandomPassword();
+				user.Salt = password.CreateSalt(128);
+				user.Password = password.GenerateHash(randomPassword, user.Salt);
+				result = UsersDA.Insert(user);
 
+				if(result == "Ok")
+				{
+					SendEmail sendEmail = new SendEmail();
+					sendEmail.To = user.Email;
+					sendEmail.Subject = "User Login Password (Do not replay this mail)";
+					sendEmail.Body = $@"<html><body><p><b>Dear</b> {user.UserName},</p>
+								 <p><b>Your Login ID : </b>{user.LoginID}</p>
+			                     <p><b>This is system generated password : </b>{randomPassword}</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+					sendEmail.NewUserSendigEmail(sendEmail);
+				}
+			}
+			catch(Exception ex)
+			{
+				return "Failed";
+			}
+
+			return result;
 		}
 		#endregion
 

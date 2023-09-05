@@ -23,9 +23,7 @@ namespace Authentication.SearchEmployee
 
 		private void Cancel_Click(object sender, EventArgs e)
 		{
-			Users.UserEntry user = new Users.UserEntry(null);
-			user.Show();
-			this.Hide();
+			this.Close();
 		}
 
 		private void Exit_Click(object sender, EventArgs e)
@@ -70,7 +68,7 @@ namespace Authentication.SearchEmployee
 		{
 			Users.UserEntry user = new Users.UserEntry(employee);
 			user.Show();
-			this.Hide();
+			this.Close();
 		}
 	}
 }

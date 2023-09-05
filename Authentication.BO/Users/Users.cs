@@ -180,7 +180,7 @@ namespace Authentication.BO.Users
 	{
 		Users GerUser(int ID);
 		List<Users> GetUsers();
-		void Save(Users user);
+		string Save(Users user);
 		void Delete(int ID);
 	}
 	#endregion

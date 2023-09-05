@@ -19,8 +19,11 @@ namespace Authentication.Users
 {
 	public partial class UserEntry : Form
 	{
+		private SearchEmployee.SearchEmployee searchForm;
 		RoleService roleService = new RoleService();
+		UserService userService = new UserService();
 		List<BO.Role.Role> _roles = new List<BO.Role.Role>();
+		List<BO.Users.Users> _users = new List<BO.Users.Users>();
 		BO.Role.Role _role = new BO.Role.Role();
 		BO.Users.Users _user = new BO.Users.Users();
 
@@ -29,11 +32,12 @@ namespace Authentication.Users
 		{
 			InitializeComponent();
 			this.LoadRoalData();
+
 			if (SEmployee != null)
 			{
 				txt_UserMaster.Text = SEmployee.Name;
 			}
-			FindEmployee = SEmployee;
+			SearchEmp = SEmployee;
 		}
 		#endregion
 
@@ -61,11 +65,11 @@ namespace Authentication.Users
 		#endregion
 
 		#region Property (for Search Employee)
-		public BO.Employee.Employee _findEmployee;
-		public BO.Employee.Employee FindEmployee
+		public BO.Employee.Employee _searchEmployee;
+		public BO.Employee.Employee SearchEmp
 		{
-			get { return _findEmployee; }
-			set { _findEmployee = value; }
+			get { return _searchEmployee; }
+			set { _searchEmployee = value; }
 		}
 		#endregion
 
@@ -78,7 +82,7 @@ namespace Authentication.Users
 			}
 			else
 			{
-				txt_UserLoginID.Text = "2222";
+				txt_UserLoginID.Text = string.Empty;
 			}
 		}
 		#endregion
@@ -107,16 +111,32 @@ namespace Authentication.Users
 		#region Save Button
 		private void SaveUser_Click(object sender, EventArgs e)
 		{
+
 			string roleName = txt_UserRoleID.Text;
 			string invalidMessage;
-
+			string result;
 			try
 			{
 				_role = _roles.Find(item => item.Name == roleName);
 				invalidMessage = this.isValidate();
 				if (string.IsNullOrEmpty(invalidMessage) || invalidMessage == "")
 				{
+					_user.LoginID = txt_UserLoginID.Text;
+					_user.UserName = txt_UserName.Text;
+					_user.RoleID = _role.ID;
+					_user.Email = txt_UserEmail.Text;
+					_user.MasterID = SearchEmp.ID;
 
+					result = userService.Save(_user);
+
+					if (result == "Ok")
+					{
+						MessageBox.Show("User information save successfullt", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+						MessageBox.Show("User information save filed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					}
 				}
 				else
 				{
@@ -143,7 +163,7 @@ namespace Authentication.Users
 			}
 			if (string.IsNullOrEmpty(txt_UserName.Text) || txt_UserName.Text == "")
 			{
-				invalidMessage = "User anme can't be empty!\nPlease enter a User name";
+				invalidMessage = "User name can't be empty!\nPlease enter a User name";
 				return invalidMessage;
 			}
 			if (txt_UserRoleID.SelectedIndex == 0)
@@ -168,7 +188,7 @@ namespace Authentication.Users
 		private void SearchEmployee_Click(object sender, EventArgs e)
 		{
 			SearchEmployee.SearchEmployee search = new SearchEmployee.SearchEmployee();
-			search.Show();
+			search.Show(this);
 		}
 	}
 }
