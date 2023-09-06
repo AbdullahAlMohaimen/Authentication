@@ -14,6 +14,7 @@ using Authentication.BO.Role;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using Newtonsoft.Json.Linq;
 
 namespace Authentication.Users
 {
@@ -26,6 +27,7 @@ namespace Authentication.Users
 		List<BO.Users.Users> _users = new List<BO.Users.Users>();
 		BO.Role.Role _role = new BO.Role.Role();
 		BO.Users.Users _user = new BO.Users.Users();
+		BO.Password.Password _password = new BO.Password.Password();
 
 		#region Load
 		public UserEntry(BO.Employee.Employee SEmployee)
@@ -76,9 +78,20 @@ namespace Authentication.Users
 		#region LoginId Auto Generate
 		private void txt_UserLoginIDAuto_CheckedChanged(object sender, EventArgs e)
 		{
+			string loginID = null;
+			bool isLoginIDUnique = false;
 			if (txt_UserLoginIDAuto.Checked)
 			{
-				txt_UserLoginID.Text = "1111";
+				_users = userService.GetUsers();
+				while (!isLoginIDUnique)
+				{
+					loginID = _password.GenerateRandomLoginID();
+					isLoginIDUnique = !_users.Any(user => user.LoginID == loginID);
+					if (isLoginIDUnique)
+					{
+						txt_UserLoginID.Text = loginID;
+					}
+				}
 			}
 			else
 			{

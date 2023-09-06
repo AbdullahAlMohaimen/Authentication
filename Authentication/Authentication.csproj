@@ -342,6 +342,9 @@
     <EmbeddedResource Include="Employee\EmployeeEntry.resx">
       <DependentUpon>EmployeeEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HardPasswordSetup\HardPasswordSetup.resx">
+      <DependentUpon>HardPasswordSetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,10 +405,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BadLoginAttemptInfo\" />
-    <Folder Include="LoginInfo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Authentication.BO\Authentication.BO.csproj">
       <Project>{8480968a-48fc-45ea-b358-b1f0caa997a6}</Project>

@@ -41,7 +41,7 @@ namespace Authentication.Service
 			oUser.LastChangeDate = oReader.GetDateTime("LastChangedDate", DateTime.MinValue);
 			oUser.TempStatus = (EnumStatus)oReader.GetInt32("TempStatus",0);
 			oUser.TempStatusTime = oReader.GetDateTime("TempStatusTime",DateTime.MinValue);
-			oUser.ChangePasswordNextLogon = oReader.GetInt32("ChangePasswordNextLogon",0);
+			oUser.ChangePasswordNextLogon = oReader.GetInt32("ChangePasswordAtNextLogon",0);
 			oUser.PasswordResetByAdmin = oReader.GetBoolean("PasswordResetByAdmin", false);
 			this.SetObjectState(oUser, Authentication.BO.ObjectState.Saved);
 		}
@@ -87,7 +87,9 @@ namespace Authentication.Service
 			List <Users> users = new List<Users>();
 			try
 			{
-
+				DataReader dr = new DataReader(UsersDA.Get());
+				users = this.CreateObjects<Users>(dr);
+				dr.Close();
 			}
 			catch (Exception ex){ 
 			

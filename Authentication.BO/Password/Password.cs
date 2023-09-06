@@ -131,8 +131,9 @@ namespace Authentication.BO.Password
 		{
 			const string validChars = "0123456789";
 			Random random = new Random();
-			int length = random.Next(6);
+			int length = random.Next(3,4);
 			StringBuilder password = new StringBuilder();
+			password.Append("00");
 			for (int i = 0; i < length; i++)
 			{
 				int index = random.Next(validChars.Length);

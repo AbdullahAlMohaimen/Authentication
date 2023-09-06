@@ -16,5 +16,15 @@ namespace Authentication.HardPasswordSetup
 		{
 			InitializeComponent();
 		}
+
+		private void Exit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void Minimize_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
+		}
 	}
 }
