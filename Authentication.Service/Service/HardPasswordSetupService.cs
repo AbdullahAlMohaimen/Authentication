@@ -94,7 +94,7 @@ namespace Authentication.Service
 			if (policyID != 0)
 				policyNo = "P00" + (policyID + 1).ToString();
 			else
-				policyNo = "R00" + 1;
+				policyNo = "P00" + 1;
 			return policyNo;
 		}
 		#endregion

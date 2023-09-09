@@ -16,7 +16,12 @@ namespace Authentication.BO.HardPasswordSetup
 		#region constructor
 		public HardPasswordSetup()
 		{
-
+			_isContainLatter = false;
+			_isContainLowerCase = false;
+			_isContainUpperCase = false;
+			_isUserPasswordSame = false;
+			_isContainSpecialCharacter = false;
+			_isContainNumber = false;
 		}
 		#endregion
 
