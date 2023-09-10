@@ -313,6 +313,12 @@
     <Compile Include="HardPasswordSetup\HardPasswordSetup.Designer.cs">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>

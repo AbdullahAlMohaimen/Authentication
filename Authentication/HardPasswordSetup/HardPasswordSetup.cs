@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Authentication.HardPasswordSetup
 {
@@ -76,6 +77,18 @@ namespace Authentication.HardPasswordSetup
 						hardPasswordSetup.IsContainNumber = true;
 					if (IsSamePassword.Checked)
 						hardPasswordSetup.IsUserPasswordSame = true;
+
+					string status = service.Save(hardPasswordSetup);
+					if (status == "Ok")
+					{
+						MessageBox.Show("New password policy added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					}
+					else
+					{
+						MessageBox.Show("New roll added failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					this.GeneratePolicyNo();
+					this.Clear();
 				}
 				else
 				{

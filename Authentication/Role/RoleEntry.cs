@@ -95,7 +95,7 @@ namespace Authentication.Role
 					}
 					else
 					{
-						MessageBox.Show("New roll added failed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						MessageBox.Show("New roll added failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 					this.GenerateCode();
 					this.Clear();

@@ -16,7 +16,7 @@ namespace Authentication
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new HardPasswordSetup.HardPasswordSetup());
+			Application.Run(new Login.Login());
 		}
 	}
 }

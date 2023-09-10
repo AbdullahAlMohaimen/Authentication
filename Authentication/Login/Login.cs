@@ -16,5 +16,23 @@ namespace Authentication.Login
 		{
 			InitializeComponent();
 		}
+
+		private void Exit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void ForgetPassword_Click(object sender, EventArgs e)
+		{
+			//DialogResult result = MessageBox.Show("Do you want to confirm this action?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			//if (result == DialogResult.Yes)
+			//{
+			//	MessageBox.Show("A tempory password has been send to your email!");
+			//}
+			//else
+			//{
+				
+			//}
+		}
 	}
 }

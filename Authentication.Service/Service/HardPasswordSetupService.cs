@@ -74,9 +74,19 @@ namespace Authentication.Service
 			return hardPasswordSetups;
 		}
 
-		public void Save(HardPasswordSetup oHP)
+		public string Save(HardPasswordSetup oHP)
 		{
-
+			HardPasswordSetupDA hardPasswordSetupDA = new HardPasswordSetupDA();
+			string status = string.Empty;
+			try
+			{
+				status = HardPasswordSetupDA.Insert(oHP);
+			}
+			catch (Exception ex)
+			{
+				status = "Failed";
+			}
+			return status;
 		}
 
 		public void Delete(int ID)

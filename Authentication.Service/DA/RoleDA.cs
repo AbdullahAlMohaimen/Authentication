@@ -83,7 +83,7 @@ namespace Authentication.Service
 			catch (Exception ex)
 			{
 				conn.Close();
-				status = "Falil";
+				status = "Failed";
 				#region Handle Exception
 
 				#endregion

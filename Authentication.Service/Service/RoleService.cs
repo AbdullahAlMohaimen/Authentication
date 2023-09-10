@@ -63,8 +63,8 @@ namespace Authentication.Service
 			{
 				status = RoleDA.Insert(role);
 			}
-			catch(Exception ex){ 
-				
+			catch(Exception ex){
+				status = "Failed";
 			}
 			return status;
 		}

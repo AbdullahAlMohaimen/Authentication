@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Authentication.BO.HardPasswordSetup;
+using Authentication.BO.Role;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -49,6 +51,46 @@ namespace Authentication.Service.DA
 			}
 
 			return policyID;
+		}
+		#endregion
+
+		#region  Save
+		public static string Insert(HardPasswordSetup oHP)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand insertCommand = new SqlCommand("Insert into HardPasswordSetup (MaxLength,MinLength,SuperUserPassMinLength," +
+						"MinPasswordAge,ContainUppercase,ContainLowercase,ContainSpecialCharacter,ContainNumber,ContainLetter," +
+						"UserPasswordSame,PasswordExpireNotificationDays,PasswordExpireDays) values('"+oHP.PassMaxLength+"','"+oHP.PassMinLength+"'," +
+						"'"+oHP.SuperUserassMinLength+"','"+oHP.PasswordMinimumAge+"','"+oHP.IsContainUpperCase+"','"+oHP.IsContainLowerCase+"'," +
+						"'"+oHP.IsContainSpecialCharacter+"','"+oHP.IsContainNumber+"','"+oHP.IsContainLatter+"','"+oHP.IsUserPasswordSame+"'," +
+						"'"+oHP.PasswordExpNotificationDays+"','"+oHP.PasswordExpDays+"')", conn,tc);
+					insertCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+			return status;
 		}
 		#endregion
 	}
