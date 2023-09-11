@@ -33,7 +33,7 @@ Create Table Role(
 --Employee TABLE
 Create Table Employee(
 	EmployeeID INT IDENTITY(1,1) not null PRIMARY KEY,
-	EmployeeNO AS ('E' + right('000' + cast(EmployeeID AS VARCHAR(15)),15)) PERSISTED,
+	EmployeeNO AS ('E' + right('00' + cast(EmployeeID AS VARCHAR(15)),15)) PERSISTED,
 	Name VARCHAR(256),
 	Gender VARCHAR(15),
 	Religion VARCHAR(20),
@@ -133,11 +133,6 @@ select * from UserPasswordHistory;
 select * from LoginInfo;
 select * from Role;
 select * from BadLoginAttemptInfo;
-
-update Employee set Religion = 'Islam' where EmployeeID = 3
-
-
-
 
 
 

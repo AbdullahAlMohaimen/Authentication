@@ -81,7 +81,7 @@ namespace Authentication.BO.SendEmail
 
 		#endregion
 
-		public void NewUserSendigEmail(SendEmail sendEmail)
+		public void SendigEmail(SendEmail sendEmail)
 		{
 			MailMessage mailSender = new MailMessage();
 			mailSender.From = new MailAddress(sendEmail.From);

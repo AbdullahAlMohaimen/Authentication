@@ -96,7 +96,6 @@ namespace Authentication.Service
 			string randomPassword = password.GenerateRandomPassword();
 			employee.Salt = password.CreateSalt(128);
 			employee.Password = password.GenerateHash(randomPassword,employee.Salt);
-
 			try
 			{
 				employeeNo = EmployeeDA.Insert(employee);
@@ -110,7 +109,7 @@ namespace Authentication.Service
 			                     <p><b>This is system generated password : </b>{randomPassword}</p>
 			                     <p>Regards,</p>
 			                     <p>Authentication Team</p></body></html>";
-					sendEmail.NewUserSendigEmail(sendEmail);
+					sendEmail.SendigEmail(sendEmail);
 				}
 			}
 			catch(Exception e)

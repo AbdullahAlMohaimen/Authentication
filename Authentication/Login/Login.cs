@@ -24,6 +24,8 @@ namespace Authentication.Login
 
 		private void ForgetPassword_Click(object sender, EventArgs e)
 		{
+
+
 			//DialogResult result = MessageBox.Show("Do you want to confirm this action?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			//if (result == DialogResult.Yes)
 			//{
@@ -33,6 +35,9 @@ namespace Authentication.Login
 			//{
 				
 			//}
+
+
+
 		}
 	}
 }

@@ -120,7 +120,7 @@ namespace Authentication.Service
 			                     <p><b>This is system generated password : </b>{randomPassword}</p>
 			                     <p>Regards,</p>
 			                     <p>Authentication Team</p></body></html>";
-					sendEmail.NewUserSendigEmail(sendEmail);
+					sendEmail.SendigEmail(sendEmail);
 				}
 			}
 			catch(Exception ex)
