@@ -16,7 +16,7 @@ namespace Authentication
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Role.RoleEntry());
+			Application.Run(new Users.UserEntry(null));
 		}
 	}
 }

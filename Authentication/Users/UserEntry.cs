@@ -144,7 +144,7 @@ namespace Authentication.Users
 
 					if (result == "Ok")
 					{
-						MessageBox.Show("User information save successfullt", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show("User information save successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					else
 					{
