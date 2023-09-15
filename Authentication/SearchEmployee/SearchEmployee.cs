@@ -15,27 +15,48 @@ namespace Authentication.SearchEmployee
 	{
 		BO.Employee.Employee employee = new BO.Employee.Employee();
 		EmployeeService employeeService = new EmployeeService();
+		private Users.UserEntry originalUserEntryForm;
+		private Form callingForm;
 
-		public SearchEmployee()
+		#region Load
+		public SearchEmployee(Form caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 		}
+		#endregion
 
+		#region property
+		public string SearchType;
+		public string SearchBy
+		{
+			get { return SearchType; }
+			set { SearchType = value; }
+		}
+		#endregion
+
+		#region Cancel Button
 		private void Cancel_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Minimize Button
 		private void Minimize_Click(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
 		}
+		#endregion
 
+		#region Employee Search Button
 		private void EmpSearch_Click(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(txt_ID.Text) && string.IsNullOrEmpty(txt_Name.Text))
@@ -63,12 +84,25 @@ namespace Authentication.SearchEmployee
 			}
 
 		}
+		#endregion
 
+		#region Select Button
 		private void Select_Click(object sender, EventArgs e)
 		{
-			Users.UserEntry user = new Users.UserEntry(employee);
-			user.Show();
-			this.Close();
+			if(employee != null)
+			{
+				if (callingForm is Users.UserEntry userEntryForm)
+				{
+					userEntryForm.SetSelectedEmployee(employee);
+					userEntryForm.Show();
+				}
+				this.Hide();
+			}
+			else
+			{
+				MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
 		}
+		#endregion
 	}
 }

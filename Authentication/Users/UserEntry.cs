@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json.Linq;
+using Authentication.BO.Employee;
 
 namespace Authentication.Users
 {
@@ -30,16 +31,10 @@ namespace Authentication.Users
 		BO.Password.Password _password = new BO.Password.Password();
 
 		#region Load
-		public UserEntry(BO.Employee.Employee SEmployee)
+		public UserEntry()
 		{
 			InitializeComponent();
 			this.LoadRoalData();
-
-			if (SEmployee != null)
-			{
-				txt_UserMaster.Text = SEmployee.Name;
-			}
-			SearchEmp = SEmployee;
 		}
 		#endregion
 
@@ -150,6 +145,7 @@ namespace Authentication.Users
 					{
 						MessageBox.Show("User information save filed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					}
+					this.Clear();
 				}
 				else
 				{
@@ -198,10 +194,36 @@ namespace Authentication.Users
 		}
 		#endregion
 
+		#region Clear Method
+		public void Clear()
+		{
+			SearchEmp = null;
+			txt_UserLoginID.Text = string.Empty;
+			txt_UserRoleID.SelectedIndex = 0;
+			txt_UserName.Text = string.Empty;
+			txt_UserEmail.Text = string.Empty;
+			txt_UserMaster.Text = string.Empty;
+		}
+		#endregion
+
+		#region Search Employee Button
 		private void SearchEmployee_Click(object sender, EventArgs e)
 		{
-			SearchEmployee.SearchEmployee search = new SearchEmployee.SearchEmployee();
-			search.Show(this);
+			SearchEmployee.SearchEmployee search = new SearchEmployee.SearchEmployee(this);
+			search.SearchBy = "User";
+			search.Show();
 		}
+		#endregion
+
+		#region Set Selected Employee
+		public void SetSelectedEmployee(BO.Employee.Employee SEemployee)
+		{
+			if (SEemployee != null)
+			{
+				txt_UserMaster.Text = "(" + SEemployee.EmployeeNo+")"+SEemployee.Name;
+				SearchEmp = SEemployee;
+			}
+		}
+		#endregion
 	}
 }
