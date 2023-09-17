@@ -22,22 +22,19 @@ namespace Authentication.Login
 			this.Close();
 		}
 
-		private void ForgetPassword_Click(object sender, EventArgs e)
+		private void ForgetPass_Click(object sender, EventArgs e)
 		{
-
-
-			//DialogResult result = MessageBox.Show("Do you want to confirm this action?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			//if (result == DialogResult.Yes)
-			//{
-			//	MessageBox.Show("A tempory password has been send to your email!");
-			//}
-			//else
-			//{
-				
-			//}
-
-
-
+			if (string.IsNullOrEmpty(txt_UserLoginID.Text))
+			{
+				MessageBox.Show("Please enter your login ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				Forget_Password.ForgetPassword forgetPassword = new Forget_Password.ForgetPassword(this);
+				forgetPassword._loginID = txt_UserLoginID.Text;
+				forgetPassword.SetLoginID(txt_UserLoginID.Text);
+				forgetPassword.Show();
+			}
 		}
 	}
 }

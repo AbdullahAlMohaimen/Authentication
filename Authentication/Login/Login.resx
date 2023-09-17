@@ -272,7 +272,7 @@
   <data name="panel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAYsSURBVHhe5VtL
+        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAYsSURBVHhe5VtL
         bBxFEG1r56NIJojfiSsExO8Ih4RPJEAgEAjI7trmxAUpjkQIIEEIkIAUiUNOcI2IkIhIwldwRBwSDAau
         RCTAIRfDIURE/kRxDmvz3vj1ur3etWdnZr2d2SeVdqa6praqu6v6Mz1mLVTD8N56GP4LOipWYagacy30
         nibxWmy/UIuigzBwEdR43JhY7EJQC4IHpHuR12L7BRj3qTWyHsdbxC4EI0HwkNXNa7H9AVt8JAwvNI0M
@@ -430,6 +430,54 @@
 </value>
   </data>
   <data name="panel16.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel17.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel18.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel19.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel20.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE
+        7ElgDLAlF4DoTEHxJ10TS/4kj6IofkIPdCOw0I22AZh15jhHhSw+rurMcQ4LdfPbALo7zmFZe5TL1XHO
+        2xfRyXGOFuohesn3Sy6KIgE4AVPfJ+I8BBzVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panel22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCQoRFQX/A9hTAAAAY0lEQVRIS+2RsQ2AMBADXbEhEkwE

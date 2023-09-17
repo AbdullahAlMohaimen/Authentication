@@ -1,6 +1,6 @@
-﻿namespace Authentication.Home
+﻿namespace Authentication.BlurOverlayForm
 {
-	partial class Home
+	partial class BlurOverlayForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -30,15 +30,15 @@
 		{
 			this.SuspendLayout();
 			// 
-			// Home
+			// BlurOverlayForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Wheat;
-			this.ClientSize = new System.Drawing.Size(1071, 548);
+			this.BackColor = System.Drawing.Color.DarkGray;
+			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "Home";
-			this.Text = "Home";
+			this.Name = "BlurOverlayForm";
+			this.Text = "BlurOverlayForm";
 			this.ResumeLayout(false);
 
 		}

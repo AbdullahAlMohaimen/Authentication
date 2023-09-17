@@ -38,7 +38,7 @@
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.txt_Password = new MaterialSkin.Controls.MaterialMaskedTextBox();
-			this.txt_Email = new MaterialSkin.Controls.MaterialMaskedTextBox();
+			this.txt_UserLoginID = new MaterialSkin.Controls.MaterialMaskedTextBox();
 			this.SaveRole = new Guna.UI2.WinForms.Guna2Button();
 			this.ForgetPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.panel6 = new System.Windows.Forms.Panel();
@@ -52,6 +52,13 @@
 			this.panel14 = new System.Windows.Forms.Panel();
 			this.panel15 = new System.Windows.Forms.Panel();
 			this.panel16 = new System.Windows.Forms.Panel();
+			this.ForgetPass = new Guna.UI2.WinForms.Guna2Button();
+			this.panel17 = new System.Windows.Forms.Panel();
+			this.panel18 = new System.Windows.Forms.Panel();
+			this.panel19 = new System.Windows.Forms.Panel();
+			this.panel20 = new System.Windows.Forms.Panel();
+			this.panel21 = new System.Windows.Forms.Panel();
+			this.panel22 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -64,7 +71,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(396, 36);
+			this.panel1.Size = new System.Drawing.Size(354, 36);
 			this.panel1.TabIndex = 13;
 			// 
 			// panel3
@@ -95,7 +102,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(325, 6);
+			this.Minimize.Location = new System.Drawing.Point(285, 6);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -109,7 +116,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(360, 6);
+			this.Exit.Location = new System.Drawing.Point(320, 6);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -120,7 +127,7 @@
 			// 
 			this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
 			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel2.Location = new System.Drawing.Point(138, 84);
+			this.panel2.Location = new System.Drawing.Point(113, 84);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(137, 135);
 			this.panel2.TabIndex = 14;
@@ -138,7 +145,7 @@
 			// 
 			this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
 			this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel5.Location = new System.Drawing.Point(312, 149);
+			this.panel5.Location = new System.Drawing.Point(258, 149);
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(69, 70);
 			this.panel5.TabIndex = 16;
@@ -158,7 +165,7 @@
 			this.txt_Password.Hint = "Enter Your Password";
 			this.txt_Password.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
 			this.txt_Password.LeadingIcon = null;
-			this.txt_Password.Location = new System.Drawing.Point(54, 328);
+			this.txt_Password.Location = new System.Drawing.Point(30, 326);
 			this.txt_Password.Mask = "";
 			this.txt_Password.MaxLength = 32767;
 			this.txt_Password.MouseState = MaterialSkin.MouseState.OUT;
@@ -175,7 +182,7 @@
 			this.txt_Password.SelectionLength = 0;
 			this.txt_Password.SelectionStart = 0;
 			this.txt_Password.ShortcutsEnabled = true;
-			this.txt_Password.Size = new System.Drawing.Size(284, 48);
+			this.txt_Password.Size = new System.Drawing.Size(293, 48);
 			this.txt_Password.SkipLiterals = true;
 			this.txt_Password.TabIndex = 19;
 			this.txt_Password.TabStop = false;
@@ -185,47 +192,47 @@
 			this.txt_Password.UseSystemPasswordChar = false;
 			this.txt_Password.ValidatingType = null;
 			// 
-			// txt_Email
+			// txt_UserLoginID
 			// 
-			this.txt_Email.AllowPromptAsInput = true;
-			this.txt_Email.AnimateReadOnly = false;
-			this.txt_Email.AsciiOnly = false;
-			this.txt_Email.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.txt_Email.BeepOnError = false;
-			this.txt_Email.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-			this.txt_Email.Depth = 0;
-			this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			this.txt_Email.HidePromptOnLeave = false;
-			this.txt_Email.HideSelection = true;
-			this.txt_Email.Hint = "Enter Your UserID";
-			this.txt_Email.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-			this.txt_Email.LeadingIcon = null;
-			this.txt_Email.Location = new System.Drawing.Point(54, 265);
-			this.txt_Email.Mask = "";
-			this.txt_Email.MaxLength = 32767;
-			this.txt_Email.MouseState = MaterialSkin.MouseState.OUT;
-			this.txt_Email.Name = "txt_Email";
-			this.txt_Email.PasswordChar = '\0';
-			this.txt_Email.PrefixSuffixText = null;
-			this.txt_Email.PromptChar = '_';
-			this.txt_Email.ReadOnly = false;
-			this.txt_Email.RejectInputOnFirstFailure = false;
-			this.txt_Email.ResetOnPrompt = true;
-			this.txt_Email.ResetOnSpace = true;
-			this.txt_Email.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.txt_Email.SelectedText = "";
-			this.txt_Email.SelectionLength = 0;
-			this.txt_Email.SelectionStart = 0;
-			this.txt_Email.ShortcutsEnabled = true;
-			this.txt_Email.Size = new System.Drawing.Size(284, 48);
-			this.txt_Email.SkipLiterals = true;
-			this.txt_Email.TabIndex = 18;
-			this.txt_Email.TabStop = false;
-			this.txt_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txt_Email.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-			this.txt_Email.TrailingIcon = null;
-			this.txt_Email.UseSystemPasswordChar = false;
-			this.txt_Email.ValidatingType = null;
+			this.txt_UserLoginID.AllowPromptAsInput = true;
+			this.txt_UserLoginID.AnimateReadOnly = false;
+			this.txt_UserLoginID.AsciiOnly = false;
+			this.txt_UserLoginID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.txt_UserLoginID.BeepOnError = false;
+			this.txt_UserLoginID.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+			this.txt_UserLoginID.Depth = 0;
+			this.txt_UserLoginID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.txt_UserLoginID.HidePromptOnLeave = false;
+			this.txt_UserLoginID.HideSelection = true;
+			this.txt_UserLoginID.Hint = "Enter Your LoginID";
+			this.txt_UserLoginID.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+			this.txt_UserLoginID.LeadingIcon = null;
+			this.txt_UserLoginID.Location = new System.Drawing.Point(30, 263);
+			this.txt_UserLoginID.Mask = "";
+			this.txt_UserLoginID.MaxLength = 32767;
+			this.txt_UserLoginID.MouseState = MaterialSkin.MouseState.OUT;
+			this.txt_UserLoginID.Name = "txt_UserLoginID";
+			this.txt_UserLoginID.PasswordChar = '\0';
+			this.txt_UserLoginID.PrefixSuffixText = null;
+			this.txt_UserLoginID.PromptChar = '_';
+			this.txt_UserLoginID.ReadOnly = false;
+			this.txt_UserLoginID.RejectInputOnFirstFailure = false;
+			this.txt_UserLoginID.ResetOnPrompt = true;
+			this.txt_UserLoginID.ResetOnSpace = true;
+			this.txt_UserLoginID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.txt_UserLoginID.SelectedText = "";
+			this.txt_UserLoginID.SelectionLength = 0;
+			this.txt_UserLoginID.SelectionStart = 0;
+			this.txt_UserLoginID.ShortcutsEnabled = true;
+			this.txt_UserLoginID.Size = new System.Drawing.Size(293, 48);
+			this.txt_UserLoginID.SkipLiterals = true;
+			this.txt_UserLoginID.TabIndex = 18;
+			this.txt_UserLoginID.TabStop = false;
+			this.txt_UserLoginID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txt_UserLoginID.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+			this.txt_UserLoginID.TrailingIcon = null;
+			this.txt_UserLoginID.UseSystemPasswordChar = false;
+			this.txt_UserLoginID.ValidatingType = null;
 			// 
 			// SaveRole
 			// 
@@ -238,7 +245,7 @@
 			this.SaveRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SaveRole.ForeColor = System.Drawing.Color.Wheat;
 			this.SaveRole.Image = ((System.Drawing.Image)(resources.GetObject("SaveRole.Image")));
-			this.SaveRole.Location = new System.Drawing.Point(57, 401);
+			this.SaveRole.Location = new System.Drawing.Point(36, 399);
 			this.SaveRole.Name = "SaveRole";
 			this.SaveRole.Size = new System.Drawing.Size(124, 32);
 			this.SaveRole.TabIndex = 105;
@@ -247,14 +254,11 @@
 			// ForgetPassword
 			// 
 			this.ForgetPassword.BackColor = System.Drawing.Color.Transparent;
-			this.ForgetPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ForgetPassword.ForeColor = System.Drawing.Color.Maroon;
-			this.ForgetPassword.Location = new System.Drawing.Point(200, 405);
+			this.ForgetPassword.Location = new System.Drawing.Point(0, 0);
 			this.ForgetPassword.Name = "ForgetPassword";
-			this.ForgetPassword.Size = new System.Drawing.Size(135, 23);
-			this.ForgetPassword.TabIndex = 108;
-			this.ForgetPassword.Text = "Forget Password?";
-			this.ForgetPassword.Click += new System.EventHandler(this.ForgetPassword_Click);
+			this.ForgetPassword.Size = new System.Drawing.Size(0, 0);
+			this.ForgetPassword.TabIndex = 18;
+			this.ForgetPassword.Text = null;
 			// 
 			// panel6
 			// 
@@ -278,7 +282,7 @@
 			// 
 			this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
 			this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel8.Location = new System.Drawing.Point(343, 525);
+			this.panel8.Location = new System.Drawing.Point(278, 525);
 			this.panel8.Name = "panel8";
 			this.panel8.Size = new System.Drawing.Size(24, 23);
 			this.panel8.TabIndex = 17;
@@ -287,7 +291,7 @@
 			// 
 			this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
 			this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel9.Location = new System.Drawing.Point(357, 484);
+			this.panel9.Location = new System.Drawing.Point(292, 484);
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(24, 23);
 			this.panel9.TabIndex = 17;
@@ -296,7 +300,7 @@
 			// 
 			this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
 			this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel10.Location = new System.Drawing.Point(323, 496);
+			this.panel10.Location = new System.Drawing.Point(258, 496);
 			this.panel10.Name = "panel10";
 			this.panel10.Size = new System.Drawing.Size(24, 23);
 			this.panel10.TabIndex = 17;
@@ -332,7 +336,7 @@
 			// 
 			this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
 			this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel14.Location = new System.Drawing.Point(293, 510);
+			this.panel14.Location = new System.Drawing.Point(228, 510);
 			this.panel14.Name = "panel14";
 			this.panel14.Size = new System.Drawing.Size(24, 23);
 			this.panel14.TabIndex = 17;
@@ -341,7 +345,7 @@
 			// 
 			this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
 			this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel15.Location = new System.Drawing.Point(216, 464);
+			this.panel15.Location = new System.Drawing.Point(171, 464);
 			this.panel15.Name = "panel15";
 			this.panel15.Size = new System.Drawing.Size(24, 23);
 			this.panel15.TabIndex = 17;
@@ -350,10 +354,83 @@
 			// 
 			this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
 			this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel16.Location = new System.Drawing.Point(200, 496);
+			this.panel16.Location = new System.Drawing.Point(155, 496);
 			this.panel16.Name = "panel16";
 			this.panel16.Size = new System.Drawing.Size(24, 23);
 			this.panel16.TabIndex = 17;
+			// 
+			// ForgetPass
+			// 
+			this.ForgetPass.BackColor = System.Drawing.Color.Transparent;
+			this.ForgetPass.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ForgetPass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.ForgetPass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.ForgetPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.ForgetPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.ForgetPass.FillColor = System.Drawing.Color.Transparent;
+			this.ForgetPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ForgetPass.ForeColor = System.Drawing.Color.Maroon;
+			this.ForgetPass.ImageSize = new System.Drawing.Size(0, 0);
+			this.ForgetPass.Location = new System.Drawing.Point(171, 402);
+			this.ForgetPass.Name = "ForgetPass";
+			this.ForgetPass.Size = new System.Drawing.Size(155, 25);
+			this.ForgetPass.TabIndex = 106;
+			this.ForgetPass.Text = "Forget Password";
+			this.ForgetPass.Click += new System.EventHandler(this.ForgetPass_Click);
+			// 
+			// panel17
+			// 
+			this.panel17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel17.BackgroundImage")));
+			this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel17.Location = new System.Drawing.Point(6, 193);
+			this.panel17.Name = "panel17";
+			this.panel17.Size = new System.Drawing.Size(24, 23);
+			this.panel17.TabIndex = 18;
+			// 
+			// panel18
+			// 
+			this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
+			this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel18.Location = new System.Drawing.Point(36, 179);
+			this.panel18.Name = "panel18";
+			this.panel18.Size = new System.Drawing.Size(24, 23);
+			this.panel18.TabIndex = 19;
+			// 
+			// panel19
+			// 
+			this.panel19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel19.BackgroundImage")));
+			this.panel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel19.Location = new System.Drawing.Point(56, 160);
+			this.panel19.Name = "panel19";
+			this.panel19.Size = new System.Drawing.Size(24, 23);
+			this.panel19.TabIndex = 20;
+			// 
+			// panel20
+			// 
+			this.panel20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel20.BackgroundImage")));
+			this.panel20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel20.Location = new System.Drawing.Point(36, 208);
+			this.panel20.Name = "panel20";
+			this.panel20.Size = new System.Drawing.Size(24, 23);
+			this.panel20.TabIndex = 21;
+			// 
+			// panel21
+			// 
+			this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
+			this.panel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel21.Location = new System.Drawing.Point(303, 64);
+			this.panel21.Name = "panel21";
+			this.panel21.Size = new System.Drawing.Size(24, 23);
+			this.panel21.TabIndex = 22;
+			// 
+			// panel22
+			// 
+			this.panel22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel22.BackgroundImage")));
+			this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel22.Location = new System.Drawing.Point(278, 99);
+			this.panel22.Name = "panel22";
+			this.panel22.Size = new System.Drawing.Size(24, 23);
+			this.panel22.TabIndex = 22;
 			// 
 			// Login
 			// 
@@ -361,9 +438,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(393, 560);
+			this.ClientSize = new System.Drawing.Size(351, 560);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel22);
+			this.Controls.Add(this.panel21);
+			this.Controls.Add(this.panel17);
+			this.Controls.Add(this.ForgetPass);
+			this.Controls.Add(this.panel18);
+			this.Controls.Add(this.panel19);
 			this.Controls.Add(this.panel16);
+			this.Controls.Add(this.panel20);
 			this.Controls.Add(this.panel15);
 			this.Controls.Add(this.panel14);
 			this.Controls.Add(this.panel13);
@@ -377,7 +461,7 @@
 			this.Controls.Add(this.ForgetPassword);
 			this.Controls.Add(this.SaveRole);
 			this.Controls.Add(this.txt_Password);
-			this.Controls.Add(this.txt_Email);
+			this.Controls.Add(this.txt_UserLoginID);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
@@ -403,7 +487,7 @@
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel5;
 		private MaterialSkin.Controls.MaterialMaskedTextBox txt_Password;
-		private MaterialSkin.Controls.MaterialMaskedTextBox txt_Email;
+		private MaterialSkin.Controls.MaterialMaskedTextBox txt_UserLoginID;
 		private Guna.UI2.WinForms.Guna2Button SaveRole;
 		private Guna.UI2.WinForms.Guna2HtmlLabel ForgetPassword;
 		private System.Windows.Forms.Panel panel6;
@@ -417,5 +501,12 @@
 		private System.Windows.Forms.Panel panel14;
 		private System.Windows.Forms.Panel panel15;
 		private System.Windows.Forms.Panel panel16;
+		private Guna.UI2.WinForms.Guna2Button ForgetPass;
+		private System.Windows.Forms.Panel panel17;
+		private System.Windows.Forms.Panel panel18;
+		private System.Windows.Forms.Panel panel19;
+		private System.Windows.Forms.Panel panel20;
+		private System.Windows.Forms.Panel panel21;
+		private System.Windows.Forms.Panel panel22;
 	}
 }
