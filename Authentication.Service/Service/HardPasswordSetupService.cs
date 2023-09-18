@@ -63,7 +63,22 @@ namespace Authentication.Service
 		public HardPasswordSetup GetHardPasswordSetup(int ID)
 		{
 			HardPasswordSetup oHardPasswordSetup = new HardPasswordSetup();
+			try
+			{
+				DataReader oreader = new DataReader(HardPasswordSetupDA.Get(1));
+				if (oreader.Read())
+				{
+					oHardPasswordSetup = this.CreateObject<HardPasswordSetup>(oreader);
+				}
+				else
+				{
+					oHardPasswordSetup = null;
+				}
+			}
+			catch(Exception ex)
+			{
 
+			}
 			return oHardPasswordSetup;
 		}
 
@@ -106,6 +121,16 @@ namespace Authentication.Service
 			else
 				policyNo = "P00" + 1;
 			return policyNo;
+		}
+		#endregion
+
+		#region IsHardPasswordSetup
+
+		public bool IsHardPasswordSetup(string password)
+		{
+			HardPasswordSetup hardPasswordSetup = new HardPasswordSetup();
+
+			return true;
 		}
 		#endregion
 	}

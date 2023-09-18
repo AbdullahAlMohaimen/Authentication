@@ -109,7 +109,6 @@ namespace Authentication.Service
 				user.Salt = password.CreateSalt(128);
 				user.Password = password.GenerateHash(randomPassword, user.Salt);
 				result = UsersDA.Insert(user);
-
 				if(result == "Ok")
 				{
 					SendEmail sendEmail = new SendEmail();
@@ -139,6 +138,30 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#endregion
+
+		#region GetUserByLoginID
+		public Users GetUserByLoginID(string loginID)
+		{
+			Users oUser = new Users();
+			try
+			{
+				DataReader oreader = new DataReader(UsersDA.GetUserByLoginID(loginID));
+				if (oreader.Read())
+				{
+					oUser = this.CreateObject<Users>(oreader);
+				}
+				else
+				{
+					oUser = null;
+				}
+			}
+			catch(Exception ex)
+			{
+				oUser = null;
+			}
+			return oUser;
+		}
 		#endregion
 	}
 }

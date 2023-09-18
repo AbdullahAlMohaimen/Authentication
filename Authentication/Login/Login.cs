@@ -12,16 +12,21 @@ namespace Authentication.Login
 {
 	public partial class Login : Form
 	{
+		#region Load
 		public Login()
 		{
 			InitializeComponent();
 		}
+		#endregion
 
+		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+		#endregion
 
+		#region Forget Password Button Click
 		private void ForgetPass_Click(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(txt_UserLoginID.Text))
@@ -36,5 +41,13 @@ namespace Authentication.Login
 				forgetPassword.Show();
 			}
 		}
+		#endregion
+
+		#region Minimize Button
+		private void Minimize_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
+		}
+		#endregion
 	}
 }

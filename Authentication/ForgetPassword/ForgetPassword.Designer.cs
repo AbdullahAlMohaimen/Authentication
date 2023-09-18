@@ -224,12 +224,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(517, 225);
+			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "ForgetPassword";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "ForgetPassword";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.guna2Panel1.ResumeLayout(false);

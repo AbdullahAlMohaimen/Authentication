@@ -107,6 +107,7 @@
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
 			this.Minimize.UseVisualStyleBackColor = false;
+			this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
 			// 
 			// Exit
 			// 
@@ -256,7 +257,7 @@
 			this.ForgetPassword.BackColor = System.Drawing.Color.Transparent;
 			this.ForgetPassword.Location = new System.Drawing.Point(0, 0);
 			this.ForgetPassword.Name = "ForgetPassword";
-			this.ForgetPassword.Size = new System.Drawing.Size(0, 0);
+			this.ForgetPassword.Size = new System.Drawing.Size(3, 2);
 			this.ForgetPassword.TabIndex = 18;
 			this.ForgetPassword.Text = null;
 			// 
@@ -466,7 +467,7 @@
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "Login";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.panel1.ResumeLayout(false);

@@ -19,6 +19,10 @@ namespace Authentication.Service.DA
 		public HardPasswordSetupDA() { }
 		#endregion
 
+		#region Get(ID)
+
+		#endregion
+
 		#region  GET PolicyNo
 		public int GetPolicyID()
 		{
@@ -93,5 +97,6 @@ namespace Authentication.Service.DA
 			return status;
 		}
 		#endregion
+
 	}
 }

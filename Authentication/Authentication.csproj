@@ -295,6 +295,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlurOverlayForm\BlurOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlurOverlayForm\BlurOverlayForm.Designer.cs">
+      <DependentUpon>BlurOverlayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     <Compile Include="Users\UserEntry.Designer.cs">
       <DependentUpon>UserEntry.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BlurOverlayForm\BlurOverlayForm.resx">
+      <DependentUpon>BlurOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeEntry.resx">
       <DependentUpon>EmployeeEntry.cs</DependentUpon>
     </EmbeddedResource>
