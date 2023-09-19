@@ -1,11 +1,15 @@
 ﻿using Authentication.BO.HardPasswordSetup;
-using Authentication.BO.Role;
+using Authentication.BO.Employee;
+using MailKit.Mime;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR.Messaging;
+using Org.BouncyCastle.Ocsp;
+using System.Data;
 
 namespace Authentication.Service.DA
 {
@@ -20,7 +24,24 @@ namespace Authentication.Service.DA
 		#endregion
 
 		#region Get(ID)
+		internal static IDataReader Get(int id)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from HardPasswordSetup where PolicyID = '" + id + "'", conn);
+				dr = getCommand.ExecuteReader();
+			}catch (Exception ex)
+			{
 
+			}
+			return dr;
+		}
 		#endregion
 
 		#region  GET PolicyNo

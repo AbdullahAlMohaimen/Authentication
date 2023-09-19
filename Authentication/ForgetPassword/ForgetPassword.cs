@@ -53,9 +53,12 @@ namespace Authentication.Forget_Password
 				oUser = userService.GetUserByLoginID(_loginID);
 				if (oUser != null)
 				{
+					
 					string randomPassword = password.GenerateRandomPassword();
 					oUser.Salt = password.CreateSalt(128);
 					oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
+
+
 				}
 				else
 				{

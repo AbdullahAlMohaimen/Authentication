@@ -28,11 +28,11 @@ namespace Authentication.Service
 
 		private void MapObject(HardPasswordSetup oHardPasswordSetup, DataReader oReader)
 		{
-			base.SetObjectID(oHardPasswordSetup, oReader.GetInt32("PlicyID").Value);
+			base.SetObjectID(oHardPasswordSetup, oReader.GetInt32("PolicyID").Value);
 			oHardPasswordSetup.PolicyNo = oReader.GetString("PolicyNo", string.Empty);
 			oHardPasswordSetup.PassMaxLength = oReader.GetInt32("MaxLength").Value;
 			oHardPasswordSetup.PassMinLength = oReader.GetInt32("MinLength").Value;
-			oHardPasswordSetup.SuperUserassMinLength = oReader.GetInt32("SuperuserPassMinLength").Value;
+			oHardPasswordSetup.SuperUserPassMinLength = oReader.GetInt32("SuperuserPassMinLength").Value;
 			oHardPasswordSetup.PasswordMinimumAge = oReader.GetInt32("MinPasswordAge").Value;
 			oHardPasswordSetup.PasswordExpNotificationDays = oReader.GetInt32("PasswordExpireNotificationDays").Value;
 			oHardPasswordSetup.PasswordExpDays = oReader.GetInt32("PasswordExpireDays").Value;
@@ -40,7 +40,7 @@ namespace Authentication.Service
 			oHardPasswordSetup.IsContainLowerCase = oReader.GetBoolean("ContainLowercase", false);
 			oHardPasswordSetup.IsContainSpecialCharacter = oReader.GetBoolean("ContainSpecialCharacter", false);
 			oHardPasswordSetup.IsContainNumber = oReader.GetBoolean("ContainNumber", false);
-			oHardPasswordSetup.IsContainLatter = oReader.GetBoolean("ContainLatter", false);
+			oHardPasswordSetup.IsContainLatter = oReader.GetBoolean("ContainLetter", false);
 			oHardPasswordSetup.IsUserPasswordSame = oReader.GetBoolean("UserPasswordSame", false);
 			this.SetObjectState(oHardPasswordSetup, Authentication.BO.ObjectState.Saved);
 		}
@@ -65,7 +65,7 @@ namespace Authentication.Service
 			HardPasswordSetup oHardPasswordSetup = new HardPasswordSetup();
 			try
 			{
-				DataReader oreader = new DataReader(HardPasswordSetupDA.Get(1));
+				DataReader oreader = new DataReader(HardPasswordSetupDA.Get(ID));
 				if (oreader.Read())
 				{
 					oHardPasswordSetup = this.CreateObject<HardPasswordSetup>(oreader);
@@ -125,12 +125,71 @@ namespace Authentication.Service
 		#endregion
 
 		#region IsHardPasswordSetup
-
-		public bool IsHardPasswordSetup(string password)
+		public bool IsHardPasswordSetup(string password, string userName, int roleID)
 		{
 			HardPasswordSetup hardPasswordSetup = new HardPasswordSetup();
+			hardPasswordSetup = GetHardPasswordSetup(1);
+			bool isHardPassword = true;
 
-			return true;
+			if (hardPasswordSetup != null)
+			{
+				if (hardPasswordSetup.IsContainNumber)
+				{
+					if (!password.ToCharArray().Any(char.IsDigit))
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.IsContainLatter)
+				{
+					if (!password.ToCharArray().Any(char.IsLetter))
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.IsContainLowerCase)
+				{
+					if (!password.ToCharArray().Any(char.IsLower))
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.IsContainUpperCase)
+				{
+					if (!password.ToCharArray().Any(char.IsUpper))
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.IsContainSpecialCharacter)
+				{
+					Regex specialCharacterRegex = new Regex("[!@#$%^&*()_+{}[\\]:;<>,.?~\\\\/\\-=|]");
+					if (!specialCharacterRegex.IsMatch(password))
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.IsUserPasswordSame)
+				{
+					if (userName.ToLower().Trim() == password.ToLower().Trim())
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.PassMaxLength>0)
+				{
+					if (password.Length > hardPasswordSetup.PassMaxLength)
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.PassMinLength > 0)
+				{
+					if (password.Length < hardPasswordSetup.PassMinLength)
+						isHardPassword = false;
+				}
+				if (hardPasswordSetup.SuperUserPassMinLength > 0 && (userName.ToLower() == "SuperUser" || userName.ToLower() == "MasterUser"))
+				{
+					if (password.Length < hardPasswordSetup.SuperUserPassMinLength)
+						isHardPassword = false;
+				}
+				if(roleID == 1 || roleID == 5 || roleID == 20)
+				{
+					if (password.Length < hardPasswordSetup.SuperUserPassMinLength)
+						isHardPassword = false;
+				}
+				return isHardPassword;
+			}
+			else
+			{
+				return isHardPassword;
+			}
 		}
 		#endregion
 	}

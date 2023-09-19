@@ -55,11 +55,11 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region SuperUser Password Minimum Length : INT 
-		public int _superUserassMinLength;
-		public int SuperUserassMinLength
+		public int _superUserPassMinLength;
+		public int SuperUserPassMinLength
 		{
-			get { return _superUserassMinLength; }
-			set { _superUserassMinLength = value; }
+			get { return _superUserPassMinLength; }
+			set { _superUserPassMinLength = value; }
 		}
 		#endregion
 
@@ -91,8 +91,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region Contain UpperCase : Bool
-		public bool? _isContainUpperCase;
-		public bool? IsContainUpperCase
+		public bool _isContainUpperCase;
+		public bool IsContainUpperCase
 		{
 			get { return _isContainUpperCase; }
 			set { _isContainUpperCase = value; }
@@ -100,8 +100,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region Contain LowerCase : Bool
-		public bool? _isContainLowerCase;
-		public bool? IsContainLowerCase
+		public bool _isContainLowerCase;
+		public bool IsContainLowerCase
 		{
 			get { return _isContainLowerCase; }
 			set { _isContainLowerCase = value; }
@@ -109,8 +109,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region Contain SpecialCharacter : Bool
-		public bool? _isContainSpecialCharacter;
-		public bool? IsContainSpecialCharacter
+		public bool _isContainSpecialCharacter;
+		public bool IsContainSpecialCharacter
 		{
 			get { return _isContainSpecialCharacter; }
 			set { _isContainSpecialCharacter = value; }
@@ -118,8 +118,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region Contain Number : Bool
-		public bool? _isContainNumber;
-		public bool? IsContainNumber
+		public bool _isContainNumber;
+		public bool IsContainNumber
 		{
 			get { return _isContainNumber; }
 			set { _isContainNumber = value; }
@@ -127,8 +127,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region Contain Latter : Bool
-		public bool? _isContainLatter;
-		public bool? IsContainLatter
+		public bool _isContainLatter;
+		public bool IsContainLatter
 		{
 			get { return _isContainLatter; }
 			set { _isContainLatter = value; }
@@ -136,8 +136,8 @@ namespace Authentication.BO.HardPasswordSetup
 		#endregion
 
 		#region User Password Same : Bool
-		public bool? _isUserPasswordSame;
-		public bool? IsUserPasswordSame
+		public bool _isUserPasswordSame;
+		public bool IsUserPasswordSame
 		{
 			get { return _isUserPasswordSame; }
 			set { _isUserPasswordSame = value; }
