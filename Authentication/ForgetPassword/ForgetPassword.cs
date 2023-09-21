@@ -66,6 +66,8 @@ namespace Authentication.Forget_Password
 						{
 							oUser.Salt = password.CreateSalt(128);
 							oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
+
+
 						}
 					}
 				}
