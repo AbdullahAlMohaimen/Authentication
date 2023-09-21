@@ -60,6 +60,8 @@ namespace Authentication.Service
 		#endregion
 
 		#region Service Implementation
+
+		#region GetHardPasswordSetup by ID
 		public HardPasswordSetup GetHardPasswordSetup(int ID)
 		{
 			HardPasswordSetup oHardPasswordSetup = new HardPasswordSetup();
@@ -81,14 +83,18 @@ namespace Authentication.Service
 			}
 			return oHardPasswordSetup;
 		}
+		#endregion
 
+		#region GetHardPasswordSetups
 		public List<HardPasswordSetup> GetHardPasswordSetups()
 		{
 			List<HardPasswordSetup> hardPasswordSetups = new List<HardPasswordSetup>();
 
 			return hardPasswordSetups;
 		}
+		#endregion
 
+		#region Save HardPasswordSetup
 		public string Save(HardPasswordSetup oHP)
 		{
 			HardPasswordSetupDA hardPasswordSetupDA = new HardPasswordSetupDA();
@@ -103,11 +109,15 @@ namespace Authentication.Service
 			}
 			return status;
 		}
+		#endregion
 
+		#region Delete HardPasswordSetup
 		public void Delete(int ID)
 		{
 
 		}
+		#endregion
+
 		#endregion
 
 		#region  PolicyNo Generate
@@ -188,7 +198,7 @@ namespace Authentication.Service
 			}
 			else
 			{
-				return isHardPassword;
+				return false;
 			}
 		}
 		#endregion

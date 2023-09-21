@@ -45,20 +45,29 @@ namespace Authentication.Forget_Password
 		private void Submit_Click(object sender, EventArgs e)
 		{
 			BO.Users.Users oUser = new BO.Users.Users();
+			HardPasswordSetupService oHP = new HardPasswordSetupService();
 			Password password = new Password();
-			string result;
+			string randomPassword = null; ;
+			//string result = null;
 
 			if (!string.IsNullOrEmpty(txt_LoginID.Text))
 			{
 				oUser = userService.GetUserByLoginID(_loginID);
 				if (oUser != null)
 				{
-					
-					string randomPassword = password.GenerateRandomPassword();
-					oUser.Salt = password.CreateSalt(128);
-					oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
+					if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
+						randomPassword = password.GenerateRandomPassword(14, 16);
+					else
+						randomPassword = password.GenerateRandomPassword(10);
 
-
+					if(randomPassword != null)
+					{
+						if (oHP.IsHardPasswordSetup(randomPassword, oUser.UserName, oUser.RoleID))
+						{
+							oUser.Salt = password.CreateSalt(128);
+							oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
+						}
+					}
 				}
 				else
 				{

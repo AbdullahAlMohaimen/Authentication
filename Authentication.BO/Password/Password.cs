@@ -62,7 +62,7 @@ namespace Authentication.BO.Password
 		#endregion
 
 		#region Random Password withLength
-		public string GenerateRandomPasswordByLength(int length)
+		public string GenerateRandomPassword(int length)
 		{
 			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()?><+";
 			Random random = new Random();
@@ -77,8 +77,24 @@ namespace Authentication.BO.Password
 		}
 		#endregion
 
+		#region Random Password with min max Length
+		public string GenerateRandomPassword(int minLength, int maxLength)
+		{
+			const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()?><+";
+			Random random = new Random();
+			int length = random.Next(minLength, maxLength);
+			StringBuilder password = new StringBuilder();
+			for (int i = 0; i < length; i++)
+			{
+				int index = random.Next(validChars.Length);
+				password.Append(validChars[index]);
+			}
+			return password.ToString();
+		}
+		#endregion
+
 		#region Random Password withLength(HARD)
-		public string GenerateRandomPassword(int length)
+		public string GenerateRandomHardPassword(int length)
 		{
 			const string numbers = "0123456789";
 
@@ -126,7 +142,7 @@ namespace Authentication.BO.Password
 		}
 		#endregion
 
-		#region Random Password
+		#region Random LoginID
 		public string GenerateRandomLoginID()
 		{
 			const string validChars = "0123456789";

@@ -102,10 +102,15 @@ namespace Authentication.Service
 		public string Save(Users user)
 		{
 			Password password = new Password();
+			string randomPassword;
 			string result;
 			try
 			{
-				string randomPassword = password.GenerateRandomPassword();
+				if(user.RoleID == 1 || user.RoleID == 5 || user.RoleID == 20)
+					randomPassword = password.GenerateRandomPassword(14,16);
+				else
+					randomPassword = password.GenerateRandomPassword(10);
+
 				user.Salt = password.CreateSalt(128);
 				user.Password = password.GenerateHash(randomPassword, user.Salt);
 				result = UsersDA.Insert(user);
