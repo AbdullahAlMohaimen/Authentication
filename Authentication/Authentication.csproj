@@ -366,6 +366,9 @@
     <EmbeddedResource Include="BlurOverlayForm\BlurOverlayForm.resx">
       <DependentUpon>BlurOverlayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeEntry.resx">
       <DependentUpon>EmployeeEntry.cs</DependentUpon>
     </EmbeddedResource>

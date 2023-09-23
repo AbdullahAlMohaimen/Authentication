@@ -94,7 +94,7 @@ namespace Authentication.Service.DA
 					SqlCommand insertCommand = new SqlCommand("Insert into HardPasswordSetup (MaxLength,MinLength,SuperUserPassMinLength," +
 						"MinPasswordAge,ContainUppercase,ContainLowercase,ContainSpecialCharacter,ContainNumber,ContainLetter," +
 						"UserPasswordSame,PasswordExpireNotificationDays,PasswordExpireDays) values('"+oHP.PassMaxLength+"','"+oHP.PassMinLength+"'," +
-						"'"+oHP.SuperUserassMinLength+"','"+oHP.PasswordMinimumAge+"','"+oHP.IsContainUpperCase+"','"+oHP.IsContainLowerCase+"'," +
+						"'"+oHP.SuperUserPassMinLength+"','"+oHP.PasswordMinimumAge+"','"+oHP.IsContainUpperCase+"','"+oHP.IsContainLowerCase+"'," +
 						"'"+oHP.IsContainSpecialCharacter+"','"+oHP.IsContainNumber+"','"+oHP.IsContainLatter+"','"+oHP.IsUserPasswordSame+"'," +
 						"'"+oHP.PasswordExpNotificationDays+"','"+oHP.PasswordExpDays+"')", conn,tc);
 					insertCommand.ExecuteNonQuery();

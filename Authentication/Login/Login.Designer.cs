@@ -39,7 +39,7 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.txt_Password = new MaterialSkin.Controls.MaterialMaskedTextBox();
 			this.txt_UserLoginID = new MaterialSkin.Controls.MaterialMaskedTextBox();
-			this.SaveRole = new Guna.UI2.WinForms.Guna2Button();
+			this.LoginX = new Guna.UI2.WinForms.Guna2Button();
 			this.ForgetPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
@@ -235,22 +235,23 @@
 			this.txt_UserLoginID.UseSystemPasswordChar = false;
 			this.txt_UserLoginID.ValidatingType = null;
 			// 
-			// SaveRole
+			// LoginX
 			// 
-			this.SaveRole.BorderRadius = 8;
-			this.SaveRole.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.SaveRole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.SaveRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.SaveRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.SaveRole.FillColor = System.Drawing.Color.SeaGreen;
-			this.SaveRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SaveRole.ForeColor = System.Drawing.Color.Wheat;
-			this.SaveRole.Image = ((System.Drawing.Image)(resources.GetObject("SaveRole.Image")));
-			this.SaveRole.Location = new System.Drawing.Point(36, 399);
-			this.SaveRole.Name = "SaveRole";
-			this.SaveRole.Size = new System.Drawing.Size(124, 32);
-			this.SaveRole.TabIndex = 105;
-			this.SaveRole.Text = "  Login";
+			this.LoginX.BorderRadius = 8;
+			this.LoginX.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.LoginX.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.LoginX.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.LoginX.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.LoginX.FillColor = System.Drawing.Color.SeaGreen;
+			this.LoginX.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LoginX.ForeColor = System.Drawing.Color.Wheat;
+			this.LoginX.Image = ((System.Drawing.Image)(resources.GetObject("LoginX.Image")));
+			this.LoginX.Location = new System.Drawing.Point(36, 399);
+			this.LoginX.Name = "LoginX";
+			this.LoginX.Size = new System.Drawing.Size(124, 32);
+			this.LoginX.TabIndex = 105;
+			this.LoginX.Text = "  Login";
+			this.LoginX.Click += new System.EventHandler(this.LoginX_Click);
 			// 
 			// ForgetPassword
 			// 
@@ -438,7 +439,6 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(351, 560);
 			this.ControlBox = false;
 			this.Controls.Add(this.panel22);
@@ -460,14 +460,14 @@
 			this.Controls.Add(this.panel7);
 			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.ForgetPassword);
-			this.Controls.Add(this.SaveRole);
+			this.Controls.Add(this.LoginX);
 			this.Controls.Add(this.txt_Password);
 			this.Controls.Add(this.txt_UserLoginID);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "Login";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.panel1.ResumeLayout(false);
@@ -489,7 +489,7 @@
 		private System.Windows.Forms.Panel panel5;
 		private MaterialSkin.Controls.MaterialMaskedTextBox txt_Password;
 		private MaterialSkin.Controls.MaterialMaskedTextBox txt_UserLoginID;
-		private Guna.UI2.WinForms.Guna2Button SaveRole;
+		private Guna.UI2.WinForms.Guna2Button LoginX;
 		private Guna.UI2.WinForms.Guna2HtmlLabel ForgetPassword;
 		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.Panel panel7;

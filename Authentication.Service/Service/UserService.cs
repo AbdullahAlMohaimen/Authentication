@@ -168,5 +168,39 @@ namespace Authentication.Service
 			return oUser;
 		}
 		#endregion
+
+		#region ForgetPassword
+		public string ForgetPassword(Users user, string randomPassword)
+		{
+			Password password = new Password();
+			string result = null;
+			if (user != null)
+			{
+				user.Salt = password.CreateSalt(128);
+				user.Password = password.GenerateHash(randomPassword, user.Salt);
+				user.ForgetPasswordDate = DateTime.Now;
+				user.ChangePasswordNextLogon = 1;
+
+				result = UsersDA.UpdateForgetPassword(user);
+				if (result == "Ok")
+				{
+					SendEmail sendEmail = new SendEmail();
+					sendEmail.To = user.Email;
+					sendEmail.Subject = "User Forget Password (Do not replay this mail)";
+					sendEmail.Body = $@"<html><body><p><b>Dear</b> {user.UserName},</p>
+			                     <p><b>This is system generated password : </b>{randomPassword}</p>
+								 <p><b>This password is valid within 24 hours</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+					sendEmail.SendigEmail(sendEmail);
+				}
+				else
+				{
+					result = "failed";
+				}
+			}
+			return result;
+		}
+		#endregion
 	}
 }

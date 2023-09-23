@@ -61,7 +61,7 @@ namespace Authentication.HardPasswordSetup
 				{
 					hardPasswordSetup.PassMaxLength = (int)Convert.ToInt32(txt_PasswordMaxLength.Text);
 					hardPasswordSetup.PassMinLength = (int)Convert.ToInt32(txt_PasswordMinLength.Text);
-					hardPasswordSetup.SuperUserassMinLength = (int)Convert.ToInt32(txt_SuperUserPassMinLength.Text);
+					hardPasswordSetup.SuperUserPassMinLength = (int)Convert.ToInt32(txt_SuperUserPassMinLength.Text);
 					hardPasswordSetup.PasswordMinimumAge = (int)Convert.ToInt32(txt_PasswordMinAge.Text);
 					hardPasswordSetup.PasswordExpNotificationDays = (int)Convert.ToInt32(txt_PassExpNotificationDays.Text);
 					hardPasswordSetup.PasswordExpDays = (int)Convert.ToInt32(txt_PasswordExpDays.Text);

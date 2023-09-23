@@ -46,35 +46,59 @@ namespace Authentication.Forget_Password
 		{
 			BO.Users.Users oUser = new BO.Users.Users();
 			HardPasswordSetupService oHP = new HardPasswordSetupService();
+			UserService userService = new UserService();
 			Password password = new Password();
-			string randomPassword = null; ;
-			//string result = null;
+			bool isHardPassword = false;
+			string randomPassword = null;
+			string result = null;
 
-			if (!string.IsNullOrEmpty(txt_LoginID.Text))
+			try
 			{
-				oUser = userService.GetUserByLoginID(_loginID);
-				if (oUser != null)
+				if (!string.IsNullOrEmpty(txt_LoginID.Text))
 				{
-					if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
-						randomPassword = password.GenerateRandomPassword(14, 16);
-					else
-						randomPassword = password.GenerateRandomPassword(10);
-
-					if(randomPassword != null)
+					oUser = userService.GetUserByLoginID(_loginID);
+					if (oUser != null)
 					{
-						if (oHP.IsHardPasswordSetup(randomPassword, oUser.UserName, oUser.RoleID))
+						if (oUser.Email != null)
 						{
-							oUser.Salt = password.CreateSalt(128);
-							oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
-
-
+							while (!isHardPassword)
+							{
+								if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
+									randomPassword = password.GenerateRandomPassword(14, 16);
+								else
+									randomPassword = password.GenerateRandomPassword(10);
+								if (randomPassword != null)
+									if (oHP.IsHardPasswordSetup(randomPassword, oUser.UserName, oUser.RoleID))
+										isHardPassword = true;
+							}
+							result = userService.ForgetPassword(oUser, randomPassword);
+							if (result == "Ok")
+								MessageBox.Show("A tempory password has been send to your email.\nPlease check your email", "Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							else
+								MessageBox.Show("Something Problem", "Failed to Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							this.Close();
 						}
+						else
+						{
+							MessageBox.Show("Can't find your email!\nPlease contact with administrator", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							this.Close();
+						}
+					}
+					else
+					{
+						MessageBox.Show("Wrong LoginID.\nPlease enter correct LoginID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						this.Close();
 					}
 				}
 				else
 				{
-					MessageBox.Show("Wrong LoginID.\nPlease enter correct LoginID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show("LoginID can't be empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					this.Close();
 				}
+			}
+			catch(Exception ex) 
+			{
+				MessageBox.Show(ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 		#endregion
