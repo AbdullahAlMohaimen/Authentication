@@ -6,17 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Data.SqlClient;
-using Authentication.BO.Role;
-using Authentication.BO.Users;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Data;
 using Authentication.BO;
-using Authentication.BO.Employee;
-using Authentication.BO.Password;
-using Authentication.BO.SendEmail;
-using Authentication.BO.HardPasswordSetup;
-using Authentication.Service.DA;
+using Authentication.Service;
 
 namespace Authentication.Service
 {

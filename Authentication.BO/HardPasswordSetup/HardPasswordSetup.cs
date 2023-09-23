@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Authentication.BO.Global;
+using Authentication.BO;
 using System.Web.Caching;
 using System.Data;
 
-namespace Authentication.BO.HardPasswordSetup
+namespace Authentication.BO
 {
 	#region HardPasswordSetup
 	[Serializable]

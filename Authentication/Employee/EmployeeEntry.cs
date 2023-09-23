@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Authentication.BO.Global;
-using Authentication.BO.Employee;
+using Authentication.BO;
 using Authentication.Service;
 
 namespace Authentication.Employee
@@ -16,7 +15,7 @@ namespace Authentication.Employee
 	public partial class EmployeeEntry : Form
 	{
 		EmployeeService employeeService = new EmployeeService();
-		BO.Employee.Employee employee = new BO.Employee.Employee();
+		BO.Employee employee = new BO.Employee();
 
 		#region Constructor
 		public EmployeeEntry()

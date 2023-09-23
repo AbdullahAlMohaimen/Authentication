@@ -13,7 +13,7 @@ namespace Authentication.SearchEmployee
 {
 	public partial class SearchEmployee : Form
 	{
-		BO.Employee.Employee employee = new BO.Employee.Employee();
+		BO.Employee employee = new BO.Employee();
 		EmployeeService employeeService = new EmployeeService();
 		private Users.UserEntry originalUserEntryForm;
 		private Form callingForm;

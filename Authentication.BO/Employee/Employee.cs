@@ -1,4 +1,4 @@
-﻿using Authentication.BO.Global;
+﻿using Authentication.BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Web.Caching;
 
-namespace Authentication.BO.Employee
+namespace Authentication.BO
 {
 	#region Employee
 	[Serializable]

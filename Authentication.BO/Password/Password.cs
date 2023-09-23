@@ -1,4 +1,4 @@
-﻿using Authentication.BO.Global;
+﻿using Authentication.BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Caching;
 using System.Security.Cryptography;
 
-namespace Authentication.BO.Password
+namespace Authentication.BO
 {
 	#region Password
 	public class Password : BasicBaseObject

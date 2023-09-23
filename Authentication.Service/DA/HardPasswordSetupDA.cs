@@ -1,5 +1,5 @@
-﻿using Authentication.BO.HardPasswordSetup;
-using Authentication.BO.Employee;
+﻿
+using Authentication.BO;
 using MailKit.Mime;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using Microsoft.AspNet.SignalR.Messaging;
 using Org.BouncyCastle.Ocsp;
 using System.Data;
 
-namespace Authentication.Service.DA
+namespace Authentication.Service
 {
 	public  class HardPasswordSetupDA
 	{

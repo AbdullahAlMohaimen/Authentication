@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace Authentication.BO.Global
+namespace Authentication.BO
 {
 	public abstract class BasicBaseObject : ObjectTemplate
 	{

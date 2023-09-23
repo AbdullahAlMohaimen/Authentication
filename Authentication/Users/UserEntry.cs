@@ -10,12 +10,10 @@ using System.Windows.Forms;
 using Authentication.BO;
 using Authentication.SearchEmployee;
 using Authentication.Service;
-using Authentication.BO.Role;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json.Linq;
-using Authentication.BO.Employee;
 
 namespace Authentication.Users
 {
@@ -24,11 +22,11 @@ namespace Authentication.Users
 		private SearchEmployee.SearchEmployee searchForm;
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
-		List<BO.Role.Role> _roles = new List<BO.Role.Role>();
-		List<BO.Users.Users> _users = new List<BO.Users.Users>();
-		BO.Role.Role _role = new BO.Role.Role();
-		BO.Users.Users _user = new BO.Users.Users();
-		BO.Password.Password _password = new BO.Password.Password();
+		List<BO.Role> _roles = new List<BO.Role>();
+		List<BO.Users> _users = new List<BO.Users>();
+		BO.Role _role = new BO.Role();
+		BO.Users _user = new BO.Users();
+		BO.Password _password = new BO.Password();
 
 		#region Load
 		public UserEntry()
@@ -62,8 +60,8 @@ namespace Authentication.Users
 		#endregion
 
 		#region Property (for Search Employee)
-		public BO.Employee.Employee _searchEmployee;
-		public BO.Employee.Employee SearchEmp
+		public BO.Employee _searchEmployee;
+		public BO.Employee SearchEmp
 		{
 			get { return _searchEmployee; }
 			set { _searchEmployee = value; }
@@ -216,7 +214,7 @@ namespace Authentication.Users
 		#endregion
 
 		#region Set Selected Employee
-		public void SetSelectedEmployee(BO.Employee.Employee SEemployee)
+		public void SetSelectedEmployee(BO.Employee SEemployee)
 		{
 			if (SEemployee != null)
 			{

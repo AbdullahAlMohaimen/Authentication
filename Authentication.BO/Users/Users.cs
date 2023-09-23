@@ -1,11 +1,11 @@
-﻿using Authentication.BO.Global;
+﻿using Authentication.BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Authentication.BO.Users
+namespace Authentication.BO
 {
 	#region User
 	[Serializable]

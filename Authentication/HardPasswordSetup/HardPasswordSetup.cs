@@ -52,7 +52,7 @@ namespace Authentication.HardPasswordSetup
 		#region Save Hard Password Policy
 		private void SaveHardPasswordPolicy_Click(object sender, EventArgs e)
 		{
-			BO.HardPasswordSetup.HardPasswordSetup hardPasswordSetup = new BO.HardPasswordSetup.HardPasswordSetup();
+			BO.HardPasswordSetup hardPasswordSetup = new BO.HardPasswordSetup();
 			string invalidMessage;
 			try
 			{

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Authentication.Service.DA
+namespace Authentication.Service
 {
 	internal class EmployeePasswordHistoryDA
 	{

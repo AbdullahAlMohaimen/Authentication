@@ -1,4 +1,4 @@
-﻿using Authentication.BO.Employee;
+﻿using Authentication.BO;
 using MailKit.Mime;
 using System;
 using System.Collections.Generic;

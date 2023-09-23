@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Authentication.BO;
 using Authentication.Service.Model;
-using Authentication.BO.Employee;
-using Authentication.BO.Password;
-using Authentication.BO.SendEmail;
-using Authentication.BO.Users;
-using Authentication.Service.DA;
+using Authentication.Service;
 using System.Net.Mail;
 using System.Data.SqlClient;
 

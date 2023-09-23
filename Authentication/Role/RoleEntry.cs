@@ -1,5 +1,4 @@
 ﻿using Authentication.BO;
-using Authentication.BO.Role;
 using Authentication.Service;
 using System;
 using System.Collections.Generic;
@@ -77,7 +76,7 @@ namespace Authentication.Role
 		#region Save Button
 		private void SaveRole_Click(object sender, EventArgs e)
 		{
-			BO.Role.Role role = new BO.Role.Role();
+			BO.Role role = new BO.Role();
 			string invalidMessage;
 			try
 			{

@@ -14,9 +14,8 @@ using System.Data.SqlClient;
 using Authentication.BO;
 using iTextSharp.text.pdf.parser;
 using System.Globalization;
-using Authentication.BO.Employee;
 
-namespace Authentication.BO.SendEmail
+namespace Authentication.BO
 {
 	[Serializable]
 	public class SendEmail

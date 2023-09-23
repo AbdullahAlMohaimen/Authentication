@@ -1,4 +1,4 @@
-﻿using Authentication.BO.Employee;
+﻿using Authentication.BO;
 using MailKit.Mime;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,6 @@ using Org.BouncyCastle.Ocsp;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using Authentication.BO.Role;
 using MailKit;
 using iTextSharp.text.pdf.security;
 using System.Data;

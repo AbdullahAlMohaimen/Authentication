@@ -1,4 +1,4 @@
-﻿using Authentication.BO.Employee;
+﻿using Authentication.BO;
 using MailKit.Mime;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Messaging;
 using Org.BouncyCastle.Ocsp;
 using System.Data;
-using Authentication.BO.Users;
 
 
 namespace Authentication.Service

@@ -1,5 +1,4 @@
-﻿using Authentication.BO.Password;
-using Authentication.Service;
+﻿using Authentication.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,10 +61,10 @@ namespace Authentication.Login
 		#region Login Button
 		private void LoginX_Click(object sender, EventArgs e)
 		{
-			BO.Users.Users oUser = new BO.Users.Users();
+			BO.Users oUser = new BO.Users();
 			HardPasswordSetupService oHP = new HardPasswordSetupService();
 			UserService userService = new UserService();
-			Password password = new Password();
+			BO.Password password = new BO.Password();
 			try
 			{
 				if (!string.IsNullOrEmpty(txt_UserLoginID.Text))
@@ -81,6 +80,8 @@ namespace Authentication.Login
 								{
 									MessageBox.Show("Your account is " + oUser.Status.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 								}
+
+
 							}
 							else
 							{
