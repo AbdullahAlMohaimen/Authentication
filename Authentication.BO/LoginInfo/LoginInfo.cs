@@ -11,7 +11,10 @@ namespace Authentication.BO
 	public class LoginInfo : BasicBaseObject
 	{
 		#region Constructor
-		public LoginInfo() { }
+		public LoginInfo() { 
+			_loginTime = DateTime.Now;
+			_logoutTime = null;
+		}
 		#endregion
 
 		#region Property
@@ -62,8 +65,8 @@ namespace Authentication.BO
 		#endregion
 
 		#region LogoutTime : DateTime 
-		private DateTime _logoutTime;
-		public DateTime LogoutTime
+		private DateTime? _logoutTime;
+		public DateTime? LogoutTime
 		{
 			get { return _logoutTime; }
 			set { _logoutTime = value; }

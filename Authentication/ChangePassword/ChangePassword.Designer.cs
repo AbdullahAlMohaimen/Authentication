@@ -41,14 +41,14 @@
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+			this.txt_CurrentPassword = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+			this.txt_newPassword = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label8 = new System.Windows.Forms.Label();
-			this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+			this.txt_ConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.panel15 = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
@@ -236,28 +236,28 @@
 			this.label4.TabIndex = 109;
 			this.label4.Text = ":";
 			// 
-			// guna2TextBox1
+			// txt_CurrentPassword
 			// 
-			this.guna2TextBox1.BorderColor = System.Drawing.Color.Maroon;
-			this.guna2TextBox1.BorderRadius = 6;
-			this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.guna2TextBox1.DefaultText = "";
-			this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox1.FillColor = System.Drawing.Color.Wheat;
-			this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-			this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox1.Location = new System.Drawing.Point(214, 68);
-			this.guna2TextBox1.Name = "guna2TextBox1";
-			this.guna2TextBox1.PasswordChar = '*';
-			this.guna2TextBox1.PlaceholderText = "";
-			this.guna2TextBox1.SelectedText = "";
-			this.guna2TextBox1.Size = new System.Drawing.Size(406, 34);
-			this.guna2TextBox1.TabIndex = 108;
+			this.txt_CurrentPassword.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_CurrentPassword.BorderRadius = 6;
+			this.txt_CurrentPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_CurrentPassword.DefaultText = "";
+			this.txt_CurrentPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_CurrentPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_CurrentPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_CurrentPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_CurrentPassword.FillColor = System.Drawing.Color.Wheat;
+			this.txt_CurrentPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_CurrentPassword.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_CurrentPassword.ForeColor = System.Drawing.Color.Black;
+			this.txt_CurrentPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_CurrentPassword.Location = new System.Drawing.Point(214, 68);
+			this.txt_CurrentPassword.Name = "txt_CurrentPassword";
+			this.txt_CurrentPassword.PasswordChar = '*';
+			this.txt_CurrentPassword.PlaceholderText = "";
+			this.txt_CurrentPassword.SelectedText = "";
+			this.txt_CurrentPassword.Size = new System.Drawing.Size(406, 34);
+			this.txt_CurrentPassword.TabIndex = 108;
 			// 
 			// label2
 			// 
@@ -281,28 +281,28 @@
 			this.label6.TabIndex = 112;
 			this.label6.Text = ":";
 			// 
-			// guna2TextBox2
+			// txt_newPassword
 			// 
-			this.guna2TextBox2.BorderColor = System.Drawing.Color.Maroon;
-			this.guna2TextBox2.BorderRadius = 6;
-			this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.guna2TextBox2.DefaultText = "";
-			this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox2.FillColor = System.Drawing.Color.Wheat;
-			this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-			this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox2.Location = new System.Drawing.Point(214, 118);
-			this.guna2TextBox2.Name = "guna2TextBox2";
-			this.guna2TextBox2.PasswordChar = '*';
-			this.guna2TextBox2.PlaceholderText = "";
-			this.guna2TextBox2.SelectedText = "";
-			this.guna2TextBox2.Size = new System.Drawing.Size(406, 34);
-			this.guna2TextBox2.TabIndex = 111;
+			this.txt_newPassword.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_newPassword.BorderRadius = 6;
+			this.txt_newPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_newPassword.DefaultText = "";
+			this.txt_newPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_newPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_newPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_newPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_newPassword.FillColor = System.Drawing.Color.Wheat;
+			this.txt_newPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_newPassword.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_newPassword.ForeColor = System.Drawing.Color.Black;
+			this.txt_newPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_newPassword.Location = new System.Drawing.Point(214, 118);
+			this.txt_newPassword.Name = "txt_newPassword";
+			this.txt_newPassword.PasswordChar = '*';
+			this.txt_newPassword.PlaceholderText = "";
+			this.txt_newPassword.SelectedText = "";
+			this.txt_newPassword.Size = new System.Drawing.Size(406, 34);
+			this.txt_newPassword.TabIndex = 111;
 			// 
 			// label5
 			// 
@@ -335,28 +335,28 @@
 			this.label8.TabIndex = 116;
 			this.label8.Text = ":";
 			// 
-			// guna2TextBox3
+			// txt_ConfirmPassword
 			// 
-			this.guna2TextBox3.BorderColor = System.Drawing.Color.Maroon;
-			this.guna2TextBox3.BorderRadius = 6;
-			this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.guna2TextBox3.DefaultText = "";
-			this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox3.FillColor = System.Drawing.Color.Wheat;
-			this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-			this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox3.Location = new System.Drawing.Point(214, 168);
-			this.guna2TextBox3.Name = "guna2TextBox3";
-			this.guna2TextBox3.PasswordChar = '*';
-			this.guna2TextBox3.PlaceholderText = "";
-			this.guna2TextBox3.SelectedText = "";
-			this.guna2TextBox3.Size = new System.Drawing.Size(406, 34);
-			this.guna2TextBox3.TabIndex = 115;
+			this.txt_ConfirmPassword.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_ConfirmPassword.BorderRadius = 6;
+			this.txt_ConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_ConfirmPassword.DefaultText = "";
+			this.txt_ConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_ConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_ConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_ConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_ConfirmPassword.FillColor = System.Drawing.Color.Wheat;
+			this.txt_ConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_ConfirmPassword.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_ConfirmPassword.ForeColor = System.Drawing.Color.Black;
+			this.txt_ConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_ConfirmPassword.Location = new System.Drawing.Point(214, 168);
+			this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
+			this.txt_ConfirmPassword.PasswordChar = '*';
+			this.txt_ConfirmPassword.PlaceholderText = "";
+			this.txt_ConfirmPassword.SelectedText = "";
+			this.txt_ConfirmPassword.Size = new System.Drawing.Size(406, 34);
+			this.txt_ConfirmPassword.TabIndex = 115;
 			// 
 			// label7
 			// 
@@ -577,14 +577,14 @@
 			this.guna2Panel1.Controls.Add(this.panel6);
 			this.guna2Panel1.Controls.Add(this.panel15);
 			this.guna2Panel1.Controls.Add(this.label7);
-			this.guna2Panel1.Controls.Add(this.guna2TextBox3);
+			this.guna2Panel1.Controls.Add(this.txt_ConfirmPassword);
 			this.guna2Panel1.Controls.Add(this.label8);
 			this.guna2Panel1.Controls.Add(this.panel2);
 			this.guna2Panel1.Controls.Add(this.label5);
-			this.guna2Panel1.Controls.Add(this.guna2TextBox2);
+			this.guna2Panel1.Controls.Add(this.txt_newPassword);
 			this.guna2Panel1.Controls.Add(this.label6);
 			this.guna2Panel1.Controls.Add(this.label2);
-			this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+			this.guna2Panel1.Controls.Add(this.txt_CurrentPassword);
 			this.guna2Panel1.Controls.Add(this.label4);
 			this.guna2Panel1.Controls.Add(this.label3);
 			this.guna2Panel1.Controls.Add(this.Cancel);
@@ -631,14 +631,14 @@
 		private Guna.UI2.WinForms.Guna2Button Cancel;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+		private Guna.UI2.WinForms.Guna2TextBox txt_CurrentPassword;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label6;
-		private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+		private Guna.UI2.WinForms.Guna2TextBox txt_newPassword;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label8;
-		private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+		private Guna.UI2.WinForms.Guna2TextBox txt_ConfirmPassword;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Panel panel15;
 		private System.Windows.Forms.Panel panel6;

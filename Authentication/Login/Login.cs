@@ -1,4 +1,5 @@
-﻿using Authentication.Service;
+﻿using Authentication.BO;
+using Authentication.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +64,8 @@ namespace Authentication.Login
 		{
 			BO.Users oUser = new BO.Users();
 			HardPasswordSetupService oHP = new HardPasswordSetupService();
+			LoginInfoService loginInfoService = new LoginInfoService();
+			List<LoginInfo> loginInfos = new List<LoginInfo>();
 			UserService userService = new UserService();
 			BO.Password password = new BO.Password();
 			try
@@ -78,9 +81,19 @@ namespace Authentication.Login
 							{
 								if(oUser.Status != BO.EnumStatus.Active)
 								{
-									MessageBox.Show("Your account is " + oUser.Status.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									MessageBox.Show("Your account is " + oUser.Status.ToString() + ".\nplease contact with Administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									return;
 								}
+								loginInfos = loginInfoService.GetLoginInfoByLoginID(oUser.LoginID);
+								if (loginInfos.Count != 0)
+								{
 
+								}
+								else
+								{
+									MessageBox.Show("You are Login in first time, please change your password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									return;
+								}
 
 							}
 							else

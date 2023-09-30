@@ -60,9 +60,21 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		public LoginInfo GetByLoginID(string loginID)
+		public List<LoginInfo> GetLoginInfoByLoginID(string loginID)
 		{
-			return null;
+			List<LoginInfo> loginInfos = new List<LoginInfo>();
+			loginInfos = null;
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfoByLoginID(loginID));
+				loginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return loginInfos;
 		}
 	}
 }
