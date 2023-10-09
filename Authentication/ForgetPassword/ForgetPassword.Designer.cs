@@ -1,4 +1,4 @@
-﻿namespace Authentication.Forget_Password
+﻿namespace Authentication
 {
 	partial class ForgetPassword
 	{
@@ -135,7 +135,7 @@
 			this.label3.Size = new System.Drawing.Size(404, 32);
 			this.label3.TabIndex = 106;
 			this.label3.Text = "                     If you click on submit button \r\na temporary password will be" +
-    " send in your email address.";
+	" send in your email address.";
 			// 
 			// Cancel
 			// 

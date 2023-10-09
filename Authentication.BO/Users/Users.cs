@@ -17,7 +17,6 @@ namespace Authentication.BO
 			_authorizedDate = DateTime.Now;
 			_passwordHints = string.Empty;
 			_forgetPasswordDate = null;
-			_lastChangeDate = null;
 			_tempStatus = EnumStatus.Active;
 			_tempStatusTime = null;
 			_changePasswordNextLogon = 0;
@@ -127,8 +126,8 @@ namespace Authentication.BO
 		#endregion
 
 		#region LastChangeDate : DateTime 
-		private DateTime? _lastChangeDate;
-		public DateTime? LastChangeDate
+		private DateTime _lastChangeDate;
+		public DateTime LastChangeDate
 		{
 			get { return _lastChangeDate; }
 			set { _lastChangeDate = value; }

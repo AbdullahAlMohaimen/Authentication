@@ -10,7 +10,9 @@ namespace Authentication.BO
 	public class UserPasswordHistory : BasicBaseObject
 	{
 		#region Constructor
-		public UserPasswordHistory() { }
+		public UserPasswordHistory() {
+			EntryDate = DateTime.Now;
+		}
 		#endregion
 
 		#region Property

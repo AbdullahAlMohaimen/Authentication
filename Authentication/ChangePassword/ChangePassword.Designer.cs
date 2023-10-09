@@ -1,4 +1,4 @@
-﻿namespace Authentication.Change_Password
+﻿namespace Authentication
 {
 	partial class ChangePassword
 	{
@@ -119,6 +119,7 @@
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
 			this.Minimize.UseVisualStyleBackColor = false;
+			this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
 			// 
 			// Exit
 			// 
@@ -196,6 +197,7 @@
 			this.Submit.Size = new System.Drawing.Size(115, 31);
 			this.Submit.TabIndex = 104;
 			this.Submit.Text = " Submit";
+			this.Submit.Click += new System.EventHandler(this.Submit_Click);
 			// 
 			// Cancel
 			// 
@@ -213,6 +215,7 @@
 			this.Cancel.Size = new System.Drawing.Size(121, 31);
 			this.Cancel.TabIndex = 105;
 			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
 			// 
 			// label3
 			// 

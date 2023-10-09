@@ -39,7 +39,7 @@ namespace Authentication.Login
 				}
 				else
 				{
-					Forget_Password.ForgetPassword forgetPassword = new Forget_Password.ForgetPassword(this);
+					ForgetPassword forgetPassword = new ForgetPassword(this);
 					forgetPassword._loginID = txt_UserLoginID.Text;
 					forgetPassword.SetLoginID(txt_UserLoginID.Text);
 					forgetPassword.Show();
@@ -91,7 +91,16 @@ namespace Authentication.Login
 								}
 								else
 								{
-									MessageBox.Show("You are Login in first time, please change your password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									DialogResult result = MessageBox.Show("You are logged to system first time.\nPlease change your password.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+									if (result == DialogResult.OK)
+									{
+										ChangePassword changePassword = new ChangePassword(this);
+										changePassword._loginID = txt_UserLoginID.Text;
+										changePassword.SetLoginID(txt_UserLoginID.Text);
+										changePassword.SetType("Login");
+										changePassword.Show();
+									}
 									return;
 								}
 
