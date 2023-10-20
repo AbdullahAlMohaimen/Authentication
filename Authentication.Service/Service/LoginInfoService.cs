@@ -52,6 +52,15 @@ namespace Authentication.Service
 		}
 		public string Save(LoginInfo loginInfo)
 		{
+			string result;
+			try
+			{
+				result = LoginInfoDA.Insert(loginInfo);
+			}
+			catch (Exception e)
+			{
+				result = "Failed";
+			}
 			return null;
 		}
 		public void Delete(int ID)
@@ -76,5 +85,31 @@ namespace Authentication.Service
 			}
 			return loginInfos;
 		}
+
+		#region GetNoOFLogin
+		public int NoOfLoginInfo(string loginID)
+		{
+			int nCount = 0;
+			List<LoginInfo> loginInfos = new List<LoginInfo>();
+			loginInfos = null;
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.NoOfLoginInfo(loginID));
+				loginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+
+				if (loginInfos != null && loginInfos.Count != 0)
+				{
+					nCount = loginInfos.Count;
+				}
+			}
+			catch (Exception e)
+			{
+				#region Handle Exception
+				#endregion
+			}
+			return nCount;
+		}
+		#endregion
 	}
 }

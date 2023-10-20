@@ -64,6 +64,15 @@
 		Inactive = 2,
 		Locked = 3
 	}
+
+	public enum EnumLogoutType : short
+	{
+		NotInitiate = 0,
+		User = 1,
+		Superuser = 2,
+		ResetLoginTime = 3,
+		WebUser = 4
+	}
 	public enum EnumSystemType
 	{
 		Desktop = 1,

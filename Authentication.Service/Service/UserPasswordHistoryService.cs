@@ -66,7 +66,7 @@ namespace Authentication
 		}
 		#endregion
 
-		#region Get All Users
+		#region Get All
 		public List<UserPasswordHistory> GetUserPasswordHistories()
 		{
 			List<UserPasswordHistory> oUserPasswordHistory = new List<UserPasswordHistory>();
@@ -84,7 +84,7 @@ namespace Authentication
 		}
 		#endregion
 
-		#region Save User
+		#region Save
 		public string Save(UserPasswordHistory oUserPasswordHistory)
 		{
 			string result = string.Empty;
@@ -109,5 +109,6 @@ namespace Authentication
 		#endregion
 
 		#endregion
+
 	}
 }

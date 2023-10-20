@@ -84,11 +84,15 @@ namespace Authentication
 		}
 		#endregion
 
-
+		#region Submit Button
 		private void Submit_Click(object sender, EventArgs e)
 		{
 			BO.Users oUser = new BO.Users();
 			HardPasswordSetupService oHP = new HardPasswordSetupService();
+			UserPasswordHistory newHistory = new UserPasswordHistory();
+			LoginInfo loginInfo = new LoginInfo();
+			UserPasswordHistoryService userPasswordHistoryService = new UserPasswordHistoryService();
+			LoginInfoService loginInfoService = new LoginInfoService();
 			UserService userService = new UserService();
 			BO.Password password = new BO.Password();
 			bool isHardPassword = false;
@@ -123,8 +127,27 @@ namespace Authentication
 													DateTime lastChangeDate = oUser.LastChangeDate.AddHours(+24);
 													DateTime nowDate = DateTime.Now;
 
-													UserPasswordHistory newHistory = new UserPasswordHistory();
-													long nCount = userLogInInfoService.NoofLogin(user.ID);
+													long nCount = loginInfoService.NoOfLoginInfo(oUser.LoginID);
+													if( nCount == 0)
+													{
+														loginInfo.LoginID = oUser.LoginID;
+														loginInfo.UserName = oUser.UserName;
+														this.SaveLoginHistory(loginInfo);
+													}
+													else
+													{
+														if(oUser.PasswordResetByAdmin != true)
+														{
+															if (lastChangeDate < nowDate)
+															{
+
+															}
+															else
+															{
+																MessageBox.Show("You cannot change password within 24 hours!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+															}
+														}
+													}
 
 												}
 												else
@@ -175,6 +198,19 @@ namespace Authentication
 			{
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+		#endregion
+
+
+		private void SaveLoginHistory(LoginInfo item)
+		{
+			LoginInfoService srv = new LoginInfoService();
+
+			item.PCNumber = System.Environment.MachineName;
+			item.LoginTime = DateTime.Now;
+			item.LogoutTime = null;
+			item.Type = "Not Initiate";
+			srv.Save(item);
 		}
 	}
 }
