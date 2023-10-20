@@ -147,6 +147,10 @@ namespace Authentication
 																MessageBox.Show("You cannot change password within 24 hours!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 															}
 														}
+														else
+														{
+
+														}
 													}
 
 												}
