@@ -331,6 +331,12 @@
     <Compile Include="HardPasswordSetup\HardPasswordSetup.Designer.cs">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\AdministratorController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\AdministratorController.Designer.cs">
+      <DependentUpon>AdministratorController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HardPasswordSetup\HardPasswordSetup.resx">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\AdministratorController.resx">
+      <DependentUpon>AdministratorController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

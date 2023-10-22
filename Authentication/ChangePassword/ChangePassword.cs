@@ -63,7 +63,7 @@ namespace Authentication
 		}
 		#endregion
 
-		#region Cancel Button
+		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
 			this.Close();
@@ -95,9 +95,15 @@ namespace Authentication
 			LoginInfoService loginInfoService = new LoginInfoService();
 			UserService userService = new UserService();
 			BO.Password password = new BO.Password();
-			bool isHardPassword = false;
-			string randomPassword = null;
 			string result = null;
+			long nCount = 0;
+			string newPassword;
+			string salt;
+			string newHashPassword;
+			DateTime lastChangeDate = DateTime.MinValue;
+			DateTime nowDate = DateTime.Now;
+
+			List<UserPasswordHistory> userPasswordHistories = new List<UserPasswordHistory>();
 
 			try
 			{
@@ -120,16 +126,19 @@ namespace Authentication
 											{
 												if (oHP.IsHardPasswordSetup(txt_newPassword.Text, oUser.UserName, oUser.RoleID))
 												{
-													string newPassword = txt_newPassword.Text;
-													string salt = password.CreateSalt(40);
-													string newHashPassword = password.GenerateHash(newPassword, salt);
+													newPassword = txt_newPassword.Text;
+													salt = password.CreateSalt(40);
+													newHashPassword = password.GenerateHash(newPassword, salt);
 
-													DateTime lastChangeDate = oUser.LastChangeDate.AddHours(+24);
-													DateTime nowDate = DateTime.Now;
-
-													long nCount = loginInfoService.NoOfLoginInfo(oUser.LoginID);
+													if(oUser.LastChangeDate != null)
+													{
+														lastChangeDate = oUser.LastChangeDate.AddHours(+24);
+													}
+													nCount = loginInfoService.NoOfLoginInfo(oUser.LoginID);
 													if( nCount == 0)
 													{
+														newHistory.UserID = oUser.ID;
+
 														loginInfo.LoginID = oUser.LoginID;
 														loginInfo.UserName = oUser.UserName;
 														this.SaveLoginHistory(loginInfo);
@@ -140,7 +149,26 @@ namespace Authentication
 														{
 															if (lastChangeDate < nowDate)
 															{
-																 
+																userPasswordHistories = userPasswordHistoryService.GetUserPasswordHistories(oUser.ID);
+																if (userPasswordHistories.Count == 0)
+																{
+																	newHistory.UserID = oUser.ID;
+																}
+																else
+																{
+																	foreach (UserPasswordHistory ph in userPasswordHistories)
+																	{
+																		if (password.AreEqual(txt_newPassword.Text, ph.UserPassword, ph.Salt))
+																		{
+																			newHistory.UserID = 0;
+																			MessageBox.Show("Please choose a new password.\nThe password you entered matches the last 10 passwords that have been changed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+																		}
+																		else
+																		{
+																			newHistory.UserID = oUser.ID;
+																		}
+																	}
+																}
 															}
 															else
 															{
@@ -149,10 +177,49 @@ namespace Authentication
 														}
 														else
 														{
-
+															userPasswordHistories = userPasswordHistoryService.GetUserPasswordHistories(oUser.ID);
+															if (userPasswordHistories.Count == 0)
+															{
+																newHistory.UserID = oUser.ID;
+															}
+															else
+															{
+																foreach (UserPasswordHistory ph in userPasswordHistories)
+																{
+																	if (password.AreEqual(txt_newPassword.Text, ph.UserPassword, ph.Salt))
+																	{
+																		newHistory.UserID = 0;
+																		MessageBox.Show("Please choose a new password.\nThe password you entered matches the last 10 passwords that have been changed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+																		return;
+																	}
+																	else
+																	{
+																		newHistory.UserID = oUser.ID;
+																	}
+																}
+															}
 														}
 													}
+													if(newHistory.UserID != 0)
+													{
+														oUser.Password = newHashPassword;
+														oUser.Salt = salt;
+														oUser.ChangePasswordNextLogon = 0;
+														oUser.LastChangeDate = DateTime.Now;
+														userService.UpdatePassword(oUser);
 
+														newHistory.UserPassword = newHashPassword;
+														newHistory.Salt = salt;
+														newHistory.EntryDate = DateTime.Now;
+														result = userPasswordHistoryService.Save(newHistory);
+
+														if(result == "Ok")
+														{
+															MessageBox.Show("Password changed successfully", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+															this.clearData();
+															this.Close();
+														}
+													}
 												}
 												else
 												{
@@ -179,6 +246,7 @@ namespace Authentication
 									MessageBox.Show("Your CURRENT password and NEW password can't be same!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 								}
 							}
+							else
 							{
 								MessageBox.Show("Please enter CONFIRM password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							}
@@ -205,7 +273,13 @@ namespace Authentication
 		}
 		#endregion
 
-
+		public void clearData()
+		{
+			this.txt_LoginID.Text = null;
+			this.txt_CurrentPassword.Text = null;
+			this.txt_ConfirmPassword.Text = null;
+			this.txt_newPassword.Text = null;
+		}
 		private void SaveLoginHistory(LoginInfo item)
 		{
 			LoginInfoService srv = new LoginInfoService();

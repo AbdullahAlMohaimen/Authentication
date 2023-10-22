@@ -92,7 +92,6 @@ namespace Authentication.Login
 								else
 								{
 									DialogResult result = MessageBox.Show("You are logged to system first time.\nPlease change your password.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
 									if (result == DialogResult.OK)
 									{
 										ChangePassword changePassword = new ChangePassword(this);

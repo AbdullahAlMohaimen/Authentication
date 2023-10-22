@@ -16,5 +16,19 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 		}
+
+		public void AddUserControl(UserControl userControl)
+		{
+			userControl.Dock = DockStyle.Fill;
+			panelContainer.Controls.Clear();
+			panelContainer.Controls.Add(userControl);
+			userControl.BringToFront();
+		}
+
+		private void Administration_Click(object sender, EventArgs e)
+		{
+			AdministratorController administratorController = new AdministratorController();
+			AddUserControl(administratorController);
+		}
 	}
 }

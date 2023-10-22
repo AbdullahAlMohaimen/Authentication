@@ -50,6 +50,7 @@ namespace Authentication
 			bool isHardPassword = false;
 			string randomPassword = null;
 			string result = null;
+			DateTime forgetPassword;
 
 			try
 			{
@@ -58,28 +59,37 @@ namespace Authentication
 					oUser = userService.GetUserByLoginID(_loginID);
 					if (oUser != null)
 					{
-						if (oUser.Email != null)
+						forgetPassword = oUser.ForgetPasswordDate == null ? DateTime.MinValue : oUser.ForgetPasswordDate.Value;
+						if (forgetPassword.Date != DateTime.Now.Date)
 						{
-							while (!isHardPassword)
+							if (oUser.Email != null)
 							{
-								if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
-									randomPassword = password.GenerateRandomPassword(14, 16);
+								while (!isHardPassword)
+								{
+									if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
+										randomPassword = password.GenerateRandomPassword(14, 16);
+									else
+										randomPassword = password.GenerateRandomPassword(10);
+									if (randomPassword != null)
+										if (oHP.IsHardPasswordSetup(randomPassword, oUser.UserName, oUser.RoleID))
+											isHardPassword = true;
+								}
+								result = userService.ForgetPassword(oUser, randomPassword);
+								if (result == "Ok")
+									MessageBox.Show("A tempory password has been send to your email.\nPlease check your email", "Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
 								else
-									randomPassword = password.GenerateRandomPassword(10);
-								if (randomPassword != null)
-									if (oHP.IsHardPasswordSetup(randomPassword, oUser.UserName, oUser.RoleID))
-										isHardPassword = true;
+									MessageBox.Show("Something Problem", "Failed to Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+								this.Close();
 							}
-							result = userService.ForgetPassword(oUser, randomPassword);
-							if (result == "Ok")
-								MessageBox.Show("A tempory password has been send to your email.\nPlease check your email", "Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							else
-								MessageBox.Show("Something Problem", "Failed to Send Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							this.Close();
+							{
+								MessageBox.Show("Can't find your email!\nPlease contact with administrator", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+								this.Close();
+							}
 						}
 						else
 						{
-							MessageBox.Show("Can't find your email!\nPlease contact with administrator", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							MessageBox.Show("Please check your Email.\nAlready a temporary password has already been sent to your Email on Today.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							this.Close();
 						}
 					}

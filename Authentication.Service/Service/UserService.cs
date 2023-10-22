@@ -198,5 +198,18 @@ namespace Authentication.Service
 			return result;
 		}
 		#endregion
+
+		#region UpdatePassword
+		public string UpdatePassword(Users user)
+		{
+			Password password = new Password();
+			string result = null;
+			if (user != null)
+			{
+				result = UsersDA.UpdateUserPassword(user);
+			}
+			return result;
+		}
+		#endregion
 	}
 }

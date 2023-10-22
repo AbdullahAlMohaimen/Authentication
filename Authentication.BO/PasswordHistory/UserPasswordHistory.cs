@@ -62,6 +62,7 @@ namespace Authentication.BO
 	{
 		UserPasswordHistory GetUserPasswordHistory(int ID);
 		List<UserPasswordHistory> GetUserPasswordHistories();
+		List<UserPasswordHistory> GetUserPasswordHistories(int ID);
 		string Save(UserPasswordHistory upH);
 		void Delete(int ID);
 	}
