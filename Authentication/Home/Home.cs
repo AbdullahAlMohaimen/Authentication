@@ -17,6 +17,20 @@ namespace Authentication.Home
 			InitializeComponent();
 		}
 
+		#region Exit Button
+		private void Exit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		#endregion
+
+		#region Minimize Button
+		private void Minimize_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
+		}
+		#endregion
+
 		public void AddUserControl(UserControl userControl)
 		{
 			userControl.Dock = DockStyle.Fill;

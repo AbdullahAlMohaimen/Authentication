@@ -29,29 +29,46 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-			this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+			this.adminCombobox = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.Administration = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
-			this.adminCombobox = new Guna.UI2.WinForms.Guna2ComboBox();
-			this.guna2ShadowPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.panelContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// guna2ShadowPanel1
+			// adminCombobox
 			// 
-			this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Moccasin;
-			this.guna2ShadowPanel1.Controls.Add(this.adminCombobox);
-			this.guna2ShadowPanel1.Controls.Add(this.Administration);
-			this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Moccasin;
-			this.guna2ShadowPanel1.Location = new System.Drawing.Point(-2, 48);
-			this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-			this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-			this.guna2ShadowPanel1.Size = new System.Drawing.Size(188, 501);
-			this.guna2ShadowPanel1.TabIndex = 4;
+			this.adminCombobox.BackColor = System.Drawing.Color.Moccasin;
+			this.adminCombobox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.adminCombobox.BorderRadius = 8;
+			this.adminCombobox.BorderThickness = 0;
+			this.adminCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.adminCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.adminCombobox.DropDownHeight = 150;
+			this.adminCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.adminCombobox.DropDownWidth = 120;
+			this.adminCombobox.FillColor = System.Drawing.Color.Moccasin;
+			this.adminCombobox.FocusedColor = System.Drawing.Color.Empty;
+			this.adminCombobox.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.adminCombobox.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.adminCombobox.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.adminCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.adminCombobox.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.adminCombobox.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.adminCombobox.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.adminCombobox.IntegralHeight = false;
+			this.adminCombobox.ItemHeight = 28;
+			this.adminCombobox.Location = new System.Drawing.Point(111, 69);
+			this.adminCombobox.MaxDropDownItems = 5;
+			this.adminCombobox.Name = "adminCombobox";
+			this.adminCombobox.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.adminCombobox.Size = new System.Drawing.Size(182, 34);
+			this.adminCombobox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.adminCombobox.TabIndex = 6;
 			// 
 			// Administration
 			// 
@@ -72,7 +89,7 @@
 			this.Administration.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.Administration.ImageSize = new System.Drawing.Size(24, 24);
 			this.Administration.IndicateFocus = true;
-			this.Administration.Location = new System.Drawing.Point(6, 117);
+			this.Administration.Location = new System.Drawing.Point(11, 393);
 			this.Administration.Name = "Administration";
 			this.Administration.Size = new System.Drawing.Size(174, 28);
 			this.Administration.TabIndex = 9;
@@ -114,6 +131,7 @@
 			this.Minimize.Size = new System.Drawing.Size(28, 24);
 			this.Minimize.TabIndex = 12;
 			this.Minimize.UseVisualStyleBackColor = false;
+			this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
 			// 
 			// Exit
 			// 
@@ -128,43 +146,15 @@
 			this.Exit.Size = new System.Drawing.Size(28, 24);
 			this.Exit.TabIndex = 11;
 			this.Exit.UseVisualStyleBackColor = false;
+			this.Exit.Click += new System.EventHandler(this.Exit_Click);
 			// 
 			// panelContainer
 			// 
+			this.panelContainer.Controls.Add(this.adminCombobox);
 			this.panelContainer.Location = new System.Drawing.Point(184, 48);
 			this.panelContainer.Name = "panelContainer";
 			this.panelContainer.Size = new System.Drawing.Size(889, 501);
 			this.panelContainer.TabIndex = 13;
-			// 
-			// adminCombobox
-			// 
-			this.adminCombobox.BackColor = System.Drawing.Color.Moccasin;
-			this.adminCombobox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.BorderRadius = 8;
-			this.adminCombobox.BorderThickness = 0;
-			this.adminCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.adminCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.adminCombobox.DropDownHeight = 150;
-			this.adminCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.adminCombobox.DropDownWidth = 120;
-			this.adminCombobox.FillColor = System.Drawing.Color.Moccasin;
-			this.adminCombobox.FocusedColor = System.Drawing.Color.Empty;
-			this.adminCombobox.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.adminCombobox.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.adminCombobox.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.adminCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.adminCombobox.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.adminCombobox.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.IntegralHeight = false;
-			this.adminCombobox.ItemHeight = 28;
-			this.adminCombobox.Location = new System.Drawing.Point(3, 6);
-			this.adminCombobox.MaxDropDownItems = 5;
-			this.adminCombobox.Name = "adminCombobox";
-			this.adminCombobox.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.adminCombobox.Size = new System.Drawing.Size(182, 34);
-			this.adminCombobox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.adminCombobox.TabIndex = 6;
 			// 
 			// Home
 			// 
@@ -172,22 +162,21 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(1071, 548);
+			this.Controls.Add(this.Administration);
 			this.Controls.Add(this.panelContainer);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.guna2ShadowPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Home";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Home";
-			this.guna2ShadowPanel1.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.panelContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
 		private Guna.UI2.WinForms.Guna2GradientButton Administration;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label35;
