@@ -73,6 +73,12 @@
 		ResetLoginTime = 3,
 		WebUser = 4
 	}
+
+	public enum EnumAdministrator
+	{
+		User = 1,
+		Employee = 2,
+	}
 	public enum EnumSystemType
 	{
 		Desktop = 1,

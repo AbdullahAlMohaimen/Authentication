@@ -331,17 +331,35 @@
     <Compile Include="HardPasswordSetup\HardPasswordSetup.Designer.cs">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home\AdministratorController.cs">
+    <Compile Include="Home\AdministartorDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Home\AdministratorController.Designer.cs">
-      <DependentUpon>AdministratorController.cs</DependentUpon>
+    <Compile Include="Home\AdministartorDashboard.Designer.cs">
+      <DependentUpon>AdministartorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\EmployeeListController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\EmployeeListController.Designer.cs">
+      <DependentUpon>EmployeeListController.cs</DependentUpon>
     </Compile>
     <Compile Include="Home\Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\ProfileController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\ProfileController.Designer.cs">
+      <DependentUpon>ProfileController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\UserListController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\UserListController.Designer.cs">
+      <DependentUpon>UserListController.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
@@ -384,11 +402,20 @@
     <EmbeddedResource Include="HardPasswordSetup\HardPasswordSetup.resx">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home\AdministratorController.resx">
-      <DependentUpon>AdministratorController.cs</DependentUpon>
+    <EmbeddedResource Include="Home\AdministartorDashboard.resx">
+      <DependentUpon>AdministartorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\EmployeeListController.resx">
+      <DependentUpon>EmployeeListController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\ProfileController.resx">
+      <DependentUpon>ProfileController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\UserListController.resx">
+      <DependentUpon>UserListController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

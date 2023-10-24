@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Authentication.Home
 {
-	public partial class AdministratorController : UserControl
+	public partial class AdministartorDashboard : UserControl
 	{
-		public AdministratorController()
+		public AdministartorDashboard()
 		{
 			InitializeComponent();
 		}

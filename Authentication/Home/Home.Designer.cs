@@ -29,77 +29,23 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-			this.adminCombobox = new Guna.UI2.WinForms.Guna2ComboBox();
-			this.Administration = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label35 = new System.Windows.Forms.Label();
+			this.headerTitle = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
+			this.menuTreeView = new System.Windows.Forms.TreeView();
+			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.homeDropDown = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.panel1.SuspendLayout();
-			this.panelContainer.SuspendLayout();
+			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// adminCombobox
-			// 
-			this.adminCombobox.BackColor = System.Drawing.Color.Moccasin;
-			this.adminCombobox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.BorderRadius = 8;
-			this.adminCombobox.BorderThickness = 0;
-			this.adminCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.adminCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.adminCombobox.DropDownHeight = 150;
-			this.adminCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.adminCombobox.DropDownWidth = 120;
-			this.adminCombobox.FillColor = System.Drawing.Color.Moccasin;
-			this.adminCombobox.FocusedColor = System.Drawing.Color.Empty;
-			this.adminCombobox.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.adminCombobox.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.adminCombobox.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.adminCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.adminCombobox.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.adminCombobox.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.adminCombobox.IntegralHeight = false;
-			this.adminCombobox.ItemHeight = 28;
-			this.adminCombobox.Location = new System.Drawing.Point(111, 69);
-			this.adminCombobox.MaxDropDownItems = 5;
-			this.adminCombobox.Name = "adminCombobox";
-			this.adminCombobox.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.adminCombobox.Size = new System.Drawing.Size(182, 34);
-			this.adminCombobox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.adminCombobox.TabIndex = 6;
-			// 
-			// Administration
-			// 
-			this.Administration.BorderColor = System.Drawing.Color.DarkGreen;
-			this.Administration.BorderRadius = 2;
-			this.Administration.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-			this.Administration.BorderThickness = 1;
-			this.Administration.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Administration.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Administration.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Administration.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Administration.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Administration.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Administration.FillColor = System.Drawing.Color.NavajoWhite;
-			this.Administration.FillColor2 = System.Drawing.Color.IndianRed;
-			this.Administration.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Administration.ForeColor = System.Drawing.Color.Maroon;
-			this.Administration.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.Administration.ImageSize = new System.Drawing.Size(24, 24);
-			this.Administration.IndicateFocus = true;
-			this.Administration.Location = new System.Drawing.Point(11, 393);
-			this.Administration.Name = "Administration";
-			this.Administration.Size = new System.Drawing.Size(174, 28);
-			this.Administration.TabIndex = 9;
-			this.Administration.Text = "Administration";
-			this.Administration.Click += new System.EventHandler(this.Administration_Click);
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.SeaGreen;
-			this.panel1.Controls.Add(this.label35);
+			this.panel1.Controls.Add(this.homeDropDown);
+			this.panel1.Controls.Add(this.headerTitle);
 			this.panel1.Controls.Add(this.Minimize);
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
@@ -107,16 +53,15 @@
 			this.panel1.Size = new System.Drawing.Size(1075, 36);
 			this.panel1.TabIndex = 12;
 			// 
-			// label35
+			// headerTitle
 			// 
-			this.label35.AutoSize = true;
-			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(210, 25);
-			this.label35.TabIndex = 106;
-			this.label35.Text = "New Employee Entry";
+			this.headerTitle.AutoSize = true;
+			this.headerTitle.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.headerTitle.ForeColor = System.Drawing.Color.Salmon;
+			this.headerTitle.Location = new System.Drawing.Point(8, 2);
+			this.headerTitle.Name = "headerTitle";
+			this.headerTitle.Size = new System.Drawing.Size(0, 25);
+			this.headerTitle.TabIndex = 106;
 			// 
 			// Minimize
 			// 
@@ -150,11 +95,70 @@
 			// 
 			// panelContainer
 			// 
-			this.panelContainer.Controls.Add(this.adminCombobox);
-			this.panelContainer.Location = new System.Drawing.Point(184, 48);
+			this.panelContainer.Location = new System.Drawing.Point(206, 48);
 			this.panelContainer.Name = "panelContainer";
-			this.panelContainer.Size = new System.Drawing.Size(889, 501);
+			this.panelContainer.Size = new System.Drawing.Size(864, 500);
 			this.panelContainer.TabIndex = 13;
+			// 
+			// menuTreeView
+			// 
+			this.menuTreeView.BackColor = System.Drawing.Color.Wheat;
+			this.menuTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.menuTreeView.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.menuTreeView.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.menuTreeView.ForeColor = System.Drawing.Color.Maroon;
+			this.menuTreeView.Location = new System.Drawing.Point(5, 4);
+			this.menuTreeView.Name = "menuTreeView";
+			this.menuTreeView.Size = new System.Drawing.Size(191, 490);
+			this.menuTreeView.TabIndex = 14;
+			this.menuTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.menuTreeView_AfterSelect);
+			// 
+			// guna2Panel1
+			// 
+			this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.guna2Panel1.BorderRadius = 10;
+			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.menuTreeView);
+			this.guna2Panel1.Location = new System.Drawing.Point(2, 50);
+			this.guna2Panel1.Name = "guna2Panel1";
+			this.guna2Panel1.Size = new System.Drawing.Size(201, 497);
+			this.guna2Panel1.TabIndex = 108;
+			// 
+			// homeDropDown
+			// 
+			this.homeDropDown.BackColor = System.Drawing.Color.Wheat;
+			this.homeDropDown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.BorderRadius = 8;
+			this.homeDropDown.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+			this.homeDropDown.BorderThickness = 2;
+			this.homeDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.homeDropDown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.homeDropDown.DropDownHeight = 150;
+			this.homeDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.homeDropDown.DropDownWidth = 120;
+			this.homeDropDown.FillColor = System.Drawing.Color.SeaGreen;
+			this.homeDropDown.FocusedColor = System.Drawing.Color.Empty;
+			this.homeDropDown.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.homeDropDown.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.homeDropDown.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+			this.homeDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.homeDropDown.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.homeDropDown.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.IntegralHeight = false;
+			this.homeDropDown.ItemHeight = 20;
+			this.homeDropDown.Location = new System.Drawing.Point(718, 6);
+			this.homeDropDown.MaxDropDownItems = 5;
+			this.homeDropDown.Name = "homeDropDown";
+			this.homeDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.homeDropDown.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.homeDropDown.Size = new System.Drawing.Size(264, 26);
+			this.homeDropDown.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.homeDropDown.TabIndex = 107;
+			this.homeDropDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.homeDropDown.SelectedIndexChanged += new System.EventHandler(this.homeDropDown_SelectedIndexChanged);
 			// 
 			// Home
 			// 
@@ -162,7 +166,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(1071, 548);
-			this.Controls.Add(this.Administration);
+			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panelContainer);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -171,18 +175,19 @@
 			this.Text = "Home";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panelContainer.ResumeLayout(false);
+			this.guna2Panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private Guna.UI2.WinForms.Guna2GradientButton Administration;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.Label headerTitle;
 		private System.Windows.Forms.Button Minimize;
 		private System.Windows.Forms.Button Exit;
 		private Guna.UI2.WinForms.Guna2Panel panelContainer;
-		private Guna.UI2.WinForms.Guna2ComboBox adminCombobox;
+		private System.Windows.Forms.TreeView menuTreeView;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+		private Guna.UI2.WinForms.Guna2ComboBox homeDropDown;
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Authentication.Home
 {
-	partial class AdministratorController
+	partial class AdministartorDashboard
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,34 +28,35 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.SuspendLayout();
 			// 
-			// radioButton1
+			// guna2Panel1
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(299, 58);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(85, 17);
-			this.radioButton1.TabIndex = 0;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "radioButton1";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.guna2Panel1.BorderRadius = 10;
+			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+			this.guna2Panel1.Name = "guna2Panel1";
+			this.guna2Panel1.Size = new System.Drawing.Size(858, 494);
+			this.guna2Panel1.TabIndex = 108;
 			// 
-			// AdministratorController
+			// AdministartorDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.radioButton1);
-			this.Name = "AdministratorController";
-			this.Size = new System.Drawing.Size(597, 347);
+			this.BackColor = System.Drawing.Color.Wheat;
+			this.Controls.Add(this.guna2Panel1);
+			this.Name = "AdministartorDashboard";
+			this.Size = new System.Drawing.Size(864, 500);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.RadioButton radioButton1;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 	}
 }
