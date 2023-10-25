@@ -30,13 +30,13 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.homeDropDown = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.headerTitle = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
 			this.menuTreeView = new System.Windows.Forms.TreeView();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-			this.homeDropDown = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -52,6 +52,40 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1075, 36);
 			this.panel1.TabIndex = 12;
+			// 
+			// homeDropDown
+			// 
+			this.homeDropDown.BackColor = System.Drawing.Color.Wheat;
+			this.homeDropDown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.BorderRadius = 8;
+			this.homeDropDown.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+			this.homeDropDown.BorderThickness = 2;
+			this.homeDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.homeDropDown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.homeDropDown.DropDownHeight = 150;
+			this.homeDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.homeDropDown.DropDownWidth = 120;
+			this.homeDropDown.FillColor = System.Drawing.Color.SeaGreen;
+			this.homeDropDown.FocusedColor = System.Drawing.Color.Empty;
+			this.homeDropDown.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.homeDropDown.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.homeDropDown.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+			this.homeDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.homeDropDown.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.homeDropDown.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.homeDropDown.IntegralHeight = false;
+			this.homeDropDown.ItemHeight = 20;
+			this.homeDropDown.Location = new System.Drawing.Point(718, 6);
+			this.homeDropDown.MaxDropDownItems = 5;
+			this.homeDropDown.Name = "homeDropDown";
+			this.homeDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.homeDropDown.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.homeDropDown.Size = new System.Drawing.Size(264, 26);
+			this.homeDropDown.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.homeDropDown.TabIndex = 107;
+			this.homeDropDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.homeDropDown.SelectedIndexChanged += new System.EventHandler(this.homeDropDown_SelectedIndexChanged);
 			// 
 			// headerTitle
 			// 
@@ -125,40 +159,6 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(201, 497);
 			this.guna2Panel1.TabIndex = 108;
-			// 
-			// homeDropDown
-			// 
-			this.homeDropDown.BackColor = System.Drawing.Color.Wheat;
-			this.homeDropDown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.homeDropDown.BorderRadius = 8;
-			this.homeDropDown.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-			this.homeDropDown.BorderThickness = 2;
-			this.homeDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.homeDropDown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.homeDropDown.DropDownHeight = 150;
-			this.homeDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.homeDropDown.DropDownWidth = 120;
-			this.homeDropDown.FillColor = System.Drawing.Color.SeaGreen;
-			this.homeDropDown.FocusedColor = System.Drawing.Color.Empty;
-			this.homeDropDown.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.homeDropDown.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.homeDropDown.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-			this.homeDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.homeDropDown.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.homeDropDown.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.homeDropDown.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.homeDropDown.IntegralHeight = false;
-			this.homeDropDown.ItemHeight = 20;
-			this.homeDropDown.Location = new System.Drawing.Point(718, 6);
-			this.homeDropDown.MaxDropDownItems = 5;
-			this.homeDropDown.Name = "homeDropDown";
-			this.homeDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.homeDropDown.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.homeDropDown.Size = new System.Drawing.Size(264, 26);
-			this.homeDropDown.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.homeDropDown.TabIndex = 107;
-			this.homeDropDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.homeDropDown.SelectedIndexChanged += new System.EventHandler(this.homeDropDown_SelectedIndexChanged);
 			// 
 			// Home
 			// 
