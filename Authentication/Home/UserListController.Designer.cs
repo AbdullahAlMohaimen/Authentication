@@ -52,19 +52,18 @@
 			// 
 			// allUserGrid
 			// 
-			this.allUserGrid.AllowUserToOrderColumns = true;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allUserGrid.BackgroundColor = System.Drawing.Color.Wheat;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.allUserGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.allUserGrid.ColumnHeadersHeight = 4;
+			this.allUserGrid.ColumnHeadersHeight = 25;
 			this.allUserGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -75,10 +74,10 @@
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.allUserGrid.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.allUserGrid.Location = new System.Drawing.Point(8, 65);
+			this.allUserGrid.Location = new System.Drawing.Point(9, 91);
 			this.allUserGrid.Name = "allUserGrid";
 			this.allUserGrid.RowHeadersVisible = false;
-			this.allUserGrid.Size = new System.Drawing.Size(842, 420);
+			this.allUserGrid.Size = new System.Drawing.Size(840, 393);
 			this.allUserGrid.TabIndex = 0;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -92,7 +91,7 @@
 			this.allUserGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.allUserGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-			this.allUserGrid.ThemeStyle.HeaderStyle.Height = 4;
+			this.allUserGrid.ThemeStyle.HeaderStyle.Height = 25;
 			this.allUserGrid.ThemeStyle.ReadOnly = false;
 			this.allUserGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

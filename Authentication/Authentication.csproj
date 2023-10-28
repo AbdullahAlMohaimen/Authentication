@@ -70,9 +70,8 @@
     <Reference Include="FarPoint.Win.Spread.Design, Version=16.2.20231.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
       <HintPath>..\packages\GrapeCity.Spread.WinForms.Design.16.2.0.1475\lib\net462\FarPoint.Win.Spread.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>

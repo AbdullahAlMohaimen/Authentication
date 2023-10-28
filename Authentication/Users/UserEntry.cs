@@ -41,7 +41,7 @@ namespace Authentication.Users
 		{
 			try
 			{
-				_roles = roleService.GetRole();
+				_roles = roleService.GetAllRole();
 				if (_roles.Count != 0)
 				{
 					txt_UserRoleID.Items.Add("Select User Type");

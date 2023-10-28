@@ -66,7 +66,7 @@ namespace Authentication.Service
 		#endregion
 
 		#region  GetRole()
-		public List<Role> GetRole()
+		public List<Role> GetAllRole()
 		{
 			List<Role> roles = new List<Role>();
 			try

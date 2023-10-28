@@ -67,7 +67,7 @@ namespace Authentication.BO
 	public interface IRoleService
 	{
 		Role GetRoleByID(int ID);
-		List<Role> GetRole();
+		List<Role> GetAllRole();
 		string Save(Role employee);
 		void Delete(int ID);
 	}
