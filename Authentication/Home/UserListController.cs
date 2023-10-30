@@ -50,13 +50,20 @@ namespace Authentication.Home
 					allUserDataTable.Rows.Add(row);
 				}
 				allUserGrid.DataSource = allUserDataTable;
-
 				this.SetGridColumn();
+
 
 				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
 				editButton.HeaderText = "Edit";
 				editButton.Text = "Edit";
 				editButton.UseColumnTextForButtonValue = true;
+				editButton.DefaultCellStyle.BackColor = SystemColors.Control;
+				editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+				editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+				editButton.CellTemplate.Style.BackColor = Color.SeaGreen;
+				editButton.CellTemplate.Style.ForeColor = Color.Maroon;
+				editButton.CellTemplate.Style.SelectionBackColor = Color.Tomato;
+				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(editButton);
 
 				DataGridViewButtonColumn active = new DataGridViewButtonColumn();
