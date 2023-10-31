@@ -28,10 +28,21 @@ namespace Authentication.Users
 		BO.Users _user = new BO.Users();
 		BO.Password _password = new BO.Password();
 
+		#region property
+		private UserControl callingForm;
+		public string _loginID;
+		public string LoginID
+		{
+			get { return _loginID; }
+			set { _loginID = value; }
+		}
+		#endregion
+
 		#region Load
-		public UserEntry()
+		public UserEntry(UserControl caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 			this.LoadRoalData();
 		}
 		#endregion

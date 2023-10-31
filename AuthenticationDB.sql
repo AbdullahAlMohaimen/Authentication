@@ -134,6 +134,22 @@ select * from LoginInfo;
 select * from Role;
 select * from BadLoginAttemptInfo;
 
+select * from Users
+
+
+ALTER TABLE Users
+ADD CreatedBy INT null;
+ALTER TABLE Users
+ADD CreatedDate DateTime null;
+ALTER TABLE Users
+ADD ModifiedBy INT null;
+ALTER TABLE Users
+ADD ModifiedDate DateTime null;
+ALTER TABLE Users
+ADD PasswordResetBy INT NULL;
+ALTER TABLE Users
+ADD PasswordResetDate DateTime NULL;
+
 
 
 

@@ -1,5 +1,6 @@
 ﻿using Authentication.BO;
 using Authentication.Service;
+using Authentication.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +19,16 @@ namespace Authentication.Home
 		DataTable allUserDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
+
+		#region Load
 		public UserListController()
 		{
 			InitializeComponent();
 
 			this.GetAllRole();
 			this.GetAllUsers();
-
 		}
+		#endregion
 
 		#region Get ALL Users
 		public void GetAllUsers()
@@ -62,7 +65,6 @@ namespace Authentication.Home
 				editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 				editButton.CellTemplate.Style.BackColor = Color.SeaGreen;
 				editButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				editButton.CellTemplate.Style.SelectionBackColor = Color.Tomato;
 				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(editButton);
 
@@ -70,12 +72,24 @@ namespace Authentication.Home
 				active.HeaderText = "Active";
 				active.Text = "Active";
 				active.UseColumnTextForButtonValue = true;
+				active.DefaultCellStyle.BackColor = SystemColors.Control;
+				active.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+				active.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+				active.CellTemplate.Style.BackColor = Color.SeaGreen;
+				active.CellTemplate.Style.ForeColor = Color.Maroon;
+				active.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(active);
 
 				DataGridViewButtonColumn action = new DataGridViewButtonColumn();
 				action.HeaderText = "Action";
 				action.Text = "Reset Password";
 				action.UseColumnTextForButtonValue = true;
+				action.DefaultCellStyle.BackColor = SystemColors.Control;
+				action.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+				action.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+				action.CellTemplate.Style.BackColor = Color.SeaGreen;
+				action.CellTemplate.Style.ForeColor = Color.Maroon;
+				action.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(action);
 
 
@@ -117,23 +131,21 @@ namespace Authentication.Home
 		#region Set Grid Column
 		public void SetGridColumn()
 		{
-			allUserGrid.Columns["Login ID"].Width = 80;
-			allUserGrid.Columns["User Name"].Width = 130;
+			allUserGrid.Columns["Login ID"].Width = 70;
+			allUserGrid.Columns["User Name"].Width = 150;
 			allUserGrid.Columns["Role"].Width = 120;
-			allUserGrid.Columns["Status"].Width = 80;
+			allUserGrid.Columns["Status"].Width = 70;
 			allUserGrid.Columns["Email"].Width = 200;
 		}
 		#endregion
 
-		// Event handler for cell click
+		#region Grid Button Click
 		private void allUserGrid_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
 			{
-				// Check if the clicked cell is a button cell
 				if (allUserGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex < allUserGrid.Rows.Count - 1)
 				{
-					// Check which button column was clicked
 					if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
 					{
 
@@ -149,6 +161,15 @@ namespace Authentication.Home
 				}
 			}
 		}
+		#endregion
 
+		#region AddNewUser Button
+		private void AddNewUser_Click(object sender, EventArgs e)
+		{
+			UserEntry userEntry = new UserEntry(this);
+			userEntry._loginID = "00098";
+			userEntry.Show();
+		}
+		#endregion
 	}
 }

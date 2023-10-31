@@ -21,6 +21,12 @@ namespace Authentication.BO
 			_tempStatusTime = null;
 			_changePasswordNextLogon = 0;
 			_passwordResetByAdmin = false;
+			_createdBy = 0;
+			_createdDate = null;
+			_modifiedBy = 0;
+			_modifiedDate = null;
+			_passwordResetBy = 0;
+			_passwordResetDate = null;
 		}
 		#endregion
 
@@ -167,6 +173,62 @@ namespace Authentication.BO
 		{
 			get { return _passwordResetByAdmin; }
 			set { _passwordResetByAdmin = value; }
+		}
+		#endregion
+
+
+
+		#region CreatedBy : INT 
+		private int _createdBy;
+		public int CreatedBy
+		{
+			get { return _createdBy; }
+			set { _createdBy = value; }
+		}
+		#endregion
+
+		#region CreatedDate : DateTime 
+		private DateTime? _createdDate;
+		public DateTime? CreatedDate
+		{
+			get { return _createdDate; }
+			set { _createdDate = value; }
+		}
+		#endregion
+
+		#region ModifiedBy : INT 
+		private int _modifiedBy;
+		public int ModifiedBy
+		{
+			get { return _modifiedBy; }
+			set { _modifiedBy = value; }
+		}
+		#endregion
+
+		#region ModifiedDate : DateTime 
+		private DateTime? _modifiedDate;
+		public DateTime? ModifiedDate
+		{
+			get { return _modifiedDate; }
+			set { _modifiedDate = value; }
+		}
+		#endregion
+
+		#region PasswordResetBy : INT 
+		private int _passwordResetBy;
+		public int PasswordResetBy
+		{
+			get { return _passwordResetBy; }
+			set { _passwordResetBy = value; }
+		}
+		#endregion
+
+		#region PasswordResetDate : DateTime 
+		private DateTime? _passwordResetDate;
+		public DateTime? PasswordResetDate
+		{
+			get { return _passwordResetDate; }
+			set { _passwordResetDate = value; }
 		}
 		#endregion
 
