@@ -84,7 +84,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region GET
+		#region GetLoginInfoByLoginID
 		internal static IDataReader GetLoginInfoByLoginID(string loginID)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -118,6 +118,28 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '" + loginID + "'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region GetLastLoginInfo
+		internal static IDataReader GetLastLoginInfo(string loginID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '" + loginID + "' order by LogoutTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

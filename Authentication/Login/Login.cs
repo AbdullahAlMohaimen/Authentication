@@ -68,6 +68,9 @@ namespace Authentication.Login
 			List<LoginInfo> loginInfos = new List<LoginInfo>();
 			UserService userService = new UserService();
 			BO.Password password = new BO.Password();
+
+			int nLoginCount = 0;
+			int _nBadLoginAttempt = 10;
 			try
 			{
 				if (!string.IsNullOrEmpty(txt_UserLoginID.Text))
@@ -77,9 +80,40 @@ namespace Authentication.Login
 						oUser = userService.GetUserByLoginID(txt_UserLoginID.Text);
 						if(oUser != null)
 						{
+							if(oUser.ForgetPasswordDate != DateTime.MinValue)
+							{
+								DateTime forgetPasswordDate = oUser.ForgetPasswordDate;
+								DateTime nowTime = DateTime.Now;
+								TimeSpan expireHour = (TimeSpan)(DateTime.Now - oUser.ForgetPasswordDate);
+								if (expireHour.Days >= 1)
+								{
+									MessageBox.Show("Your temporary password has been expired! \nplease contact with Administrator.", "Password Expired", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									return;
+								}
+							}
 							if (password.AreEqual(txt_Password.Text,oUser.Password,oUser.Salt))
 							{
-								if(oUser.Status != BO.EnumStatus.Active)
+								DateTime lastBadAttemptTime = oUser.TempStatusTime.AddMinutes(+45);
+								DateTime currentTime = DateTime.Now;
+								if (lastBadAttemptTime > currentTime)
+								{
+									if (lastBadAttemptTime > currentTime)
+									{
+										if (oUser.TempStatus == EnumStatus.Inactive)
+										{
+											MessageBox.Show("Your account has been inactive for 30 minutes because you entered the wrong password several times.", "Locked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+											return;
+										}
+									}
+								}
+
+								if (oUser.PasswordResetByAdmin != true)
+								{
+									MessageBox.Show("Please change your password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									return;
+								}
+
+								if (oUser.Status != BO.EnumStatus.Active)
 								{
 									MessageBox.Show("Your account is " + oUser.Status.ToString() + ".\nplease contact with Administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 									return;
@@ -87,7 +121,10 @@ namespace Authentication.Login
 								loginInfos = loginInfoService.GetLoginInfoByLoginID(oUser.LoginID);
 								if (loginInfos.Count != 0)
 								{
+									foreach (LoginInfo li in loginInfos)
+									{
 
+									}
 								}
 								else
 								{

@@ -138,11 +138,16 @@ namespace Authentication.Users
 				invalidMessage = this.isValidate();
 				if (string.IsNullOrEmpty(invalidMessage) || invalidMessage == "")
 				{
-					_user.LoginID = txt_UserLoginID.Text;
-					_user.UserName = txt_UserName.Text;
-					_user.RoleID = _role.ID;
-					_user.Email = txt_UserEmail.Text;
-					_user.MasterID = SearchEmp.ID;
+					if (_user.IsNew == true)
+					{
+						_user.LoginID = txt_UserLoginID.Text;
+						_user.UserName = txt_UserName.Text;
+						_user.RoleID = _role.ID;
+						_user.Email = txt_UserEmail.Text;
+						_user.MasterID = SearchEmp.ID;
+
+						_user.CreatedDate = DateTime.Now;
+					}
 
 					result = userService.Save(_user);
 

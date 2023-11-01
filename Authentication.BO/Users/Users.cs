@@ -16,9 +16,7 @@ namespace Authentication.BO
 			_status = EnumStatus.Active;
 			_authorizedDate = DateTime.Now;
 			_passwordHints = string.Empty;
-			_forgetPasswordDate = null;
 			_tempStatus = EnumStatus.Active;
-			_tempStatusTime = null;
 			_changePasswordNextLogon = 0;
 			_passwordResetByAdmin = false;
 			_createdBy = 0;
@@ -123,8 +121,8 @@ namespace Authentication.BO
 		#endregion
 
 		#region ForgetPasswordDate : DateTime 
-		private DateTime? _forgetPasswordDate;
-		public DateTime? ForgetPasswordDate
+		private DateTime _forgetPasswordDate;
+		public DateTime ForgetPasswordDate
 		{
 			get { return _forgetPasswordDate; }
 			set { _forgetPasswordDate = value; }
@@ -150,8 +148,8 @@ namespace Authentication.BO
 		#endregion
 
 		#region TempStatusTime : DateTime 
-		private DateTime? _tempStatusTime;
-		public DateTime? TempStatusTime
+		private DateTime _tempStatusTime;
+		public DateTime TempStatusTime
 		{
 			get { return _tempStatusTime; }
 			set { _tempStatusTime = value; }
@@ -175,8 +173,6 @@ namespace Authentication.BO
 			set { _passwordResetByAdmin = value; }
 		}
 		#endregion
-
-
 
 		#region CreatedBy : INT 
 		private int _createdBy;

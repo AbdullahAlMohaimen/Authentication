@@ -14,6 +14,7 @@ namespace Authentication.BO
 		public LoginInfo() { 
 			_loginTime = DateTime.Now;
 			_logoutTime = null;
+			_isLogout = false;
 		}
 		#endregion
 
@@ -70,6 +71,15 @@ namespace Authentication.BO
 		{
 			get { return _logoutTime; }
 			set { _logoutTime = value; }
+		}
+		#endregion
+
+		#region IsLogout : Bool
+		public bool _isLogout;
+		public bool IsLogout
+		{
+			get { return _isLogout; }
+			set { _isLogout = value; }
 		}
 		#endregion
 

@@ -23,6 +23,7 @@ namespace Authentication.Service
 			oLoginInfo.PCNumber = oReader.GetString("PCNumber", string.Empty);
 			oLoginInfo.LoginTime = oReader.GetDateTime("LoginTime", DateTime.MinValue);
 			oLoginInfo.LogoutTime = oReader.GetDateTime("LogoutTime", DateTime.MinValue);
+			oLoginInfo.IsLogout = oReader.GetBoolean("isLogout",false);
 			this.SetObjectState(oLoginInfo, BO.ObjectState.Saved);
 		}
 
@@ -69,6 +70,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region GetLoginInfoByLoginID
 		public List<LoginInfo> GetLoginInfoByLoginID(string loginID)
 		{
 			List<LoginInfo> loginInfos = new List<LoginInfo>();
@@ -85,6 +87,7 @@ namespace Authentication.Service
 			}
 			return loginInfos;
 		}
+		#endregion
 
 		#region GetNoOFLogin
 		public int NoOfLoginInfo(string loginID)
@@ -109,6 +112,25 @@ namespace Authentication.Service
 				#endregion
 			}
 			return nCount;
+		}
+		#endregion
+
+		#region GetLastLoginInfo
+		public List<LoginInfo> GetLastLoginInfo(string loginID)
+		{
+			List<LoginInfo> loginInfos = new List<LoginInfo>();
+			loginInfos = null;
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLastLoginInfo(loginID));
+				loginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return loginInfos;
 		}
 		#endregion
 	}

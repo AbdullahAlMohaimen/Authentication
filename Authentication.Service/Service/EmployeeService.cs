@@ -47,6 +47,13 @@ namespace Authentication.Service
 			oEmployee.LastChangedDate = oReader.GetDateTime("LastChangedDate", DateTime.MinValue);
 			oEmployee.TempStatus = (EnumStatus)oReader.GetInt32("TempStatus", 1);
 			oEmployee.TempStatusTime = oReader.GetDateTime("TempStatusTime", DateTime.MinValue);
+
+			oEmployee.CreatedBy = oReader.GetInt32("CreatedBy", 0);
+			oEmployee.CreatedDate = oReader.GetDateTime("CreatedDate", DateTime.MinValue);
+			oEmployee.ModifiedBy = oReader.GetInt32("ModifiedBy", 0);
+			oEmployee.ModifiedDate = oReader.GetDateTime("ModifiedDate", DateTime.MinValue);
+			oEmployee.PasswordResetBy = oReader.GetInt32("PasswordResetBy", 0);
+			oEmployee.PasswordResetDate = oReader.GetDateTime("PasswordResetDate", DateTime.MinValue);
 			this.SetObjectState(oEmployee, Authentication.BO.ObjectState.Saved);
 		}
 		protected override T CreateObject<T>(DataReader oReader)

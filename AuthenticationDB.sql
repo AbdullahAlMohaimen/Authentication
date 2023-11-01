@@ -151,5 +151,19 @@ ALTER TABLE Users
 ADD PasswordResetDate DateTime NULL;
 
 
+ALTER TABLE Employee
+ADD CreatedBy INT null;
+ALTER TABLE Employee
+ADD CreatedDate DateTime null;
+ALTER TABLE Employee
+ADD ModifiedBy INT null;
+ALTER TABLE Employee
+ADD ModifiedDate DateTime null;
+ALTER TABLE Employee
+ADD PasswordResetBy INT NULL;
+ALTER TABLE Employee
+ADD PasswordResetDate DateTime NULL;
 
+Alter table LoginInfo
+add isLogout bit null; 
 
