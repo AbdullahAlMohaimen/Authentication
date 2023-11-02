@@ -143,6 +143,10 @@ namespace Authentication.Login
 
 								lastLoginInfos = loginInfoService.GetLastLoginInfo(oUser.LoginID);
 
+								if (lastLoginInfos.Count >0)
+								{
+
+								}
 							}
 							else
 							{
