@@ -66,6 +66,7 @@ namespace Authentication.Login
 			HardPasswordSetupService oHP = new HardPasswordSetupService();
 			LoginInfoService loginInfoService = new LoginInfoService();
 			List<LoginInfo> loginInfos = new List<LoginInfo>();
+			List<LoginInfo> lastLoginInfos = new List<LoginInfo>();
 			UserService userService = new UserService();
 			BO.Password password = new BO.Password();
 
@@ -139,6 +140,8 @@ namespace Authentication.Login
 									}
 									return;
 								}
+
+								lastLoginInfos = loginInfoService.GetLastLoginInfo(oUser.LoginID);
 
 							}
 							else

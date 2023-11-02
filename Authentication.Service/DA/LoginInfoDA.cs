@@ -139,7 +139,7 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '" + loginID + "' order by LogoutTime desc", conn);
+				getCommand = new SqlCommand("Select top 1 * from LoginInfo where LoginID = '" + loginID + "' and LogoutTime is not null order by LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
