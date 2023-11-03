@@ -196,5 +196,32 @@ namespace Authentication.Service
 			}
 		}
 		#endregion
+
+		#region IsPasswordExpired
+		public bool IsPasswordExpired(string loginID)
+		{
+			UserService userService = new UserService();
+			HardPasswordSetup oHardPasswordSetup = new HardPasswordSetup();
+			Users oUser = new Users();
+			bool bValid = true;
+
+			oUser = userService.GetUserByLoginID(loginID);
+			oHardPasswordSetup = GetHardPasswordSetup(1);
+
+			if (oHardPasswordSetup != null)
+			{
+				if (oHardPasswordSetup.PasswordExpDays > 0)
+				{
+					if (oUser != null)
+					{
+						TimeSpan ts = DateTime.Today - oUser.LastChangeDate;
+						if(ts.Days > oHardPasswordSetup.PasswordExpDays)
+							bValid = false;
+					}
+				}
+			}
+			return bValid;
+		}
+		#endregion
 	}
 }

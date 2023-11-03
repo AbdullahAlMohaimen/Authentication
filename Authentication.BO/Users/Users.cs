@@ -228,6 +228,15 @@ namespace Authentication.BO
 		}
 		#endregion
 
+		#region StatusChangedDate : DateTime 
+		private DateTime? _statusChangedDate;
+		public DateTime? StatusChangedDate
+		{
+			get { return _statusChangedDate; }
+			set { _statusChangedDate = value; }
+		}
+		#endregion
+
 		#endregion
 	}
 	#endregion

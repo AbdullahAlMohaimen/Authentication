@@ -28,6 +28,15 @@ namespace Authentication.BO
 		}
 		#endregion
 
+		#region UserID : String 
+		private int _userID;
+		public int UserID
+		{
+			get { return _userID; }
+			set { _userID = value; }
+		}
+		#endregion
+
 		#region Type : String 
 		private string _type;
 		public string Type
@@ -62,10 +71,10 @@ namespace Authentication.BO
 	#region IBadLoginAttemptServie
 	public interface IBadLoginAttemptServie
 	{
-		BadLoginAttemptInfo GetBadLoginAttemptInfo(int ID);
-		List<BadLoginAttemptInfo> GetBadLoginAttemptInfos();
-		string Save(BadLoginAttemptInfo badLogin);
-		void Delete(int ID);
+		//BadLoginAttemptInfo GetBadLoginAttemptInfo(int ID);
+		//List<BadLoginAttemptInfo> GetBadLoginAttemptInfos();
+		//string Save(BadLoginAttemptInfo badLogin);
+		//void Delete(int ID);
 	}
 	#endregion
 }

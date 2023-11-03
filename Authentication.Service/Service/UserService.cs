@@ -46,7 +46,7 @@ namespace Authentication.Service
 			oUser.ModifiedDate = oReader.GetDateTime("ModifiedDate", DateTime.MinValue);
 			oUser.PasswordResetBy = oReader.GetInt32("PasswordResetBy", 0);
 			oUser.PasswordResetDate = oReader.GetDateTime("PasswordResetDate", DateTime.MinValue);
-
+			oUser.StatusChangedDate = oReader.GetDateTime("StatusChangedDate", DateTime.MinValue);
 			this.SetObjectState(oUser, Authentication.BO.ObjectState.Saved);
 		}
 		protected override T CreateObject<T>(DataReader oReader)
@@ -219,5 +219,45 @@ namespace Authentication.Service
 			return result;
 		}
 		#endregion
+
+		#region Update
+		public string Update(Users user)
+		{
+			string result = null;
+			try
+			{
+				if (user != null)
+				{
+					result = UsersDA.Update(user);
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "Failed";
+			}
+			return result;
+		}
+		#endregion
+
+		#region UpdateUserTempStatus
+		public string UpdateUserTempStatus(int userID)
+		{
+			string result = null;
+			try
+			{
+				if (userID != null)
+				{
+					EnumStatus tempStatus = EnumStatus.Inactive;
+					result = UsersDA.UpdateUserTempStatus(userID , tempStatus);
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "Failed";
+			}
+			return result;
+		}
+		#endregion
+
 	}
 }

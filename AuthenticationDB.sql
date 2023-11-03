@@ -167,3 +167,7 @@ ADD PasswordResetDate DateTime NULL;
 Alter table LoginInfo
 add isLogout bit null; 
 
+ALter table Users
+add StatusChangedDate DateTime null;
+Alter Table BadLoginAttemptInfo
+Add UserID int not null;

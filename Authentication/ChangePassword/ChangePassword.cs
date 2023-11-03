@@ -288,6 +288,7 @@ namespace Authentication
 			item.LoginTime = DateTime.Now;
 			item.LogoutTime = null;
 			item.Type = "Not Initiate";
+			item.IsLogout = true;
 			srv.Save(item);
 		}
 	}

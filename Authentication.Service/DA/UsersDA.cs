@@ -64,6 +64,34 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Update
+		internal static string Update(Users oUser)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Users set Password = '" + oUser.Password + "'," +
+						"Salt = '" + oUser.Salt + "'," +
+						"ForgetPasswordDate = '" + oUser.ForgetPasswordDate + "'," +
+						"ChangePasswordAtNextLogon = '" + oUser.ChangePasswordNextLogon + "' where UserID = '" + oUser.ID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
 		#region Update ForgetPassword
 		internal static string UpdateForgetPassword(Users oUser)
 		{
@@ -119,6 +147,32 @@ namespace Authentication.Service
 			}
 		}
 		#endregion
+
+		#region Update
+		internal static string UpdateUserTempStatus(int userID, EnumStatus tempStatus)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Users set TempStatus = '"+ tempStatus + "' where UserID = '"+ userID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
 		#region GET
 		internal static IDataReader Get()
 		{
