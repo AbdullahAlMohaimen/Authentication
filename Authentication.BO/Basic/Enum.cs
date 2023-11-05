@@ -62,7 +62,8 @@
 		Regardless = 0,
 		Active = 1,
 		Inactive = 2,
-		Locked = 3
+		Locked = 3,
+		PasswordExpired = 4,
 	}
 
 	public enum EnumLogoutType : short

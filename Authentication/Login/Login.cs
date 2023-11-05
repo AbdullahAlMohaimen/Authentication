@@ -116,7 +116,19 @@ namespace Authentication.Login
 
 								if (oUser.PasswordResetByAdmin != true)
 								{
-									MessageBox.Show("Please change your password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									DialogResult result = MessageBox.Show("An admin can reset your password.\nPlease change your password now.", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+									if (result == DialogResult.Yes)
+									{
+										ChangePassword changePassword = new ChangePassword(this);
+										changePassword._loginID = txt_UserLoginID.Text;
+										changePassword.SetLoginID(txt_UserLoginID.Text);
+										changePassword.SetType("Login");
+										changePassword.Show();
+									}
+									else
+									{
+										return;
+									}
 									return;
 								}
 
@@ -135,7 +147,7 @@ namespace Authentication.Login
 								}
 								else
 								{
-									DialogResult result = MessageBox.Show("You are logged to system first time.\nPlease change your password.", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+									DialogResult result = MessageBox.Show("You are logged to system first time.\nPlease change your password.", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 									if (result == DialogResult.OK)
 									{
 										ChangePassword changePassword = new ChangePassword(this);

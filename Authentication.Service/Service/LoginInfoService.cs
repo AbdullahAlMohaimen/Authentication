@@ -75,9 +75,11 @@ namespace Authentication.Service
 		{
 			List<LoginInfo> loginInfos = new List<LoginInfo>();
 			loginInfos = null;
+			bool isLogout;
 			try
 			{
-				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfoByLoginID(loginID));
+				isLogout = false;
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfoByLoginID(loginID , isLogout));
 				loginInfos = this.CreateObjects<LoginInfo>(dr);
 				dr.Close();
 			}

@@ -85,7 +85,7 @@ namespace Authentication.Service
 		#endregion
 
 		#region GetLoginInfoByLoginID
-		internal static IDataReader GetLoginInfoByLoginID(string loginID)
+		internal static IDataReader GetLoginInfoByLoginID(string loginID, bool isLogout)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
 			SqlConnection conn = new SqlConnection(connectionString);
@@ -95,7 +95,7 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+loginID+"'", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+ loginID + "' and isLogout = '"+ isLogout + "'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
