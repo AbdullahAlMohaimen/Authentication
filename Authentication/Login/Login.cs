@@ -89,7 +89,7 @@ namespace Authentication.Login
 						{
 							if(oUser.ForgetPasswordDate != DateTime.MinValue)
 							{
-								DateTime forgetPasswordDate = oUser.ForgetPasswordDate;
+								DateTime? forgetPasswordDate = oUser.ForgetPasswordDate;
 								DateTime nowTime = DateTime.Now;
 								TimeSpan expireHour = (TimeSpan)(DateTime.Now - oUser.ForgetPasswordDate);
 								if (expireHour.Days >= 1)
@@ -114,20 +114,16 @@ namespace Authentication.Login
 									}
 								}
 
-								if (oUser.PasswordResetByAdmin != true)
+								if (oUser.PasswordResetByAdmin != false)
 								{
 									DialogResult result = MessageBox.Show("An admin can reset your password.\nPlease change your password now.", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-									if (result == DialogResult.Yes)
+									if (result == DialogResult.OK)
 									{
 										ChangePassword changePassword = new ChangePassword(this);
 										changePassword._loginID = txt_UserLoginID.Text;
 										changePassword.SetLoginID(txt_UserLoginID.Text);
 										changePassword.SetType("Login");
 										changePassword.Show();
-									}
-									else
-									{
-										return;
 									}
 									return;
 								}
@@ -171,7 +167,7 @@ namespace Authentication.Login
 										oUser.StatusChangedDate = DateTime.Now;
 										userService.Update(oUser);
 
-										MessageBox.Show("Wrong Password!\nPlease enter correct password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+										MessageBox.Show("You didn't access last 90 days.Your account deactivated by system.\nplease contact with Administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 										return;
 									}
 								}
@@ -180,7 +176,7 @@ namespace Authentication.Login
 								{
 									if (!oHP.IsPasswordExpired(oUser.LoginID))
 									{
-										MessageBox.Show("Password expired.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+										MessageBox.Show("Password expired.\nplease contact with Administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 										return;
 									}
 									else
@@ -193,12 +189,28 @@ namespace Authentication.Login
 											{
 												if(oHardPasswordSetup.PasswordExpDays - ts.Days == 0)
 												{
-													MessageBox.Show("\"Your password will expire today.  Do you want to change password now ?", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+													DialogResult result = MessageBox.Show("Your password will expire today. Do you want to change password now ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+													if (result == DialogResult.OK)
+													{
+														ChangePassword changePassword = new ChangePassword(this);
+														changePassword._loginID = txt_UserLoginID.Text;
+														changePassword.SetLoginID(txt_UserLoginID.Text);
+														changePassword.SetType("Login");
+														changePassword.Show();
+													}
 													return;
 												}
 												else if(oHardPasswordSetup.PasswordExpDays - ts.Days <= oHardPasswordSetup.PasswordExpNotificationDays)
 												{
-													MessageBox.Show("Your password will expire in" + (oHardPasswordSetup.PasswordExpDays - ts.Days).ToString() +" days. Do you want to change password now ?", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+													DialogResult result = MessageBox.Show("Your password will expire in" + (oHardPasswordSetup.PasswordExpDays - ts.Days).ToString() +" days. Do you want to change password now ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+													if (result == DialogResult.OK)
+													{
+														ChangePassword changePassword = new ChangePassword(this);
+														changePassword._loginID = txt_UserLoginID.Text;
+														changePassword.SetLoginID(txt_UserLoginID.Text);
+														changePassword.SetType("Login");
+														changePassword.Show();
+													}
 													return;
 												}
 											}
@@ -208,7 +220,17 @@ namespace Authentication.Login
 
 								if (oUser.ChangePasswordNextLogon == 1)
 								{
-									MessageBox.Show("Please change your password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									MessageBox.Show("", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+									DialogResult result = MessageBox.Show("This a temporary password, and this password is valid with in 24 hours.\nPlease change your password now", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+									if (result == DialogResult.OK)
+									{
+										ChangePassword changePassword = new ChangePassword(this);
+										changePassword._loginID = txt_UserLoginID.Text;
+										changePassword.SetLoginID(txt_UserLoginID.Text);
+										changePassword.SetType("Login");
+										changePassword.Show();
+									}
 									return;
 								}
 
@@ -217,7 +239,12 @@ namespace Authentication.Login
 								oLoginInfo.LoginID = oUser.LoginID;
 								this.SaveLoginHistory(oLoginInfo);
 
-
+								Home.Home home = new Home.Home(this);
+								home._loginID = txt_UserLoginID.Text;
+								home.SetCurrentUser(oUser);
+								home.SetType("Login");
+								this.Close();
+								home.Show();
 
 							}
 							else

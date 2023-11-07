@@ -133,7 +133,7 @@ namespace Authentication.Service
 					SqlCommand updateCommand = new SqlCommand("Update Users set Password = '" + oUser.Password + "'," +
 						"Salt = '" + oUser.Salt + "'," +
 						"LastChangedDate = '" + oUser.LastChangeDate + "'," +
-						"ChangePasswordAtNextLogon = '" + oUser.ChangePasswordNextLogon + "' where UserID = '"+oUser.ID +"'", conn, tc);
+						"ChangePasswordAtNextLogon = '" + oUser.ChangePasswordNextLogon + "',ForgetPasswordDate = '"+oUser.ForgetPasswordDate+"' where UserID = '"+oUser.ID +"'", conn, tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();

@@ -20,10 +20,13 @@ namespace Authentication
 {
 	public partial class ChangePassword : Form
 	{
+		#region Service
 		UserService userService = new UserService();
-		string Type;
-		#region property
+		#endregion
+
+		#region Variable / property
 		private Form callingForm;
+		string Type;
 		public string _loginID;
 		public string LoginID
 		{
@@ -54,7 +57,7 @@ namespace Authentication
 		}
 		#endregion
 
-		#region Load
+		#region load ( Constructor ) 
 		public ChangePassword(Form caller)
 		{
 			InitializeComponent();
@@ -206,6 +209,7 @@ namespace Authentication
 														oUser.Salt = salt;
 														oUser.ChangePasswordNextLogon = 0;
 														oUser.LastChangeDate = DateTime.Now;
+														oUser.ForgetPasswordDate = null;
 														userService.UpdatePassword(oUser);
 
 														newHistory.UserPassword = newHashPassword;
@@ -273,6 +277,7 @@ namespace Authentication
 		}
 		#endregion
 
+		#region Clear Method
 		public void clearData()
 		{
 			this.txt_LoginID.Text = null;
@@ -280,6 +285,9 @@ namespace Authentication
 			this.txt_ConfirmPassword.Text = null;
 			this.txt_newPassword.Text = null;
 		}
+		#endregion
+
+		#region SaveLoginHistory
 		private void SaveLoginHistory(LoginInfo item)
 		{
 			LoginInfoService srv = new LoginInfoService();
@@ -291,5 +299,6 @@ namespace Authentication
 			item.IsLogout = true;
 			srv.Save(item);
 		}
+		#endregion
 	}
 }

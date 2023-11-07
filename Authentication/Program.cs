@@ -16,7 +16,7 @@ namespace Authentication
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Home.Home());
+			Application.Run(new Login.Login());
 		}
 	}
 }

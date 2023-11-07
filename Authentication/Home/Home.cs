@@ -14,15 +14,28 @@ namespace Authentication.Home
 {
 	public partial class Home : Form
 	{
-		#region Variable
-		BO.Users oUser = new BO.Users();
+		#region Service
 		UserService _userService = new UserService();
 		#endregion
 
-		#region Constructor
-		public Home()
+		#region Variable / Property
+		BO.Users currentUser = new BO.Users();
+
+		private Form callingForm;
+		string Type;
+		public string _loginID;
+		public string LoginID
+		{
+			get { return _loginID; }
+			set { _loginID = value; }
+		}
+		#endregion
+
+		#region load ( Constructor ) 
+		public Home(Form caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 			//AdministratorDropDown.DataSource = Enum.GetValues(typeof(EnumAdministrator));
 			this.getAllMenu();
 			this.getHomeDropDownValue();
@@ -33,15 +46,27 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.Users oUser)
+		{
+			currentUser = oUser;
+		}
+
+		public void SetType(string type)
+		{
+			this.Type = type;
+		}
+		#endregion
+
 		#region Get Dropdown Data
 		public void getHomeDropDownValue()
 		{
-			if(oUser.UserName != null)
+			if(currentUser.UserName != null)
 			{
-				string[] nameParts = oUser.UserName.Split(' ');
-				string lastName = nameParts[nameParts.Length - 1]+"("+oUser.LoginID+")";
+				string[] nameParts = currentUser.UserName.Split(' ');
+				string lastName = nameParts[nameParts.Length - 1]+"("+ currentUser.LoginID+")";
 				homeDropDown.Items.Add(lastName);
-				homeDropDown.Items.Add(oUser.UserName);
+				homeDropDown.Items.Add(currentUser.UserName);
 			}
 			homeDropDown.Items.Add("Setting");
 			homeDropDown.Items.Add("Logout");
@@ -129,12 +154,13 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region Home DropDown
 		private void homeDropDown_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			ComboBox cmb = (ComboBox)sender;
 			string selectedValue = cmb.SelectedItem as string;
 
-			if (selectedValue == oUser.UserName)
+			if (selectedValue == currentUser.UserName)
 			{
 
 			}
@@ -149,5 +175,6 @@ namespace Authentication.Home
 		
 			}
 		}
+		#endregion
 	}
 }

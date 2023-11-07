@@ -121,8 +121,8 @@ namespace Authentication.BO
 		#endregion
 
 		#region ForgetPasswordDate : DateTime 
-		private DateTime _forgetPasswordDate;
-		public DateTime ForgetPasswordDate
+		private DateTime? _forgetPasswordDate;
+		public DateTime? ForgetPasswordDate
 		{
 			get { return _forgetPasswordDate; }
 			set { _forgetPasswordDate = value; }
