@@ -1,3 +1,4 @@
+drop database AuthenticationDB;
 Create DataBase AuthenticationDB;
 USE AuthenticationDB;
 
