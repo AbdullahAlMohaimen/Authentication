@@ -19,7 +19,7 @@ namespace Authentication.Home
 		#endregion
 
 		#region Variable / Property
-		BO.Users currentUser = new BO.Users();
+		BO.CurrentUser oCurrentUser = new CurrentUser();
 
 		private Form callingForm;
 		string Type;
@@ -38,7 +38,7 @@ namespace Authentication.Home
 			callingForm = caller;
 			//AdministratorDropDown.DataSource = Enum.GetValues(typeof(EnumAdministrator));
 			this.getAllMenu();
-			this.getHomeDropDownValue();
+			
 			AdministartorDashboard administartorDashboard = new AdministartorDashboard();
 			AddControl(administartorDashboard);
 			this.headerTitle.Text = "Dashboard";
@@ -47,9 +47,10 @@ namespace Authentication.Home
 		#endregion
 
 		#region SetCurrentUser & Type
-		public void SetCurrentUser(BO.Users oUser)
+		public void SetCurrentUser(BO.CurrentUser oUser)
 		{
-			currentUser = oUser;
+			oCurrentUser = oUser;
+			this.getHomeDropDownValue();
 		}
 
 		public void SetType(string type)
@@ -61,12 +62,12 @@ namespace Authentication.Home
 		#region Get Dropdown Data
 		public void getHomeDropDownValue()
 		{
-			if(currentUser.UserName != null)
+			if(oCurrentUser.UserName != null)
 			{
-				string[] nameParts = currentUser.UserName.Split(' ');
-				string lastName = nameParts[nameParts.Length - 1]+"("+ currentUser.LoginID+")";
-				homeDropDown.Items.Add(lastName);
-				homeDropDown.Items.Add(currentUser.UserName);
+				//string[] nameParts = oCurrentUser.UserName.Split(' ');
+				//string lastName = nameParts[nameParts.Length - 1]+"("+ oCurrentUser.LoginID+")";
+				//homeDropDown.Items.Add(lastName);
+				homeDropDown.Items.Add(oCurrentUser.UserName);
 			}
 			homeDropDown.Items.Add("Setting");
 			homeDropDown.Items.Add("Logout");
@@ -160,7 +161,7 @@ namespace Authentication.Home
 			ComboBox cmb = (ComboBox)sender;
 			string selectedValue = cmb.SelectedItem as string;
 
-			if (selectedValue == currentUser.UserName)
+			if (selectedValue == oCurrentUser.UserName)
 			{
 
 			}

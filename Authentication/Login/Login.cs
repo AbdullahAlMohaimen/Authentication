@@ -15,6 +15,10 @@ namespace Authentication.Login
 {
 	public partial class Login : Form
 	{
+		#region Global Variable
+		CurrentUser oCurrentUser = new CurrentUser();
+		#endregion
+
 		#region Load
 		public Login()
 		{
@@ -240,12 +244,22 @@ namespace Authentication.Login
 								oLoginInfo.LoginID = oUser.LoginID;
 								this.SaveLoginHistory(oLoginInfo);
 
+								#region Set CurrentUser
+								oCurrentUser.LoginID = oUser.LoginID;
+								oCurrentUser.UserName = oUser.UserName;
+								oCurrentUser.Status = (EnumStatus)oUser.Status;
+								oCurrentUser.Email = oUser.Email;
+								oCurrentUser.RoleID = oUser.RoleID;
+								oUser.MasterID = oUser.MasterID;
+								#endregion
+
 								Home.Home home = new Home.Home(this);
 								home._loginID = txt_UserLoginID.Text;
-								home.SetCurrentUser(oUser);
+								home.SetCurrentUser(oCurrentUser);
 								home.SetType("Login");
-								this.Close();
 								home.Show();
+								this.Hide();
+								
 
 							}
 							else

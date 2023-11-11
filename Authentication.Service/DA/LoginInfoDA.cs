@@ -95,7 +95,7 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+ loginID + "' and isLogout = '"+ isLogout + "'", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+ loginID + "' and isLogout is null", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

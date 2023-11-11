@@ -34,7 +34,7 @@ namespace Authentication.Service
 			{
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand insertCommand = new SqlCommand("Insert into BadLoginAttemptInfo(LoginID,Type,AttempTime,PcNumber,UserID)" +
+					SqlCommand insertCommand = new SqlCommand("Insert into BadLoginAttemptInfo(LoginID,Type,AttemptTime,PcNumber,UserID)" +
 						"values('"+ item.LoginID + "','"+ item.Type +"', '"+item.AttemptTime+"', '"+item.PCNumber+"','"+item.UserID+"')", conn, tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
@@ -69,7 +69,7 @@ namespace Authentication.Service
 
 			try
 			{
-				getCommand = new SqlCommand("Select * from BadLoginAttemptInfo where (UserID = '"+ UserID +"' LoginID = '" + loginID + "') and AttemptTime between '"+ fromTime + "' and '"+ toTime + "'", conn);
+				getCommand = new SqlCommand("Select * from BadLoginAttemptInfo where (UserID = '"+ UserID +"' and LoginID = '" + loginID + "') and AttemptTime between '"+ fromTime + "' and '"+ toTime + "'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
