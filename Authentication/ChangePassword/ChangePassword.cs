@@ -133,7 +133,7 @@ namespace Authentication
 													salt = password.CreateSalt(40);
 													newHashPassword = password.GenerateHash(newPassword, salt);
 
-													if(oUser.LastChangeDate != null)
+													if(oUser.LastChangeDate != DateTime.MinValue)
 													{
 														lastChangeDate = oUser.LastChangeDate.AddHours(+24);
 													}

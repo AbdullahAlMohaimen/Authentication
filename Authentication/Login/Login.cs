@@ -19,6 +19,7 @@ namespace Authentication.Login
 		public Login()
 		{
 			InitializeComponent();
+			txt_Password.Text = "";
 		}
 		#endregion
 

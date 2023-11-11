@@ -135,7 +135,6 @@ select * from LoginInfo;
 select * from Role;
 select * from BadLoginAttemptInfo;
 
-select * from Users
 
 
 ALTER TABLE Users
