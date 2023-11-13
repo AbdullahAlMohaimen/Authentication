@@ -69,6 +69,7 @@ namespace Authentication.Home
 				//homeDropDown.Items.Add(lastName);
 				homeDropDown.Items.Add(oCurrentUser.UserName);
 			}
+			homeDropDown.Items.Add("Change Password");
 			homeDropDown.Items.Add("Setting");
 			homeDropDown.Items.Add("Logout");
 			homeDropDown.SelectedIndex = 0;
@@ -78,7 +79,9 @@ namespace Authentication.Home
 		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
+			Login.Login login = new Login.Login();
 			this.Close();
+			login.Close();
 		}
 		#endregion
 
@@ -160,20 +163,26 @@ namespace Authentication.Home
 		{
 			ComboBox cmb = (ComboBox)sender;
 			string selectedValue = cmb.SelectedItem as string;
+			int selectedIndex = cmb.SelectedIndex;
 
-			if (selectedValue == oCurrentUser.UserName)
+			if (selectedValue == oCurrentUser.UserName && selectedIndex == 0)
 			{
 
 			}
 
-			if (selectedValue == "Setting")
+			if (selectedValue == "Setting" && selectedIndex == 1)
 			{
 
 			}
 
-			if (selectedValue == "Logout")
+			if (selectedValue == "Change Password" && selectedIndex == 2)
 			{
-		
+
+			}
+
+			if (selectedValue == "Logout" && selectedIndex == 3)
+			{
+				this.Close();
 			}
 		}
 		#endregion
