@@ -62,7 +62,7 @@ namespace Authentication.Home
 		#region Get Dropdown Data
 		public void getHomeDropDownValue()
 		{
-			if(oCurrentUser.UserName != null)
+			if (oCurrentUser.UserName != null)
 			{
 				//string[] nameParts = oCurrentUser.UserName.Split(' ');
 				//string lastName = nameParts[nameParts.Length - 1]+"("+ oCurrentUser.LoginID+")";
@@ -72,7 +72,6 @@ namespace Authentication.Home
 			homeDropDown.Items.Add("Change Password");
 			homeDropDown.Items.Add("Setting");
 			homeDropDown.Items.Add("Logout");
-			homeDropDown.SelectedIndex = 0;
 		}
 		#endregion
 

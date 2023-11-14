@@ -50,7 +50,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1075, 36);
+			this.panel1.Size = new System.Drawing.Size(1156, 36);
 			this.panel1.TabIndex = 12;
 			// 
 			// homeDropDown
@@ -76,7 +76,7 @@
 			this.homeDropDown.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.homeDropDown.IntegralHeight = false;
 			this.homeDropDown.ItemHeight = 20;
-			this.homeDropDown.Location = new System.Drawing.Point(718, 6);
+			this.homeDropDown.Location = new System.Drawing.Point(790, 6);
 			this.homeDropDown.MaxDropDownItems = 5;
 			this.homeDropDown.Name = "homeDropDown";
 			this.homeDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -105,7 +105,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(998, 6);
+			this.Minimize.Location = new System.Drawing.Point(1075, 6);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(28, 24);
 			this.Minimize.TabIndex = 12;
@@ -120,7 +120,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(1037, 6);
+			this.Exit.Location = new System.Drawing.Point(1118, 6);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(28, 24);
 			this.Exit.TabIndex = 11;
@@ -129,9 +129,9 @@
 			// 
 			// panelContainer
 			// 
-			this.panelContainer.Location = new System.Drawing.Point(206, 48);
+			this.panelContainer.Location = new System.Drawing.Point(206, 49);
 			this.panelContainer.Name = "panelContainer";
-			this.panelContainer.Size = new System.Drawing.Size(864, 500);
+			this.panelContainer.Size = new System.Drawing.Size(946, 538);
 			this.panelContainer.TabIndex = 13;
 			// 
 			// menuTreeView
@@ -143,7 +143,7 @@
 			this.menuTreeView.ForeColor = System.Drawing.Color.Maroon;
 			this.menuTreeView.Location = new System.Drawing.Point(5, 4);
 			this.menuTreeView.Name = "menuTreeView";
-			this.menuTreeView.Size = new System.Drawing.Size(191, 490);
+			this.menuTreeView.Size = new System.Drawing.Size(191, 526);
 			this.menuTreeView.TabIndex = 14;
 			this.menuTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.menuTreeView_AfterSelect);
 			// 
@@ -155,9 +155,9 @@
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
 			this.guna2Panel1.Controls.Add(this.menuTreeView);
-			this.guna2Panel1.Location = new System.Drawing.Point(2, 50);
+			this.guna2Panel1.Location = new System.Drawing.Point(2, 52);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(201, 497);
+			this.guna2Panel1.Size = new System.Drawing.Size(201, 535);
 			this.guna2Panel1.TabIndex = 108;
 			// 
 			// Home
@@ -165,7 +165,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
-			this.ClientSize = new System.Drawing.Size(1071, 548);
+			this.ClientSize = new System.Drawing.Size(1154, 589);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panelContainer);
 			this.Controls.Add(this.panel1);

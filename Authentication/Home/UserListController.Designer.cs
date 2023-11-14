@@ -52,7 +52,7 @@ namespace Authentication.Home
 			this.guna2Panel1.Controls.Add(this.allUserGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(858, 494);
+			this.guna2Panel1.Size = new System.Drawing.Size(940, 535);
 			this.guna2Panel1.TabIndex = 109;
 			// 
 			// AddNewUser
@@ -99,10 +99,10 @@ namespace Authentication.Home
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.allUserGrid.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.allUserGrid.Location = new System.Drawing.Point(9, 53);
+			this.allUserGrid.Location = new System.Drawing.Point(6, 53);
 			this.allUserGrid.Name = "allUserGrid";
 			this.allUserGrid.RowHeadersVisible = false;
-			this.allUserGrid.Size = new System.Drawing.Size(840, 431);
+			this.allUserGrid.Size = new System.Drawing.Size(928, 477);
 			this.allUserGrid.TabIndex = 0;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -134,7 +134,7 @@ namespace Authentication.Home
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "UserListController";
-			this.Size = new System.Drawing.Size(864, 500);
+			this.Size = new System.Drawing.Size(946, 538);
 			this.guna2Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.allUserGrid)).EndInit();
 			this.ResumeLayout(false);
