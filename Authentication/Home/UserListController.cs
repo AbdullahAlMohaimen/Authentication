@@ -15,10 +15,13 @@ namespace Authentication.Home
 {
 	public partial class UserListController : UserControl
 	{
+		#region property / Variable
+		BO.CurrentUser oCurrentUser = new CurrentUser();
 		List<BO.Role> roles = new List<BO.Role>();
 		DataTable allUserDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
+		#endregion
 
 		#region Load
 		public UserListController()
@@ -27,6 +30,13 @@ namespace Authentication.Home
 
 			this.GetAllRole();
 			this.GetAllUsers();
+		}
+		#endregion
+
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oUser)
+		{
+			oCurrentUser = oUser;
 		}
 		#endregion
 
@@ -68,17 +78,23 @@ namespace Authentication.Home
 				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(editButton);
 
-				DataGridViewButtonColumn active = new DataGridViewButtonColumn();
-				active.HeaderText = "Active";
-				active.Text = "Active";
-				active.UseColumnTextForButtonValue = true;
-				active.DefaultCellStyle.BackColor = SystemColors.Control;
-				active.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				active.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				active.CellTemplate.Style.BackColor = Color.SeaGreen;
-				active.CellTemplate.Style.ForeColor = Color.Maroon;
-				active.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allUserGrid.Columns.Add(active);
+				if (users.Count > 0)
+				{
+					var lastUser = users[users.Count - 1];
+					DataGridViewButtonColumn active = new DataGridViewButtonColumn();
+					active.HeaderText = "Active";
+					active.UseColumnTextForButtonValue = true;
+					active.DefaultCellStyle.BackColor = SystemColors.Control;
+					active.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+					active.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+					active.CellTemplate.Style.BackColor = Color.SeaGreen;
+					active.CellTemplate.Style.ForeColor = Color.Maroon;
+					active.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+					// Set the button text based on the last user's status
+					active.Text = (lastUser.Status == EnumStatus.Active) ? "In-Active" : "Active";
+					allUserGrid.Columns.Add(active);
+				}
 
 				DataGridViewButtonColumn action = new DataGridViewButtonColumn();
 				action.HeaderText = "Action";
@@ -91,8 +107,6 @@ namespace Authentication.Home
 				action.CellTemplate.Style.ForeColor = Color.Maroon;
 				action.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(action);
-
-
 			}
 			catch (Exception ex)
 			{
@@ -142,24 +156,52 @@ namespace Authentication.Home
 		#region Grid Button Click
 		private void allUserGrid_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+			DataGridViewRow selectedRow = allUserGrid.Rows[e.RowIndex];
+			BO.Users oUser = new BO.Users();
+
+			string loginID = selectedRow.Cells["Login ID"].Value.ToString();
+			oUser = userService.GetUserByLoginID(loginID);
+
+			if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
 			{
-				if (allUserGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex < allUserGrid.Rows.Count - 1)
-				{
-					if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
-					{
-
-					}
-					else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
-					{
-
-					}
-					else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
-					{
-
-					}
-				}
+				UserEntry userEntry = new UserEntry(this);
+				userEntry.SetCurrentUser(this.oCurrentUser);
+				userEntry.EditUser(oUser);
+				userEntry._loginID = oCurrentUser.LoginID;
+				userEntry.Show();
 			}
+			else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
+			{
+				string statusString = oUser.Status == EnumStatus.Active ? "In-Active" : "Active";
+				DialogResult result = MessageBox.Show($"Are you sure to {statusString} this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+				if (result == DialogResult.OK)
+				{
+
+				}
+				return;
+			}
+			else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
+			{
+
+			}
+			//if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+			//{
+			//	if (allUserGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex < allUserGrid.Rows.Count - 1)
+			//	{
+			//		if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
+			//		{
+
+			//		}
+			//		else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
+			//		{
+
+			//		}
+			//		else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
+			//		{
+
+			//		}
+			//	}
+			//}
 		}
 		#endregion
 
@@ -167,7 +209,9 @@ namespace Authentication.Home
 		private void AddNewUser_Click(object sender, EventArgs e)
 		{
 			UserEntry userEntry = new UserEntry(this);
-			userEntry._loginID = "00098";
+			userEntry.SetCurrentUser(this.oCurrentUser);
+			userEntry.EditUser(null);
+			userEntry._loginID = oCurrentUser.LoginID;
 			userEntry.Show();
 		}
 		#endregion

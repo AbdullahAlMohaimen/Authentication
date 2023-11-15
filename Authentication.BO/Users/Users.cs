@@ -16,6 +16,7 @@ namespace Authentication.BO
 			_status = EnumStatus.Active;
 			_authorizedDate = DateTime.Now;
 			_passwordHints = string.Empty;
+			_forgetPasswordDate = null;
 			_tempStatus = EnumStatus.Active;
 			_changePasswordNextLogon = 0;
 			_passwordResetByAdmin = false;

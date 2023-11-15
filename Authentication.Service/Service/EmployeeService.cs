@@ -80,6 +80,19 @@ namespace Authentication.Service
 		public Employee GetEmployee(int ID)
 		{
 			Employee oEmployee = new Employee();
+			try
+			{
+				DataReader oreader = new DataReader(EmployeeDA.GetEmployee((int)ID));
+				if (oreader.Read())
+				{
+					oEmployee = this.CreateObject<Employee>(oreader);
+				}
+
+			}
+			catch (Exception e)
+			{
+
+			}
 			return oEmployee;
 		}
 		#endregion

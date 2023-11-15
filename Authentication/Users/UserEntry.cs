@@ -14,28 +14,26 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json.Linq;
+using Authentication.Home;
 
 namespace Authentication.Users
 {
 	public partial class UserEntry : Form
 	{
+		#region property / Variable
 		private SearchEmployee.SearchEmployee searchForm;
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
+		EmployeeService employeeService = new EmployeeService();
 		List<BO.Role> _roles = new List<BO.Role>();
 		List<BO.Users> _users = new List<BO.Users>();
 		BO.Role _role = new BO.Role();
 		BO.Users _user = new BO.Users();
 		BO.Password _password = new BO.Password();
-
-		#region property
+		BO.CurrentUser oCurrentUser = new CurrentUser();
 		private UserControl callingForm;
 		public string _loginID;
-		public string LoginID
-		{
-			get { return _loginID; }
-			set { _loginID = value; }
-		}
+		public string LoginID { get { return _loginID; } set { _loginID = value; } }
 		#endregion
 
 		#region Load
@@ -43,7 +41,39 @@ namespace Authentication.Users
 		{
 			InitializeComponent();
 			callingForm = caller;
+		}
+		#endregion
+
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oCUser)
+		{
+			oCurrentUser = oCUser;
+		}
+		#endregion
+
+		#region SetEditedUser & Type
+		public void EditUser(BO.Users oUser)
+		{
+			_user = oUser;
+			BO.Role role = new BO.Role();
 			this.LoadRoalData();
+			if (_user != null)
+			{
+				txt_UserLoginID.Text = _user.LoginID.ToString();
+				txt_UserName.Text = _user.UserName.ToString();
+				txt_UserEmail.Text = _user.Email.ToString();
+
+				role = this._roles.Find(x => x.ID == _user.RoleID);
+				txt_UserRoleID.SelectedItem = role.Name;
+
+				BO.Employee _employee = employeeService.GetEmployee(_user.MasterID);
+				txt_UserMaster.Text = "(" + _employee.EmployeeNo + ")" + _employee.Name;
+				SearchEmp = _employee;
+			}
+			else
+			{
+				_user = new BO.Users();
+			}
 		}
 		#endregion
 
@@ -145,8 +175,16 @@ namespace Authentication.Users
 						_user.RoleID = _role.ID;
 						_user.Email = txt_UserEmail.Text;
 						_user.MasterID = SearchEmp.ID;
-
+						_user.CreatedBy = this.oCurrentUser.ID;
 						_user.CreatedDate = DateTime.Now;
+					}
+					else
+					{
+						_user.UserName = txt_UserName.Text;
+						_user.Email = txt_UserEmail.Text;
+						_user.RoleID = _role.ID;
+						_user.ModifiedBy = this.oCurrentUser.ID;
+						_user.ModifiedDate = DateTime.Now;
 					}
 
 					result = userService.Save(_user);
@@ -160,6 +198,11 @@ namespace Authentication.Users
 						MessageBox.Show("User information save filed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					}
 					this.Clear();
+					
+					UserListController userListController = new UserListController();
+					userListController.GetAllRole();
+					userListController.GetAllUsers();
+					this.Close();
 				}
 				else
 				{

@@ -170,7 +170,7 @@ namespace Authentication.Login
 									{
 										oUser.Status = EnumStatus.Locked;
 										oUser.StatusChangedDate = DateTime.Now;
-										userService.Update(oUser);
+										userService.UpdateUserDeactivate(oUser);
 
 										MessageBox.Show("You didn't access last 90 days.Your account deactivated by system.\nplease contact with Administrator.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 										return;
@@ -245,6 +245,7 @@ namespace Authentication.Login
 								this.SaveLoginHistory(oLoginInfo);
 
 								#region Set CurrentUser
+								oCurrentUser.ID = oUser.ID;
 								oCurrentUser.LoginID = oUser.LoginID;
 								oCurrentUser.UserName = oUser.UserName;
 								oCurrentUser.Status = (EnumStatus)oUser.Status;

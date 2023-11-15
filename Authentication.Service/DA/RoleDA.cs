@@ -107,7 +107,7 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from Role", conn);
+				getCommand = new SqlCommand("Select * from Role order by Name", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex) { 

@@ -35,10 +35,12 @@ namespace Authentication.Service
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
 					SqlCommand insertCommand = new SqlCommand("INSERT INTO Users(LoginID,UserName,Status,Email,RoleID,MasterID," +
-						"AuthorizedDate,Password,PasswordHints,Salt,TempStatus,ChangePasswordAtNextLogon,PasswordResetByAdmin)" +
+						"AuthorizedDate,Password,PasswordHints,Salt,TempStatus,ChangePasswordAtNextLogon,PasswordResetByAdmin," +
+						"CreatedBy,CreatedDate)" +
 						"values('"+oUser.LoginID+"','"+oUser.UserName+"','"+(int)oUser.Status+"','"+oUser.Email+"','"+oUser.RoleID+"'," +
 						"'"+oUser.MasterID+"','"+oUser.AuthorizedDate+"','"+oUser.Password+"','"+oUser.PasswordHints+"','"+oUser.Salt+"'," +
-						"'"+(int)oUser.TempStatus+"','"+oUser.ChangePasswordNextLogon+"','"+oUser.PasswordResetByAdmin+"')", conn,tc);
+						"'"+(int)oUser.TempStatus+"','"+oUser.ChangePasswordNextLogon+"','"+oUser.PasswordResetByAdmin+"'," +
+						"'"+oUser.CreatedBy+"','"+oUser.CreatedDate+"')", conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -66,6 +68,32 @@ namespace Authentication.Service
 
 		#region Update
 		internal static string Update(Users oUser)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Users set UserName = '"+oUser.UserName+"',Email = '"+oUser.Email+"'," +
+						"RoleID = '"+oUser.RoleID+"', ModifiedBy = '"+oUser.ModifiedBy+"',ModifiedDate = '"+oUser.ModifiedDate+"' where UserID = '" + oUser.ID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
+		#region Update User for Deactivate
+		internal static string UpdateUserDeactivate(Users oUser)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
 			SqlConnection conn = new SqlConnection(connectionString);

@@ -107,28 +107,36 @@ namespace Authentication.Service
 		{
 			Password password = new Password();
 			string randomPassword;
-			string result;
+			string result = null;
 			try
 			{
-				if(user.RoleID == 1 || user.RoleID == 5 || user.RoleID == 20)
-					randomPassword = password.GenerateRandomPassword(14,16);
-				else
-					randomPassword = password.GenerateRandomPassword(10);
-
-				user.Salt = password.CreateSalt(128);
-				user.Password = password.GenerateHash(randomPassword, user.Salt);
-				result = UsersDA.Insert(user);
-				if(result == "Ok")
+				if(user.IsNew == true)
 				{
-					SendEmail sendEmail = new SendEmail();
-					sendEmail.To = user.Email;
-					sendEmail.Subject = "User Login Password (Do not replay this mail)";
-					sendEmail.Body = $@"<html><body><p><b>Dear</b> {user.UserName},</p>
+					if (user.RoleID == 1 || user.RoleID == 5 || user.RoleID == 20)
+						randomPassword = password.GenerateRandomPassword(14, 16);
+					else
+						randomPassword = password.GenerateRandomPassword(10);
+
+					user.Salt = password.CreateSalt(128);
+					user.Password = password.GenerateHash(randomPassword, user.Salt);
+					result = UsersDA.Insert(user);
+
+					if (result == "Ok")
+					{
+						SendEmail sendEmail = new SendEmail();
+						sendEmail.To = user.Email;
+						sendEmail.Subject = "User Login Password (Do not replay this mail)";
+						sendEmail.Body = $@"<html><body><p><b>Dear</b> {user.UserName},</p>
 								 <p><b>Your Login ID : </b>{user.LoginID}</p>
 			                     <p><b>This is system generated password : </b>{randomPassword}</p>
 			                     <p>Regards,</p>
 			                     <p>Authentication Team</p></body></html>";
-					sendEmail.SendigEmail(sendEmail);
+						sendEmail.SendigEmail(sendEmail);
+					}
+				}
+				else
+				{
+					result = UsersDA.Update(user);
 				}
 			}
 			catch(Exception ex)
@@ -229,6 +237,25 @@ namespace Authentication.Service
 				if (user != null)
 				{
 					result = UsersDA.Update(user);
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "Failed";
+			}
+			return result;
+		}
+		#endregion
+
+		#region Update User for Deactivated
+		public string UpdateUserDeactivate(Users user)
+		{
+			string result = null;
+			try
+			{
+				if (user != null)
+				{
+					result = UsersDA.UpdateUserDeactivate(user);
 				}
 			}
 			catch (Exception ex)

@@ -91,13 +91,6 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region TreeView Click
-		private void menuTreeView_AfterSelect(object sender, TreeViewEventArgs e)
-		{
-			OpenUserListWindow(e.Node.Text);
-		}
-		#endregion
-
 		#region Get All Menu
 		public void getAllMenu()
 		{
@@ -118,6 +111,13 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region TreeView Click
+		private void menuTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+		{
+			OpenUserListWindow(e.Node.Text);
+		}
+		#endregion
+
 		#region Menu wiz call
 		public void OpenUserListWindow(string node)
 		{
@@ -135,6 +135,7 @@ namespace Authentication.Home
 					break;
 				case "User List":
 					UserListController userListController = new UserListController();
+					userListController.SetCurrentUser(this.oCurrentUser);
 					AddControl(userListController);
 					break;
 				case "Employee List":
