@@ -28,6 +28,13 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 
+			this.loadGrid();
+		}
+		#endregion
+
+		#region LoadGrid
+		public void loadGrid()
+		{
 			this.GetAllRole();
 			this.GetAllUsers();
 		}

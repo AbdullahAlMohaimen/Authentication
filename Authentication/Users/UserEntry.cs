@@ -200,8 +200,7 @@ namespace Authentication.Users
 					this.Clear();
 					
 					UserListController userListController = new UserListController();
-					userListController.GetAllRole();
-					userListController.GetAllUsers();
+					userListController.loadGrid();
 					this.Close();
 				}
 				else

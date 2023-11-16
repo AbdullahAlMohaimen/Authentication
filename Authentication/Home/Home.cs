@@ -170,19 +170,24 @@ namespace Authentication.Home
 
 			}
 
-			if (selectedValue == "Setting" && selectedIndex == 1)
+			if (selectedValue == "Change Password" && selectedIndex == 1)
 			{
-
+				ChangePassword changePassword = new ChangePassword(this);
+				changePassword._loginID = oCurrentUser.LoginID;
+				changePassword.SetLoginID(oCurrentUser.LoginID);
+				changePassword.SetType("Home");
+				changePassword.Show();
 			}
 
-			if (selectedValue == "Change Password" && selectedIndex == 2)
+			if (selectedValue == "Setting" && selectedIndex == 2)
 			{
 
 			}
 
 			if (selectedValue == "Logout" && selectedIndex == 3)
 			{
-				this.Close();
+				Login.Login login = new Login.Login();
+				login.Show();
 			}
 		}
 		#endregion
