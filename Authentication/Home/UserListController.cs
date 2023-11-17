@@ -54,6 +54,10 @@ namespace Authentication.Home
 			try
 			{
 				users = userService.GetUsers();
+
+				allUserGrid.DataSource = null;
+				allUserDataTable.Clear();
+				allUserDataTable.Columns.Clear();
 				this.GetGridColumn();
 
 				allUserGrid.AllowUserToAddRows = false;
@@ -175,6 +179,7 @@ namespace Authentication.Home
 				userEntry.SetCurrentUser(this.oCurrentUser);
 				userEntry.EditUser(oUser);
 				userEntry._loginID = oCurrentUser.LoginID;
+				userEntry.EditingDone += UserEntry_EditingDone;
 				userEntry.Show();
 			}
 			else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
@@ -211,6 +216,11 @@ namespace Authentication.Home
 			//}
 		}
 		#endregion
+
+		private void UserEntry_EditingDone(object sender, EventArgs e)
+		{
+			this.loadGrid();
+		}
 
 		#region AddNewUser Button
 		private void AddNewUser_Click(object sender, EventArgs e)

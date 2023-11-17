@@ -21,6 +21,7 @@ namespace Authentication.Users
 	public partial class UserEntry : Form
 	{
 		#region property / Variable
+		public event EventHandler EditingDone;
 		private SearchEmployee.SearchEmployee searchForm;
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
@@ -198,9 +199,8 @@ namespace Authentication.Users
 						MessageBox.Show("User information save filed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					}
 					this.Clear();
-					
-					UserListController userListController = new UserListController();
-					userListController.loadGrid();
+
+					EditingDone?.Invoke(this, EventArgs.Empty);
 					this.Close();
 				}
 				else
