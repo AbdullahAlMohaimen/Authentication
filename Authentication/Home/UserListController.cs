@@ -54,12 +54,10 @@ namespace Authentication.Home
 			try
 			{
 				users = userService.GetUsers();
-
+				allUserGrid.Columns.Clear();
 				allUserGrid.DataSource = null;
-				allUserDataTable.Clear();
-				allUserDataTable.Columns.Clear();
+				allUserDataTable.Rows.Clear();
 				this.GetGridColumn();
-
 				allUserGrid.AllowUserToAddRows = false;
 				foreach (var user in users)
 				{
@@ -69,13 +67,12 @@ namespace Authentication.Home
 					var role = roles.Find(x=>x.ID == user.RoleID);
 					if (role != null)
 						row["Role"] = role.Name;
-					row["Status"] = user.Status == EnumStatus.Active ? "Active" : "In-Active";
+					row["U Status"] = user.Status == EnumStatus.Active ? "Active" : "In-Active";
 					row["Email"] = user.Email;
 					allUserDataTable.Rows.Add(row);
 				}
 				allUserGrid.DataSource = allUserDataTable;
 				this.SetGridColumn();
-
 
 				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
 				editButton.HeaderText = "Edit";
@@ -93,7 +90,7 @@ namespace Authentication.Home
 				{
 					var lastUser = users[users.Count - 1];
 					DataGridViewButtonColumn active = new DataGridViewButtonColumn();
-					active.HeaderText = "Active";
+					active.HeaderText = "Status";
 					active.UseColumnTextForButtonValue = true;
 					active.DefaultCellStyle.BackColor = SystemColors.Control;
 					active.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
@@ -102,8 +99,8 @@ namespace Authentication.Home
 					active.CellTemplate.Style.ForeColor = Color.Maroon;
 					active.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-					// Set the button text based on the last user's status
 					active.Text = (lastUser.Status == EnumStatus.Active) ? "In-Active" : "Active";
+
 					allUserGrid.Columns.Add(active);
 				}
 
@@ -118,16 +115,21 @@ namespace Authentication.Home
 				action.CellTemplate.Style.ForeColor = Color.Maroon;
 				action.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 				allUserGrid.Columns.Add(action);
+
+				if (allUserGrid.Rows.Count > 0)
+				{
+					int lastIndex = allUserGrid.Rows.Count - 1;
+					allUserGrid.FirstDisplayedScrollingRowIndex = lastIndex;
+				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-
 		#endregion
 
-		#region Get ALL Users
+		#region Get ALL Role
 		public void GetAllRole()
 		{
 			try
@@ -145,10 +147,11 @@ namespace Authentication.Home
 		#region Get Grid Column
 		public void GetGridColumn()
 		{
+			allUserDataTable.Columns.Clear();
 			allUserDataTable.Columns.Add("Login ID");
 			allUserDataTable.Columns.Add("User Name");
 			allUserDataTable.Columns.Add("Role");
-			allUserDataTable.Columns.Add("Status");
+			allUserDataTable.Columns.Add("U Status");
 			allUserDataTable.Columns.Add("Email");
 		}
 		#endregion
@@ -156,45 +159,66 @@ namespace Authentication.Home
 		#region Set Grid Column
 		public void SetGridColumn()
 		{
-			allUserGrid.Columns["Login ID"].Width = 70;
-			allUserGrid.Columns["User Name"].Width = 150;
-			allUserGrid.Columns["Role"].Width = 120;
-			allUserGrid.Columns["Status"].Width = 70;
-			allUserGrid.Columns["Email"].Width = 200;
+			allUserGrid.Columns["Login ID"].Width = 60;
+			allUserGrid.Columns["User Name"].Width = 210;
+			allUserGrid.Columns["Role"].Width = 180;
+			allUserGrid.Columns["U Status"].Width = 80;
+			allUserGrid.Columns["Email"].Width = 250;
 		}
 		#endregion
 
 		#region Grid Button Click
 		private void allUserGrid_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			DataGridViewRow selectedRow = allUserGrid.Rows[e.RowIndex];
-			BO.Users oUser = new BO.Users();
-
-			string loginID = selectedRow.Cells["Login ID"].Value.ToString();
-			oUser = userService.GetUserByLoginID(loginID);
-
-			if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
+			try
 			{
-				UserEntry userEntry = new UserEntry(this);
-				userEntry.SetCurrentUser(this.oCurrentUser);
-				userEntry.EditUser(oUser);
-				userEntry._loginID = oCurrentUser.LoginID;
-				userEntry.EditingDone += UserEntry_EditingDone;
-				userEntry.Show();
-			}
-			else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
-			{
-				string statusString = oUser.Status == EnumStatus.Active ? "In-Active" : "Active";
-				DialogResult result = MessageBox.Show($"Are you sure to {statusString} this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-				if (result == DialogResult.OK)
+				BO.Users oUser = new BO.Users();
+				DataGridViewRow selectedRow = allUserGrid.Rows[e.RowIndex];
+				string loginID = selectedRow.Cells["Login ID"].Value.ToString();
+				oUser = userService.GetUserByLoginID(loginID);
+
+				if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
+				{
+					UserEntry userEntry = new UserEntry(this);
+					userEntry.SetCurrentUser(this.oCurrentUser);
+					userEntry.EditUser(oUser);
+					userEntry._loginID = oCurrentUser.LoginID;
+					userEntry.EditingDone += UserEntry_EditingDone;
+					userEntry.Show();
+				}
+				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Status")
+				{
+					EnumStatus status;
+					string statusString = oUser.Status == EnumStatus.Active ? "In-Active" : "Active";
+					DialogResult result = MessageBox.Show($"Are you sure to {statusString} this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+					if (result == DialogResult.OK)
+					{
+						if (oUser.Status == EnumStatus.Active)
+							status = EnumStatus.Inactive;
+						else
+							status = EnumStatus.Active;
+
+						string updateStatusResult = userService.UpdateUserStatus(oUser.ID,status,oCurrentUser.ID,DateTime.Now,DateTime.Now);
+						if (updateStatusResult == "Ok")
+						{
+							MessageBox.Show($"{oUser.UserName} is now {statusString}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							this.loadGrid();
+						}
+						else
+						{
+							MessageBox.Show($"Something Problem.\nPlease try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+					}
+					return;
+				}
+				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
 				{
 
 				}
-				return;
 			}
-			else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
+			catch(Exception ex)
 			{
-
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			//if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
 			//{
@@ -216,6 +240,7 @@ namespace Authentication.Home
 			//}
 		}
 		#endregion
+
 
 		private void UserEntry_EditingDone(object sender, EventArgs e)
 		{

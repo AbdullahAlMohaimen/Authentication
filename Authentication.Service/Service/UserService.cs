@@ -286,5 +286,23 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region UpdateUserStatus
+		public string UpdateUserStatus(int userID, EnumStatus status, int modifiedBy, DateTime modifiedDate, DateTime statusChangeDate)
+		{
+			string result = null;
+			try
+			{
+				if (userID != null)
+				{
+					result = UsersDA.UpdateUserStatus(userID, status, modifiedBy, modifiedDate, statusChangeDate);
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "Failed";
+			}
+			return result;
+		}
+		#endregion
 	}
 }

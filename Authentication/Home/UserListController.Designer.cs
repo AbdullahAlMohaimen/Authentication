@@ -75,7 +75,11 @@ namespace Authentication.Home
 			// 
 			// allUserGrid
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaGreen;
 			this.allUserGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allUserGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.allUserGrid.BackgroundColor = System.Drawing.Color.Wheat;
@@ -91,16 +95,17 @@ namespace Authentication.Home
 			this.allUserGrid.ColumnHeadersHeight = 22;
 			this.allUserGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkGreen;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.allUserGrid.DefaultCellStyle = dataGridViewCellStyle3;
-			this.allUserGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.allUserGrid.GridColor = System.Drawing.Color.Black;
 			this.allUserGrid.Location = new System.Drawing.Point(6, 53);
 			this.allUserGrid.Name = "allUserGrid";
+			this.allUserGrid.ReadOnly = true;
 			this.allUserGrid.RowHeadersVisible = false;
 			this.allUserGrid.Size = new System.Drawing.Size(928, 477);
 			this.allUserGrid.TabIndex = 0;
@@ -110,14 +115,14 @@ namespace Authentication.Home
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
 			this.allUserGrid.ThemeStyle.BackColor = System.Drawing.Color.Wheat;
-			this.allUserGrid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.allUserGrid.ThemeStyle.GridColor = System.Drawing.Color.Black;
 			this.allUserGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
 			this.allUserGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.allUserGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.allUserGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			this.allUserGrid.ThemeStyle.HeaderStyle.Height = 22;
-			this.allUserGrid.ThemeStyle.ReadOnly = false;
+			this.allUserGrid.ThemeStyle.ReadOnly = true;
 			this.allUserGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.allUserGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

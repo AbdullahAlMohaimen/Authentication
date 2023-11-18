@@ -176,7 +176,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Update
+		#region UpdateUserTempStatus
 		internal static string UpdateUserTempStatus(int userID, EnumStatus tempStatus)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -191,6 +191,32 @@ namespace Authentication.Service
 					tc.Commit();
 					conn.Close();
 
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
+		#region UpdateUserStatus
+		internal static string UpdateUserStatus(int userID, EnumStatus status, int modifiedBy, DateTime modifiedDate, DateTime statusChangeDate)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Users set Status = '" + (int)status + "', ModifiedBy = '"+ (int)modifiedBy +"'," +
+								" ModifiedDate = '"+modifiedDate+"', StatusChangedDate = '"+statusChangeDate+"' " +
+								"where UserID = '" + userID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
 					return "Ok";
 				}
 			}
