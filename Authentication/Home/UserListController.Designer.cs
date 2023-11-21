@@ -52,7 +52,7 @@ namespace Authentication.Home
 			this.guna2Panel1.Controls.Add(this.allUserGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(940, 535);
+			this.guna2Panel1.Size = new System.Drawing.Size(1032, 585);
 			this.guna2Panel1.TabIndex = 109;
 			// 
 			// AddNewUser
@@ -97,9 +97,9 @@ namespace Authentication.Home
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon;
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkGreen;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.allUserGrid.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserGrid.GridColor = System.Drawing.Color.Black;
@@ -107,7 +107,7 @@ namespace Authentication.Home
 			this.allUserGrid.Name = "allUserGrid";
 			this.allUserGrid.ReadOnly = true;
 			this.allUserGrid.RowHeadersVisible = false;
-			this.allUserGrid.Size = new System.Drawing.Size(928, 477);
+			this.allUserGrid.Size = new System.Drawing.Size(1019, 526);
 			this.allUserGrid.TabIndex = 0;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -139,7 +139,7 @@ namespace Authentication.Home
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "UserListController";
-			this.Size = new System.Drawing.Size(946, 538);
+			this.Size = new System.Drawing.Size(1038, 590);
 			this.guna2Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.allUserGrid)).EndInit();
 			this.ResumeLayout(false);

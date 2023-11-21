@@ -304,5 +304,44 @@ namespace Authentication.Service
 			return result;
 		}
 		#endregion
+
+		#region Password Reset By Administrator
+		public string PasswordResetByAdmin(Users user)
+		{
+			Password password = new Password();
+			string result = null;
+			string randomPassword = null;
+			if (user != null)
+			{
+				if (user.RoleID == 1 || user.RoleID == 5 || user.RoleID == 20)
+					randomPassword = password.GenerateRandomPassword(14, 16);
+				else
+					randomPassword = password.GenerateRandomPassword(10);
+
+				user.Salt = password.CreateSalt(128);
+				user.Password = password.GenerateHash(randomPassword, user.Salt);
+
+				result = UsersDA.UpdatePasswordByAdmin(user);
+				if (result == "Ok")
+				{
+					SendEmail sendEmail = new SendEmail();
+					sendEmail.To = user.Email;
+					sendEmail.Subject = "Admin Reset Password (Do not replay this mail)";
+					sendEmail.Body = $@"<html><body><p><b>Dear</b> {user.UserName},</p>
+								 <p><b>An admin can reset your password.</p>
+			                     <p><b>This is system generated password : </b>{randomPassword}</p>
+								 <p><b>This password is valid within 24 hours. Please change your password now.</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+					sendEmail.SendigEmail(sendEmail);
+				}
+				else
+				{
+					result = "failed";
+				}
+			}
+			return result;
+		}
+		#endregion
 	}
 }

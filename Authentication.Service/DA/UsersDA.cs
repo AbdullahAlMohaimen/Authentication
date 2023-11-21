@@ -148,6 +148,33 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Update Password By Admin
+		internal static string UpdatePasswordByAdmin(Users oUser)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Users set Password = '" + oUser.Password + "'," +
+						"Salt = '" + oUser.Salt + "', PasswordResetByAdmin = '" + oUser.PasswordResetByAdmin + "'," +
+						"PasswordResetBy = '"+oUser.PasswordResetBy+"', PasswordResetDate = '"+oUser.PasswordResetDate+"' where UserID = '" + oUser.ID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
 		#region Update UpdateUserPassword
 		internal static string UpdateUserPassword(Users oUser)
 		{
