@@ -15,6 +15,8 @@ namespace Authentication.SearchEmployee
 	{
 		BO.Employee employee = new BO.Employee();
 		EmployeeService employeeService = new EmployeeService();
+		List<BO.Employee> employees = new List<BO.Employee>();
+		DataTable allEmployeeDataTable = new DataTable();
 		private Users.UserEntry originalUserEntryForm;
 		private Form callingForm;
 
@@ -104,5 +106,88 @@ namespace Authentication.SearchEmployee
 			}
 		}
 		#endregion
+
+		#region Find All Employee Batton
+		private void btn_findAllEmployee_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				employees = employeeService.GetEmployees();
+				allEmployeeGrid.Columns.Clear();
+				allEmployeeGrid.DataSource = null;
+				allEmployeeDataTable.Rows.Clear();
+				this.GetGridColumn();
+
+				allEmployeeGrid.AllowUserToAddRows = false;
+				foreach (BO.Employee oEmployee in employees)
+				{
+					DataRow row = allEmployeeDataTable.NewRow();
+					row["Employee No"] = oEmployee.EmployeeNo;
+					row["Name"] = oEmployee.Name;
+					row["Department"] = oEmployee.Department;
+					row["Designation"] = oEmployee.Designation;
+					row["Gender"] = oEmployee.Gender;
+					row["Religion"] = oEmployee.Religion;
+					allEmployeeDataTable.Rows.Add(row);
+				}
+				allEmployeeGrid.DataSource = allEmployeeDataTable;
+				this.SetGridColumn();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		#endregion
+
+		#region Get Grid Column
+		public void GetGridColumn()
+		{
+			allEmployeeDataTable.Columns.Clear();
+			allEmployeeDataTable.Columns.Add("Employee No");
+			allEmployeeDataTable.Columns.Add("Name");
+			allEmployeeDataTable.Columns.Add("Department");
+			allEmployeeDataTable.Columns.Add("Designation");
+			allEmployeeDataTable.Columns.Add("Gender");
+			allEmployeeDataTable.Columns.Add("Religion");
+		}
+		#endregion
+
+		#region Set Grid Column
+		public void SetGridColumn()
+		{
+			allEmployeeGrid.Columns["Employee No"].Width = 90;
+			allEmployeeGrid.Columns["Name"].Width = 220;
+			allEmployeeGrid.Columns["Department"].Width = 250;
+			allEmployeeGrid.Columns["Designation"].Width = 180;
+			allEmployeeGrid.Columns["Gender"].Width = 75;
+			allEmployeeGrid.Columns["Religion"].Width = 75;
+		}
+		#endregion
+
+		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+			//var x = allEmployeeGrid.CurrentRow.Cells;
+			//DataGridViewRow selectedRow = allEmployeeGrid.Rows[e.RowIndex];
+
+			//string column1Value = selectedRow.Cells["Name"].Value.ToString();
+			//string column2Value = selectedRow.Cells["Employee No"].Value.ToString();
+
+			//foreach (DataGridViewCell cell in selectedRow.Cells)
+			//{
+			//	string cellValue = cell.Value.ToString();
+			//}
+
+			employee = employeeService.GetEmployee(allEmployeeGrid.CurrentRow.Cells["Employee No"].Value.ToString());
+			if (employee != null)
+			{
+				txt_EmpNo.Text = employee.EmployeeNo;
+				txt_EmpName.Text = employee.Name;
+				txt_EmpJoiningDate.Text = employee.JoiningDate.ToString("dd MMM yyyy");
+				txt_EmpDepartment.Text = employee.Department;
+				txt_EmpGender.Text = employee.Gender;
+			}
+		}
 	}
 }

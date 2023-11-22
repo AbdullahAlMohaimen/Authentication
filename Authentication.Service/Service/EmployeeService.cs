@@ -97,10 +97,41 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Get Employee By ID
+		public Employee GetEmployee(string empNo)
+		{
+			Employee oEmployee = new Employee();
+			try
+			{
+				DataReader oreader = new DataReader(EmployeeDA.GetEmployee(empNo));
+				if (oreader.Read())
+				{
+					oEmployee = this.CreateObject<Employee>(oreader);
+				}
+
+			}
+			catch (Exception e)
+			{
+
+			}
+			return oEmployee;
+		}
+		#endregion
+
 		#region Get All Employee
 		public List<Employee> GetEmployees()
 		{
 			List<Employee> oEmployees = new List<Employee>();
+			try
+			{
+				DataReader dr = new DataReader(EmployeeDA.Get());
+				oEmployees = this.CreateObjects<Employee>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
 			return oEmployees;
 		}
 		#endregion

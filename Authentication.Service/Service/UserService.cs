@@ -222,7 +222,15 @@ namespace Authentication.Service
 			string result = null;
 			if (user != null)
 			{
-				result = UsersDA.UpdateUserPassword(user);
+				if(user.PasswordResetByAdmin == true)
+				{
+					user.PasswordResetByAdmin = false;
+					result = UsersDA.UpdatePasswordByAdmin(user);
+				}
+				else
+				{
+					result = UsersDA.UpdateUserPassword(user);
+				}
 			}
 			return result;
 		}

@@ -267,7 +267,6 @@ namespace Authentication.Home
 		}
 		#endregion
 
-
 		private void UserEntry_EditingDone(object sender, EventArgs e)
 		{
 			this.loadGrid();
