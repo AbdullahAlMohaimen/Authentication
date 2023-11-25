@@ -28,7 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.allUserGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
+			this.guna2Panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.allUserGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// guna2Panel1
@@ -38,10 +46,87 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.AddNewUser);
+			this.guna2Panel1.Controls.Add(this.allUserGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1032, 585);
 			this.guna2Panel1.TabIndex = 109;
+			// 
+			// allUserGrid
+			// 
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaGreen;
+			this.allUserGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.allUserGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.allUserGrid.BackgroundColor = System.Drawing.Color.Wheat;
+			this.allUserGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.allUserGrid.ColumnHeadersHeight = 22;
+			this.allUserGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserGrid.DefaultCellStyle = dataGridViewCellStyle3;
+			this.allUserGrid.GridColor = System.Drawing.Color.Black;
+			this.allUserGrid.Location = new System.Drawing.Point(6, 53);
+			this.allUserGrid.Name = "allUserGrid";
+			this.allUserGrid.ReadOnly = true;
+			this.allUserGrid.RowHeadersVisible = false;
+			this.allUserGrid.Size = new System.Drawing.Size(1019, 526);
+			this.allUserGrid.TabIndex = 1;
+			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
+			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+			this.allUserGrid.ThemeStyle.BackColor = System.Drawing.Color.Wheat;
+			this.allUserGrid.ThemeStyle.GridColor = System.Drawing.Color.Black;
+			this.allUserGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+			this.allUserGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.allUserGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.allUserGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+			this.allUserGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+			this.allUserGrid.ThemeStyle.HeaderStyle.Height = 22;
+			this.allUserGrid.ThemeStyle.ReadOnly = true;
+			this.allUserGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+			this.allUserGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+			this.allUserGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.allUserGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			this.allUserGrid.ThemeStyle.RowsStyle.Height = 22;
+			this.allUserGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.allUserGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			// 
+			// AddNewUser
+			// 
+			this.AddNewUser.BorderRadius = 8;
+			this.AddNewUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.AddNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.AddNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.AddNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.AddNewUser.FillColor = System.Drawing.Color.Brown;
+			this.AddNewUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.AddNewUser.ForeColor = System.Drawing.Color.Wheat;
+			this.AddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("AddNewUser.Image")));
+			this.AddNewUser.Location = new System.Drawing.Point(10, 12);
+			this.AddNewUser.Name = "AddNewUser";
+			this.AddNewUser.Size = new System.Drawing.Size(198, 32);
+			this.AddNewUser.TabIndex = 107;
+			this.AddNewUser.Text = "Add New Employee";
 			// 
 			// EmployeeListController
 			// 
@@ -51,6 +136,8 @@
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "EmployeeListController";
 			this.Size = new System.Drawing.Size(1038, 590);
+			this.guna2Panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.allUserGrid)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -58,5 +145,7 @@
 		#endregion
 
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+		private Guna.UI2.WinForms.Guna2DataGridView allUserGrid;
+		private Guna.UI2.WinForms.Guna2Button AddNewUser;
 	}
 }
