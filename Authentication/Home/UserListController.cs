@@ -28,7 +28,6 @@ namespace Authentication.Home
 		public UserListController()
 		{
 			InitializeComponent();
-
 			this.loadGrid();
 		}
 		#endregion
