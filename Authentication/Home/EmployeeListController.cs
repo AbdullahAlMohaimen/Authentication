@@ -1,4 +1,5 @@
 ﻿using Authentication.BO;
+using Authentication.Employee;
 using Authentication.Service;
 using Authentication.Users;
 using System;
@@ -117,12 +118,20 @@ namespace Authentication.Home
 			allEmployeeGrid.Columns["Gender"].Width =55;
 			allEmployeeGrid.Columns["Religion"].Width = 60;
 			allEmployeeGrid.Columns["DOB"].Width = 75;
-			allEmployeeGrid.Columns["Email"].Width = 180;
+			allEmployeeGrid.Columns["Email"].Width = 160;
 			allEmployeeGrid.Columns["Phone"].Width = 80;
 			allEmployeeGrid.Columns["Status"].Width =80;
 		}
+
 		#endregion
 
-
+		private void AddNewUser_Click(object sender, EventArgs e)
+		{
+			EmployeeEntry userEntry = new EmployeeEntry(this);
+			userEntry.SetCurrentUser(this.oCurrentUser);
+			userEntry.EditUser(null);
+			userEntry._loginID = oCurrentUser.LoginID;
+			userEntry.Show();
+		}
 	}
 }

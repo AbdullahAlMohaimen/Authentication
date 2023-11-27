@@ -69,6 +69,7 @@
 			this.AddNewUser.Size = new System.Drawing.Size(198, 32);
 			this.AddNewUser.TabIndex = 107;
 			this.AddNewUser.Text = "Add New Employee";
+			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
 			// 
 			// allEmployeeGrid
 			// 
