@@ -15,6 +15,7 @@ using System.Web.UI.WebControls;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json.Linq;
 using Authentication.Home;
+using System.IO;
 
 namespace Authentication.Users
 {
@@ -37,7 +38,7 @@ namespace Authentication.Users
 		public string LoginID { get { return _loginID; } set { _loginID = value; } }
 		#endregion
 
-		#region Load
+		#region Constructor(Load)
 		public UserEntry(UserControl caller)
 		{
 			InitializeComponent();
@@ -60,6 +61,7 @@ namespace Authentication.Users
 			this.LoadRoalData();
 			if (_user != null)
 			{
+				txtHeader.Text = "Edit User";
 				txt_UserLoginID.Text = _user.LoginID.ToString();
 				txt_UserName.Text = _user.UserName.ToString();
 				txt_UserEmail.Text = _user.Email.ToString();
@@ -73,6 +75,7 @@ namespace Authentication.Users
 			}
 			else
 			{
+				txtHeader.Text = "New User Entry";
 				_user = new BO.Users();
 			}
 		}

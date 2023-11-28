@@ -14,14 +14,45 @@ namespace Authentication.Employee
 {
 	public partial class EmployeeEntry : Form
 	{
+		#region Property / Variable
 		EmployeeService employeeService = new EmployeeService();
 		BO.Employee employee = new BO.Employee();
+		BO.CurrentUser oCurrentUser = new CurrentUser();
+		BO.Users _user = new BO.Users();
+		private UserControl callingForm;
+		public string _loginID;
+		public string LoginID { get { return _loginID; } set { _loginID = value; } }
+		#endregion
 
-		#region Constructor
-		public EmployeeEntry()
+		#region Constructor (Load)
+		public EmployeeEntry(UserControl caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 			this.Load();
+		}
+		#endregion
+
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oCUser)
+		{
+			oCurrentUser = oCUser;
+		}
+		#endregion
+
+		#region SetEditedUser & Type
+		public void EditEmployee(BO.Employee oEmployee)
+		{
+			if (oEmployee != null)
+			{
+				txtHeader.Text = "Edit Employee";
+				employee = oEmployee;
+			}
+			else
+			{
+				txtHeader.Text = "New Employee Entry";
+				employee = new BO.Employee();
+			}
 		}
 		#endregion
 
@@ -62,40 +93,44 @@ namespace Authentication.Employee
 		private void SaveEmployee_Click(object sender, EventArgs e)
 		{
 			string invalidMessage;
+			string employeeNo;
 			try
 			{
-				invalidMessage = this.isValidate();
-				if (invalidMessage == "")
+				if(employee.IsNew == true)
 				{
-					employee.Name = txt_EmpName.Text;
-					employee.Gender = txt_EmpGender.Text;
-					employee.Religion = txt_EmpReligion.Text;
-					employee.BirthDate = (DateTime)Convert.ToDateTime(txt_EmpDOB.Text);
-					employee.Email = txt_EmpEmail.Text;
-					employee.MobileNo = txt_EmpMobileNo.Text;
-					employee.AccountNo = string.IsNullOrEmpty(txt_EmpAccountNo.Text) ? null : txt_EmpAccountNo.Text;
-					employee.Department = txt_EmpDepartment.Text;
-					employee.Designation = txt_EmpDesignation.Text;
-					employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
-					employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
-					if (txt_EmpIsConfirm.Checked)
+					invalidMessage = this.isValidate();
+					if (invalidMessage == "")
 					{
-						employee.IsConfirmed = txt_EmpIsConfirm.Checked;
-					}
-					string employeeNo = employeeService.Save(employee);
-					if (!string.IsNullOrEmpty(employeeNo))
-					{
-						this.Clear();
-						MessageBox.Show("Employee information save successfully\nA temporary password has been send Employee's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						employee.Name = txt_EmpName.Text;
+						employee.Gender = txt_EmpGender.Text;
+						employee.Religion = txt_EmpReligion.Text;
+						employee.BirthDate = (DateTime)Convert.ToDateTime(txt_EmpDOB.Text);
+						employee.Email = txt_EmpEmail.Text;
+						employee.MobileNo = txt_EmpMobileNo.Text;
+						employee.AccountNo = string.IsNullOrEmpty(txt_EmpAccountNo.Text) ? null : txt_EmpAccountNo.Text;
+						employee.Department = txt_EmpDepartment.Text;
+						employee.Designation = txt_EmpDesignation.Text;
+						employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
+						employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
+						if (txt_EmpIsConfirm.Checked)
+						{
+							employee.IsConfirmed = txt_EmpIsConfirm.Checked;
+						}
 					}
 					else
 					{
-						MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					}
+				}
+				employeeNo = employeeService.Save(employee);
+				if (!string.IsNullOrEmpty(employeeNo))
+				{
+					this.Clear();
+					MessageBox.Show("Employee information save successfully\nA temporary password has been send Employee's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 				}
 				else
 				{
-					MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 			catch(Exception ex)

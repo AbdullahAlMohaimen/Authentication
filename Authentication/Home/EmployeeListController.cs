@@ -129,7 +129,7 @@ namespace Authentication.Home
 		{
 			EmployeeEntry userEntry = new EmployeeEntry(this);
 			userEntry.SetCurrentUser(this.oCurrentUser);
-			userEntry.EditUser(null);
+			userEntry.EditEmployee(null);
 			userEntry._loginID = oCurrentUser.LoginID;
 			userEntry.Show();
 		}

@@ -141,23 +141,30 @@ namespace Authentication.Service
 		{
 			string employeeNo = string.Empty;
 			Password password = new Password();
-			string randomPassword = password.GenerateRandomPassword();
-			employee.Salt = password.CreateSalt(128);
-			employee.Password = password.GenerateHash(randomPassword,employee.Salt);
 			try
 			{
-				employeeNo = EmployeeDA.Insert(employee);
-				if (!string.IsNullOrEmpty(employeeNo))
+				if (employee.IsNew == true)
 				{
-					SendEmail sendEmail = new SendEmail();
-					sendEmail.To = employee.Email;
-					sendEmail.Subject = "Employee Login Password (Do not replay this mail)";
-					sendEmail.Body = $@"<html><body><p><b>Dear</b> {employee.Name},</p>
+					string randomPassword = password.GenerateRandomPassword();
+					employee.Salt = password.CreateSalt(128);
+					employee.Password = password.GenerateHash(randomPassword, employee.Salt);
+					employeeNo = EmployeeDA.Insert(employee);
+					if (!string.IsNullOrEmpty(employeeNo))
+					{
+						SendEmail sendEmail = new SendEmail();
+						sendEmail.To = employee.Email;
+						sendEmail.Subject = "Employee Login Password (Do not replay this mail)";
+						sendEmail.Body = $@"<html><body><p><b>Dear</b> {employee.Name},</p>
 								 <p><b>Your Employee ID : </b>{employeeNo}</p>
 			                     <p><b>This is system generated password : </b>{randomPassword}</p>
 			                     <p>Regards,</p>
 			                     <p>Authentication Team</p></body></html>";
-					sendEmail.SendigEmail(sendEmail);
+						sendEmail.SendigEmail(sendEmail);
+					}
+				}
+				else
+				{
+					employeeNo = EmployeeDA.Update(employee);
 				}
 			}
 			catch(Exception e)

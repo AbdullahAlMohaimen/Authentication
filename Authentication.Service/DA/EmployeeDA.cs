@@ -65,6 +65,35 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Update
+		internal static string Update(Employee oEmployee)
+		{
+			string employeeNo = string.Empty;
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Employee set MaritalStatus = '" + oEmployee.MaritalStatus + "',MobileNo = '" + oEmployee.MobileNo + "'," +
+						"AccountNo = '" + oEmployee.AccountNo + "', Department = '" + oEmployee.Department + "',Designation = '" + oEmployee.Department + "'," +
+						"Email = '"+oEmployee.Email + "' Status = '"+oEmployee.Status+"',BasicSalary = '" + oEmployee.BasicSalary+"' where EmployeeID = '" + oEmployee.ID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					employeeNo = oEmployee.EmployeeNo;
+				}
+			}
+			catch (Exception ex)
+			{
+				employeeNo = null;
+			}
+			return employeeNo;
+		}
+		#endregion
+
 		#region  Search Employee
 		internal static IDataReader GetSearchEmpoyee(string empNo, string empName)
 		{

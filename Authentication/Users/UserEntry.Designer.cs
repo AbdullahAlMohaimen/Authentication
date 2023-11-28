@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserEntry));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label35 = new System.Windows.Forms.Label();
+			this.txtHeader = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -66,7 +66,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.SeaGreen;
-			this.panel1.Controls.Add(this.label35);
+			this.panel1.Controls.Add(this.txtHeader);
 			this.panel1.Controls.Add(this.Minimize);
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
@@ -74,16 +74,16 @@
 			this.panel1.Size = new System.Drawing.Size(971, 36);
 			this.panel1.TabIndex = 12;
 			// 
-			// label35
+			// txtHeader
 			// 
-			this.label35.AutoSize = true;
-			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(166, 25);
-			this.label35.TabIndex = 106;
-			this.label35.Text = "New User Entry";
+			this.txtHeader.AutoSize = true;
+			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.Location = new System.Drawing.Point(8, 2);
+			this.txtHeader.Name = "txtHeader";
+			this.txtHeader.Size = new System.Drawing.Size(166, 25);
+			this.txtHeader.TabIndex = 106;
+			this.txtHeader.Text = "New User Entry";
 			// 
 			// Minimize
 			// 
@@ -411,7 +411,6 @@
 			this.txt_UserRoleID.Name = "txt_UserRoleID";
 			this.txt_UserRoleID.ShadowDecoration.Color = System.Drawing.Color.Gray;
 			this.txt_UserRoleID.Size = new System.Drawing.Size(252, 34);
-			this.txt_UserRoleID.StartIndex = 0;
 			this.txt_UserRoleID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.txt_UserRoleID.TabIndex = 62;
 			// 
@@ -545,7 +544,7 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.Label txtHeader;
 		private System.Windows.Forms.Button Minimize;
 		private System.Windows.Forms.Button Exit;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
