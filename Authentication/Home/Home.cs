@@ -96,10 +96,8 @@ namespace Authentication.Home
 		{
 			menuTreeView.Nodes.Add("Home");
 			menuTreeView.Nodes.Add("Profile");
+
 			menuTreeView.Nodes.Add("Administration");
-
-
-
 			TreeNode administrationNode = menuTreeView.Nodes[2];
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");
@@ -108,6 +106,12 @@ namespace Authentication.Home
 			TreeNode employeeNode = administrationNode.Nodes["Employee"];
 			employeeNode = administrationNode.Nodes.Add("Employee");
 			employeeNode.Nodes.Add("Employee List");
+
+			menuTreeView.Nodes.Add("Leave");
+			TreeNode leaveNode = menuTreeView.Nodes[3];
+			TreeNode leave = administrationNode.Nodes["Leave Year"];
+			leave = administrationNode.Nodes.Add("Leave Year");
+			TreeNode leaveType = administrationNode.Nodes["Leave Type"];
 		}
 		#endregion
 

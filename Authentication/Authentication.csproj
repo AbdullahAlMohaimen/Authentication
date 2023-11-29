@@ -294,6 +294,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank\Bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bank\Bank.Designer.cs">
+      <DependentUpon>Bank.cs</DependentUpon>
+    </Compile>
     <Compile Include="BlurOverlayForm\BlurOverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,12 @@
     <Compile Include="Employee\EmployeeEntry.Designer.cs">
       <DependentUpon>EmployeeEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Family\Family.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Family\Family.Designer.cs">
+      <DependentUpon>Family.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassword\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,11 +336,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grade\GradeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grade\GradeEntry.Designer.cs">
+      <DependentUpon>GradeEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="HardPasswordSetup\HardPasswordSetup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HardPasswordSetup\HardPasswordSetup.Designer.cs">
       <DependentUpon>HardPasswordSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday\Holiday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holiday\Holiday.Designer.cs">
+      <DependentUpon>Holiday.cs</DependentUpon>
     </Compile>
     <Compile Include="Home\AdministartorDashboard.cs">
       <SubType>UserControl</SubType>
@@ -360,6 +384,30 @@
     <Compile Include="Home\UserListController.Designer.cs">
       <DependentUpon>UserListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Leave\LeaveEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave\LeaveEntry.Designer.cs">
+      <DependentUpon>LeaveEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Leave\LeaveType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave\LeaveType.Designer.cs">
+      <DependentUpon>LeaveType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Leave\LeaveYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave\LeaveYear.Designer.cs">
+      <DependentUpon>LeaveYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LifeCycle\LifeCycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LifeCycle\LifeCycle.Designer.cs">
+      <DependentUpon>LifeCycle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +427,12 @@
     </Compile>
     <Compile Include="Role\RoleEntry.Designer.cs">
       <DependentUpon>RoleEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Salary\SalaryProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salary\SalaryProcess.Designer.cs">
+      <DependentUpon>SalaryProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchEmployee\SearchEmployee.cs">
       <SubType>Form</SubType>
