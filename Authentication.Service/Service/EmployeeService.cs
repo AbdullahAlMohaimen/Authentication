@@ -97,7 +97,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Get Employee By ID
+		#region Get Employee By EmpNo
 		public Employee GetEmployee(string empNo)
 		{
 			Employee oEmployee = new Employee();

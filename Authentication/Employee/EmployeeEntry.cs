@@ -15,6 +15,7 @@ namespace Authentication.Employee
 	public partial class EmployeeEntry : Form
 	{
 		#region Property / Variable
+		public event EventHandler EditingDone;
 		EmployeeService employeeService = new EmployeeService();
 		BO.Employee employee = new BO.Employee();
 		BO.CurrentUser oCurrentUser = new CurrentUser();
@@ -40,19 +41,33 @@ namespace Authentication.Employee
 		}
 		#endregion
 
-		#region SetEditedUser & Type
+		#region SetEditedEmployee & Type
 		public void EditEmployee(BO.Employee oEmployee)
 		{
-			if (oEmployee != null)
+			employee = oEmployee;
+			if (employee != null)
 			{
 				txtHeader.Text = "Edit Employee";
-				employee = oEmployee;
+				txt_EmpName.Text = employee.Name;
+				txt_EmpGender.SelectedItem = employee.Gender;
+				txt_EmpReligion.SelectedItem = employee.Religion;
+				txt_EmpDOB.Value = employee.BirthDate;
+				txt_EmpMStatus.SelectedItem = employee.MaritalStatus;
+				txt_EmpMobileNo.Text = employee.MobileNo;
+				txt_EmpAccountNo.Text = employee.AccountNo;
+				txt_EmpDepartment.SelectedItem = employee.Department;
+				txt_EmpDesignation.SelectedItem = employee.Designation;
+				txt_EmpEmail.Text = employee.Email;
+				txt_EmpSalary.Text = employee.BasicSalary.ToString();
+				txt_EmpIsConfirm.Checked = (bool)employee.IsConfirmed;
 			}
 			else
 			{
 				txtHeader.Text = "New Employee Entry";
 				employee = new BO.Employee();
 			}
+
+
 		}
 		#endregion
 
@@ -96,31 +111,28 @@ namespace Authentication.Employee
 			string employeeNo;
 			try
 			{
-				if(employee.IsNew == true)
+				invalidMessage = this.isValidate();
+				if (invalidMessage == "")
 				{
-					invalidMessage = this.isValidate();
-					if (invalidMessage == "")
+					employee.Name = txt_EmpName.Text;
+					employee.Gender = txt_EmpGender.Text;
+					employee.Religion = txt_EmpReligion.Text;
+					employee.BirthDate = (DateTime)Convert.ToDateTime(txt_EmpDOB.Text);
+					employee.Email = txt_EmpEmail.Text;
+					employee.MobileNo = txt_EmpMobileNo.Text;
+					employee.AccountNo = string.IsNullOrEmpty(txt_EmpAccountNo.Text) ? null : txt_EmpAccountNo.Text;
+					employee.Department = txt_EmpDepartment.Text;
+					employee.Designation = txt_EmpDesignation.Text;
+					employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
+					employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
+					if (txt_EmpIsConfirm.Checked)
 					{
-						employee.Name = txt_EmpName.Text;
-						employee.Gender = txt_EmpGender.Text;
-						employee.Religion = txt_EmpReligion.Text;
-						employee.BirthDate = (DateTime)Convert.ToDateTime(txt_EmpDOB.Text);
-						employee.Email = txt_EmpEmail.Text;
-						employee.MobileNo = txt_EmpMobileNo.Text;
-						employee.AccountNo = string.IsNullOrEmpty(txt_EmpAccountNo.Text) ? null : txt_EmpAccountNo.Text;
-						employee.Department = txt_EmpDepartment.Text;
-						employee.Designation = txt_EmpDesignation.Text;
-						employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
-						employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
-						if (txt_EmpIsConfirm.Checked)
-						{
-							employee.IsConfirmed = txt_EmpIsConfirm.Checked;
-						}
+						employee.IsConfirmed = txt_EmpIsConfirm.Checked;
 					}
-					else
-					{
-						MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					}
+				}
+				else
+				{
+					MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 				employeeNo = employeeService.Save(employee);
 				if (!string.IsNullOrEmpty(employeeNo))
@@ -138,6 +150,10 @@ namespace Authentication.Employee
 				MessageBox.Show(ex.Message);
 				//MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			this.Clear();
+
+			EditingDone?.Invoke(this, EventArgs.Empty);
+			this.Close();
 		}
 		#endregion
 

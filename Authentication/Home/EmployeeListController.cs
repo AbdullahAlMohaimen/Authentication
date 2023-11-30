@@ -125,6 +125,7 @@ namespace Authentication.Home
 
 		#endregion
 
+		#region New User Butoon
 		private void AddNewUser_Click(object sender, EventArgs e)
 		{
 			EmployeeEntry userEntry = new EmployeeEntry(this);
@@ -132,6 +133,41 @@ namespace Authentication.Home
 			userEntry.EditEmployee(null);
 			userEntry._loginID = oCurrentUser.LoginID;
 			userEntry.Show();
+		}
+		#endregion
+
+		#region Grid Button Click
+		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			try
+			{
+				BO.Employee oEmployee = new BO.Employee();
+				DataGridViewRow selectedRow = allEmployeeGrid.Rows[e.RowIndex];
+				string employeeNo = selectedRow.Cells["Emp No"].Value.ToString();
+				oEmployee = employeeService.GetEmployee(employeeNo);
+
+				if (allEmployeeGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
+				{
+					#region Edit User
+					EmployeeEntry employeeEntry = new EmployeeEntry(this);
+					employeeEntry.SetCurrentUser(this.oCurrentUser);
+					employeeEntry.EditEmployee(oEmployee);
+					employeeEntry._loginID = oCurrentUser.LoginID;
+					employeeEntry.EditingDone += EmployeeEntry_EditingDone;
+					employeeEntry.Show();
+					#endregion
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		#endregion
+
+		private void EmployeeEntry_EditingDone(object sender, EventArgs e)
+		{
+			this.loadGrid();
 		}
 	}
 }

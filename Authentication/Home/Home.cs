@@ -109,9 +109,17 @@ namespace Authentication.Home
 
 			menuTreeView.Nodes.Add("Leave");
 			TreeNode leaveNode = menuTreeView.Nodes[3];
-			TreeNode leave = administrationNode.Nodes["Leave Year"];
-			leave = administrationNode.Nodes.Add("Leave Year");
-			TreeNode leaveType = administrationNode.Nodes["Leave Type"];
+			TreeNode leaveYear = leaveNode.Nodes["Leave Year"];
+			leaveYear = leaveNode.Nodes.Add("Leave Year");
+
+			TreeNode leaveType = leaveNode.Nodes["Leave Type"];
+			leaveType = leaveNode.Nodes.Add("Leave Type");
+
+			TreeNode leaveApplicatipn = leaveNode.Nodes["Leave Apply"];
+			leaveApplicatipn = leaveNode.Nodes.Add("Leave Apply");
+
+			TreeNode leaveApproval = leaveNode.Nodes["Leave Approval"];
+			leaveApproval = leaveNode.Nodes.Add("Leave Approval");
 		}
 		#endregion
 
