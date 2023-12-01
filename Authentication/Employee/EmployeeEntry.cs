@@ -126,23 +126,48 @@ namespace Authentication.Employee
 					employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
 					employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
 					if (txt_EmpIsConfirm.Checked)
-					{
 						employee.IsConfirmed = txt_EmpIsConfirm.Checked;
-					}
+					else
+						employee.IsConfirmed = false;
 				}
 				else
 				{
 					MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
-				employeeNo = employeeService.Save(employee);
-				if (!string.IsNullOrEmpty(employeeNo))
+				if (employee.IsNew == true)
 				{
-					this.Clear();
-					MessageBox.Show("Employee information save successfully\nA temporary password has been send Employee's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					employee.CreatedBy = oCurrentUser.ID;
+					employee.CreatedDate = DateTime.Now;
 				}
 				else
 				{
-					MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					employee.ModifiedBy = oCurrentUser.ID;
+					employee.ModifiedDate = DateTime.Now;
+				}
+				employeeNo = employeeService.Save(employee);
+				if(employee.IsNew == true)
+				{
+					if (!string.IsNullOrEmpty(employeeNo))
+					{
+						this.Clear();
+						MessageBox.Show("Employee information save successfully\nA temporary password has been send Employee's email", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					}
+					else
+					{
+						MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				else
+				{
+					if (!string.IsNullOrEmpty(employeeNo))
+					{
+						this.Clear();
+						MessageBox.Show("Employee information save successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					}
+					else
+					{
+						MessageBox.Show("Employee information save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			}
 			catch(Exception ex)

@@ -67,15 +67,26 @@ namespace Authentication.Home
 					row["Emp No"] = oEmployee.EmployeeNo;
 					row["Name"] = oEmployee.Name;
 					row["Gender"] = oEmployee.Gender;
-					row["Religion"] = oEmployee.Religion;
-					row["DOB"] = oEmployee.BirthDate.ToString("dd MMM yyy");
+					row["DOJ"] = oEmployee.JoiningDate.ToString("dd MMM yyy");
 					row["Email"] = oEmployee.Email;
 					row["Phone"] = oEmployee.MobileNo;
 					row["Status"] = oEmployee.Status == EnumStatus.Active ? "Active" : "In-Active";
+					row["IsConfirm"] = oEmployee.IsConfirmed == true ? "Yes" : "No";
 					allEmployeeDataTable.Rows.Add(row);
 				}
 				allEmployeeGrid.DataSource = allEmployeeDataTable;
 				this.SetGridColumn();
+
+				DataGridViewButtonColumn statusChangedButton = new DataGridViewButtonColumn();
+				statusChangedButton.HeaderText = "Change Status";
+				statusChangedButton.Text = "Change Status";
+				statusChangedButton.UseColumnTextForButtonValue = true;
+				statusChangedButton.DefaultCellStyle.BackColor = SystemColors.Control;
+				statusChangedButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+				statusChangedButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+				statusChangedButton.CellTemplate.Style.ForeColor = Color.Maroon;
+				statusChangedButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+				allEmployeeGrid.Columns.Add(statusChangedButton);
 
 				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
 				editButton.HeaderText = "Edit";
@@ -102,25 +113,25 @@ namespace Authentication.Home
 			allEmployeeDataTable.Columns.Add("Emp No");
 			allEmployeeDataTable.Columns.Add("Name");
 			allEmployeeDataTable.Columns.Add("Gender");
-			allEmployeeDataTable.Columns.Add("Religion");
-			allEmployeeDataTable.Columns.Add("DOB");
+			allEmployeeDataTable.Columns.Add("DOJ");
 			allEmployeeDataTable.Columns.Add("Email");
 			allEmployeeDataTable.Columns.Add("Phone");
 			allEmployeeDataTable.Columns.Add("Status");
+			allEmployeeDataTable.Columns.Add("IsConfirm");
 		}
 		#endregion
 
 		#region Set Grid Column
 		public void SetGridColumn()
 		{
-			allEmployeeGrid.Columns["Emp No"].Width = 55;
-			allEmployeeGrid.Columns["Name"].Width = 165;
-			allEmployeeGrid.Columns["Gender"].Width =55;
-			allEmployeeGrid.Columns["Religion"].Width = 60;
-			allEmployeeGrid.Columns["DOB"].Width = 75;
-			allEmployeeGrid.Columns["Email"].Width = 160;
-			allEmployeeGrid.Columns["Phone"].Width = 80;
-			allEmployeeGrid.Columns["Status"].Width =80;
+			allEmployeeGrid.Columns["Emp No"].Width = 50;
+			allEmployeeGrid.Columns["Name"].Width = 150;
+			allEmployeeGrid.Columns["Gender"].Width =45;
+			allEmployeeGrid.Columns["DOJ"].Width = 70;
+			allEmployeeGrid.Columns["Email"].Width = 140;
+			allEmployeeGrid.Columns["Phone"].Width = 75;
+			allEmployeeGrid.Columns["Status"].Width = 45;
+			allEmployeeGrid.Columns["IsConfirm"].Width = 90;
 		}
 
 		#endregion

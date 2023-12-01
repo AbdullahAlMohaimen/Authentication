@@ -86,7 +86,7 @@ namespace Authentication.Home
 				allUserGrid.Columns.Add(editButton);
 
 				DataGridViewButtonColumn active = new DataGridViewButtonColumn();
-				active.HeaderText = "Status";
+				active.HeaderText = "User Status";
 				active.Text = "Change Status";
 				active.UseColumnTextForButtonValue = true;
 				active.DefaultCellStyle.BackColor = SystemColors.Control;
