@@ -129,9 +129,9 @@
 			// 
 			// panelContainer
 			// 
-			this.panelContainer.Location = new System.Drawing.Point(269, 49);
+			this.panelContainer.Location = new System.Drawing.Point(240, 49);
 			this.panelContainer.Name = "panelContainer";
-			this.panelContainer.Size = new System.Drawing.Size(1036, 588);
+			this.panelContainer.Size = new System.Drawing.Size(1065, 588);
 			this.panelContainer.TabIndex = 13;
 			// 
 			// menuTreeView
@@ -143,7 +143,7 @@
 			this.menuTreeView.ForeColor = System.Drawing.Color.Maroon;
 			this.menuTreeView.Location = new System.Drawing.Point(5, 3);
 			this.menuTreeView.Name = "menuTreeView";
-			this.menuTreeView.Size = new System.Drawing.Size(257, 577);
+			this.menuTreeView.Size = new System.Drawing.Size(227, 577);
 			this.menuTreeView.TabIndex = 14;
 			this.menuTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.menuTreeView_AfterSelect);
 			// 
@@ -157,7 +157,7 @@
 			this.guna2Panel1.Controls.Add(this.menuTreeView);
 			this.guna2Panel1.Location = new System.Drawing.Point(2, 51);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(266, 586);
+			this.guna2Panel1.Size = new System.Drawing.Size(236, 586);
 			this.guna2Panel1.TabIndex = 108;
 			// 
 			// Home

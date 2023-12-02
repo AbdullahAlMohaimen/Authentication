@@ -52,7 +52,7 @@ namespace Authentication.Home
 			this.guna2Panel1.Controls.Add(this.allUserGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(1032, 585);
+			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
 			// 
 			// AddNewUser
@@ -107,7 +107,7 @@ namespace Authentication.Home
 			this.allUserGrid.Name = "allUserGrid";
 			this.allUserGrid.ReadOnly = true;
 			this.allUserGrid.RowHeadersVisible = false;
-			this.allUserGrid.Size = new System.Drawing.Size(1019, 526);
+			this.allUserGrid.Size = new System.Drawing.Size(1048, 526);
 			this.allUserGrid.TabIndex = 0;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allUserGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -139,7 +139,7 @@ namespace Authentication.Home
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "UserListController";
-			this.Size = new System.Drawing.Size(1038, 590);
+			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.allUserGrid)).EndInit();
 			this.ResumeLayout(false);

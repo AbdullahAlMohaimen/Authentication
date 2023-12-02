@@ -50,7 +50,7 @@
 			this.guna2Panel1.Controls.Add(this.allEmployeeGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(1032, 585);
+			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
 			// 
 			// AddNewUser
@@ -105,7 +105,7 @@
 			this.allEmployeeGrid.Name = "allEmployeeGrid";
 			this.allEmployeeGrid.ReadOnly = true;
 			this.allEmployeeGrid.RowHeadersVisible = false;
-			this.allEmployeeGrid.Size = new System.Drawing.Size(1019, 526);
+			this.allEmployeeGrid.Size = new System.Drawing.Size(1047, 526);
 			this.allEmployeeGrid.TabIndex = 1;
 			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -137,7 +137,7 @@
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "EmployeeListController";
-			this.Size = new System.Drawing.Size(1038, 590);
+			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.allEmployeeGrid)).EndInit();
 			this.ResumeLayout(false);

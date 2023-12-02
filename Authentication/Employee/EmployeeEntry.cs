@@ -60,6 +60,7 @@ namespace Authentication.Employee
 				txt_EmpEmail.Text = employee.Email;
 				txt_EmpSalary.Text = employee.BasicSalary.ToString();
 				txt_EmpIsConfirm.Checked = (bool)employee.IsConfirmed;
+				txt_EmpAddress.Text = employee.Address;
 			}
 			else
 			{
@@ -125,6 +126,7 @@ namespace Authentication.Employee
 					employee.Designation = txt_EmpDesignation.Text;
 					employee.MaritalStatus = string.IsNullOrEmpty(txt_EmpMStatus.Text) ? null : txt_EmpMStatus.Text;
 					employee.BasicSalary = (int)Convert.ToInt32(txt_EmpSalary.Text);
+					employee.Address = txt_EmpAddress.Text;
 					if (txt_EmpIsConfirm.Checked)
 						employee.IsConfirmed = txt_EmpIsConfirm.Checked;
 					else
@@ -196,6 +198,7 @@ namespace Authentication.Employee
 			txt_EmpDesignation.SelectedIndex = 0;
 			txt_EmpEmail.Text = string.Empty;
 			txt_EmpSalary.Text = string.Empty;
+			txt_EmpAddress.Text = string.Empty;
 			txt_EmpIsConfirm.Checked = false;
 		}
 		#endregion

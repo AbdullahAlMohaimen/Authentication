@@ -35,10 +35,10 @@ namespace Authentication.Service
 				{
 					SqlCommand insertCommand = new SqlCommand("Insert into EMPLOYEE(Name,Gender,Religion,BirthDate," +
 								"JoiningDate,Email,MobileNo,IsConfirmed,Status,AccountNo,Department,MaritalStatus,Designation,BasicSalary,AuthorizedDate,ChangePasswordAtNextLogon," +
-								"Password,PasswordHints,Salt,TempStatus,PasswordResetByAdmin) values " +
+								"Password,PasswordHints,Salt,TempStatus,PasswordResetByAdmin,Address) values " +
 								"('" + e.Name + "','" + e.Gender + "','" + e.Religion + "','" + e.BirthDate + "','" + e.JoiningDate + "','" + e.Email + "','" + e.MobileNo + "'," +
 								"'" + e.IsConfirmed + "','" + (int)e.Status + "','" + e.AccountNo + "','" + e.Department + "','" + e.MaritalStatus + "','" + e.Designation + "','" + e.BasicSalary + "','" + e.AuthorizedDate + "'," +
-								"'" + e.ChangePasswordAtNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "','" +e.PasswordResetByAdmin+ "')", conn, tc);
+								"'" + e.ChangePasswordAtNextLogon + "','" + e.Password + "','"+e.PasswordHints+"','" + e.Salt + "','" + (int)e.TempStatus + "','" +e.PasswordResetByAdmin+ "','"+e.Address+"')", conn, tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -78,7 +78,7 @@ namespace Authentication.Service
 				{
 					SqlCommand updateCommand = new SqlCommand("Update Employee set MaritalStatus = '" + oEmployee.MaritalStatus + "',MobileNo = '" + oEmployee.MobileNo + "'," +
 						"AccountNo = '" + oEmployee.AccountNo + "', Department = '" + oEmployee.Department + "',Designation = '" + oEmployee.Department + "'," +
-						"Email = '"+oEmployee.Email + "', Status = '"+(int)oEmployee.Status+"',BasicSalary = '" + oEmployee.BasicSalary+"',IsConfirmed = '"+oEmployee.IsConfirmed+"' where EmployeeID = '" + oEmployee.ID + "'", conn, tc);
+						"Email = '"+oEmployee.Email + "', Status = '"+(int)oEmployee.Status+"',BasicSalary = '" + oEmployee.BasicSalary+"',IsConfirmed = '"+oEmployee.IsConfirmed+"',Address = '"+oEmployee.Address+"' where EmployeeID = '" + oEmployee.ID + "'", conn, tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();

@@ -29,6 +29,7 @@ namespace Authentication.BO
 			_modifiedDate = null;
 			_passwordResetBy = 0;
 			_passwordResetDate = null;
+			_address = string.Empty;
 		}
 		#endregion
 
@@ -161,6 +162,15 @@ namespace Authentication.BO
 		{
 			get { return _designation; }
 			set { _designation = value; }
+		}
+		#endregion
+
+		#region Address : String
+		public string _address;
+		public string Address
+		{
+			get { return _address; }
+			set { _address = value; }
 		}
 		#endregion
 

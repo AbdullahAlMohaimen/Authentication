@@ -82,6 +82,9 @@
 			this.label19 = new System.Windows.Forms.Label();
 			this.label21 = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
+			this.txt_EmpAddress = new Guna.UI2.WinForms.Guna2TextBox();
+			this.label35 = new System.Windows.Forms.Label();
+			this.label36 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -344,7 +347,7 @@
 			this.SaveEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SaveEmployee.ForeColor = System.Drawing.Color.Wheat;
 			this.SaveEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SaveEmployee.Image")));
-			this.SaveEmployee.Location = new System.Drawing.Point(802, 295);
+			this.SaveEmployee.Location = new System.Drawing.Point(802, 366);
 			this.SaveEmployee.Name = "SaveEmployee";
 			this.SaveEmployee.Size = new System.Drawing.Size(115, 31);
 			this.SaveEmployee.TabIndex = 104;
@@ -362,7 +365,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(665, 295);
+			this.Cancel.Location = new System.Drawing.Point(665, 366);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(121, 31);
 			this.Cancel.TabIndex = 105;
@@ -376,6 +379,9 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.label35);
+			this.guna2Panel1.Controls.Add(this.label36);
+			this.guna2Panel1.Controls.Add(this.txt_EmpAddress);
 			this.guna2Panel1.Controls.Add(this.Cancel);
 			this.guna2Panel1.Controls.Add(this.label11);
 			this.guna2Panel1.Controls.Add(this.SaveEmployee);
@@ -426,7 +432,7 @@
 			this.guna2Panel1.Controls.Add(this.label20);
 			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(945, 342);
+			this.guna2Panel1.Size = new System.Drawing.Size(945, 416);
 			this.guna2Panel1.TabIndex = 106;
 			// 
 			// label11
@@ -434,7 +440,7 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(31, 262);
+			this.label11.Location = new System.Drawing.Point(27, 262);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(91, 21);
 			this.label11.TabIndex = 69;
@@ -956,13 +962,59 @@
 			this.label20.TabIndex = 79;
 			this.label20.Text = "*";
 			// 
+			// txt_EmpAddress
+			// 
+			this.txt_EmpAddress.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_EmpAddress.BorderRadius = 6;
+			this.txt_EmpAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_EmpAddress.DefaultText = "";
+			this.txt_EmpAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_EmpAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_EmpAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpAddress.FillColor = System.Drawing.Color.Wheat;
+			this.txt_EmpAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpAddress.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmpAddress.ForeColor = System.Drawing.Color.Black;
+			this.txt_EmpAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpAddress.Location = new System.Drawing.Point(196, 307);
+			this.txt_EmpAddress.Multiline = true;
+			this.txt_EmpAddress.Name = "txt_EmpAddress";
+			this.txt_EmpAddress.PasswordChar = '\0';
+			this.txt_EmpAddress.PlaceholderText = "";
+			this.txt_EmpAddress.SelectedText = "";
+			this.txt_EmpAddress.Size = new System.Drawing.Size(252, 90);
+			this.txt_EmpAddress.TabIndex = 170;
+			// 
+			// label35
+			// 
+			this.label35.AutoSize = true;
+			this.label35.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label35.Location = new System.Drawing.Point(27, 307);
+			this.label35.Name = "label35";
+			this.label35.Size = new System.Drawing.Size(73, 21);
+			this.label35.TabIndex = 171;
+			this.label35.Text = "Address";
+			// 
+			// label36
+			// 
+			this.label36.AutoSize = true;
+			this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label36.Location = new System.Drawing.Point(170, 306);
+			this.label36.Name = "label36";
+			this.label36.Size = new System.Drawing.Size(16, 24);
+			this.label36.TabIndex = 173;
+			this.label36.Text = ":";
+			// 
 			// EmployeeEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(969, 407);
+			this.ClientSize = new System.Drawing.Size(969, 478);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
@@ -1032,5 +1084,8 @@
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label20;
+		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.Label label36;
+		private Guna.UI2.WinForms.Guna2TextBox txt_EmpAddress;
 	}
 }

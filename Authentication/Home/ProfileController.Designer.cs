@@ -40,7 +40,7 @@
 			this.guna2Panel1.BorderThickness = 2;
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(1031, 585);
+			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 110;
 			// 
 			// ProfileController
@@ -50,7 +50,7 @@
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "ProfileController";
-			this.Size = new System.Drawing.Size(1038, 590);
+			this.Size = new System.Drawing.Size(1067, 590);
 			this.ResumeLayout(false);
 
 		}

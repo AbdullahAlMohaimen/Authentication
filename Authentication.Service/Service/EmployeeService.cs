@@ -38,6 +38,7 @@ namespace Authentication.Service
 			oEmployee.Department = oReader.GetString("Department", string.Empty);
 			oEmployee.MaritalStatus = oReader.GetString("MaritalStatus", string.Empty);
 			oEmployee.Designation = oReader.GetString("Designation", string.Empty);
+			oEmployee.Address = oReader.GetString("Address", string.Empty);
 			oEmployee.BasicSalary = oReader.GetInt32("BasicSalary").Value;
 			oEmployee.ChangePasswordAtNextLogon = oReader.GetInt32("ChangePasswordAtNextLogon",1);
 			oEmployee.Password = oReader.GetString("Password");

@@ -105,7 +105,7 @@ namespace Authentication.Home
 
 			TreeNode employeeNode = administrationNode.Nodes["Employee"];
 			employeeNode = administrationNode.Nodes.Add("Employee");
-			employeeNode.Nodes.Add("Employee Basic Information");
+			employeeNode.Nodes.Add("Employee Information");
 			employeeNode.Nodes.Add("Employee List");
 
 			menuTreeView.Nodes.Add("Leave");
@@ -148,6 +148,10 @@ namespace Authentication.Home
 				case "Employee List":
 					EmployeeListController employeeListController = new EmployeeListController();
 					AddControl(employeeListController);
+					break;
+				case "Employee Information":
+					EmployeeInformationCOntroller employeeInformationCOntroller = new EmployeeInformationCOntroller();
+					AddControl(employeeInformationCOntroller);
 					break;
 				default:
 					break;
