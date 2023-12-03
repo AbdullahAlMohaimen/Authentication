@@ -30,10 +30,22 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeInformationCOntroller));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.Clear_Emp_Button = new System.Windows.Forms.Button();
+			this.label21 = new System.Windows.Forms.Label();
+			this.txt_Locked = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label20 = new System.Windows.Forms.Label();
+			this.txt_InActive = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label19 = new System.Windows.Forms.Label();
+			this.txt_Active = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.txt_EmpAddress = new Guna.UI2.WinForms.Guna2TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txt_EmpJoiningDate = new MetroFramework.Controls.MetroDateTime();
 			this.label38 = new System.Windows.Forms.Label();
-			this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+			this.txt_EmpNo = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label39 = new System.Windows.Forms.Label();
-			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.label11 = new System.Windows.Forms.Label();
 			this.SaveEmployee = new Guna.UI2.WinForms.Guna2Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -76,18 +88,6 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-			this.txt_RoleDescription = new Guna.UI2.WinForms.Guna2TextBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label19 = new System.Windows.Forms.Label();
-			this.txt_Active = new Guna.UI2.WinForms.Guna2CheckBox();
-			this.label20 = new System.Windows.Forms.Label();
-			this.txt_InActive = new Guna.UI2.WinForms.Guna2CheckBox();
-			this.label21 = new System.Windows.Forms.Label();
-			this.txt_Locked = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -98,6 +98,7 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.Clear_Emp_Button);
 			this.guna2Panel1.Controls.Add(this.label21);
 			this.guna2Panel1.Controls.Add(this.txt_Locked);
 			this.guna2Panel1.Controls.Add(this.label20);
@@ -106,14 +107,13 @@
 			this.guna2Panel1.Controls.Add(this.txt_Active);
 			this.guna2Panel1.Controls.Add(this.label7);
 			this.guna2Panel1.Controls.Add(this.label9);
-			this.guna2Panel1.Controls.Add(this.txt_RoleDescription);
+			this.guna2Panel1.Controls.Add(this.txt_EmpAddress);
 			this.guna2Panel1.Controls.Add(this.label2);
 			this.guna2Panel1.Controls.Add(this.label4);
-			this.guna2Panel1.Controls.Add(this.metroDateTime1);
+			this.guna2Panel1.Controls.Add(this.txt_EmpJoiningDate);
 			this.guna2Panel1.Controls.Add(this.label38);
-			this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+			this.guna2Panel1.Controls.Add(this.txt_EmpNo);
 			this.guna2Panel1.Controls.Add(this.label39);
-			this.guna2Panel1.Controls.Add(this.Cancel);
 			this.guna2Panel1.Controls.Add(this.label11);
 			this.guna2Panel1.Controls.Add(this.SaveEmployee);
 			this.guna2Panel1.Controls.Add(this.label6);
@@ -160,6 +160,189 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 111;
 			// 
+			// Clear_Emp_Button
+			// 
+			this.Clear_Emp_Button.BackColor = System.Drawing.Color.Wheat;
+			this.Clear_Emp_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_Emp_Button.BackgroundImage")));
+			this.Clear_Emp_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.Clear_Emp_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Clear_Emp_Button.FlatAppearance.BorderSize = 0;
+			this.Clear_Emp_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Clear_Emp_Button.Location = new System.Drawing.Point(765, 28);
+			this.Clear_Emp_Button.Name = "Clear_Emp_Button";
+			this.Clear_Emp_Button.Size = new System.Drawing.Size(27, 24);
+			this.Clear_Emp_Button.TabIndex = 178;
+			this.Clear_Emp_Button.UseVisualStyleBackColor = false;
+			this.Clear_Emp_Button.Click += new System.EventHandler(this.Clear_Emp_Button_Click);
+			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label21.Location = new System.Drawing.Point(452, 536);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(64, 21);
+			this.label21.TabIndex = 176;
+			this.label21.Text = "Locked";
+			// 
+			// txt_Locked
+			// 
+			this.txt_Locked.AutoSize = true;
+			this.txt_Locked.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Locked.CheckedState.BorderRadius = 0;
+			this.txt_Locked.CheckedState.BorderThickness = 0;
+			this.txt_Locked.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Locked.Location = new System.Drawing.Point(434, 540);
+			this.txt_Locked.Name = "txt_Locked";
+			this.txt_Locked.Size = new System.Drawing.Size(15, 14);
+			this.txt_Locked.TabIndex = 177;
+			this.txt_Locked.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Locked.UncheckedState.BorderRadius = 0;
+			this.txt_Locked.UncheckedState.BorderThickness = 0;
+			this.txt_Locked.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Locked.CheckedChanged += new System.EventHandler(this.txt_Locked_CheckedChanged);
+			// 
+			// label20
+			// 
+			this.label20.AutoSize = true;
+			this.label20.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label20.Location = new System.Drawing.Point(309, 536);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(91, 21);
+			this.label20.TabIndex = 174;
+			this.label20.Text = "In-Active";
+			// 
+			// txt_InActive
+			// 
+			this.txt_InActive.AutoSize = true;
+			this.txt_InActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_InActive.CheckedState.BorderRadius = 0;
+			this.txt_InActive.CheckedState.BorderThickness = 0;
+			this.txt_InActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_InActive.Location = new System.Drawing.Point(291, 540);
+			this.txt_InActive.Name = "txt_InActive";
+			this.txt_InActive.Size = new System.Drawing.Size(15, 14);
+			this.txt_InActive.TabIndex = 175;
+			this.txt_InActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_InActive.UncheckedState.BorderRadius = 0;
+			this.txt_InActive.UncheckedState.BorderThickness = 0;
+			this.txt_InActive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_InActive.CheckedChanged += new System.EventHandler(this.txt_InActive_CheckedChanged);
+			// 
+			// label19
+			// 
+			this.label19.AutoSize = true;
+			this.label19.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label19.Location = new System.Drawing.Point(193, 536);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(64, 21);
+			this.label19.TabIndex = 172;
+			this.label19.Text = "Active";
+			// 
+			// txt_Active
+			// 
+			this.txt_Active.AutoSize = true;
+			this.txt_Active.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.CheckedState.BorderRadius = 0;
+			this.txt_Active.CheckedState.BorderThickness = 0;
+			this.txt_Active.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.Location = new System.Drawing.Point(175, 540);
+			this.txt_Active.Name = "txt_Active";
+			this.txt_Active.Size = new System.Drawing.Size(15, 14);
+			this.txt_Active.TabIndex = 173;
+			this.txt_Active.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.UncheckedState.BorderRadius = 0;
+			this.txt_Active.UncheckedState.BorderThickness = 0;
+			this.txt_Active.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.CheckedChanged += new System.EventHandler(this.txt_Active_CheckedChanged);
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label7.Location = new System.Drawing.Point(171, 423);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(16, 24);
+			this.label7.TabIndex = 171;
+			this.label7.Text = ":";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label9.Location = new System.Drawing.Point(28, 425);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(73, 21);
+			this.label9.TabIndex = 170;
+			this.label9.Text = "Address";
+			// 
+			// txt_EmpAddress
+			// 
+			this.txt_EmpAddress.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_EmpAddress.BorderRadius = 6;
+			this.txt_EmpAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_EmpAddress.DefaultText = "";
+			this.txt_EmpAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_EmpAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_EmpAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpAddress.FillColor = System.Drawing.Color.Wheat;
+			this.txt_EmpAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpAddress.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmpAddress.ForeColor = System.Drawing.Color.Black;
+			this.txt_EmpAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpAddress.Location = new System.Drawing.Point(197, 420);
+			this.txt_EmpAddress.Multiline = true;
+			this.txt_EmpAddress.Name = "txt_EmpAddress";
+			this.txt_EmpAddress.PasswordChar = '\0';
+			this.txt_EmpAddress.PlaceholderText = "";
+			this.txt_EmpAddress.SelectedText = "";
+			this.txt_EmpAddress.Size = new System.Drawing.Size(303, 66);
+			this.txt_EmpAddress.TabIndex = 169;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label2.Location = new System.Drawing.Point(536, 160);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(145, 21);
+			this.label2.TabIndex = 166;
+			this.label2.Text = "Date of Joining";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label4.Location = new System.Drawing.Point(679, 160);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(16, 24);
+			this.label4.TabIndex = 168;
+			this.label4.Text = ":";
+			// 
+			// txt_EmpJoiningDate
+			// 
+			this.txt_EmpJoiningDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmpJoiningDate.CalendarForeColor = System.Drawing.Color.Wheat;
+			this.txt_EmpJoiningDate.CalendarMonthBackground = System.Drawing.Color.Wheat;
+			this.txt_EmpJoiningDate.CalendarTitleBackColor = System.Drawing.Color.Wheat;
+			this.txt_EmpJoiningDate.CalendarTitleForeColor = System.Drawing.Color.Wheat;
+			this.txt_EmpJoiningDate.CalendarTrailingForeColor = System.Drawing.Color.Wheat;
+			this.txt_EmpJoiningDate.FontWeight = MetroFramework.MetroDateTimeWeight.Bold;
+			this.txt_EmpJoiningDate.Location = new System.Drawing.Point(705, 156);
+			this.txt_EmpJoiningDate.MinimumSize = new System.Drawing.Size(0, 29);
+			this.txt_EmpJoiningDate.Name = "txt_EmpJoiningDate";
+			this.txt_EmpJoiningDate.Size = new System.Drawing.Size(317, 29);
+			this.txt_EmpJoiningDate.Style = MetroFramework.MetroColorStyle.Black;
+			this.txt_EmpJoiningDate.TabIndex = 167;
+			// 
 			// label38
 			// 
 			this.label38.AutoSize = true;
@@ -171,28 +354,28 @@
 			this.label38.TabIndex = 163;
 			this.label38.Text = "Employee ID";
 			// 
-			// guna2TextBox1
+			// txt_EmpNo
 			// 
-			this.guna2TextBox1.BorderColor = System.Drawing.Color.Maroon;
-			this.guna2TextBox1.BorderRadius = 6;
-			this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.guna2TextBox1.DefaultText = "";
-			this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.guna2TextBox1.FillColor = System.Drawing.Color.Wheat;
-			this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-			this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.guna2TextBox1.Location = new System.Drawing.Point(197, 104);
-			this.guna2TextBox1.Name = "guna2TextBox1";
-			this.guna2TextBox1.PasswordChar = '\0';
-			this.guna2TextBox1.PlaceholderText = "";
-			this.guna2TextBox1.SelectedText = "";
-			this.guna2TextBox1.Size = new System.Drawing.Size(303, 34);
-			this.guna2TextBox1.TabIndex = 164;
+			this.txt_EmpNo.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_EmpNo.BorderRadius = 6;
+			this.txt_EmpNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_EmpNo.DefaultText = "";
+			this.txt_EmpNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_EmpNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_EmpNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_EmpNo.FillColor = System.Drawing.Color.Wheat;
+			this.txt_EmpNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpNo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmpNo.ForeColor = System.Drawing.Color.Black;
+			this.txt_EmpNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_EmpNo.Location = new System.Drawing.Point(197, 104);
+			this.txt_EmpNo.Name = "txt_EmpNo";
+			this.txt_EmpNo.PasswordChar = '\0';
+			this.txt_EmpNo.PlaceholderText = "";
+			this.txt_EmpNo.SelectedText = "";
+			this.txt_EmpNo.Size = new System.Drawing.Size(303, 34);
+			this.txt_EmpNo.TabIndex = 164;
 			// 
 			// label39
 			// 
@@ -204,23 +387,6 @@
 			this.label39.Size = new System.Drawing.Size(16, 24);
 			this.label39.TabIndex = 165;
 			this.label39.Text = ":";
-			// 
-			// Cancel
-			// 
-			this.Cancel.BorderRadius = 8;
-			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Cancel.FillColor = System.Drawing.Color.Brown;
-			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
-			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(741, 533);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(121, 31);
-			this.Cancel.TabIndex = 161;
-			this.Cancel.Text = " Cancel";
 			// 
 			// label11
 			// 
@@ -246,7 +412,7 @@
 			this.SaveEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SaveEmployee.Image")));
 			this.SaveEmployee.Location = new System.Drawing.Point(878, 533);
 			this.SaveEmployee.Name = "SaveEmployee";
-			this.SaveEmployee.Size = new System.Drawing.Size(115, 31);
+			this.SaveEmployee.Size = new System.Drawing.Size(144, 31);
 			this.SaveEmployee.TabIndex = 160;
 			this.SaveEmployee.Text = "  Save";
 			// 
@@ -510,9 +676,9 @@
 			this.txt_EmpDOB.CalendarTrailingForeColor = System.Drawing.Color.Wheat;
 			this.txt_EmpDOB.FontWeight = MetroFramework.MetroDateTimeWeight.Bold;
 			this.txt_EmpDOB.Location = new System.Drawing.Point(705, 104);
-			this.txt_EmpDOB.MinimumSize = new System.Drawing.Size(0, 32);
+			this.txt_EmpDOB.MinimumSize = new System.Drawing.Size(0, 29);
 			this.txt_EmpDOB.Name = "txt_EmpDOB";
-			this.txt_EmpDOB.Size = new System.Drawing.Size(317, 32);
+			this.txt_EmpDOB.Size = new System.Drawing.Size(317, 29);
 			this.txt_EmpDOB.TabIndex = 125;
 			// 
 			// label23
@@ -919,174 +1085,6 @@
 			this.panel2.Size = new System.Drawing.Size(1058, 3);
 			this.panel2.TabIndex = 1;
 			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label2.Location = new System.Drawing.Point(536, 160);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(145, 21);
-			this.label2.TabIndex = 166;
-			this.label2.Text = "Date of Joining";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(679, 160);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(16, 24);
-			this.label4.TabIndex = 168;
-			this.label4.Text = ":";
-			// 
-			// metroDateTime1
-			// 
-			this.metroDateTime1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.metroDateTime1.CalendarForeColor = System.Drawing.Color.Wheat;
-			this.metroDateTime1.CalendarMonthBackground = System.Drawing.Color.Wheat;
-			this.metroDateTime1.CalendarTitleBackColor = System.Drawing.Color.Wheat;
-			this.metroDateTime1.CalendarTitleForeColor = System.Drawing.Color.Wheat;
-			this.metroDateTime1.CalendarTrailingForeColor = System.Drawing.Color.Wheat;
-			this.metroDateTime1.FontWeight = MetroFramework.MetroDateTimeWeight.Bold;
-			this.metroDateTime1.Location = new System.Drawing.Point(705, 156);
-			this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 35);
-			this.metroDateTime1.Name = "metroDateTime1";
-			this.metroDateTime1.Size = new System.Drawing.Size(317, 32);
-			this.metroDateTime1.Style = MetroFramework.MetroColorStyle.Black;
-			this.metroDateTime1.TabIndex = 167;
-			// 
-			// txt_RoleDescription
-			// 
-			this.txt_RoleDescription.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_RoleDescription.BorderRadius = 6;
-			this.txt_RoleDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_RoleDescription.DefaultText = "";
-			this.txt_RoleDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_RoleDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_RoleDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_RoleDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_RoleDescription.FillColor = System.Drawing.Color.Wheat;
-			this.txt_RoleDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_RoleDescription.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_RoleDescription.ForeColor = System.Drawing.Color.Black;
-			this.txt_RoleDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_RoleDescription.Location = new System.Drawing.Point(197, 420);
-			this.txt_RoleDescription.Multiline = true;
-			this.txt_RoleDescription.Name = "txt_RoleDescription";
-			this.txt_RoleDescription.PasswordChar = '\0';
-			this.txt_RoleDescription.PlaceholderText = "";
-			this.txt_RoleDescription.SelectedText = "";
-			this.txt_RoleDescription.Size = new System.Drawing.Size(303, 66);
-			this.txt_RoleDescription.TabIndex = 169;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label7.Location = new System.Drawing.Point(171, 423);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(16, 24);
-			this.label7.TabIndex = 171;
-			this.label7.Text = ":";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label9.Location = new System.Drawing.Point(28, 425);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(73, 21);
-			this.label9.TabIndex = 170;
-			this.label9.Text = "Address";
-			// 
-			// label19
-			// 
-			this.label19.AutoSize = true;
-			this.label19.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label19.Location = new System.Drawing.Point(193, 536);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(64, 21);
-			this.label19.TabIndex = 172;
-			this.label19.Text = "Active";
-			// 
-			// txt_Active
-			// 
-			this.txt_Active.AutoSize = true;
-			this.txt_Active.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Active.CheckedState.BorderRadius = 0;
-			this.txt_Active.CheckedState.BorderThickness = 0;
-			this.txt_Active.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Active.Location = new System.Drawing.Point(175, 540);
-			this.txt_Active.Name = "txt_Active";
-			this.txt_Active.Size = new System.Drawing.Size(15, 14);
-			this.txt_Active.TabIndex = 173;
-			this.txt_Active.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Active.UncheckedState.BorderRadius = 0;
-			this.txt_Active.UncheckedState.BorderThickness = 0;
-			this.txt_Active.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Active.CheckedChanged += new System.EventHandler(this.txt_Active_CheckedChanged);
-			// 
-			// label20
-			// 
-			this.label20.AutoSize = true;
-			this.label20.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label20.Location = new System.Drawing.Point(309, 536);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(91, 21);
-			this.label20.TabIndex = 174;
-			this.label20.Text = "In-Active";
-			// 
-			// txt_InActive
-			// 
-			this.txt_InActive.AutoSize = true;
-			this.txt_InActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_InActive.CheckedState.BorderRadius = 0;
-			this.txt_InActive.CheckedState.BorderThickness = 0;
-			this.txt_InActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_InActive.Location = new System.Drawing.Point(291, 540);
-			this.txt_InActive.Name = "txt_InActive";
-			this.txt_InActive.Size = new System.Drawing.Size(15, 14);
-			this.txt_InActive.TabIndex = 175;
-			this.txt_InActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_InActive.UncheckedState.BorderRadius = 0;
-			this.txt_InActive.UncheckedState.BorderThickness = 0;
-			this.txt_InActive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_InActive.CheckedChanged += new System.EventHandler(this.txt_InActive_CheckedChanged);
-			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label21.Location = new System.Drawing.Point(452, 536);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(64, 21);
-			this.label21.TabIndex = 176;
-			this.label21.Text = "Locked";
-			// 
-			// txt_Locked
-			// 
-			this.txt_Locked.AutoSize = true;
-			this.txt_Locked.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Locked.CheckedState.BorderRadius = 0;
-			this.txt_Locked.CheckedState.BorderThickness = 0;
-			this.txt_Locked.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Locked.Location = new System.Drawing.Point(434, 540);
-			this.txt_Locked.Name = "txt_Locked";
-			this.txt_Locked.Size = new System.Drawing.Size(15, 14);
-			this.txt_Locked.TabIndex = 177;
-			this.txt_Locked.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Locked.UncheckedState.BorderRadius = 0;
-			this.txt_Locked.UncheckedState.BorderThickness = 0;
-			this.txt_Locked.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Locked.CheckedChanged += new System.EventHandler(this.txt_Locked_CheckedChanged);
-			// 
 			// EmployeeInformationCOntroller
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1112,9 +1110,8 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label38;
-		private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+		private Guna.UI2.WinForms.Guna2TextBox txt_EmpNo;
 		private System.Windows.Forms.Label label39;
-		private Guna.UI2.WinForms.Guna2Button Cancel;
 		private System.Windows.Forms.Label label11;
 		private Guna.UI2.WinForms.Guna2Button SaveEmployee;
 		private System.Windows.Forms.Label label6;
@@ -1153,15 +1150,16 @@
 		private Guna.UI2.WinForms.Guna2ComboBox txt_EmpMStatus;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label4;
-		private MetroFramework.Controls.MetroDateTime metroDateTime1;
+		private MetroFramework.Controls.MetroDateTime txt_EmpJoiningDate;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label9;
-		private Guna.UI2.WinForms.Guna2TextBox txt_RoleDescription;
+		private Guna.UI2.WinForms.Guna2TextBox txt_EmpAddress;
 		private System.Windows.Forms.Label label21;
 		private Guna.UI2.WinForms.Guna2CheckBox txt_Locked;
 		private System.Windows.Forms.Label label20;
 		private Guna.UI2.WinForms.Guna2CheckBox txt_InActive;
 		private System.Windows.Forms.Label label19;
 		private Guna.UI2.WinForms.Guna2CheckBox txt_Active;
+		private System.Windows.Forms.Button Clear_Emp_Button;
 	}
 }

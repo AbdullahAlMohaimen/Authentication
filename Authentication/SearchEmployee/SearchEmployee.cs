@@ -13,12 +13,14 @@ namespace Authentication.SearchEmployee
 {
 	public partial class SearchEmployee : Form
 	{
+		#region Property & Variable
 		BO.Employee employee = new BO.Employee();
 		EmployeeService employeeService = new EmployeeService();
 		List<BO.Employee> employees = new List<BO.Employee>();
 		DataTable allEmployeeDataTable = new DataTable();
 		private Users.UserEntry originalUserEntryForm;
 		private Form callingForm;
+		#endregion
 
 		#region Load
 		public SearchEmployee(Form caller)
@@ -165,6 +167,7 @@ namespace Authentication.SearchEmployee
 		}
 		#endregion
 
+		#region Grid Column CLick
 		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
@@ -189,5 +192,6 @@ namespace Authentication.SearchEmployee
 				txt_EmpGender.Text = employee.Gender;
 			}
 		}
+		#endregion
 	}
 }

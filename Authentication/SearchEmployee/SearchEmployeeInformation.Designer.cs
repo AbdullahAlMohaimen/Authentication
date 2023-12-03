@@ -106,7 +106,7 @@
 			this.allEmployeeGrid.Name = "allEmployeeGrid";
 			this.allEmployeeGrid.ReadOnly = true;
 			this.allEmployeeGrid.RowHeadersVisible = false;
-			this.allEmployeeGrid.Size = new System.Drawing.Size(962, 143);
+			this.allEmployeeGrid.Size = new System.Drawing.Size(962, 149);
 			this.allEmployeeGrid.TabIndex = 1;
 			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -129,6 +129,7 @@
 			this.allEmployeeGrid.ThemeStyle.RowsStyle.Height = 22;
 			this.allEmployeeGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.allEmployeeGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			this.allEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allEmployeeGrid_CellContentClick);
 			// 
 			// guna2Panel3
 			// 
@@ -141,7 +142,7 @@
 			this.guna2Panel3.Controls.Add(this.allEmployeeGrid);
 			this.guna2Panel3.Location = new System.Drawing.Point(13, 211);
 			this.guna2Panel3.Name = "guna2Panel3";
-			this.guna2Panel3.Size = new System.Drawing.Size(974, 188);
+			this.guna2Panel3.Size = new System.Drawing.Size(974, 194);
 			this.guna2Panel3.TabIndex = 118;
 			// 
 			// btn_findAllEmployee
@@ -160,6 +161,7 @@
 			this.btn_findAllEmployee.Size = new System.Drawing.Size(138, 31);
 			this.btn_findAllEmployee.TabIndex = 113;
 			this.btn_findAllEmployee.Text = "Find All";
+			this.btn_findAllEmployee.Click += new System.EventHandler(this.btn_findAllEmployee_Click);
 			// 
 			// Select
 			// 
@@ -172,11 +174,12 @@
 			this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Select.ForeColor = System.Drawing.Color.Wheat;
 			this.Select.Image = ((System.Drawing.Image)(resources.GetObject("Select.Image")));
-			this.Select.Location = new System.Drawing.Point(823, 405);
+			this.Select.Location = new System.Drawing.Point(846, 410);
 			this.Select.Name = "Select";
 			this.Select.Size = new System.Drawing.Size(138, 31);
 			this.Select.TabIndex = 114;
 			this.Select.Text = "Select";
+			this.Select.Click += new System.EventHandler(this.Select_Click);
 			// 
 			// Cancel
 			// 
@@ -189,11 +192,12 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(665, 405);
+			this.Cancel.Location = new System.Drawing.Point(688, 410);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(138, 31);
 			this.Cancel.TabIndex = 116;
 			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
 			// 
 			// txt_EmpGender
 			// 
@@ -428,6 +432,7 @@
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
 			this.Minimize.UseVisualStyleBackColor = false;
+			this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
 			// 
 			// Exit
 			// 
@@ -442,6 +447,7 @@
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
 			this.Exit.UseVisualStyleBackColor = false;
+			this.Exit.Click += new System.EventHandler(this.Exit_Click);
 			// 
 			// txt_ID
 			// 
@@ -527,6 +533,7 @@
 			this.EmpSearch.Size = new System.Drawing.Size(138, 31);
 			this.EmpSearch.TabIndex = 104;
 			this.EmpSearch.Text = "Search";
+			this.EmpSearch.Click += new System.EventHandler(this.EmpSearch_Click);
 			// 
 			// guna2Panel1
 			// 

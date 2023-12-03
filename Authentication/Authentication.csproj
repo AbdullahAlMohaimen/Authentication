@@ -392,6 +392,12 @@
     <Compile Include="SearchEmployee\SearchEmployee.Designer.cs">
       <DependentUpon>SearchEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchEmployee\SearchEmployeeInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchEmployee\SearchEmployeeInformation.Designer.cs">
+      <DependentUpon>SearchEmployeeInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\UserEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchEmployee\SearchEmployee.resx">
       <DependentUpon>SearchEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchEmployee\SearchEmployeeInformation.resx">
+      <DependentUpon>SearchEmployeeInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\UserEntry.resx">
       <DependentUpon>UserEntry.cs</DependentUpon>
