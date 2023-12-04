@@ -174,3 +174,7 @@ Add UserID int not null;
 
 Alter Table Employee
 Add Address varchar(1000) null;
+
+Alter Table Users
+Add IsApprover Bit null;
+

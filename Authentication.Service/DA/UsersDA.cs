@@ -36,11 +36,11 @@ namespace Authentication.Service
 				{
 					SqlCommand insertCommand = new SqlCommand("INSERT INTO Users(LoginID,UserName,Status,Email,RoleID,MasterID," +
 						"AuthorizedDate,Password,PasswordHints,Salt,TempStatus,ChangePasswordAtNextLogon,PasswordResetByAdmin," +
-						"CreatedBy,CreatedDate)" +
+						"CreatedBy,CreatedDate,IsApprover)" +
 						"values('"+oUser.LoginID+"','"+oUser.UserName+"','"+(int)oUser.Status+"','"+oUser.Email+"','"+oUser.RoleID+"'," +
 						"'"+oUser.MasterID+"','"+oUser.AuthorizedDate+"','"+oUser.Password+"','"+oUser.PasswordHints+"','"+oUser.Salt+"'," +
 						"'"+(int)oUser.TempStatus+"','"+oUser.ChangePasswordNextLogon+"','"+oUser.PasswordResetByAdmin+"'," +
-						"'"+oUser.CreatedBy+"','"+oUser.CreatedDate+"')", conn,tc);
+						"'"+oUser.CreatedBy+"','"+oUser.CreatedDate+"','"+oUser.IsApprover+"')", conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -77,7 +77,7 @@ namespace Authentication.Service
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
 					SqlCommand updateCommand = new SqlCommand("Update Users set UserName = '"+oUser.UserName+"',Email = '"+oUser.Email+"'," +
-						"RoleID = '"+oUser.RoleID+"', ModifiedBy = '"+oUser.ModifiedBy+"',ModifiedDate = '"+oUser.ModifiedDate+"' where UserID = '" + oUser.ID + "'", conn, tc);
+						"RoleID = '"+oUser.RoleID+"', ModifiedBy = '"+oUser.ModifiedBy+"',ModifiedDate = '"+oUser.ModifiedDate+"', IsApprover = '"+oUser.IsApprover+"' where UserID = '" + oUser.ID + "'", conn, tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();

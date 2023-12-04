@@ -59,6 +59,8 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.txt_UserEmail = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label9 = new System.Windows.Forms.Label();
+			this.label21 = new System.Windows.Forms.Label();
+			this.txt_IsApprover = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -122,6 +124,8 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.label21);
+			this.guna2Panel1.Controls.Add(this.txt_IsApprover);
 			this.guna2Panel1.Controls.Add(this.label7);
 			this.guna2Panel1.Controls.Add(this.SearchEmployee);
 			this.guna2Panel1.Controls.Add(this.txt_UserName);
@@ -520,6 +524,33 @@
 			this.label9.TabIndex = 77;
 			this.label9.Text = "*";
 			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label21.Location = new System.Drawing.Point(511, 123);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(109, 21);
+			this.label21.TabIndex = 178;
+			this.label21.Text = "Is Approver";
+			// 
+			// txt_IsApprover
+			// 
+			this.txt_IsApprover.AutoSize = true;
+			this.txt_IsApprover.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_IsApprover.CheckedState.BorderRadius = 0;
+			this.txt_IsApprover.CheckedState.BorderThickness = 0;
+			this.txt_IsApprover.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_IsApprover.Location = new System.Drawing.Point(488, 127);
+			this.txt_IsApprover.Name = "txt_IsApprover";
+			this.txt_IsApprover.Size = new System.Drawing.Size(15, 14);
+			this.txt_IsApprover.TabIndex = 179;
+			this.txt_IsApprover.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_IsApprover.UncheckedState.BorderRadius = 0;
+			this.txt_IsApprover.UncheckedState.BorderThickness = 0;
+			this.txt_IsApprover.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			// 
 			// UserEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,5 +604,7 @@
 		private System.Windows.Forms.Label label12;
 		private Guna.UI2.WinForms.Guna2CheckBox txt_UserLoginIDAuto;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label21;
+		private Guna.UI2.WinForms.Guna2CheckBox txt_IsApprover;
 	}
 }

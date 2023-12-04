@@ -47,6 +47,7 @@ namespace Authentication.Service
 			oUser.PasswordResetBy = oReader.GetInt32("PasswordResetBy", 0);
 			oUser.PasswordResetDate = oReader.GetDateTime("PasswordResetDate", DateTime.MinValue);
 			oUser.StatusChangedDate = oReader.GetDateTime("StatusChangedDate", DateTime.MinValue);
+			oUser.IsApprover = oReader.GetBoolean("IsApprover", false);
 			this.SetObjectState(oUser, Authentication.BO.ObjectState.Saved);
 		}
 		protected override T CreateObject<T>(DataReader oReader)

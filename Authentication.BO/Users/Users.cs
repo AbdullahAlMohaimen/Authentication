@@ -26,6 +26,7 @@ namespace Authentication.BO
 			_modifiedDate = null;
 			_passwordResetBy = 0;
 			_passwordResetDate = null;
+			_isApprover = false;
 		}
 		#endregion
 
@@ -235,6 +236,15 @@ namespace Authentication.BO
 		{
 			get { return _statusChangedDate; }
 			set { _statusChangedDate = value; }
+		}
+		#endregion
+
+		#region IsApprover : bool 
+		private bool _isApprover;
+		public bool IsApprover
+		{
+			get { return _isApprover; }
+			set { _isApprover = value; }
 		}
 		#endregion
 

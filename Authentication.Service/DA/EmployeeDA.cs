@@ -77,7 +77,7 @@ namespace Authentication.Service
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
 					SqlCommand updateCommand = new SqlCommand("Update Employee set MaritalStatus = '" + oEmployee.MaritalStatus + "',MobileNo = '" + oEmployee.MobileNo + "'," +
-						"AccountNo = '" + oEmployee.AccountNo + "', Department = '" + oEmployee.Department + "',Designation = '" + oEmployee.Department + "'," +
+						"AccountNo = '" + oEmployee.AccountNo + "', Department = '" + oEmployee.Department + "',Designation = '" + oEmployee.Designation + "'," +
 						"Email = '"+oEmployee.Email + "', Status = '"+(int)oEmployee.Status+"',BasicSalary = '" + oEmployee.BasicSalary+"',IsConfirmed = '"+oEmployee.IsConfirmed+"',Address = '"+oEmployee.Address+"' where EmployeeID = '" + oEmployee.ID + "'", conn, tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();

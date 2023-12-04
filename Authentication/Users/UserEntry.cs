@@ -71,6 +71,14 @@ namespace Authentication.Users
 
 				BO.Employee _employee = employeeService.GetEmployee(_user.MasterID);
 				txt_UserMaster.Text = "(" + _employee.EmployeeNo + ")" + _employee.Name;
+				if (_user.IsApprover == true)
+				{
+					txt_IsApprover.Checked = true;
+				}
+				if (_user.IsApprover == false)
+				{
+					txt_IsApprover.Checked = false;
+				}
 				SearchEmp = _employee;
 			}
 			else
@@ -191,6 +199,14 @@ namespace Authentication.Users
 						_user.ModifiedDate = DateTime.Now;
 					}
 
+					if(txt_IsApprover.Checked == true)
+					{
+						_user.IsApprover = true;
+					}
+					if (txt_IsApprover.Checked == false)
+					{
+						_user.IsApprover = false;
+					}
 					result = userService.Save(_user);
 
 					if (result == "Ok")
