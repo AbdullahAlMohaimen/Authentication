@@ -415,6 +415,7 @@
 			this.SaveEmployee.Size = new System.Drawing.Size(144, 31);
 			this.SaveEmployee.TabIndex = 160;
 			this.SaveEmployee.Text = "  Save";
+			this.SaveEmployee.Click += new System.EventHandler(this.SaveEmployee_Click);
 			// 
 			// label6
 			// 

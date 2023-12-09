@@ -16,6 +16,7 @@ namespace Authentication.Home
 	public partial class EmployeeInformationCOntroller : UserControl
 	{
 		#region Property (for Search Employee)
+		BO.CurrentUser oCurrentUser = new CurrentUser();
 		public BO.Employee _selectedEmployee;
 		public BO.Employee SelectedEmployee
 		{
@@ -29,6 +30,14 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 			Clear_Emp_Button.Visible = false;
+			SaveEmployee.Enabled = false;
+		}
+		#endregion
+
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oUser)
+		{
+			oCurrentUser = oUser;
 		}
 		#endregion
 
@@ -86,6 +95,7 @@ namespace Authentication.Home
 
 			if(SelectedEmployee != null)
 			{
+				SaveEmployee.Enabled = true;
 				Clear_Emp_Button.Visible = true;
 				this.SetEmployeeProperty();
 			}
@@ -123,6 +133,7 @@ namespace Authentication.Home
 		#region Clear Employee Property
 		public void ClearEmployeeProperty()
 		{
+			SelectedEmployee = null;
 			txt_EmpNo.Text = string.Empty;
 			txt_EmpName.Text = string.Empty;
 			txt_EmpEmail.Text = string.Empty;
@@ -144,14 +155,31 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region Clear Button
 		private void Clear_Emp_Button_Click(object sender, EventArgs e)
 		{
 			txt_UserMaster.Text = string.Empty;
 			if (string.IsNullOrEmpty(txt_UserMaster.Text))
 			{
+				SaveEmployee.Enabled = false;
 				Clear_Emp_Button.Visible = false;
 				this.ClearEmployeeProperty();
 			}
 		}
+		#endregion
+
+		#region Save Employee Button
+		private void SaveEmployee_Click(object sender, EventArgs e)
+		{
+			if (SearchEmployee != null)
+			{
+
+			}
+			else
+			{
+				MessageBox.Show("Please select an employee first!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+		}
+		#endregion
 	}
 }

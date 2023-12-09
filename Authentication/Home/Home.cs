@@ -151,6 +151,7 @@ namespace Authentication.Home
 					break;
 				case "Employee Information":
 					EmployeeInformationCOntroller employeeInformationCOntroller = new EmployeeInformationCOntroller();
+					employeeInformationCOntroller.SetCurrentUser(this.oCurrentUser);
 					AddControl(employeeInformationCOntroller);
 					break;
 				default:

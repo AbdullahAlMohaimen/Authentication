@@ -159,8 +159,6 @@ namespace Authentication.SearchEmployee
 		#region Grid Column CLick
 		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//allEmployeeGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
-
 			employee = employeeService.GetEmployee(allEmployeeGrid.CurrentRow.Cells["Employee No"].Value.ToString());
 			if (employee != null)
 			{
