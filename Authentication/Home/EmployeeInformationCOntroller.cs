@@ -207,6 +207,8 @@ namespace Authentication.Home
 					SelectedEmployee.ModifiedBy = oCurrentUser.ID;
 					SelectedEmployee.ModifiedDate = DateTime.Now;
 				}
+
+
 				new EmployeeService().SaveEmployeeBasicInfo(SelectedEmployee);
 				MessageBox.Show("Employee basic information save successfullly !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
