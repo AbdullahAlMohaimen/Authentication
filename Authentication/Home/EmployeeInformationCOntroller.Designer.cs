@@ -374,7 +374,7 @@
 			this.txt_EmpNo.PasswordChar = '\0';
 			this.txt_EmpNo.PlaceholderText = "";
 			this.txt_EmpNo.SelectedText = "";
-			this.txt_EmpNo.Size = new System.Drawing.Size(303, 34);
+			this.txt_EmpNo.Size = new System.Drawing.Size(165, 34);
 			this.txt_EmpNo.TabIndex = 164;
 			// 
 			// label39

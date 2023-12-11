@@ -95,6 +95,7 @@ namespace Authentication.Home
 
 			if(SelectedEmployee != null)
 			{
+				txt_EmpNo.ReadOnly = true;
 				SaveEmployee.Enabled = true;
 				Clear_Emp_Button.Visible = true;
 				this.SetEmployeeProperty();
@@ -171,13 +172,47 @@ namespace Authentication.Home
 		#region Save Employee Button
 		private void SaveEmployee_Click(object sender, EventArgs e)
 		{
-			if (SearchEmployee != null)
+			if (SelectedEmployee != null)
 			{
+				SelectedEmployee.EmployeeNo = txt_EmpNo.Text;
+				SelectedEmployee.Name = txt_EmpName.Text;
+				SelectedEmployee.Email = txt_EmpEmail.Text;
+				SelectedEmployee.MobileNo = txt_EmpMobileNo.Text;
+				SelectedEmployee.AccountNo = txt_EmpAccountNo.Text;
+				SelectedEmployee.BasicSalary = Convert.ToInt32(txt_EmpSalary.Text);
+				SelectedEmployee.Address = txt_EmpAddress.Text;
+				SelectedEmployee.BirthDate = (DateTime)Convert.ToDateTime(txt_EmpDOB.Text);
+				SelectedEmployee.JoiningDate = (DateTime)Convert.ToDateTime(txt_EmpJoiningDate.Text);
+				SelectedEmployee.Designation = txt_EmpDesignation.Text;
+				SelectedEmployee.Department = txt_EmpDepartment.Text;
+				SelectedEmployee.Gender = txt_EmpGender.Text;
+				SelectedEmployee.MaritalStatus = txt_EmpMStatus.Text;
+				SelectedEmployee.Religion = txt_EmpReligion.Text;
+				SelectedEmployee.IsConfirmed = txt_EmpIsConfirm.Checked;
 
+				if (txt_Active.Checked == true)
+					SelectedEmployee.Status = EnumStatus.Active;
+				if (txt_InActive.Checked == true)
+					SelectedEmployee.Status = EnumStatus.Inactive;
+				if (txt_Locked.Checked == true)
+					SelectedEmployee.Status = EnumStatus.Locked;
+
+				if(SelectedEmployee.IsNew == true)
+				{
+					SelectedEmployee.CreatedBy = oCurrentUser.ID;
+					SelectedEmployee.CreatedDate =DateTime.Now;
+				}
+				else
+				{
+					SelectedEmployee.ModifiedBy = oCurrentUser.ID;
+					SelectedEmployee.ModifiedDate = DateTime.Now;
+				}
+				new EmployeeService().SaveEmployeeBasicInfo(SelectedEmployee);
+				MessageBox.Show("Employee basic information save successfullly !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			else
 			{
-				MessageBox.Show("Please select an employee first!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show("Please select an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 		#endregion

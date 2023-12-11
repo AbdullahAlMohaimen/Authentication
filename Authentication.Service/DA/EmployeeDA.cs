@@ -94,6 +94,38 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Update Basic Information
+		internal static string UpdateEmpBasicInfo(Employee oEmployee)
+		{
+			string employeeNo = string.Empty;
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Employee Set Name = '"+oEmployee.Name+"',Gender = '"+oEmployee.Gender+"', " +
+						"Religion = '"+oEmployee.Religion+"', BirthDate = '"+oEmployee.BirthDate+"', JoiningDate = '"+oEmployee.JoiningDate+"', " +
+						"Email = '"+oEmployee.Email+"', MobileNo = '"+oEmployee.MobileNo+"', IsConfirmed = '"+oEmployee.IsConfirmed+"', Status = '"+(int)oEmployee.Status+"', " +
+						"AccountNo = '"+oEmployee.AccountNo+"', Department = '"+oEmployee.Department+"', MaritalStatus = '"+oEmployee.MaritalStatus+"', " +
+						"Designation = '"+oEmployee.Designation+"', BasicSalary = '"+oEmployee.BasicSalary+"', ModifiedBy = '"+oEmployee.ModifiedBy+"', " +
+						"ModifiedDate = '"+oEmployee.ModifiedDate+"', Address = '"+oEmployee.Address+"' where EmployeeID = '"+oEmployee.ID+"'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					employeeNo = oEmployee.EmployeeNo;
+				}
+			}
+			catch (Exception ex)
+			{
+				employeeNo = null;
+			}
+			return employeeNo;
+		}
+		#endregion
+
 		#region  Search Employee
 		internal static IDataReader GetSearchEmpoyee(string empNo, string empName)
 		{

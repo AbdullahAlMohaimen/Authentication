@@ -176,6 +176,24 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Save Employee
+		public string SaveEmployeeBasicInfo(Employee employee)
+		{
+			string employeeNo = string.Empty;
+			Password password = new Password();
+			try
+			{
+				employeeNo = EmployeeDA.UpdateEmpBasicInfo(employee);
+			}
+			catch (Exception e)
+			{
+
+			}
+			return employeeNo;
+		}
+		#endregion
+
+
 		#region Delete Employee
 		public void Delete(int ID)
 		{
