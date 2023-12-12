@@ -188,7 +188,7 @@ namespace Authentication.Home
 					userEntry.Show();
 					#endregion
 				}
-				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Status")
+				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "User Status")
 				{
 					#region Change Status
 					EnumStatus status;
