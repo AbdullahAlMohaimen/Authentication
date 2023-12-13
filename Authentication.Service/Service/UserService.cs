@@ -11,6 +11,7 @@ using Authentication.Service.Model;
 using Authentication.Service;
 using System.Net.Mail;
 using System.Data.SqlClient;
+using System.Web.UI.WebControls;
 
 namespace Authentication.Service
 {
@@ -73,16 +74,24 @@ namespace Authentication.Service
 		#region Get User by ID
 		public Users GerUser(int userID)
 		{
-			Users users = new Users();
+			Users oUser = new Users();
 			try
 			{
-
+				DataReader oreader = new DataReader(UsersDA.Get(userID));
+				if (oreader.Read())
+				{
+					oUser = this.CreateObject<Users>(oreader);
+				}
+				else
+				{
+					oUser = null;
+				}
 			}
 			catch (Exception ex)
 			{
-
+				oUser = null;
 			}
-			return users;
+			return oUser;
 		}
 		#endregion
 
@@ -299,11 +308,37 @@ namespace Authentication.Service
 		public string UpdateUserStatus(int userID, EnumStatus status, int modifiedBy, DateTime modifiedDate, DateTime statusChangeDate)
 		{
 			string result = null;
+			BO.Users oUsers = new BO.Users();
+			string statusString = "";
 			try
 			{
+				if (status == EnumStatus.Active)
+					statusString = "ACTIVE";
+				if (status == EnumStatus.Inactive)
+					statusString = "INACTIVE";
+				if (status == EnumStatus.Locked)
+					statusString = "LOCKED";
+
 				if (userID != null)
 				{
 					result = UsersDA.UpdateUserStatus(userID, status, modifiedBy, modifiedDate, statusChangeDate);
+
+					oUsers = this.GerUser(userID);
+					if (result == "Ok")
+					{
+						SendEmail sendEmail = new SendEmail();
+						sendEmail.To = oUsers.Email;
+						sendEmail.Subject = "User Profile Activation (Do not replay this mail)";
+						sendEmail.Body = $@"<html><body><p><b>Dear</b> {oUsers.UserName},</p>
+								 <p><b>An admin can {statusString} your profile</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+						sendEmail.SendigEmail(sendEmail);
+					}
+					else
+					{
+						result = "failed";
+					}
 				}
 			}
 			catch (Exception ex)

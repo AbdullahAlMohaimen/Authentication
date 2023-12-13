@@ -37,7 +37,17 @@
 			this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
 			this.menuTreeView = new System.Windows.Forms.TreeView();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+			this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+			this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel1.SuspendLayout();
+			this.panelContainer.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -129,6 +139,15 @@
 			// 
 			// panelContainer
 			// 
+			this.panelContainer.Controls.Add(this.tableLayoutPanel1);
+			this.panelContainer.Controls.Add(this.panel2);
+			this.panelContainer.Controls.Add(this.flowLayoutPanel2);
+			this.panelContainer.Controls.Add(this.flowLayoutPanel1);
+			this.panelContainer.Controls.Add(this.metroPanel1);
+			this.panelContainer.Controls.Add(this.guna2ShadowPanel1);
+			this.panelContainer.Controls.Add(this.guna2Panel2);
+			this.panelContainer.Controls.Add(this.guna2GradientPanel1);
+			this.panelContainer.Controls.Add(this.guna2CustomGradientPanel1);
 			this.panelContainer.Location = new System.Drawing.Point(240, 49);
 			this.panelContainer.Name = "panelContainer";
 			this.panelContainer.Size = new System.Drawing.Size(1065, 588);
@@ -160,6 +179,84 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(236, 586);
 			this.guna2Panel1.TabIndex = 108;
 			// 
+			// guna2CustomGradientPanel1
+			// 
+			this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(4, 5);
+			this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+			this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(200, 200);
+			this.guna2CustomGradientPanel1.TabIndex = 0;
+			// 
+			// guna2GradientPanel1
+			// 
+			this.guna2GradientPanel1.Location = new System.Drawing.Point(210, 5);
+			this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+			this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 100);
+			this.guna2GradientPanel1.TabIndex = 1;
+			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.Location = new System.Drawing.Point(416, 5);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.Size = new System.Drawing.Size(200, 100);
+			this.guna2Panel2.TabIndex = 2;
+			// 
+			// guna2ShadowPanel1
+			// 
+			this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+			this.guna2ShadowPanel1.Location = new System.Drawing.Point(622, 5);
+			this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+			this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+			this.guna2ShadowPanel1.Size = new System.Drawing.Size(200, 100);
+			this.guna2ShadowPanel1.TabIndex = 3;
+			// 
+			// metroPanel1
+			// 
+			this.metroPanel1.HorizontalScrollbarBarColor = true;
+			this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+			this.metroPanel1.HorizontalScrollbarSize = 10;
+			this.metroPanel1.Location = new System.Drawing.Point(210, 111);
+			this.metroPanel1.Name = "metroPanel1";
+			this.metroPanel1.Size = new System.Drawing.Size(200, 100);
+			this.metroPanel1.TabIndex = 4;
+			this.metroPanel1.VerticalScrollbarBarColor = true;
+			this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+			this.metroPanel1.VerticalScrollbarSize = 10;
+			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(828, 5);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+			this.flowLayoutPanel1.TabIndex = 5;
+			// 
+			// flowLayoutPanel2
+			// 
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(416, 111);
+			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+			this.flowLayoutPanel2.TabIndex = 6;
+			// 
+			// panel2
+			// 
+			this.panel2.Location = new System.Drawing.Point(622, 111);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(200, 100);
+			this.panel2.TabIndex = 7;
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(827, 111);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 2;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+			this.tableLayoutPanel1.TabIndex = 8;
+			// 
 			// Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +272,7 @@
 			this.Text = "Home";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.panelContainer.ResumeLayout(false);
 			this.guna2Panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -189,5 +287,14 @@
 		private System.Windows.Forms.TreeView menuTreeView;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 		private Guna.UI2.WinForms.Guna2ComboBox homeDropDown;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private MetroFramework.Controls.MetroPanel metroPanel1;
+		private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+		private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+		private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
 	}
 }
