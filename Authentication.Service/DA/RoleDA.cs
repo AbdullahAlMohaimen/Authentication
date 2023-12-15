@@ -116,5 +116,30 @@ namespace Authentication.Service
 			return dr;
 		}
 		#endregion
+
+		#region Get By ID
+		internal static IDataReader Get(int ID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (ID != null)
+				{
+					getCommand = new SqlCommand("Select * from Role where RoleID = '" + ID + "'", conn);
+					dr = getCommand.ExecuteReader();
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
 	}
 }

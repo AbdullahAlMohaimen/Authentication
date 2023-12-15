@@ -88,7 +88,23 @@ namespace Authentication.Service
 		public Role GetRoleByID(int ID)
 		{
 			Role role = new Role();
-			return role; ;
+			try
+			{
+				DataReader oreader = new DataReader(RoleDA.Get(ID));
+				if (oreader.Read())
+				{
+					role = this.CreateObject<Role>(oreader);
+				}
+				else
+				{
+					role = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				role = null;
+			}
+			return role;
 		}
 		#endregion
 

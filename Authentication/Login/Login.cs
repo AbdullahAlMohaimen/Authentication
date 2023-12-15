@@ -242,6 +242,7 @@ namespace Authentication.Login
 								LoginInfo oLoginInfo = new LoginInfo();
 								oLoginInfo.UserName = oUser.UserName;
 								oLoginInfo.LoginID = oUser.LoginID;
+								oLoginInfo.Type = new RoleService().GetRoleByID(oUser.RoleID).Name;
 								this.SaveLoginHistory(oLoginInfo);
 
 								#region Set CurrentUser
@@ -251,7 +252,8 @@ namespace Authentication.Login
 								oCurrentUser.Status = (EnumStatus)oUser.Status;
 								oCurrentUser.Email = oUser.Email;
 								oCurrentUser.RoleID = oUser.RoleID;
-								oUser.MasterID = oUser.MasterID;
+								oCurrentUser.IsLogout = false;
+								oCurrentUser.MasterID = oUser.MasterID;
 								#endregion
 
 								Home.Home home = new Home.Home(this);
@@ -311,7 +313,6 @@ namespace Authentication.Login
 			item.PCNumber = System.Environment.MachineName;
 			item.LoginTime = DateTime.Now;
 			item.LogoutTime = null;
-			item.Type = "Not Initiate";
 			item.IsLogout = false;
 			srv.Save(item);
 		}

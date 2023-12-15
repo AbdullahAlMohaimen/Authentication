@@ -34,9 +34,9 @@ namespace Authentication.Service
 			{
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand insertCommand = new SqlCommand("Insert into LoginInfo(LoginID,UserName,Type,PcNumber,LoginTime,LogoutTime)" +
+					SqlCommand insertCommand = new SqlCommand("Insert into LoginInfo(LoginID,UserName,Type,PcNumber,LoginTime,LogoutTime,IsLogout)" +
 						"values('"+oLoginInfo.LoginID+"','"+oLoginInfo.UserName+"','"+oLoginInfo.Type+"','"+oLoginInfo.PCNumber+"'," +
-						"'"+oLoginInfo.LoginTime+"','"+oLoginInfo.LogoutTime+"')",conn,tc);
+						"'"+oLoginInfo.LoginTime+"','"+oLoginInfo.LogoutTime+"','"+oLoginInfo.IsLogout+"')",conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -65,7 +65,7 @@ namespace Authentication.Service
 			{
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand updateCommand = new SqlCommand("Update LoginInfo set LogoutTime = '"+loginInfo.LogoutTime+"' " +
+					SqlCommand updateCommand = new SqlCommand("Update LoginInfo set LogoutTime = '"+loginInfo.LogoutTime+"' ,IsLogout = '"+loginInfo.IsLogout+"'" +
 						"where LoginInfoID = '"+loginInfo.ID+"' and LoginID = '"+loginInfo.LoginID+"'", conn,tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();
@@ -95,7 +95,7 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+ loginID + "' and isLogout is null", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginID = '"+ loginID + "' and isLogout = '"+isLogout+"'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
@@ -140,6 +140,28 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("Select top 1 * from LoginInfo where LoginID = '" + loginID + "' and LogoutTime is not null order by LoginTime desc", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region GetLastLoginInfo
+		internal static IDataReader GetCurrentLoginInfo(string loginID, string type, string pcNo, bool isLogout)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select top 1 * from LoginInfo where LoginID = '" + loginID + "' and Type = '"+type+"' and PCNumber = '"+pcNo+"' and isLogout = '"+isLogout+"' order by LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

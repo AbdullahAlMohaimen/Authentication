@@ -69,11 +69,27 @@
 	public enum EnumLogoutType : short
 	{
 		NotInitiate = 0,
-		User = 1,
-		Superuser = 2,
-		ResetLoginTime = 3,
-		WebUser = 4
+		Administrator = 1,
+		Manager_Or_Supervisor = 2,
+		Employee = 3,
+		Guest = 4,
+		SuperUser = 5,
+		Moderator = 6,
+		Content_Creator = 7,
+		Salesperson = 8,
+		Finance_Accounting = 9,
+		Human_Resources = 10,
+		Marketing = 11,
+		Developer_Or_Programmer = 12,
+		QA_Analyst = 13,
+		Security_Officer = 14,
+		Compliance_Officer = 15,
+		Auditor = 16,
+		Vendor_Supplier = 17,
+		Supervisor = 18,
+		Password_Manager = 19,
 	}
+
 
 	public enum EnumAdministrator
 	{

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Authentication.Home
 {
@@ -78,9 +79,28 @@ namespace Authentication.Home
 		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
-			Login.Login login = new Login.Login();
-			this.Close();
-			login.Close();
+			DialogResult result = MessageBox.Show($"Are you sure to Logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+			if (result == DialogResult.OK)
+			{
+				LoginInfo loginInfo = new LoginInfo();
+				BO.Role oRole = new BO.Role();
+				oRole = new RoleService().GetRoleByID(oCurrentUser.RoleID);
+				loginInfo = new LoginInfoService().GetCurrentLoginInfo(oCurrentUser.LoginID,oRole.Name, System.Environment.MachineName,false);
+
+				if (loginInfo != null)
+				{
+					loginInfo.LogoutTime = DateTime.Now;
+					loginInfo.IsLogout = true;
+					string logoutResult = new LoginInfoService().Save(loginInfo);
+
+					if (logoutResult == "Ok")
+					{
+						Login.Login login = new Login.Login();
+						this.Close();
+						login.Close();
+					}
+				}
+			}
 		}
 		#endregion
 
@@ -173,7 +193,7 @@ namespace Authentication.Home
 		#region Home DropDown
 		private void homeDropDown_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			ComboBox cmb = (ComboBox)sender;
+            System.Windows.Controls.ComboBox cmb = (System.Windows.Controls.ComboBox)sender;
 			string selectedValue = cmb.SelectedItem as string;
 			int selectedIndex = cmb.SelectedIndex;
 
@@ -198,8 +218,7 @@ namespace Authentication.Home
 
 			if (selectedValue == "Logout" && selectedIndex == 3)
 			{
-				Login.Login login = new Login.Login();
-				login.Show();
+				this.Exit_Click(null,null);
 			}
 		}
 		#endregion

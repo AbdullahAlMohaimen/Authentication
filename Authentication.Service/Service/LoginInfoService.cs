@@ -56,13 +56,20 @@ namespace Authentication.Service
 			string result;
 			try
 			{
-				result = LoginInfoDA.Insert(loginInfo);
+				if (loginInfo.IsNew == true)
+				{
+					result = LoginInfoDA.Insert(loginInfo);
+				}
+				else
+				{
+					result = LoginInfoDA.Update(loginInfo);
+				}
 			}
 			catch (Exception e)
 			{
 				result = "Failed";
 			}
-			return null;
+			return result;
 		}
 		public void Delete(int ID)
 		{
@@ -78,7 +85,7 @@ namespace Authentication.Service
 			bool isLogout;
 			try
 			{
-				isLogout = false;
+				isLogout = true;
 				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfoByLoginID(loginID , isLogout));
 				loginInfos = this.CreateObjects<LoginInfo>(dr);
 				dr.Close();
@@ -133,6 +140,30 @@ namespace Authentication.Service
 
 			}
 			return loginInfos;
+		}
+		#endregion
+
+		#region GetLastLoginInfo
+		public LoginInfo GetCurrentLoginInfo(string loginID,string type,string pcNo, bool isLogout)
+		{
+			LoginInfo oLoginInfo = new LoginInfo();
+			try
+			{
+				DataReader oreader = new DataReader(LoginInfoDA.GetCurrentLoginInfo(loginID, type, pcNo, isLogout));
+				if (oreader.Read())
+				{
+					oLoginInfo = this.CreateObject<LoginInfo>(oreader);
+				}
+				else
+				{
+					oLoginInfo = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				oLoginInfo = null;
+			}
+			return oLoginInfo;
 		}
 		#endregion
 	}

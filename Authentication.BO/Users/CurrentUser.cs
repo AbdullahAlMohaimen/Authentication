@@ -22,6 +22,7 @@ namespace Authentication.BO
 		public string Email { get; set; }
 		public int RoleID { get; set; }
 		public int MasterID { get; set; }
+		public bool IsLogout { get; set; }
 		#endregion
 	}
 	#endregion
