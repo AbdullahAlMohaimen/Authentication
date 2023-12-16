@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,66 @@ namespace Authentication.Role
 {
 	public partial class RoleEntry : Form
 	{
+		#region property / Variable
+		public event EventHandler EditingDone;
 		EmployeeService _employeeService = new EmployeeService();
 		RoleService _roleService = new RoleService();
+		private UserControl callingForm;
+		BO.CurrentUser oCurrentUser = new CurrentUser();
+		BO.Role _role = new BO.Role();
+		public string _loginID;
+		public string LoginID { get { return _loginID; } set { _loginID = value; } }
+		#endregion
 
 		#region Constructor
-		public RoleEntry()
+		public RoleEntry(UserControl caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 			GenerateCode();
 			this.Load();
+		}
+		#endregion
+
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oCUser)
+		{
+			oCurrentUser = oCUser;
+		}
+		#endregion
+
+		#region SetEditedUser & Type
+		public void EditRole(BO.Role oRole)
+		{
+			_role = oRole;
+			BO.Role role = new BO.Role();
+			if (_role != null)
+			{
+				txtHeader.Text = "Edit User";
+				//txt_UserLoginID.Text = _user.LoginID.ToString();
+				//txt_UserName.Text = _user.UserName.ToString();
+				//txt_UserEmail.Text = _user.Email.ToString();
+
+				//role = this._roles.Find(x => x.ID == _user.RoleID);
+				//txt_UserRoleID.SelectedItem = role.Name;
+
+				//BO.Employee _employee = employeeService.GetEmployee(_user.MasterID);
+				//txt_UserMaster.Text = "(" + _employee.EmployeeNo + ")" + _employee.Name;
+				//if (_user.IsApprover == true)
+				//{
+				//	txt_IsApprover.Checked = true;
+				//}
+				//if (_user.IsApprover == false)
+				//{
+				//	txt_IsApprover.Checked = false;
+				//}
+				//SearchEmp = _employee;
+			}
+			else
+			{
+				txtHeader.Text = "New User Entry";
+				_role = new BO.Role();
+			}
 		}
 		#endregion
 
@@ -98,6 +150,9 @@ namespace Authentication.Role
 					}
 					this.GenerateCode();
 					this.Clear();
+
+					EditingDone?.Invoke(this, EventArgs.Empty);
+					this.Close();
 				}
 				else
 				{

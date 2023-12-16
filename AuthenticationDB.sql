@@ -178,3 +178,12 @@ Add Address varchar(1000) null;
 Alter Table Users
 Add IsApprover Bit null;
 
+ALTER TABLE Role
+ADD CreatedBy INT null;
+ALTER TABLE Role
+ADD CreatedDate DateTime null;
+ALTER TABLE Role
+ADD ModifiedBy INT null;
+ALTER TABLE Role
+ADD ModifiedDate DateTime null;
+

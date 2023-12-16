@@ -79,26 +79,22 @@ namespace Authentication.Home
 		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
 		{
-			DialogResult result = MessageBox.Show($"Are you sure to Logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-			if (result == DialogResult.OK)
+			LoginInfo loginInfo = new LoginInfo();
+			BO.Role oRole = new BO.Role();
+			oRole = new RoleService().GetRoleByID(oCurrentUser.RoleID);
+			loginInfo = new LoginInfoService().GetCurrentLoginInfo(oCurrentUser.LoginID, oRole.Name, System.Environment.MachineName, false);
+
+			if (loginInfo != null)
 			{
-				LoginInfo loginInfo = new LoginInfo();
-				BO.Role oRole = new BO.Role();
-				oRole = new RoleService().GetRoleByID(oCurrentUser.RoleID);
-				loginInfo = new LoginInfoService().GetCurrentLoginInfo(oCurrentUser.LoginID,oRole.Name, System.Environment.MachineName,false);
+				loginInfo.LogoutTime = DateTime.Now;
+				loginInfo.IsLogout = true;
+				string logoutResult = new LoginInfoService().Save(loginInfo);
 
-				if (loginInfo != null)
+				if (logoutResult == "Ok")
 				{
-					loginInfo.LogoutTime = DateTime.Now;
-					loginInfo.IsLogout = true;
-					string logoutResult = new LoginInfoService().Save(loginInfo);
-
-					if (logoutResult == "Ok")
-					{
-						Login.Login login = new Login.Login();
-						this.Close();
-						login.Close();
-					}
+					Login.Login login = new Login.Login();
+					this.Close();
+					login.Close();
 				}
 			}
 		}
@@ -119,6 +115,10 @@ namespace Authentication.Home
 
 			menuTreeView.Nodes.Add("Administration");
 			TreeNode administrationNode = menuTreeView.Nodes[2];
+			TreeNode roleNode = administrationNode.Nodes["Role"];
+			roleNode = administrationNode.Nodes.Add("Role");
+			roleNode.Nodes.Add("Role List");
+
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");
 			userNode.Nodes.Add("User List");
@@ -128,13 +128,13 @@ namespace Authentication.Home
 			employeeNode.Nodes.Add("Employee Information");
 			employeeNode.Nodes.Add("Employee List");
 
-			menuTreeView.Nodes.Add("Leave");
-			TreeNode leaveNode = menuTreeView.Nodes[3];
-			TreeNode leaveYear = leaveNode.Nodes["Leave Year"];
-			leaveYear = leaveNode.Nodes.Add("Leave Year");
-			leaveYear = leaveNode.Nodes.Add("Leave Type");
-			leaveYear = leaveNode.Nodes.Add("Leave Apply");
-			leaveYear = leaveNode.Nodes.Add("Leave Approval");
+			//menuTreeView.Nodes.Add("Leave");
+			//TreeNode leaveNode = menuTreeView.Nodes[3];
+			//TreeNode leaveYear = leaveNode.Nodes["Leave Year"];
+			//leaveYear = leaveNode.Nodes.Add("Leave Year");
+			//leaveYear = leaveNode.Nodes.Add("Leave Type");
+			//leaveYear = leaveNode.Nodes.Add("Leave Apply");
+			//leaveYear = leaveNode.Nodes.Add("Leave Approval");
 		}
 		#endregion
 
@@ -159,6 +159,11 @@ namespace Authentication.Home
 				case "Profile":
 					ProfileController profileController = new ProfileController();
 					AddControl(profileController);
+					break;
+				case "Role List":
+					RoleListController roleListController = new RoleListController();
+					roleListController.SetCurrentUser(this.oCurrentUser);
+					AddControl(roleListController);
 					break;
 				case "User List":
 					UserListController userListController = new UserListController();
@@ -193,7 +198,7 @@ namespace Authentication.Home
 		#region Home DropDown
 		private void homeDropDown_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            System.Windows.Controls.ComboBox cmb = (System.Windows.Controls.ComboBox)sender;
+            System.Windows.Forms.ComboBox cmb = (System.Windows.Forms.ComboBox)sender;
 			string selectedValue = cmb.SelectedItem as string;
 			int selectedIndex = cmb.SelectedIndex;
 
@@ -218,7 +223,11 @@ namespace Authentication.Home
 
 			if (selectedValue == "Logout" && selectedIndex == 3)
 			{
-				this.Exit_Click(null,null);
+				DialogResult result = MessageBox.Show($"Are you sure to Logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+				if (result == DialogResult.OK)
+				{
+					this.Exit_Click(null, null);
+				}
 			}
 		}
 		#endregion

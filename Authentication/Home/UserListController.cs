@@ -19,6 +19,7 @@ namespace Authentication.Home
 		#region property / Variable
 		BO.CurrentUser oCurrentUser = new CurrentUser();
 		List<BO.Role> roles = new List<BO.Role>();
+		List<BO.Users> users = new List<BO.Users>();
 		DataTable allUserDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
@@ -50,7 +51,6 @@ namespace Authentication.Home
 		#region Get ALL Users
 		public void GetAllUsers()
 		{
-			List<BO.Users> users = new List<BO.Users>();
 			try
 			{
 				users = userService.GetUsers();

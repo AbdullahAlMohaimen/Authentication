@@ -72,7 +72,7 @@ namespace Authentication.Service
 		#region  Service Implementation
 
 		#region Get User by ID
-		public Users GerUser(int userID)
+		public Users GetUser(int userID)
 		{
 			Users oUser = new Users();
 			try
@@ -323,7 +323,7 @@ namespace Authentication.Service
 				{
 					result = UsersDA.UpdateUserStatus(userID, status, modifiedBy, modifiedDate, statusChangeDate);
 
-					oUsers = this.GerUser(userID);
+					oUsers = this.GetUser(userID);
 					if (result == "Ok")
 					{
 						SendEmail sendEmail = new SendEmail();

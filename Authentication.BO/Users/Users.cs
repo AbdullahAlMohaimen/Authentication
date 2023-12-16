@@ -255,7 +255,7 @@ namespace Authentication.BO
 	#region IUser Service
 	public interface IUserService
 	{
-		Users GerUser(int ID);
+		Users GetUser(int ID);
 		List<Users> GetUsers();
 		string Save(Users user);
 		void Delete(int ID);

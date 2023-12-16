@@ -16,7 +16,7 @@ namespace Authentication.Service
 	[Serializable]
 	public class RoleService : ServiceTemplate, IRoleService
 	{
-		#region Employee Data Mapping
+		#region Role Data Mapping
 		public RoleService() { }
 
 		private void MapObject(Role oRole, DataReader oReader)
@@ -26,6 +26,11 @@ namespace Authentication.Service
 			oRole.Name = oReader.GetString("Name", string.Empty);
 			oRole.Status = (EnumStatus)oReader.GetInt32("Status", 1);
 			oRole.Description = oReader.GetString("Description", string.Empty);
+
+			oRole.CreatedBy = oReader.GetInt32("CreatedBy", 0);
+			oRole.CreatedDate = oReader.GetDateTime("CreatedDate");
+			oRole.ModifiedBy = oReader.GetInt32("ModifiedBy", 0);
+			oRole.ModifiedDate = oReader.GetDateTime("ModifiedDate");
 			this.SetObjectState(oRole, Authentication.BO.ObjectState.Saved);
 		}
 		protected override T CreateObject<T>(DataReader oReader)
