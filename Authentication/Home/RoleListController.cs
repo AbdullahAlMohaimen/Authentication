@@ -2,6 +2,7 @@
 using Authentication.Role;
 using Authentication.Service;
 using Authentication.Users;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,7 @@ namespace Authentication.Home
 		{
 			try
 			{
+				roles = new List<BO.Role>();
 				roles = roleService.GetAllRole();
 				allRoleGrid.Columns.Clear();
 				allRoleGrid.DataSource = null;
@@ -76,7 +78,11 @@ namespace Authentication.Home
 					row["Code"] = oRole.Code;
 					row["Name"] = oRole.Name;
 					row["Status"] = oRole.Status == EnumStatus.Active ? "Active" : "In-Active";
-					row["Created By"] = userService.GetUser(oRole.CreatedBy).UserName;
+					var oUser = userService.GetUser(oRole.CreatedBy);
+					if(oUser != null)
+						row["Created By"] = oUser.UserName;
+					else
+						row["Created By"] = "";
 
 					allRoleDataTable.Rows.Add(row);
 				}
@@ -115,10 +121,10 @@ namespace Authentication.Home
 		#region Set Grid Column
 		public void SetGridColumn()
 		{
-			allRoleGrid.Columns["Code"].Width = 60;
-			allRoleGrid.Columns["Name"].Width = 215;
-			allRoleGrid.Columns["Status"].Width = 180;
-			allRoleGrid.Columns["Created By"].Width = 255;
+			allRoleGrid.Columns["Code"].Width = 30;
+			allRoleGrid.Columns["Name"].Width = 150;
+			allRoleGrid.Columns["Status"].Width = 30;
+			allRoleGrid.Columns["Created By"].Width = 400;
 		}
 		#endregion
 	}
