@@ -89,16 +89,16 @@ namespace Authentication.Home
 				allRoleGrid.DataSource = allRoleDataTable;
 				this.SetGridColumn();
 
-				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
-				editButton.HeaderText = "Edit";
-				editButton.Text = "Edit";
-				editButton.UseColumnTextForButtonValue = true;
-				editButton.DefaultCellStyle.BackColor = SystemColors.Control;
-				editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				editButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allRoleGrid.Columns.Add(editButton);
+				//DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
+				//editButton.HeaderText = "Edit";
+				//editButton.Text = "Edit";
+				//editButton.UseColumnTextForButtonValue = true;
+				//editButton.DefaultCellStyle.BackColor = SystemColors.Control;
+				//editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+				//editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+				//editButton.CellTemplate.Style.ForeColor = Color.Maroon;
+				//editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+				//allRoleGrid.Columns.Add(editButton);
 			}
 			catch (Exception ex)
 			{
@@ -122,9 +122,32 @@ namespace Authentication.Home
 		public void SetGridColumn()
 		{
 			allRoleGrid.Columns["Code"].Width = 30;
-			allRoleGrid.Columns["Name"].Width = 150;
+			allRoleGrid.Columns["Name"].Width = 100;
 			allRoleGrid.Columns["Status"].Width = 30;
 			allRoleGrid.Columns["Created By"].Width = 400;
+		}
+		#endregion
+
+		#region
+		private void editButton_click_Click(object sender, EventArgs e)
+		{
+			Guna2DataGridView dataGridView = allRoleGrid;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				string code = selectedRow.Cells["Code"].Value.ToString();
+
+				BO.Role selectedRole = roleService.GetRoleByCode(code);
+				RoleEntry roleEntry = new RoleEntry(this);
+				roleEntry.SetCurrentUser(this.oCurrentUser);
+				roleEntry.EditRole(selectedRole);
+				roleEntry._loginID = oCurrentUser.LoginID;
+				roleEntry.Show();
+			}
+			else
+			{
+				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
 		}
 		#endregion
 	}

@@ -20,9 +20,10 @@ namespace Authentication.Role
 		public event EventHandler EditingDone;
 		EmployeeService _employeeService = new EmployeeService();
 		RoleService _roleService = new RoleService();
+		UserService _userService = new UserService();
 		private UserControl callingForm;
 		BO.CurrentUser oCurrentUser = new CurrentUser();
-		BO.Role _role = new BO.Role();
+		BO.Role oRole = new BO.Role();
 		public string _loginID;
 		public string LoginID { get { return _loginID; } set { _loginID = value; } }
 		#endregion
@@ -32,8 +33,6 @@ namespace Authentication.Role
 		{
 			InitializeComponent();
 			callingForm = caller;
-			GenerateCode();
-			this.Load();
 		}
 		#endregion
 
@@ -44,37 +43,26 @@ namespace Authentication.Role
 		}
 		#endregion
 
-		#region SetEditedUser & Type
+		#region SetEditedRole & Type
 		public void EditRole(BO.Role oRole)
 		{
-			_role = oRole;
+			oRole = oRole;
 			BO.Role role = new BO.Role();
-			if (_role != null)
+			if (oRole != null)
 			{
+				this.Load();
 				txtHeader.Text = "Edit User";
-				//txt_UserLoginID.Text = _user.LoginID.ToString();
-				//txt_UserName.Text = _user.UserName.ToString();
-				//txt_UserEmail.Text = _user.Email.ToString();
 
-				//role = this._roles.Find(x => x.ID == _user.RoleID);
-				//txt_UserRoleID.SelectedItem = role.Name;
-
-				//BO.Employee _employee = employeeService.GetEmployee(_user.MasterID);
-				//txt_UserMaster.Text = "(" + _employee.EmployeeNo + ")" + _employee.Name;
-				//if (_user.IsApprover == true)
-				//{
-				//	txt_IsApprover.Checked = true;
-				//}
-				//if (_user.IsApprover == false)
-				//{
-				//	txt_IsApprover.Checked = false;
-				//}
-				//SearchEmp = _employee;
+				txt_RoleName.Text = oRole.Name;
+				txt_RoleCode.Text = oRole.Code;
+				txt_RoleStatus.SelectedItem = oRole.Status;
+				txt_RoleDescription.Text = oRole.Description;
 			}
 			else
 			{
 				txtHeader.Text = "New User Entry";
-				_role = new BO.Role();
+				oRole = new BO.Role();
+				GenerateCode();
 			}
 		}
 		#endregion
@@ -128,18 +116,29 @@ namespace Authentication.Role
 		#region Save Button
 		private void SaveRole_Click(object sender, EventArgs e)
 		{
-			BO.Role role = new BO.Role();
 			string invalidMessage;
 			try
 			{
 				invalidMessage = this.isValidate();
 				if (string.IsNullOrEmpty(invalidMessage))
 				{
-					role.Name = txt_RoleName.Text;
-					role.Code = _roleService.GetCode();
-					role.Status = (EnumStatus)txt_RoleStatus.SelectedItem;
-					role.Description = txt_RoleDescription.Text;
-					string status = _roleService.Save(role);
+					oRole.Name = txt_RoleName.Text;
+					oRole.Code = _roleService.GetCode();
+					oRole.Status = (EnumStatus)txt_RoleStatus.SelectedItem;
+					oRole.Description = txt_RoleDescription.Text;
+
+					if(oRole.IsNew == true)
+					{
+						oRole.CreatedBy = oCurrentUser.ID;
+						oRole.CreatedDate = DateTime.Now;
+					}
+					else
+					{
+						oRole.ModifiedBy = oCurrentUser.ID;
+						oRole.ModifiedDate = DateTime.Now;
+					}
+
+					string status = _roleService.Save(oRole);
 					if (status == "Ok")
 					{
 						MessageBox.Show("New roll added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

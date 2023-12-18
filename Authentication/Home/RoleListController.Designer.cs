@@ -33,6 +33,8 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
+			this.editButton_click = new Guna.UI2.WinForms.Guna2Button();
 			this.AddNewRole = new Guna.UI2.WinForms.Guna2Button();
 			this.allRoleGrid = new Guna.UI2.WinForms.Guna2DataGridView();
 			this.guna2Panel1.SuspendLayout();
@@ -46,12 +48,49 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.deleteButton_Click);
+			this.guna2Panel1.Controls.Add(this.editButton_click);
 			this.guna2Panel1.Controls.Add(this.AddNewRole);
 			this.guna2Panel1.Controls.Add(this.allRoleGrid);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 110;
+			// 
+			// deleteButton_Click
+			// 
+			this.deleteButton_Click.BorderRadius = 8;
+			this.deleteButton_Click.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.deleteButton_Click.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.deleteButton_Click.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.deleteButton_Click.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.deleteButton_Click.FillColor = System.Drawing.Color.OrangeRed;
+			this.deleteButton_Click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.deleteButton_Click.ForeColor = System.Drawing.Color.Wheat;
+			this.deleteButton_Click.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton_Click.Image")));
+			this.deleteButton_Click.Location = new System.Drawing.Point(935, 539);
+			this.deleteButton_Click.Name = "deleteButton_Click";
+			this.deleteButton_Click.Size = new System.Drawing.Size(109, 32);
+			this.deleteButton_Click.TabIndex = 109;
+			this.deleteButton_Click.Text = "Delete";
+			// 
+			// editButton_click
+			// 
+			this.editButton_click.BorderRadius = 8;
+			this.editButton_click.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.editButton_click.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.editButton_click.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.editButton_click.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.editButton_click.FillColor = System.Drawing.Color.Teal;
+			this.editButton_click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.editButton_click.ForeColor = System.Drawing.Color.Wheat;
+			this.editButton_click.Image = ((System.Drawing.Image)(resources.GetObject("editButton_click.Image")));
+			this.editButton_click.Location = new System.Drawing.Point(815, 539);
+			this.editButton_click.Name = "editButton_click";
+			this.editButton_click.Size = new System.Drawing.Size(109, 32);
+			this.editButton_click.TabIndex = 108;
+			this.editButton_click.Text = "Edit";
+			this.editButton_click.Click += new System.EventHandler(this.editButton_click_Click);
 			// 
 			// AddNewRole
 			// 
@@ -76,8 +115,8 @@
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
 			this.allRoleGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allRoleGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.allRoleGrid.BackgroundColor = System.Drawing.Color.Wheat;
@@ -105,7 +144,7 @@
 			this.allRoleGrid.Name = "allRoleGrid";
 			this.allRoleGrid.ReadOnly = true;
 			this.allRoleGrid.RowHeadersVisible = false;
-			this.allRoleGrid.Size = new System.Drawing.Size(1048, 526);
+			this.allRoleGrid.Size = new System.Drawing.Size(1048, 471);
 			this.allRoleGrid.TabIndex = 0;
 			this.allRoleGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
 			this.allRoleGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -148,5 +187,7 @@
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 		private Guna.UI2.WinForms.Guna2Button AddNewRole;
 		private Guna.UI2.WinForms.Guna2DataGridView allRoleGrid;
+		private Guna.UI2.WinForms.Guna2Button deleteButton_Click;
+		private Guna.UI2.WinForms.Guna2Button editButton_click;
 	}
 }

@@ -72,7 +72,7 @@ namespace Authentication.Service
 			{
 				using(SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand insertCommand = new SqlCommand("Insert into ROLE (Name,Status,Description) values('"+role.Name+"','"+(int)role.Status+"','"+role.Description+"')",conn,tc);
+					SqlCommand insertCommand = new SqlCommand("Insert into ROLE (Name,Status,Description,CreatedBy,CreatedDate) values('"+role.Name+"','"+(int)role.Status+"','"+role.Description+"','"+role.CreatedBy+"','"+role.CreatedDate+"')",conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -93,6 +93,32 @@ namespace Authentication.Service
 			}
 
 			return status;
+		}
+		#endregion
+
+		#region Update
+		internal static string Update(Role oRole)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Role set Name = '"+oRole.Name+"', Status = '"+(int)oRole.Status+"',Description = '"+oRole.Description+"'," +
+						"ModifiedBy = '"+oRole.ModifiedBy+"',ModifiedDate = '"+oRole.ModifiedDate+"'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
 		}
 		#endregion
 
@@ -141,5 +167,31 @@ namespace Authentication.Service
 			return dr;
 		}
 		#endregion
+
+		#region Get By ID
+		internal static IDataReader GetByCode(string code)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (code != null)
+				{
+					getCommand = new SqlCommand("Select * from Role where code = '" + code + "'", conn);
+					dr = getCommand.ExecuteReader();
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
 	}
 }

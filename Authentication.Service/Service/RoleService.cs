@@ -61,7 +61,14 @@ namespace Authentication.Service
 			string status = string.Empty;
 			try
 			{
-				status = RoleDA.Insert(role);
+				if(role.IsNew == true)
+				{
+					status = RoleDA.Insert(role);
+				}
+				else
+				{
+					status = RoleDA.Update(role);
+				}
 			}
 			catch(Exception ex){
 				status = "Failed";
@@ -120,6 +127,30 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#endregion
+
+		#region GetRoleByCode()
+		public Role GetRoleByCode(string code)
+		{
+			Role role = new Role();
+			try
+			{
+				DataReader oreader = new DataReader(RoleDA.GetByCode(code));
+				if (oreader.Read())
+				{
+					role = this.CreateObject<Role>(oreader);
+				}
+				else
+				{
+					role = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				role = null;
+			}
+			return role;
+		}
 		#endregion
 
 		#region  Code AutoGenerate
