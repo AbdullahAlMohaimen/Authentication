@@ -142,12 +142,18 @@ namespace Authentication.Home
 				roleEntry.SetCurrentUser(this.oCurrentUser);
 				roleEntry.EditRole(selectedRole);
 				roleEntry._loginID = oCurrentUser.LoginID;
+				roleEntry.EditingDone += RoleEntry_EditingDone;
 				roleEntry.Show();
 			}
 			else
 			{
 				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
+		}
+
+		private void RoleEntry_EditingDone(object sender, EventArgs e)
+		{
+			this.loadGrid();
 		}
 		#endregion
 	}
