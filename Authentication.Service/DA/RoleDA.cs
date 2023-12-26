@@ -122,6 +122,41 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  Insert
+		internal static string Delete(int ID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand insertCommand = new SqlCommand("Delete from Role where RoleID = '"+ID+"'", conn, tc);
+					insertCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+
+			return status;
+		}
+		#endregion
+
 		#region  GET
 		internal static IDataReader Get()
 		{

@@ -54,6 +54,7 @@ namespace Authentication.Home
 		#region LoadGrid
 		public void loadGrid()
 		{
+			allRoleGrid.CurrentCell = null;
 			this.GetAllRole();
 		}
 		#endregion
@@ -87,6 +88,8 @@ namespace Authentication.Home
 					allRoleDataTable.Rows.Add(row);
 				}
 				allRoleGrid.DataSource = allRoleDataTable;
+				allRoleGrid.CurrentCell = null;
+				allRoleGrid.ClearSelection();
 				this.SetGridColumn();
 
 				//DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
@@ -128,7 +131,7 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region
+		#region Edit Button
 		private void editButton_click_Click(object sender, EventArgs e)
 		{
 			Guna2DataGridView dataGridView = allRoleGrid;
@@ -147,13 +150,45 @@ namespace Authentication.Home
 			}
 			else
 			{
-				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				MessageBox.Show("Please select a row for edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 		}
 
 		private void RoleEntry_EditingDone(object sender, EventArgs e)
 		{
 			this.loadGrid();
+		}
+		#endregion
+
+		#region Delete Button
+		private void deleteButton_Click_Click(object sender, EventArgs e)
+		{
+			Guna2DataGridView dataGridView = allRoleGrid;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				DialogResult result = MessageBox.Show($"Are you sure to delete this Role?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (result == DialogResult.Yes)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					string code = selectedRow.Cells["Code"].Value.ToString();
+					BO.Role selectedRole = roleService.GetRoleByCode(code);
+
+					string rslt = new RoleService().Delete(selectedRole.ID);
+					if (rslt == "Ok")
+					{
+						MessageBox.Show("Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+						MessageBox.Show("Deleted Failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				return;
+			}
+			else
+			{
+				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
 		}
 		#endregion
 	}

@@ -119,6 +119,11 @@ namespace Authentication.Home
 			roleNode = administrationNode.Nodes.Add("Role");
 			roleNode.Nodes.Add("Role List");
 
+			TreeNode loginInfo = administrationNode.Nodes["Login Information"];
+			loginInfo = administrationNode.Nodes.Add("Login Information");
+			loginInfo.Nodes.Add("User Login Info");
+			loginInfo.Nodes.Add("Employee Login Info");
+
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");
 			userNode.Nodes.Add("User List");

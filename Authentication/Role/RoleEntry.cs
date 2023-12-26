@@ -62,6 +62,7 @@ namespace Authentication.Role
 			{
 				txtHeader.Text = "New User Entry";
 				oRole = new BO.Role();
+				this.Load();
 				GenerateCode();
 			}
 		}

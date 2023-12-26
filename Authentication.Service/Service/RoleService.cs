@@ -121,9 +121,19 @@ namespace Authentication.Service
 		#endregion
 
 		#region Delete
-		public void Delete(int RoleID)
+		public string Delete(int RoleID)
 		{
-
+			RoleDA roleDA = new RoleDA();
+			string status = string.Empty;
+			try
+			{
+				status = RoleDA.Delete(RoleID);
+			}
+			catch (Exception ex)
+			{
+				status = "Failed";
+			}
+			return status;
 		}
 		#endregion
 

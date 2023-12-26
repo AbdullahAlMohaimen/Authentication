@@ -106,7 +106,7 @@ namespace Authentication.BO
 		Role GetRoleByID(int ID);
 		List<Role> GetAllRole();
 		string Save(Role employee);
-		void Delete(int ID);
+		string Delete(int ID);
 	}
 	#endregion
 }
