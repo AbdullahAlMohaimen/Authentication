@@ -23,6 +23,7 @@ namespace Authentication.Home
 		DataTable allRoleDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
+		List<BO.Users> userList = new List<BO.Users>();
 		#endregion
 
 		#region Load
@@ -66,6 +67,7 @@ namespace Authentication.Home
 			{
 				roles = new List<BO.Role>();
 				roles = roleService.GetAllRole();
+				userList = new UserService().GetUsers();
 				allRoleGrid.Columns.Clear();
 				allRoleGrid.DataSource = null;
 				allRoleDataTable.Rows.Clear();
@@ -79,12 +81,19 @@ namespace Authentication.Home
 					row["Code"] = oRole.Code;
 					row["Name"] = oRole.Name;
 					row["Status"] = oRole.Status == EnumStatus.Active ? "Active" : "In-Active";
-					var oUser = userService.GetUser(oRole.CreatedBy);
-					if(oUser != null)
-						row["Created By"] = oUser.UserName;
+					if (userList.Count != 0)
+					{
+						BO.Users oUser = new BO.Users();
+						oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
+						if (oUser != null)
+							row["Created By"] = oUser.UserName;
+						else
+							row["Created By"] = "";
+					}
 					else
+					{
 						row["Created By"] = "";
-
+					}
 					allRoleDataTable.Rows.Add(row);
 				}
 				allRoleGrid.DataSource = allRoleDataTable;

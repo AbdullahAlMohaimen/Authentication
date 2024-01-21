@@ -163,6 +163,7 @@ namespace Authentication.Home
 					break;
 				case "Profile":
 					ProfileController profileController = new ProfileController();
+					profileController.SetCurrentUser(this.oCurrentUser);
 					AddControl(profileController);
 					break;
 				case "Role List":
