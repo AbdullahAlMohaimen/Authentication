@@ -159,6 +159,7 @@ namespace Authentication.Home
 			{
 				case "Home":
 					AdministartorDashboard administartorDashboard = new AdministartorDashboard();
+					administartorDashboard.SetCurrentUser(this.oCurrentUser);
 					AddControl(administartorDashboard);
 					break;
 				case "Profile":
@@ -178,6 +179,7 @@ namespace Authentication.Home
 					break;
 				case "Employee List":
 					EmployeeListController employeeListController = new EmployeeListController();
+					employeeListController.SetCurrentUser(this.oCurrentUser);
 					AddControl(employeeListController);
 					break;
 				case "Employee Information":
