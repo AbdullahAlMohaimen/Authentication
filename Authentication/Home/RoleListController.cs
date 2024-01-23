@@ -55,7 +55,6 @@ namespace Authentication.Home
 		#region LoadGrid
 		public void loadGrid()
 		{
-			allRoleGrid.CurrentCell = null;
 			this.GetAllRole();
 		}
 		#endregion
@@ -68,49 +67,37 @@ namespace Authentication.Home
 				roles = new List<BO.Role>();
 				roles = roleService.GetAllRole();
 				userList = new UserService().GetUsers();
-				allRoleGrid.Columns.Clear();
-				allRoleGrid.DataSource = null;
-				allRoleDataTable.Rows.Clear();
-				this.GetGridColumn();
 
-				allRoleGrid.AllowUserToAddRows = false;
+				allRoleList.DataSource = userList;
+
+				DataRow dr = null;
+				DataTable roleList = new DataTable();
+				roleList.TableName = "Role List";
+				roleList.Columns.Add("ID", typeof(int));
+				roleList.Columns.Add("Code", typeof(string));
+				roleList.Columns.Add("Name", typeof(string));
+				roleList.Columns.Add("Status", typeof(string));
+				roleList.Columns.Add("Created By", typeof (string));
+
+				allRoleList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+				allRoleList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 				foreach (BO.Role oRole in roles)
 				{
-					DataRow row = allRoleDataTable.NewRow();
-					row["Code"] = oRole.Code;
-					row["Name"] = oRole.Name;
-					row["Status"] = oRole.Status == EnumStatus.Active ? "Active" : "In-Active";
-					if (userList.Count != 0)
-					{
-						BO.Users oUser = new BO.Users();
-						oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
-						if (oUser != null)
-							row["Created By"] = oUser.UserName;
-						else
-							row["Created By"] = "";
-					}
-					else
-					{
-						row["Created By"] = "";
-					}
-					allRoleDataTable.Rows.Add(row);
-				}
-				allRoleGrid.DataSource = allRoleDataTable;
-				allRoleGrid.CurrentCell = null;
-				allRoleGrid.ClearSelection();
-				this.SetGridColumn();
+					dr = roleList.NewRow();
+					dr["ID"] = oRole.ID;
+					dr["Code"] = oRole.Code;
+					dr["Name"] = oRole.Name;
+					dr["Status"] = oRole.Status.ToString();
 
-				//DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
-				//editButton.HeaderText = "Edit";
-				//editButton.Text = "Edit";
-				//editButton.UseColumnTextForButtonValue = true;
-				//editButton.DefaultCellStyle.BackColor = SystemColors.Control;
-				//editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				//editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				//editButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				//editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				//allRoleGrid.Columns.Add(editButton);
+					BO.Users oUser = new BO.Users();
+					oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
+					dr["Created By"] = oUser == null ? "" : oUser.UserName;
+
+					roleList.Rows.Add(dr);
+				}
+				allRoleList.DataSource = roleList;
+				allRoleList.RowHeadersVisible = false;
 			}
 			catch (Exception ex)
 			{
@@ -119,31 +106,10 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region Get Grid Column
-		public void GetGridColumn()
-		{
-			allRoleDataTable.Columns.Clear();
-			allRoleDataTable.Columns.Add("Code");
-			allRoleDataTable.Columns.Add("Name");
-			allRoleDataTable.Columns.Add("Status");
-			allRoleDataTable.Columns.Add("Created By");
-		}
-		#endregion
-
-		#region Set Grid Column
-		public void SetGridColumn()
-		{
-			allRoleGrid.Columns["Code"].Width = 30;
-			allRoleGrid.Columns["Name"].Width = 100;
-			allRoleGrid.Columns["Status"].Width = 30;
-			allRoleGrid.Columns["Created By"].Width = 400;
-		}
-		#endregion
-
 		#region Edit Button
 		private void editButton_click_Click(object sender, EventArgs e)
 		{
-			Guna2DataGridView dataGridView = allRoleGrid;
+			DataGridView dataGridView = allRoleList;
 			if (dataGridView.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
@@ -172,7 +138,7 @@ namespace Authentication.Home
 		#region Delete Button
 		private void deleteButton_Click_Click(object sender, EventArgs e)
 		{
-			Guna2DataGridView dataGridView = allRoleGrid;
+			DataGridView dataGridView = allRoleList;
 			if (dataGridView.SelectedRows.Count > 0)
 			{
 				DialogResult result = MessageBox.Show($"Are you sure to delete this Role?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
