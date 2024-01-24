@@ -67,8 +67,7 @@ namespace Authentication.Home
 				roles = new List<BO.Role>();
 				roles = roleService.GetAllRole();
 				userList = new UserService().GetUsers();
-
-				allRoleList.DataSource = userList;
+				total.Text = roles.Count().ToString();
 
 				DataRow dr = null;
 				DataTable roleList = new DataTable();
@@ -79,8 +78,8 @@ namespace Authentication.Home
 				roleList.Columns.Add("Status", typeof(string));
 				roleList.Columns.Add("Created By", typeof (string));
 
-				allRoleList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-				allRoleList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+				allRoleListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+				allRoleListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
 				foreach (BO.Role oRole in roles)
 				{
@@ -96,8 +95,8 @@ namespace Authentication.Home
 
 					roleList.Rows.Add(dr);
 				}
-				allRoleList.DataSource = roleList;
-				allRoleList.RowHeadersVisible = false;
+				allRoleListTable.DataSource = roleList;
+				allRoleListTable.RowHeadersVisible = false;
 			}
 			catch (Exception ex)
 			{
@@ -109,7 +108,7 @@ namespace Authentication.Home
 		#region Edit Button
 		private void editButton_click_Click(object sender, EventArgs e)
 		{
-			DataGridView dataGridView = allRoleList;
+			DataGridView dataGridView = allRoleListTable;
 			if (dataGridView.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
@@ -138,7 +137,7 @@ namespace Authentication.Home
 		#region Delete Button
 		private void deleteButton_Click_Click(object sender, EventArgs e)
 		{
-			DataGridView dataGridView = allRoleList;
+			DataGridView dataGridView = allRoleListTable;
 			if (dataGridView.SelectedRows.Count > 0)
 			{
 				DialogResult result = MessageBox.Show($"Are you sure to delete this Role?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

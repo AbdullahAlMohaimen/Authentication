@@ -29,13 +29,19 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleListController));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
 			this.editButton_click = new Guna.UI2.WinForms.Guna2Button();
 			this.AddNewRole = new Guna.UI2.WinForms.Guna2Button();
-			this.allRoleList = new System.Windows.Forms.DataGridView();
+			this.allRoleListTable = new System.Windows.Forms.DataGridView();
 			this.guna2Panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.allRoleList)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.allRoleListTable)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// guna2Panel1
@@ -45,7 +51,10 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
-			this.guna2Panel1.Controls.Add(this.allRoleList);
+			this.guna2Panel1.Controls.Add(this.allRoleListTable);
+			this.guna2Panel1.Controls.Add(this.total);
+			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
 			this.guna2Panel1.Controls.Add(this.deleteButton_Click);
 			this.guna2Panel1.Controls.Add(this.editButton_click);
 			this.guna2Panel1.Controls.Add(this.AddNewRole);
@@ -53,6 +62,37 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 110;
+			// 
+			// total
+			// 
+			this.total.BackColor = System.Drawing.Color.Transparent;
+			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.total.ForeColor = System.Drawing.Color.DarkRed;
+			this.total.Location = new System.Drawing.Point(78, 554);
+			this.total.Name = "total";
+			this.total.Size = new System.Drawing.Size(11, 18);
+			this.total.TabIndex = 113;
+			this.total.Text = "0";
+			// 
+			// guna2HtmlLabel2
+			// 
+			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(63, 553);
+			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
+			this.guna2HtmlLabel2.TabIndex = 112;
+			this.guna2HtmlLabel2.Text = ":";
+			// 
+			// guna2HtmlLabel1
+			// 
+			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(14, 554);
+			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
+			this.guna2HtmlLabel1.TabIndex = 111;
+			this.guna2HtmlLabel1.Text = "Total";
 			// 
 			// deleteButton_Click
 			// 
@@ -65,9 +105,9 @@
 			this.deleteButton_Click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.deleteButton_Click.ForeColor = System.Drawing.Color.Wheat;
 			this.deleteButton_Click.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton_Click.Image")));
-			this.deleteButton_Click.Location = new System.Drawing.Point(935, 539);
+			this.deleteButton_Click.Location = new System.Drawing.Point(937, 549);
 			this.deleteButton_Click.Name = "deleteButton_Click";
-			this.deleteButton_Click.Size = new System.Drawing.Size(109, 32);
+			this.deleteButton_Click.Size = new System.Drawing.Size(109, 29);
 			this.deleteButton_Click.TabIndex = 109;
 			this.deleteButton_Click.Text = "Delete";
 			this.deleteButton_Click.Click += new System.EventHandler(this.deleteButton_Click_Click);
@@ -83,9 +123,9 @@
 			this.editButton_click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.editButton_click.ForeColor = System.Drawing.Color.Wheat;
 			this.editButton_click.Image = ((System.Drawing.Image)(resources.GetObject("editButton_click.Image")));
-			this.editButton_click.Location = new System.Drawing.Point(815, 539);
+			this.editButton_click.Location = new System.Drawing.Point(817, 549);
 			this.editButton_click.Name = "editButton_click";
-			this.editButton_click.Size = new System.Drawing.Size(109, 32);
+			this.editButton_click.Size = new System.Drawing.Size(109, 29);
 			this.editButton_click.TabIndex = 108;
 			this.editButton_click.Text = "Edit";
 			this.editButton_click.Click += new System.EventHandler(this.editButton_click_Click);
@@ -108,17 +148,38 @@
 			this.AddNewRole.Text = "Add New Role";
 			this.AddNewRole.Click += new System.EventHandler(this.AddNewRole_Click);
 			// 
-			// allRoleList
+			// allRoleListTable
 			// 
-			this.allRoleList.BackgroundColor = System.Drawing.Color.Wheat;
-			this.allRoleList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-			this.allRoleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.allRoleList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.allRoleList.Location = new System.Drawing.Point(10, 47);
-			this.allRoleList.Name = "allRoleList";
-			this.allRoleList.ReadOnly = true;
-			this.allRoleList.Size = new System.Drawing.Size(1040, 486);
-			this.allRoleList.TabIndex = 110;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.allRoleListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.allRoleListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.allRoleListTable.BackgroundColor = System.Drawing.Color.Wheat;
+			this.allRoleListTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allRoleListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.allRoleListTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allRoleListTable.DefaultCellStyle = dataGridViewCellStyle3;
+			this.allRoleListTable.EnableHeadersVisualStyles = false;
+			this.allRoleListTable.Location = new System.Drawing.Point(14, 47);
+			this.allRoleListTable.Name = "allRoleListTable";
+			this.allRoleListTable.ReadOnly = true;
+			this.allRoleListTable.Size = new System.Drawing.Size(1032, 496);
+			this.allRoleListTable.TabIndex = 114;
 			// 
 			// RoleListController
 			// 
@@ -129,7 +190,8 @@
 			this.Name = "RoleListController";
 			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.allRoleList)).EndInit();
+			this.guna2Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.allRoleListTable)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -140,6 +202,9 @@
 		private Guna.UI2.WinForms.Guna2Button AddNewRole;
 		private Guna.UI2.WinForms.Guna2Button deleteButton_Click;
 		private Guna.UI2.WinForms.Guna2Button editButton_click;
-		private System.Windows.Forms.DataGridView allRoleList;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+		private Guna.UI2.WinForms.Guna2HtmlLabel total;
+		private System.Windows.Forms.DataGridView allRoleListTable;
 	}
 }
