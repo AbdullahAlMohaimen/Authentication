@@ -97,6 +97,7 @@ namespace Authentication.Home
 				}
 				allRoleListTable.DataSource = roleList;
 				allRoleListTable.RowHeadersVisible = false;
+				allRoleListTable.Columns["ID"].Visible = false;
 			}
 			catch (Exception ex)
 			{
@@ -112,9 +113,9 @@ namespace Authentication.Home
 			if (dataGridView.SelectedRows.Count > 0)
 			{
 				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-				string code = selectedRow.Cells["Code"].Value.ToString();
+				int roleID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
 
-				BO.Role selectedRole = roleService.GetRoleByCode(code);
+				BO.Role selectedRole = roleService.GetRoleByID(roleID);
 				RoleEntry roleEntry = new RoleEntry(this);
 				roleEntry.SetCurrentUser(this.oCurrentUser);
 				roleEntry.EditRole(selectedRole);
@@ -144,8 +145,8 @@ namespace Authentication.Home
 				if (result == DialogResult.Yes)
 				{
 					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-					string code = selectedRow.Cells["Code"].Value.ToString();
-					BO.Role selectedRole = roleService.GetRoleByCode(code);
+					int roleID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					BO.Role selectedRole = roleService.GetRoleByID(roleID);
 
 					string rslt = new RoleService().Delete(selectedRole.ID);
 					if (rslt == "Ok")
