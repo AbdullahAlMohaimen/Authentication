@@ -167,6 +167,24 @@ namespace Authentication.Service
 
 		#endregion
 
+		#region SearchRole
+		public List<Users> SearchUsers(string searchText)
+		{
+			List<Users> users = new List<Users>();
+			try
+			{
+				DataReader dr = new DataReader(UsersDA.SearchUser(searchText));
+				users = this.CreateObjects<Users>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				users = null;
+			}
+			return users;
+		}
+		#endregion
+
 		#region GetUserByLoginID
 		public Users GetUserByLoginID(string loginID)
 		{

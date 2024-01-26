@@ -30,20 +30,20 @@ namespace Authentication.Home
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserListController));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.changeStatus = new Guna.UI2.WinForms.Guna2Button();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
 			this.editButton_click = new Guna.UI2.WinForms.Guna2Button();
-			this.txt_RoleSearch = new Guna.UI2.WinForms.Guna2TextBox();
+			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allUserListTable = new System.Windows.Forms.DataGridView();
 			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
-			this.changeStatus = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserListTable)).BeginInit();
 			this.SuspendLayout();
@@ -61,13 +61,31 @@ namespace Authentication.Home
 			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
 			this.guna2Panel1.Controls.Add(this.deleteButton_Click);
 			this.guna2Panel1.Controls.Add(this.editButton_click);
-			this.guna2Panel1.Controls.Add(this.txt_RoleSearch);
+			this.guna2Panel1.Controls.Add(this.txt_UserSearch);
 			this.guna2Panel1.Controls.Add(this.allUserListTable);
 			this.guna2Panel1.Controls.Add(this.AddNewUser);
 			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
+			// 
+			// changeStatus
+			// 
+			this.changeStatus.BorderRadius = 8;
+			this.changeStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.changeStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.changeStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.changeStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.changeStatus.FillColor = System.Drawing.Color.SeaGreen;
+			this.changeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.changeStatus.ForeColor = System.Drawing.Color.Wheat;
+			this.changeStatus.Image = ((System.Drawing.Image)(resources.GetObject("changeStatus.Image")));
+			this.changeStatus.Location = new System.Drawing.Point(694, 549);
+			this.changeStatus.Name = "changeStatus";
+			this.changeStatus.Size = new System.Drawing.Size(160, 29);
+			this.changeStatus.TabIndex = 129;
+			this.changeStatus.Text = "Change Passord";
+			this.changeStatus.Click += new System.EventHandler(this.changeStatus_Click);
 			// 
 			// total
 			// 
@@ -136,56 +154,56 @@ namespace Authentication.Home
 			this.editButton_click.Text = "Edit";
 			this.editButton_click.Click += new System.EventHandler(this.editButton_click_Click);
 			// 
-			// txt_RoleSearch
+			// txt_UserSearch
 			// 
-			this.txt_RoleSearch.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_RoleSearch.BorderRadius = 6;
-			this.txt_RoleSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_RoleSearch.DefaultText = "";
-			this.txt_RoleSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_RoleSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_RoleSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_RoleSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_RoleSearch.FillColor = System.Drawing.Color.Wheat;
-			this.txt_RoleSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_RoleSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_RoleSearch.ForeColor = System.Drawing.Color.Black;
-			this.txt_RoleSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_RoleSearch.Location = new System.Drawing.Point(166, 12);
-			this.txt_RoleSearch.Name = "txt_RoleSearch";
-			this.txt_RoleSearch.PasswordChar = '\0';
-			this.txt_RoleSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
-			this.txt_RoleSearch.PlaceholderText = "Search in all columns.....";
-			this.txt_RoleSearch.SelectedText = "";
-			this.txt_RoleSearch.Size = new System.Drawing.Size(469, 29);
-			this.txt_RoleSearch.TabIndex = 123;
-			this.txt_RoleSearch.TextChanged += new System.EventHandler(this.txt_RoleSearch_TextChanged);
+			this.txt_UserSearch.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_UserSearch.BorderRadius = 6;
+			this.txt_UserSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_UserSearch.DefaultText = "";
+			this.txt_UserSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserSearch.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Location = new System.Drawing.Point(166, 12);
+			this.txt_UserSearch.Name = "txt_UserSearch";
+			this.txt_UserSearch.PasswordChar = '\0';
+			this.txt_UserSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
+			this.txt_UserSearch.PlaceholderText = "Search in all columns.....";
+			this.txt_UserSearch.SelectedText = "";
+			this.txt_UserSearch.Size = new System.Drawing.Size(469, 29);
+			this.txt_UserSearch.TabIndex = 123;
+			this.txt_UserSearch.TextChanged += new System.EventHandler(this.txt_RoleSearch_TextChanged);
 			// 
 			// allUserListTable
 			// 
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allUserListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allUserListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserListTable.DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserListTable.EnableHeadersVisualStyles = false;
 			this.allUserListTable.Location = new System.Drawing.Point(14, 47);
 			this.allUserListTable.Name = "allUserListTable";
@@ -211,24 +229,6 @@ namespace Authentication.Home
 			this.AddNewUser.Text = "Add New User";
 			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
 			// 
-			// changeStatus
-			// 
-			this.changeStatus.BorderRadius = 8;
-			this.changeStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.changeStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.changeStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.changeStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.changeStatus.FillColor = System.Drawing.Color.SeaGreen;
-			this.changeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.changeStatus.ForeColor = System.Drawing.Color.Wheat;
-			this.changeStatus.Image = ((System.Drawing.Image)(resources.GetObject("changeStatus.Image")));
-			this.changeStatus.Location = new System.Drawing.Point(694, 549);
-			this.changeStatus.Name = "changeStatus";
-			this.changeStatus.Size = new System.Drawing.Size(160, 29);
-			this.changeStatus.TabIndex = 129;
-			this.changeStatus.Text = "Change Passord";
-			this.changeStatus.Click += new System.EventHandler(this.changeStatus_Click);
-			// 
 			// UserListController
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,7 +249,7 @@ namespace Authentication.Home
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 		private Guna.UI2.WinForms.Guna2Button AddNewUser;
 		private DataGridView allUserListTable;
-		private Guna.UI2.WinForms.Guna2TextBox txt_RoleSearch;
+		private Guna.UI2.WinForms.Guna2TextBox txt_UserSearch;
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

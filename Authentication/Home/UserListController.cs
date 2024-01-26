@@ -242,9 +242,21 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region Search User
 		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
 		{
-
+			if (!string.IsNullOrEmpty(txt_UserSearch.Text))
+			{
+				string searchText = txt_UserSearch.Text;
+				this.GetAllRole();
+				users = new UserService().SearchUsers(searchText);
+				this.ProcessData();
+			}
+			else
+			{
+				this.loadGrid();
+			}
 		}
+		#endregion
 	}
 }
