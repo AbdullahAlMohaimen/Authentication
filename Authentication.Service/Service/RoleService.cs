@@ -139,6 +139,24 @@ namespace Authentication.Service
 
 		#endregion
 
+		#region SearchRole
+		public List<Role> SearchRole(string searchText)
+		{
+			List<Role> roles = new List<Role>();
+			try
+			{
+				DataReader dr = new DataReader(RoleDA.SearchRole(searchText));
+				roles = this.CreateObjects<Role>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				roles = null;
+			}
+			return roles;
+		}
+		#endregion
+
 		#region GetRoleByCode()
 		public Role GetRoleByCode(string code)
 		{

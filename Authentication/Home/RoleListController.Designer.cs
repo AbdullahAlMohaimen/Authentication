@@ -33,6 +33,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleListController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_RoleSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allRoleListTable = new System.Windows.Forms.DataGridView();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,6 +52,7 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.txt_RoleSearch);
 			this.guna2Panel1.Controls.Add(this.allRoleListTable);
 			this.guna2Panel1.Controls.Add(this.total);
 			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
@@ -63,9 +65,34 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 110;
 			// 
+			// txt_RoleSearch
+			// 
+			this.txt_RoleSearch.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_RoleSearch.BorderRadius = 6;
+			this.txt_RoleSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_RoleSearch.DefaultText = "";
+			this.txt_RoleSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_RoleSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_RoleSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_RoleSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_RoleSearch.FillColor = System.Drawing.Color.Wheat;
+			this.txt_RoleSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_RoleSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_RoleSearch.ForeColor = System.Drawing.Color.Black;
+			this.txt_RoleSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_RoleSearch.Location = new System.Drawing.Point(166, 12);
+			this.txt_RoleSearch.Name = "txt_RoleSearch";
+			this.txt_RoleSearch.PasswordChar = '\0';
+			this.txt_RoleSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
+			this.txt_RoleSearch.PlaceholderText = "Search in all columns.....";
+			this.txt_RoleSearch.SelectedText = "";
+			this.txt_RoleSearch.Size = new System.Drawing.Size(469, 29);
+			this.txt_RoleSearch.TabIndex = 122;
+			this.txt_RoleSearch.TextChanged += new System.EventHandler(this.txt_RoleSearch_TextChanged);
+			// 
 			// allRoleListTable
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
 			this.allRoleListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allRoleListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -81,10 +108,10 @@
 			this.allRoleListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allRoleListTable.ColumnHeadersHeight = 30;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.allRoleListTable.DefaultCellStyle = dataGridViewCellStyle3;
@@ -137,9 +164,9 @@
 			this.deleteButton_Click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.deleteButton_Click.ForeColor = System.Drawing.Color.Wheat;
 			this.deleteButton_Click.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton_Click.Image")));
-			this.deleteButton_Click.Location = new System.Drawing.Point(937, 549);
+			this.deleteButton_Click.Location = new System.Drawing.Point(953, 549);
 			this.deleteButton_Click.Name = "deleteButton_Click";
-			this.deleteButton_Click.Size = new System.Drawing.Size(109, 29);
+			this.deleteButton_Click.Size = new System.Drawing.Size(93, 29);
 			this.deleteButton_Click.TabIndex = 109;
 			this.deleteButton_Click.Text = "Delete";
 			this.deleteButton_Click.Click += new System.EventHandler(this.deleteButton_Click_Click);
@@ -155,9 +182,9 @@
 			this.editButton_click.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.editButton_click.ForeColor = System.Drawing.Color.Wheat;
 			this.editButton_click.Image = ((System.Drawing.Image)(resources.GetObject("editButton_click.Image")));
-			this.editButton_click.Location = new System.Drawing.Point(817, 549);
+			this.editButton_click.Location = new System.Drawing.Point(869, 549);
 			this.editButton_click.Name = "editButton_click";
-			this.editButton_click.Size = new System.Drawing.Size(109, 29);
+			this.editButton_click.Size = new System.Drawing.Size(75, 29);
 			this.editButton_click.TabIndex = 108;
 			this.editButton_click.Text = "Edit";
 			this.editButton_click.Click += new System.EventHandler(this.editButton_click_Click);
@@ -205,5 +232,6 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
 		private System.Windows.Forms.DataGridView allRoleListTable;
+		private Guna.UI2.WinForms.Guna2TextBox txt_RoleSearch;
 	}
 }

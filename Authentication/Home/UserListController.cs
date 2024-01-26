@@ -1,4 +1,5 @@
 ﻿using Authentication.BO;
+using Authentication.Role;
 using Authentication.Service;
 using Authentication.Users;
 using System;
@@ -54,65 +55,7 @@ namespace Authentication.Home
 			try
 			{
 				users = userService.GetUsers();
-				allUserGrid.Columns.Clear();
-				allUserGrid.DataSource = null;
-				allUserDataTable.Rows.Clear();
-				this.GetGridColumn();
-				allUserGrid.AllowUserToAddRows = false;
-				foreach (var user in users)
-				{
-					DataRow row = allUserDataTable.NewRow();
-					row["Login ID"] = user.LoginID;
-					row["User Name"] = user.UserName;
-					var role = roles.Find(x => x.ID == user.RoleID);
-					if (role != null)
-						row["Role"] = role.Name;
-					row["Status"] = user.Status == EnumStatus.Active ? "Active" : "In-Active";
-					row["Email"] = user.Email;
-					allUserDataTable.Rows.Add(row);
-				}
-				allUserGrid.DataSource = allUserDataTable;
-				this.SetGridColumn();
-
-				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
-				editButton.HeaderText = "Edit";
-				editButton.Text = "Edit";
-				editButton.UseColumnTextForButtonValue = true;
-				editButton.DefaultCellStyle.BackColor = SystemColors.Control;
-				editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				editButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allUserGrid.Columns.Add(editButton);
-
-				DataGridViewButtonColumn active = new DataGridViewButtonColumn();
-				active.HeaderText = "User Status";
-				active.Text = "Change Status";
-				active.UseColumnTextForButtonValue = true;
-				active.DefaultCellStyle.BackColor = SystemColors.Control;
-				active.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				active.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				active.CellTemplate.Style.ForeColor = Color.Maroon;
-				active.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allUserGrid.Columns.Add(active);
-
-				DataGridViewButtonColumn action = new DataGridViewButtonColumn();
-				action.HeaderText = "Action";
-				action.Text = "Reset Password";
-				action.UseColumnTextForButtonValue = true;
-				action.DefaultCellStyle.BackColor = SystemColors.Control;
-				action.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				action.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				action.CellTemplate.Style.ForeColor = Color.Maroon;
-				action.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allUserGrid.Columns.Add(action);
-
-				//foreach (DataGridViewRow row in allUserGrid.Rows)
-				//{
-				//	string status = row.Cells["U Status"].Value.ToString();
-				//	DataGridViewButtonCell statusButtonCell = (DataGridViewButtonCell)row.Cells[5];
-				//	statusButtonCell.Value = status;
-				//}
+				this.ProcessData();
 			}
 			catch (Exception ex)
 			{
@@ -121,13 +64,48 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		private string GetToggleButtonText(string status)
+		#region Process User Data
+		public void ProcessData()
 		{
-			if (status == "Active")
-				return "In-Active";
-			else
-				return "Active";
+			total.Text = users.Count().ToString();
+			DataRow dr = null;
+			DataTable UserList = new DataTable();
+			UserList.TableName = "Role List";
+			UserList.Columns.Add("ID", typeof(int));
+			UserList.Columns.Add("Login ID", typeof(string));
+			UserList.Columns.Add("User Name", typeof(string));
+			UserList.Columns.Add("Role", typeof(string));
+			UserList.Columns.Add("Status", typeof(string));
+			UserList.Columns.Add("Email", typeof(string));
+			UserList.Columns.Add("Created By", typeof(string));
+
+			allUserListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			allUserListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			foreach (var user in users)
+			{
+				dr = UserList.NewRow();
+				dr["ID"] = user.ID;
+				dr["Login ID"] = user.LoginID;
+				dr["User Name"] = user.UserName;
+
+				BO.Role oRole = new BO.Role();
+				oRole = roles.Where(x => x.ID == user.RoleID).FirstOrDefault();
+				dr["Role"] = oRole == null ? "" : oRole.Name;
+				dr["Status"] = user.Status == EnumStatus.Active ? "Active" : "In-Active";
+				dr["Email"] = user.Email;
+
+				BO.Users oUser = new BO.Users();
+				oUser = users.Where(x => x.ID == user.CreatedBy).FirstOrDefault();
+				dr["Created By"] = oUser == null ? "" : oUser.UserName;
+				UserList.Rows.Add(dr);
+			}
+
+			allUserListTable.DataSource = UserList;
+			allUserListTable.RowHeadersVisible = false;
+			allUserListTable.Columns["ID"].Visible = false;
 		}
+		#endregion
 
 		#region Get ALL Role
 		public void GetAllRole()
@@ -141,127 +119,6 @@ namespace Authentication.Home
 				//MessageBox.Show("Please enter your login ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-		}
-		#endregion
-
-		#region Get Grid Column
-		public void GetGridColumn()
-		{
-			allUserDataTable.Columns.Clear();
-			allUserDataTable.Columns.Add("Login ID");
-			allUserDataTable.Columns.Add("User Name");
-			allUserDataTable.Columns.Add("Role");
-			allUserDataTable.Columns.Add("Status");
-			allUserDataTable.Columns.Add("Email");
-		}
-		#endregion
-
-		#region Set Grid Column
-		public void SetGridColumn()
-		{
-			allUserGrid.Columns["Login ID"].Width = 60;
-			allUserGrid.Columns["User Name"].Width = 215;
-			allUserGrid.Columns["Role"].Width = 180;
-			allUserGrid.Columns["Status"].Width = 75;
-			allUserGrid.Columns["Email"].Width = 255;
-		}
-		#endregion
-
-		#region Grid Button Click
-		private void allUserGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			try
-			{
-				BO.Users oUser = new BO.Users();
-				DataGridViewRow selectedRow = allUserGrid.Rows[e.RowIndex];
-				string loginID = selectedRow.Cells["Login ID"].Value.ToString();
-				oUser = userService.GetUserByLoginID(loginID);
-
-				if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
-				{
-					#region Edit User
-					UserEntry userEntry = new UserEntry(this);
-					userEntry.SetCurrentUser(this.oCurrentUser);
-					userEntry.EditUser(oUser);
-					userEntry._loginID = oCurrentUser.LoginID;
-					userEntry.EditingDone += UserEntry_EditingDone;
-					userEntry.Show();
-					#endregion
-				}
-				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "User Status")
-				{
-					#region Change Status
-					EnumStatus status;
-					string statusString = oUser.Status == EnumStatus.Active ? "In-Active" : "Active";
-					DialogResult result = MessageBox.Show($"Are you sure to {statusString} this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-					if (result == DialogResult.OK)
-					{
-						if (oUser.Status == EnumStatus.Active)
-							status = EnumStatus.Inactive;
-						else
-							status = EnumStatus.Active;
-
-						string updateStatusResult = userService.UpdateUserStatus(oUser.ID,status,oCurrentUser.ID,DateTime.Now,DateTime.Now);
-						if (updateStatusResult == "Ok")
-						{
-							MessageBox.Show($"{oUser.UserName} is now {statusString}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							this.loadGrid();
-						}
-						else
-						{
-							MessageBox.Show($"Something Problem.\nPlease try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						}
-					}
-					return;
-					#endregion
-				}
-				else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
-				{
-					#region Reset Password
-					if(oUser.ID == oCurrentUser.ID)
-					{
-						MessageBox.Show("Current user and edited user can't be the same.\nThe current user can't reset his own password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-						return;
-					}
-					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-					if (result == DialogResult.OK)
-					{
-						oUser.PasswordResetByAdmin = true;
-						oUser.PasswordResetBy = oCurrentUser.ID;
-						oUser.PasswordResetDate = DateTime.Now;
-						string passwordResetStatus = userService.PasswordResetByAdmin(oUser);
-
-						if(passwordResetStatus == "Ok")
-						{
-							MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-						}
-					}
-					return;
-					#endregion
-				}
-			}
-			catch(Exception ex)
-			{
-				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			//if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-			//{
-			//	if (allUserGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex < allUserGrid.Rows.Count - 1)
-			//	{
-			//		if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
-			//		{
-
-			//		}
-			//		else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Active")
-			//		{
-
-			//		}
-			//		else if (allUserGrid.Columns[e.ColumnIndex].HeaderText == "Action")
-			//		{
-
-			//		}
-			//	}
-			//}
 		}
 		#endregion
 
@@ -280,5 +137,114 @@ namespace Authentication.Home
 			userEntry.Show();
 		}
 		#endregion
+
+		#region Edit Button
+		private void editButton_click_Click(object sender, EventArgs e)
+		{
+			DataGridView dataGridView = allUserListTable;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				BO.Users oUser = new BO.Users();
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+				oUser = userService.GetUser(userID);
+
+				UserEntry userEntry = new UserEntry(this);
+				userEntry.SetCurrentUser(this.oCurrentUser);
+				userEntry.EditUser(oUser);
+				userEntry._loginID = oCurrentUser.LoginID;
+				userEntry.EditingDone += UserEntry_EditingDone;
+				userEntry.Show();
+			}
+			else
+			{
+				MessageBox.Show("Please select a row for edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+		}
+		#endregion
+
+		#region Change Status Button
+		private void changeStatus_Click(object sender, EventArgs e)
+		{
+			DataGridView dataGridView = allUserListTable;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				BO.Users oUser = new BO.Users();
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+				oUser = userService.GetUser(userID);
+
+				EnumStatus status;
+				string statusString = oUser.Status == EnumStatus.Active ? "In-Active" : "Active";
+				DialogResult result = MessageBox.Show($"Are you sure to {statusString} this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+				if (result == DialogResult.OK)
+				{
+					if (oUser.Status == EnumStatus.Active)
+						status = EnumStatus.Inactive;
+					else
+						status = EnumStatus.Active;
+
+					string updateStatusResult = userService.UpdateUserStatus(oUser.ID, status, oCurrentUser.ID, DateTime.Now, DateTime.Now);
+					if (updateStatusResult == "Ok")
+					{
+						MessageBox.Show($"{oUser.UserName} is now {statusString}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						this.loadGrid();
+					}
+					else
+					{
+						MessageBox.Show($"Something Problem.\nPlease try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+				return;
+			}
+			else
+			{
+				MessageBox.Show("Please select a row for change user status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+		}
+		#endregion
+
+		#region Delete Button
+		private void deleteButton_Click_Click(object sender, EventArgs e)
+		{
+			DataGridView dataGridView = allUserListTable;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				BO.Users oUser = new BO.Users();
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+				oUser = userService.GetUser(userID);
+
+				if (oUser.ID == oCurrentUser.ID)
+				{
+					MessageBox.Show("Current user and edited user can't be the same.\nThe current user can't reset his own password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+				DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+				if (result == DialogResult.OK)
+				{
+					oUser.PasswordResetByAdmin = true;
+					oUser.PasswordResetBy = oCurrentUser.ID;
+					oUser.PasswordResetDate = DateTime.Now;
+					string passwordResetStatus = userService.PasswordResetByAdmin(oUser);
+
+					if (passwordResetStatus == "Ok")
+					{
+						MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					}
+				}
+				return;
+			}
+			else
+			{
+				MessageBox.Show("Please select a row for edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+		}
+		#endregion
+
+		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -228,5 +228,27 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Search Role
+		internal static IDataReader SearchRole(string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select r.* from Role r, Users u where r.CreatedBy = u.UserID and " +
+					"(r.name like '%"+ searchText + "%' or r.code like '%"+ searchText + "%' or u.UserName like '%"+ searchText +"%')", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
 	}
 }

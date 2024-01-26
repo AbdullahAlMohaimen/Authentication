@@ -67,42 +67,49 @@ namespace Authentication.Home
 				roles = new List<BO.Role>();
 				roles = roleService.GetAllRole();
 				userList = new UserService().GetUsers();
-				total.Text = roles.Count().ToString();
 
-				DataRow dr = null;
-				DataTable roleList = new DataTable();
-				roleList.TableName = "Role List";
-				roleList.Columns.Add("ID", typeof(int));
-				roleList.Columns.Add("Code", typeof(string));
-				roleList.Columns.Add("Name", typeof(string));
-				roleList.Columns.Add("Status", typeof(string));
-				roleList.Columns.Add("Created By", typeof (string));
-
-				allRoleListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-				allRoleListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-				foreach (BO.Role oRole in roles)
-				{
-					dr = roleList.NewRow();
-					dr["ID"] = oRole.ID;
-					dr["Code"] = oRole.Code;
-					dr["Name"] = oRole.Name;
-					dr["Status"] = oRole.Status.ToString();
-
-					BO.Users oUser = new BO.Users();
-					oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
-					dr["Created By"] = oUser == null ? "" : oUser.UserName;
-
-					roleList.Rows.Add(dr);
-				}
-				allRoleListTable.DataSource = roleList;
-				allRoleListTable.RowHeadersVisible = false;
-				allRoleListTable.Columns["ID"].Visible = false;
+				this.ProcessData();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+		#endregion
+
+		#region Process Role Data
+		public void ProcessData()
+		{
+			total.Text = roles.Count().ToString();
+			DataRow dr = null;
+			DataTable roleList = new DataTable();
+			roleList.TableName = "Role List";
+			roleList.Columns.Add("ID", typeof(int));
+			roleList.Columns.Add("Code", typeof(string));
+			roleList.Columns.Add("Name", typeof(string));
+			roleList.Columns.Add("Status", typeof(string));
+			roleList.Columns.Add("Created By", typeof(string));
+
+			allRoleListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			allRoleListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			foreach (BO.Role oRole in roles)
+			{
+				dr = roleList.NewRow();
+				dr["ID"] = oRole.ID;
+				dr["Code"] = oRole.Code;
+				dr["Name"] = oRole.Name;
+				dr["Status"] = oRole.Status.ToString();
+
+				BO.Users oUser = new BO.Users();
+				oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
+				dr["Created By"] = oUser == null ? "" : oUser.UserName;
+
+				roleList.Rows.Add(dr);
+			}
+			allRoleListTable.DataSource = roleList;
+			allRoleListTable.RowHeadersVisible = false;
+			allRoleListTable.Columns["ID"].Visible = false;
 		}
 		#endregion
 
@@ -164,6 +171,27 @@ namespace Authentication.Home
 			{
 				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
+		}
+		#endregion
+
+		#region Search Role
+		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(txt_RoleSearch.Text))
+			{
+				string searchText = txt_RoleSearch.Text;
+
+				roles = new List<BO.Role>();
+				roles = roleService.SearchRole(searchText);
+				userList = new UserService().GetUsers();
+
+				this.ProcessData();
+			}
+			else
+			{
+				this.loadGrid();
+			}
+
 		}
 		#endregion
 	}
