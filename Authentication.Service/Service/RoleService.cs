@@ -77,7 +77,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region  GetRole()
+		#region  GetAllRole()
 		public List<Role> GetAllRole()
 		{
 			List<Role> roles = new List<Role>();
@@ -88,6 +88,25 @@ namespace Authentication.Service
 				dr.Close();
 			}
 			catch(Exception ex)
+			{
+
+			}
+
+			return roles;
+		}
+		#endregion
+
+		#region  GetRole()
+		public List<Role> GetAllRole(EnumStatus status)
+		{
+			List<Role> roles = new List<Role>();
+			try
+			{
+				DataReader dr = new DataReader(RoleDA.Get(status));
+				roles = this.CreateObjects<Role>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
 			{
 
 			}
@@ -146,6 +165,22 @@ namespace Authentication.Service
 			try
 			{
 				DataReader dr = new DataReader(RoleDA.SearchRole(searchText));
+				roles = this.CreateObjects<Role>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				roles = null;
+			}
+			return roles;
+		}
+
+		public List<Role> SearchRole(string searchText, EnumStatus status)
+		{
+			List<Role> roles = new List<Role>();
+			try
+			{
+				DataReader dr = new DataReader(RoleDA.SearchRole(searchText, status));
 				roles = this.CreateObjects<Role>(dr);
 				dr.Close();
 			}

@@ -107,7 +107,7 @@ namespace Authentication.Service
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
 					SqlCommand updateCommand = new SqlCommand("Update Role set Name = '"+oRole.Name+"', Status = '"+(int)oRole.Status+"',Description = '"+oRole.Description+"'," +
-						"ModifiedBy = '"+oRole.ModifiedBy+"',ModifiedDate = '"+oRole.ModifiedDate+"'", conn, tc);
+						"ModifiedBy = '"+oRole.ModifiedBy+"',ModifiedDate = '"+oRole.ModifiedDate+"' where RoleID = '"+oRole.ID+"'", conn, tc);
 					updateCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -178,6 +178,35 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  GET By Status
+		internal static IDataReader Get(EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if(status == EnumStatus.Regardless)
+				{
+					getCommand = new SqlCommand("Select * from Role Order by RoleID", conn);
+				}
+				else
+				{
+					getCommand = new SqlCommand("Select * from Role where status = '" + (int)status + "' Order by RoleID", conn);
+				}
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
 		#region Get By ID
 		internal static IDataReader Get(int ID)
 		{
@@ -240,7 +269,28 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select r.* from Role r, Users u where r.CreatedBy = u.UserID and " +
-					"(r.name like '%"+ searchText + "%' or r.code like '%"+ searchText + "%' or u.UserName like '%"+ searchText +"%')", conn);
+					"(r.name like '"+ searchText + "%' or r.code like '"+ searchText + "%' or u.UserName like '"+ searchText +"%')", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+
+		internal static IDataReader SearchRole(string searchText, EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select r.* from Role r, Users u where R.status = '"+(int)status+"' and r.CreatedBy = u.UserID and " +
+					"(r.name like '" + searchText + "%' or r.code like '" + searchText + "%' or u.UserName like '" + searchText + "%')", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

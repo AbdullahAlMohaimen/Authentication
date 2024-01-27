@@ -44,14 +44,14 @@ namespace Authentication.Role
 		#endregion
 
 		#region SetEditedRole & Type
-		public void EditRole(BO.Role oRole)
+		public void EditRole(BO.Role editedRole)
 		{
-			oRole = oRole;
+			oRole = editedRole;
 			BO.Role role = new BO.Role();
 			if (oRole != null)
 			{
 				this.Load();
-				txtHeader.Text = "Edit User";
+				txtHeader.Text = "Edit Role";
 
 				txt_RoleName.Text = oRole.Name;
 				txt_RoleCode.Text = oRole.Code;
@@ -60,7 +60,7 @@ namespace Authentication.Role
 			}
 			else
 			{
-				txtHeader.Text = "New User Entry";
+				txtHeader.Text = "New Role Entry";
 				oRole = new BO.Role();
 				this.Load();
 				GenerateCode();
@@ -74,7 +74,10 @@ namespace Authentication.Role
 			txt_RoleStatus.Items.Add("Select Status");
 			foreach (EnumStatus status in Enum.GetValues(typeof(EnumStatus)))
 			{
-				txt_RoleStatus.Items.Add(status);
+				if (status == EnumStatus.Regardless || status == EnumStatus.Active || status == EnumStatus.Inactive)
+				{
+					txt_RoleStatus.Items.Add(status);
+				}
 			}
 			this.txt_RoleStatus.SelectedIndex = 0;
 			this.txt_RoleStatus.AutoCompleteMode = AutoCompleteMode.None;
@@ -142,7 +145,14 @@ namespace Authentication.Role
 					string status = _roleService.Save(oRole);
 					if (status == "Ok")
 					{
-						MessageBox.Show("New roll added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						if (oRole.IsNew == true)
+						{
+							MessageBox.Show("New roll added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						}
+						else
+						{
+							MessageBox.Show("Edited successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						}
 					}
 					else
 					{

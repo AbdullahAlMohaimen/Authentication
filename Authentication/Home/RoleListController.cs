@@ -3,6 +3,7 @@ using Authentication.Role;
 using Authentication.Service;
 using Authentication.Users;
 using Guna.UI2.WinForms;
+using MailKit.Search;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Authentication.Home
 {
@@ -31,6 +33,17 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 			this.loadGrid();
+
+			txt_RoleStatus.Items.Add("Select Status...............");
+			txt_RoleStatus.Items.Add("All");
+			foreach (EnumStatus status in Enum.GetValues(typeof(EnumStatus)))
+			{
+				if (status == EnumStatus.Regardless || status == EnumStatus.Active || status == EnumStatus.Inactive)
+				{
+					txt_RoleStatus.Items.Add(status);
+				}
+			}
+			txt_RoleStatus.SelectedItem = "Select Status...............";
 		}
 		#endregion
 
@@ -66,7 +79,7 @@ namespace Authentication.Home
 			try
 			{
 				roles = new List<BO.Role>();
-				roles = roleService.GetAllRole();
+				roles = roleService.GetAllRole(EnumStatus.Active);
 				userList = new UserService().GetUsers();
 
 				this.ProcessData();
@@ -178,21 +191,69 @@ namespace Authentication.Home
 		#region Search Role
 		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
 		{
+			roles = new List<BO.Role>();
+			userList = new UserService().GetUsers();
+			EnumStatus Status;
 			if (!string.IsNullOrEmpty(txt_RoleSearch.Text))
 			{
 				string searchText = txt_RoleSearch.Text;
-
-				roles = new List<BO.Role>();
-				roles = roleService.SearchRole(searchText);
-				userList = new UserService().GetUsers();
-
-				this.ProcessData();
+				if (txt_RoleStatus.SelectedItem == "Select Status...............")
+				{
+					Status = EnumStatus.Active;
+					roles = roleService.SearchRole(searchText, Status);
+				}
+				else if (txt_RoleStatus.SelectedItem == "All")
+				{
+					roles = roleService.SearchRole(searchText);
+				}
+				else
+				{
+					Status = (EnumStatus)txt_RoleStatus.SelectedItem;
+					roles = roleService.SearchRole(searchText, Status);
+				}
 			}
 			else
 			{
+				if (txt_RoleStatus.SelectedItem == "Select Status...............")
+				{
+					roles = roleService.GetAllRole(EnumStatus.Active);
+				}
+				else if (txt_RoleStatus.SelectedItem == "All")
+				{
+					roles = roleService.GetAllRole();
+				}
+				else
+				{
+					Status = (EnumStatus)txt_RoleStatus.SelectedItem;
+					roles = roleService.GetAllRole(Status);
+				}
+			}
+			this.ProcessData();
+
+		}
+		#endregion
+
+		#region Dropdown
+		private void txt_EmpDesignation_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			txt_RoleSearch.Text = null;
+			EnumStatus Status;
+			roles = new List<BO.Role>();
+			userList = new UserService().GetUsers();
+			if (txt_RoleStatus.SelectedItem == "Select Status...............")
+			{
 				this.loadGrid();
 			}
-
+			else if (txt_RoleStatus.SelectedItem == "All")
+			{
+				roles = roleService.GetAllRole();
+			}
+			else
+			{
+				Status = (EnumStatus)txt_RoleStatus.SelectedItem;
+				roles = roleService.GetAllRole(Status);
+			}
+			this.ProcessData();
 		}
 		#endregion
 	}
