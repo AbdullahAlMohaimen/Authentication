@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchEmployee));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -64,12 +64,16 @@
 			this.Select = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
 			this.btn_findAllEmployee = new Guna.UI2.WinForms.Guna2Button();
-			this.allEmployeeGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
+			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
+			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			this.guna2Panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.allEmployeeGrid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -90,9 +94,9 @@
 			this.label35.ForeColor = System.Drawing.Color.Salmon;
 			this.label35.Location = new System.Drawing.Point(8, 2);
 			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(166, 25);
+			this.label35.Size = new System.Drawing.Size(177, 25);
 			this.label35.TabIndex = 106;
-			this.label35.Text = "New User Entry";
+			this.label35.Text = "Search Employee";
 			// 
 			// Minimize
 			// 
@@ -140,7 +144,7 @@
 			this.guna2Panel1.Controls.Add(this.label27);
 			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(974, 67);
+			this.guna2Panel1.Size = new System.Drawing.Size(974, 54);
 			this.guna2Panel1.TabIndex = 108;
 			// 
 			// label4
@@ -148,7 +152,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(472, 20);
+			this.label4.Location = new System.Drawing.Point(447, 13);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(16, 24);
 			this.label4.TabIndex = 107;
@@ -169,12 +173,12 @@
 			this.txt_Name.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_Name.ForeColor = System.Drawing.Color.Black;
 			this.txt_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Name.Location = new System.Drawing.Point(494, 17);
+			this.txt_Name.Location = new System.Drawing.Point(475, 10);
 			this.txt_Name.Name = "txt_Name";
 			this.txt_Name.PasswordChar = '\0';
 			this.txt_Name.PlaceholderText = "";
 			this.txt_Name.SelectedText = "";
-			this.txt_Name.Size = new System.Drawing.Size(268, 34);
+			this.txt_Name.Size = new System.Drawing.Size(378, 34);
 			this.txt_Name.TabIndex = 106;
 			// 
 			// label2
@@ -182,7 +186,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label2.Location = new System.Drawing.Point(339, 22);
+			this.label2.Location = new System.Drawing.Point(319, 15);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(127, 21);
 			this.label2.TabIndex = 105;
@@ -199,9 +203,9 @@
 			this.EmpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.EmpSearch.ForeColor = System.Drawing.Color.Wheat;
 			this.EmpSearch.Image = ((System.Drawing.Image)(resources.GetObject("EmpSearch.Image")));
-			this.EmpSearch.Location = new System.Drawing.Point(810, 18);
+			this.EmpSearch.Location = new System.Drawing.Point(864, 11);
 			this.EmpSearch.Name = "EmpSearch";
-			this.EmpSearch.Size = new System.Drawing.Size(138, 31);
+			this.EmpSearch.Size = new System.Drawing.Size(101, 31);
 			this.EmpSearch.TabIndex = 104;
 			this.EmpSearch.Text = "Search";
 			this.EmpSearch.Click += new System.EventHandler(this.EmpSearch_Click);
@@ -211,7 +215,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label1.Location = new System.Drawing.Point(27, 22);
+			this.label1.Location = new System.Drawing.Point(6, 15);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(109, 21);
 			this.label1.TabIndex = 54;
@@ -232,7 +236,7 @@
 			this.txt_ID.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_ID.ForeColor = System.Drawing.Color.Black;
 			this.txt_ID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_ID.Location = new System.Drawing.Point(166, 17);
+			this.txt_ID.Location = new System.Drawing.Point(157, 10);
 			this.txt_ID.Name = "txt_ID";
 			this.txt_ID.PasswordChar = '\0';
 			this.txt_ID.PlaceholderText = "";
@@ -245,7 +249,7 @@
 			this.label27.AutoSize = true;
 			this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label27.Location = new System.Drawing.Point(144, 20);
+			this.label27.Location = new System.Drawing.Point(134, 13);
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(16, 24);
 			this.label27.TabIndex = 96;
@@ -273,7 +277,7 @@
 			this.guna2Panel2.Controls.Add(this.label12);
 			this.guna2Panel2.Controls.Add(this.label13);
 			this.guna2Panel2.Controls.Add(this.label15);
-			this.guna2Panel2.Location = new System.Drawing.Point(12, 129);
+			this.guna2Panel2.Location = new System.Drawing.Point(12, 114);
 			this.guna2Panel2.Name = "guna2Panel2";
 			this.guna2Panel2.Size = new System.Drawing.Size(974, 73);
 			this.guna2Panel2.TabIndex = 111;
@@ -283,7 +287,7 @@
 			this.txt_EmpGender.AutoSize = true;
 			this.txt_EmpGender.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmpGender.ForeColor = System.Drawing.Color.Green;
-			this.txt_EmpGender.Location = new System.Drawing.Point(881, 10);
+			this.txt_EmpGender.Location = new System.Drawing.Point(860, 10);
 			this.txt_EmpGender.Name = "txt_EmpGender";
 			this.txt_EmpGender.Size = new System.Drawing.Size(0, 21);
 			this.txt_EmpGender.TabIndex = 114;
@@ -293,7 +297,7 @@
 			this.txt_EmpJoiningDate.AutoSize = true;
 			this.txt_EmpJoiningDate.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmpJoiningDate.ForeColor = System.Drawing.Color.Green;
-			this.txt_EmpJoiningDate.Location = new System.Drawing.Point(170, 40);
+			this.txt_EmpJoiningDate.Location = new System.Drawing.Point(149, 40);
 			this.txt_EmpJoiningDate.Name = "txt_EmpJoiningDate";
 			this.txt_EmpJoiningDate.Size = new System.Drawing.Size(0, 21);
 			this.txt_EmpJoiningDate.TabIndex = 113;
@@ -303,7 +307,7 @@
 			this.txt_EmpDepartment.AutoSize = true;
 			this.txt_EmpDepartment.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmpDepartment.ForeColor = System.Drawing.Color.Green;
-			this.txt_EmpDepartment.Location = new System.Drawing.Point(483, 39);
+			this.txt_EmpDepartment.Location = new System.Drawing.Point(462, 39);
 			this.txt_EmpDepartment.Name = "txt_EmpDepartment";
 			this.txt_EmpDepartment.Size = new System.Drawing.Size(0, 21);
 			this.txt_EmpDepartment.TabIndex = 112;
@@ -313,7 +317,7 @@
 			this.txt_EmpName.AutoSize = true;
 			this.txt_EmpName.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmpName.ForeColor = System.Drawing.Color.Green;
-			this.txt_EmpName.Location = new System.Drawing.Point(483, 10);
+			this.txt_EmpName.Location = new System.Drawing.Point(462, 10);
 			this.txt_EmpName.Name = "txt_EmpName";
 			this.txt_EmpName.Size = new System.Drawing.Size(0, 21);
 			this.txt_EmpName.TabIndex = 111;
@@ -323,7 +327,7 @@
 			this.txt_EmpNo.AutoSize = true;
 			this.txt_EmpNo.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmpNo.ForeColor = System.Drawing.Color.Green;
-			this.txt_EmpNo.Location = new System.Drawing.Point(170, 12);
+			this.txt_EmpNo.Location = new System.Drawing.Point(149, 12);
 			this.txt_EmpNo.Name = "txt_EmpNo";
 			this.txt_EmpNo.Size = new System.Drawing.Size(0, 21);
 			this.txt_EmpNo.TabIndex = 110;
@@ -333,7 +337,7 @@
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label8.Location = new System.Drawing.Point(866, 8);
+			this.label8.Location = new System.Drawing.Point(845, 8);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(16, 24);
 			this.label8.TabIndex = 108;
@@ -344,7 +348,7 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label7.Location = new System.Drawing.Point(155, 37);
+			this.label7.Location = new System.Drawing.Point(134, 37);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(16, 24);
 			this.label7.TabIndex = 107;
@@ -355,7 +359,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label5.Location = new System.Drawing.Point(806, 10);
+			this.label5.Location = new System.Drawing.Point(785, 10);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(64, 21);
 			this.label5.TabIndex = 106;
@@ -366,7 +370,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(28, 39);
+			this.label3.Location = new System.Drawing.Point(6, 39);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(118, 21);
 			this.label3.TabIndex = 105;
@@ -377,7 +381,7 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label6.Location = new System.Drawing.Point(27, 12);
+			this.label6.Location = new System.Drawing.Point(6, 12);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(109, 21);
 			this.label6.TabIndex = 54;
@@ -388,7 +392,7 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label9.Location = new System.Drawing.Point(340, 10);
+			this.label9.Location = new System.Drawing.Point(319, 10);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(127, 21);
 			this.label9.TabIndex = 56;
@@ -399,7 +403,7 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(155, 10);
+			this.label11.Location = new System.Drawing.Point(134, 10);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(16, 24);
 			this.label11.TabIndex = 96;
@@ -410,7 +414,7 @@
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label12.Location = new System.Drawing.Point(468, 8);
+			this.label12.Location = new System.Drawing.Point(447, 8);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(16, 24);
 			this.label12.TabIndex = 95;
@@ -421,7 +425,7 @@
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label13.Location = new System.Drawing.Point(341, 39);
+			this.label13.Location = new System.Drawing.Point(320, 39);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(100, 21);
 			this.label13.TabIndex = 63;
@@ -432,7 +436,7 @@
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label15.Location = new System.Drawing.Point(468, 37);
+			this.label15.Location = new System.Drawing.Point(447, 37);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(16, 24);
 			this.label15.TabIndex = 93;
@@ -449,9 +453,9 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(664, 405);
+			this.Cancel.Location = new System.Drawing.Point(763, 408);
 			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(138, 31);
+			this.Cancel.Size = new System.Drawing.Size(101, 31);
 			this.Cancel.TabIndex = 109;
 			this.Cancel.Text = " Cancel";
 			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -467,9 +471,9 @@
 			this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Select.ForeColor = System.Drawing.Color.Wheat;
 			this.Select.Image = ((System.Drawing.Image)(resources.GetObject("Select.Image")));
-			this.Select.Location = new System.Drawing.Point(822, 405);
+			this.Select.Location = new System.Drawing.Point(875, 408);
 			this.Select.Name = "Select";
-			this.Select.Size = new System.Drawing.Size(138, 31);
+			this.Select.Size = new System.Drawing.Size(101, 31);
 			this.Select.TabIndex = 104;
 			this.Select.Text = "Select";
 			this.Select.Click += new System.EventHandler(this.Select_Click);
@@ -481,11 +485,12 @@
 			this.guna2Panel3.BorderRadius = 10;
 			this.guna2Panel3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel3.BorderThickness = 2;
+			this.guna2Panel3.Controls.Add(this.txt_UserSearch);
+			this.guna2Panel3.Controls.Add(this.allEmployeeListTable);
 			this.guna2Panel3.Controls.Add(this.btn_findAllEmployee);
-			this.guna2Panel3.Controls.Add(this.allEmployeeGrid);
-			this.guna2Panel3.Location = new System.Drawing.Point(12, 211);
+			this.guna2Panel3.Location = new System.Drawing.Point(12, 194);
 			this.guna2Panel3.Name = "guna2Panel3";
-			this.guna2Panel3.Size = new System.Drawing.Size(974, 188);
+			this.guna2Panel3.Size = new System.Drawing.Size(974, 208);
 			this.guna2Panel3.TabIndex = 112;
 			// 
 			// btn_findAllEmployee
@@ -499,71 +504,101 @@
 			this.btn_findAllEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_findAllEmployee.ForeColor = System.Drawing.Color.Wheat;
 			this.btn_findAllEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btn_findAllEmployee.Image")));
-			this.btn_findAllEmployee.Location = new System.Drawing.Point(810, 5);
+			this.btn_findAllEmployee.Location = new System.Drawing.Point(864, 5);
 			this.btn_findAllEmployee.Name = "btn_findAllEmployee";
-			this.btn_findAllEmployee.Size = new System.Drawing.Size(138, 31);
+			this.btn_findAllEmployee.Size = new System.Drawing.Size(101, 31);
 			this.btn_findAllEmployee.TabIndex = 113;
 			this.btn_findAllEmployee.Text = "Find All";
 			this.btn_findAllEmployee.Click += new System.EventHandler(this.btn_findAllEmployee_Click);
 			// 
-			// allEmployeeGrid
+			// allEmployeeListTable
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Maroon;
-			this.allEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.allEmployeeGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-			this.allEmployeeGrid.BackgroundColor = System.Drawing.Color.Wheat;
-			this.allEmployeeGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allEmployeeGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.allEmployeeGrid.ColumnHeadersHeight = 22;
-			this.allEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allEmployeeGrid.DefaultCellStyle = dataGridViewCellStyle3;
-			this.allEmployeeGrid.GridColor = System.Drawing.Color.Black;
-			this.allEmployeeGrid.Location = new System.Drawing.Point(6, 39);
-			this.allEmployeeGrid.Name = "allEmployeeGrid";
-			this.allEmployeeGrid.ReadOnly = true;
-			this.allEmployeeGrid.RowHeadersVisible = false;
-			this.allEmployeeGrid.Size = new System.Drawing.Size(962, 143);
-			this.allEmployeeGrid.TabIndex = 1;
-			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
-			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-			this.allEmployeeGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-			this.allEmployeeGrid.ThemeStyle.BackColor = System.Drawing.Color.Wheat;
-			this.allEmployeeGrid.ThemeStyle.GridColor = System.Drawing.Color.Black;
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-			this.allEmployeeGrid.ThemeStyle.HeaderStyle.Height = 22;
-			this.allEmployeeGrid.ThemeStyle.ReadOnly = true;
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.Height = 22;
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.allEmployeeGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.allEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allEmployeeGrid_CellContentClick);
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
+			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			this.allEmployeeListTable.ColumnHeadersHeight = 30;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
+			this.allEmployeeListTable.Location = new System.Drawing.Point(7, 42);
+			this.allEmployeeListTable.Name = "allEmployeeListTable";
+			this.allEmployeeListTable.ReadOnly = true;
+			this.allEmployeeListTable.Size = new System.Drawing.Size(960, 159);
+			this.allEmployeeListTable.TabIndex = 116;
+			this.allEmployeeListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allEmployeeListTable_CellContentClick);
+			// 
+			// txt_UserSearch
+			// 
+			this.txt_UserSearch.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_UserSearch.BorderRadius = 6;
+			this.txt_UserSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_UserSearch.DefaultText = "";
+			this.txt_UserSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserSearch.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Location = new System.Drawing.Point(10, 7);
+			this.txt_UserSearch.Name = "txt_UserSearch";
+			this.txt_UserSearch.PasswordChar = '\0';
+			this.txt_UserSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
+			this.txt_UserSearch.PlaceholderText = "Search in all columns.....";
+			this.txt_UserSearch.SelectedText = "";
+			this.txt_UserSearch.Size = new System.Drawing.Size(469, 29);
+			this.txt_UserSearch.TabIndex = 124;
+			this.txt_UserSearch.TextChanged += new System.EventHandler(this.txt_UserSearch_TextChanged);
+			// 
+			// total
+			// 
+			this.total.BackColor = System.Drawing.Color.Transparent;
+			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.total.ForeColor = System.Drawing.Color.DarkRed;
+			this.total.Location = new System.Drawing.Point(80, 418);
+			this.total.Name = "total";
+			this.total.Size = new System.Drawing.Size(11, 18);
+			this.total.TabIndex = 131;
+			this.total.Text = "0";
+			// 
+			// guna2HtmlLabel2
+			// 
+			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(65, 417);
+			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
+			this.guna2HtmlLabel2.TabIndex = 130;
+			this.guna2HtmlLabel2.Text = ":";
+			// 
+			// guna2HtmlLabel1
+			// 
+			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(16, 418);
+			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
+			this.guna2HtmlLabel1.TabIndex = 129;
+			this.guna2HtmlLabel1.Text = "Total";
 			// 
 			// SearchEmployee
 			// 
@@ -573,6 +608,9 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(998, 448);
 			this.ControlBox = false;
+			this.Controls.Add(this.total);
+			this.Controls.Add(this.guna2HtmlLabel2);
+			this.Controls.Add(this.guna2HtmlLabel1);
 			this.Controls.Add(this.guna2Panel3);
 			this.Controls.Add(this.guna2Panel2);
 			this.Controls.Add(this.guna2Panel1);
@@ -589,8 +627,9 @@
 			this.guna2Panel2.ResumeLayout(false);
 			this.guna2Panel2.PerformLayout();
 			this.guna2Panel3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.allEmployeeGrid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -627,7 +666,11 @@
 		private System.Windows.Forms.Label txt_EmpName;
 		private System.Windows.Forms.Label txt_EmpNo;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-		private Guna.UI2.WinForms.Guna2DataGridView allEmployeeGrid;
 		private Guna.UI2.WinForms.Guna2Button btn_findAllEmployee;
+		private System.Windows.Forms.DataGridView allEmployeeListTable;
+		private Guna.UI2.WinForms.Guna2TextBox txt_UserSearch;
+		private Guna.UI2.WinForms.Guna2HtmlLabel total;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
 	}
 }

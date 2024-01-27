@@ -24,6 +24,7 @@ namespace Authentication.Home
 		DataTable allUserDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
+		List<BO.Users> allUsers = new List<BO.Users>();
 		#endregion
 
 		#region Load
@@ -67,10 +68,11 @@ namespace Authentication.Home
 		#region Process User Data
 		public void ProcessData()
 		{
+			allUsers = userService.GetUsers();
 			total.Text = users.Count().ToString();
 			DataRow dr = null;
 			DataTable UserList = new DataTable();
-			UserList.TableName = "Role List";
+			UserList.TableName = "User List";
 			UserList.Columns.Add("ID", typeof(int));
 			UserList.Columns.Add("Login ID", typeof(string));
 			UserList.Columns.Add("User Name", typeof(string));
@@ -96,12 +98,21 @@ namespace Authentication.Home
 				dr["Email"] = user.Email;
 
 				BO.Users oUser = new BO.Users();
-				oUser = users.Where(x => x.ID == user.CreatedBy).FirstOrDefault();
+				oUser = allUsers.Where(x => x.ID == user.CreatedBy).FirstOrDefault();
 				dr["Created By"] = oUser == null ? "" : oUser.UserName;
 				UserList.Rows.Add(dr);
 			}
 
 			allUserListTable.DataSource = UserList;
+			//allUserListTable.RowHeadersVisible = false;
+			//allUserListTable.Columns["ID"].Visible = false;
+
+			foreach (DataGridViewColumn column in allUserListTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			allUserListTable.Columns["Created By"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 			allUserListTable.RowHeadersVisible = false;
 			allUserListTable.Columns["ID"].Visible = false;
 		}
@@ -134,6 +145,7 @@ namespace Authentication.Home
 			userEntry.SetCurrentUser(this.oCurrentUser);
 			userEntry.EditUser(null);
 			userEntry._loginID = oCurrentUser.LoginID;
+			userEntry.EditingDone += UserEntry_EditingDone;
 			userEntry.Show();
 		}
 		#endregion

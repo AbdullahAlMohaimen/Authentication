@@ -48,6 +48,7 @@ namespace Authentication.Home
 			roleEntry.SetCurrentUser(this.oCurrentUser);
 			roleEntry.EditRole(null);
 			roleEntry._loginID = oCurrentUser.LoginID;
+			roleEntry.EditingDone += RoleEntry_EditingDone;
 			roleEntry.Show();
 		}
 		#endregion

@@ -224,5 +224,29 @@ namespace Authentication.Service
 			return dr;
 		}
 		#endregion
+
+		#region Search Employee
+		internal static IDataReader SearchEmployee(string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select * from Employee where EmployeeNo like '%"+searchText+"%' or " +
+					"Name like '%"+searchText+"%' or Department like '%"+searchText+"%' or Designation like '%"+searchText+"%' " +
+					"or Gender like '%"+searchText+"%' or Religion like '%"+searchText+"%'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
 	}
 }

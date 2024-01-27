@@ -222,6 +222,24 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region SearchRole
+		public List<Employee> SearchEmployee(string searchText)
+		{
+			List<Employee> employees = new List<Employee>();
+			try
+			{
+				DataReader dr = new DataReader(EmployeeDA.SearchEmployee(searchText));
+				employees = this.CreateObjects<Employee>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				employees = null;
+			}
+			return employees;
+		}
+		#endregion
+
 		#endregion
 	}
 }

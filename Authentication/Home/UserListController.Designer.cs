@@ -84,7 +84,7 @@ namespace Authentication.Home
 			this.changeStatus.Name = "changeStatus";
 			this.changeStatus.Size = new System.Drawing.Size(160, 29);
 			this.changeStatus.TabIndex = 129;
-			this.changeStatus.Text = "Change Passord";
+			this.changeStatus.Text = "Change Status";
 			this.changeStatus.Click += new System.EventHandler(this.changeStatus_Click);
 			// 
 			// total
