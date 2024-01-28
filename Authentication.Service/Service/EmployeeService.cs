@@ -201,7 +201,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region SearchEmployee Employee
+		#region SearchEmployee
 		public Employee SearchEmployee(string empNo, string empName)
 		{
 			Employee oEmployee = null;
@@ -222,13 +222,52 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region SearchRole
+		#region SearchRole In Grid
 		public List<Employee> SearchEmployee(string searchText)
 		{
 			List<Employee> employees = new List<Employee>();
 			try
 			{
 				DataReader dr = new DataReader(EmployeeDA.SearchEmployee(searchText));
+				employees = this.CreateObjects<Employee>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				employees = null;
+			}
+			return employees;
+		}
+		#endregion
+
+		#region SearchEmp 
+		public Employee SearchEmp(string empNo, string empName, string searchText)
+		{
+			Employee oEmployee = null;
+			try
+			{
+				DataReader oreader = new DataReader(EmployeeDA.SearchEmp(empNo, empName, searchText));
+				if (oreader.Read())
+				{
+					oEmployee = this.CreateObject<Employee>(oreader);
+				}
+
+			}
+			catch (Exception e)
+			{
+
+			}
+			return oEmployee;
+		}
+		#endregion
+
+		#region SearchRole In Grid
+		public List<Employee> SearchEmp(string searchText)
+		{
+			List<Employee> employees = new List<Employee>();
+			try
+			{
+				DataReader dr = new DataReader(EmployeeDA.SearchEmp(searchText));
 				employees = this.CreateObjects<Employee>(dr);
 				dr.Close();
 			}

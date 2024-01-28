@@ -87,7 +87,6 @@ namespace Authentication.SearchEmployee
 					return;
 				}
 			}
-
 		}
 		#endregion
 
@@ -101,7 +100,7 @@ namespace Authentication.SearchEmployee
 					userEntryForm.SetSelectedEmployee(employee);
 					userEntryForm.Show();
 				}
-				this.Hide();
+				this.Close();
 			}
 			else
 			{

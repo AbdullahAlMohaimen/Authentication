@@ -393,6 +393,12 @@
     <Compile Include="Role\RoleEntry.Designer.cs">
       <DependentUpon>RoleEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchEmployee\SearchAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchEmployee\SearchAll.Designer.cs">
+      <DependentUpon>SearchAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchEmployee\SearchEmployee.cs">
       <SubType>Form</SubType>
     </Compile>

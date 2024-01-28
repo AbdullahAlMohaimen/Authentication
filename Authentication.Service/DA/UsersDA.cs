@@ -266,8 +266,8 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select u.* from Users u, Role r where u.RoleID = r.RoleID and " +
-					"(u.LoginID like '%"+ searchText + "%' or u.UserName like '%"+ searchText + "%' or u.Email like '%"+ searchText + "%' " +
-					"or r.Name like '%"+ searchText + "%')", conn);
+					"(u.LoginID like '"+ searchText + "%' or u.UserName like '"+ searchText + "%' or u.Email like '"+ searchText + "%' " +
+					"or r.Name like '"+ searchText + "%')", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

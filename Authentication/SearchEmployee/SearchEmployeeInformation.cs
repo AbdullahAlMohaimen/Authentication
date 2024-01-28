@@ -21,11 +21,13 @@ namespace Authentication.SearchEmployee
 		private UserControl callingController;
 		#endregion
 
+		#region Load
 		public SearchEmployeeInformation(UserControl userControl)
 		{
 			InitializeComponent();
 			callingController = userControl;
 		}
+		#endregion
 
 		#region Exit Button
 		private void Exit_Click(object sender, EventArgs e)
@@ -84,12 +86,19 @@ namespace Authentication.SearchEmployee
 		{
 			if (employee != null)
 			{
-				if (callingController is Home.EmployeeInformationCOntroller empInfo)
+				if(employee.ID > 0)
 				{
-					empInfo.SetSelectedEmployee(employee);
-					empInfo.Show();
+					if (callingController is Home.EmployeeInformationCOntroller empInfo)
+					{
+						empInfo.SetSelectedEmployee(employee);
+						empInfo.Show();
+					}
+					this.Close();
 				}
-				this.Close();
+				else
+				{
+					MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
 			}
 			else
 			{
@@ -104,25 +113,8 @@ namespace Authentication.SearchEmployee
 			try
 			{
 				employees = employeeService.GetEmployees();
-				allEmployeeGrid.Columns.Clear();
-				allEmployeeGrid.DataSource = null;
-				allEmployeeDataTable.Rows.Clear();
-				this.GetGridColumn();
-
-				allEmployeeGrid.AllowUserToAddRows = false;
-				foreach (BO.Employee oEmployee in employees)
-				{
-					DataRow row = allEmployeeDataTable.NewRow();
-					row["Employee No"] = oEmployee.EmployeeNo;
-					row["Name"] = oEmployee.Name;
-					row["Department"] = oEmployee.Department;
-					row["Designation"] = oEmployee.Designation;
-					row["Gender"] = oEmployee.Gender;
-					row["Religion"] = oEmployee.Religion;
-					allEmployeeDataTable.Rows.Add(row);
-				}
-				allEmployeeGrid.DataSource = allEmployeeDataTable;
-				this.SetGridColumn();
+				total.Text = employees.Count().ToString();
+				this.ProcessData();
 			}
 			catch (Exception ex)
 			{
@@ -131,42 +123,81 @@ namespace Authentication.SearchEmployee
 		}
 		#endregion
 
-		#region Get Grid Column
-		public void GetGridColumn()
+		#region Process Search Employee
+		public void ProcessData()
 		{
-			allEmployeeDataTable.Columns.Clear();
-			allEmployeeDataTable.Columns.Add("Employee No");
-			allEmployeeDataTable.Columns.Add("Name");
-			allEmployeeDataTable.Columns.Add("Department");
-			allEmployeeDataTable.Columns.Add("Designation");
-			allEmployeeDataTable.Columns.Add("Gender");
-			allEmployeeDataTable.Columns.Add("Religion");
+			DataRow dr = null;
+			DataTable employeeList = new DataTable();
+			employeeList.TableName = "Employee List";
+
+			employeeList.Columns.Add("ID", typeof(int));
+			employeeList.Columns.Add("Employee No", typeof(string));
+			employeeList.Columns.Add("Name", typeof(string));
+			employeeList.Columns.Add("Department", typeof(string));
+			employeeList.Columns.Add("Designation", typeof(string));
+			employeeList.Columns.Add("Gender", typeof(string));
+			employeeList.Columns.Add("Religion", typeof(string));
+
+			allEmployeeListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			allEmployeeListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			foreach (BO.Employee oEmployee in employees)
+			{
+				dr = employeeList.NewRow();
+				dr["ID"] = oEmployee.ID;
+				dr["Employee No"] = oEmployee.EmployeeNo;
+				dr["Name"] = oEmployee.Name;
+				dr["Department"] = oEmployee.Department;
+				dr["Designation"] = oEmployee.Designation;
+				dr["Gender"] = oEmployee.Gender;
+				dr["Religion"] = oEmployee.Religion;
+				employeeList.Rows.Add(dr);
+			}
+			allEmployeeListTable.DataSource = employeeList;
+
+			foreach (DataGridViewColumn column in allEmployeeListTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			allEmployeeListTable.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+			allEmployeeListTable.RowHeadersVisible = false;
+			allEmployeeListTable.Columns["ID"].Visible = false;
 		}
 		#endregion
 
-		#region Set Grid Column
-		public void SetGridColumn()
+		private void txt_UserSearch_TextChanged(object sender, EventArgs e)
 		{
-			allEmployeeGrid.Columns["Employee No"].Width = 90;
-			allEmployeeGrid.Columns["Name"].Width = 220;
-			allEmployeeGrid.Columns["Department"].Width = 250;
-			allEmployeeGrid.Columns["Designation"].Width = 180;
-			allEmployeeGrid.Columns["Gender"].Width = 75;
-			allEmployeeGrid.Columns["Religion"].Width = 75;
+			if (!string.IsNullOrEmpty(txt_UserSearch.Text))
+			{
+				string searchText = txt_UserSearch.Text;
+				employees = employeeService.SearchEmployee(searchText);
+				this.ProcessData();
+			}
+			else
+			{
+				this.btn_findAllEmployee_Click(null, null);
+			}
 		}
-		#endregion
 
 		#region Grid Column CLick
-		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void allEmployeeListTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			employee = employeeService.GetEmployee(allEmployeeGrid.CurrentRow.Cells["Employee No"].Value.ToString());
-			if (employee != null)
+			DataGridView dataGridView = allEmployeeListTable;
+			if (dataGridView.SelectedRows.Count > 0)
 			{
-				txt_EmpNo.Text = employee.EmployeeNo;
-				txt_EmpName.Text = employee.Name;
-				txt_EmpJoiningDate.Text = employee.JoiningDate.ToString("dd MMM yyyy");
-				txt_EmpDepartment.Text = employee.Department;
-				txt_EmpGender.Text = employee.Gender;
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int employeeID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+
+				employee = employeeService.GetEmployee(employeeID);
+				if (employee != null)
+				{
+					txt_EmpNo.Text = employee.EmployeeNo;
+					txt_EmpName.Text = employee.Name;
+					txt_EmpJoiningDate.Text = employee.JoiningDate.ToString("dd MMM yyyy");
+					txt_EmpDepartment.Text = employee.Department;
+					txt_EmpGender.Text = employee.Gender;
+				}
 			}
 		}
 		#endregion

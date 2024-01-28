@@ -18,6 +18,7 @@ namespace Authentication.Home
 		#region Property (for Search Employee)
 		BO.CurrentUser oCurrentUser = new CurrentUser();
 		public BO.Employee _selectedEmployee;
+		EmployeeService _employeeService = new EmployeeService();
 		public BO.Employee SelectedEmployee
 		{
 			get { return _selectedEmployee; }
@@ -89,7 +90,7 @@ namespace Authentication.Home
 			SelectedEmployee = null;
 			if (SEemployee != null)
 			{
-				txt_UserMaster.Text = "( " + SEemployee.EmployeeNo + " ) " + SEemployee.Name;
+				txt_UserMaster.Text = "(" + SEemployee.EmployeeNo + ") - " + SEemployee.Name;
 				SelectedEmployee = SEemployee;
 			}
 
@@ -99,6 +100,10 @@ namespace Authentication.Home
 				SaveEmployee.Enabled = true;
 				Clear_Emp_Button.Visible = true;
 				this.SetEmployeeProperty();
+			}
+			else
+			{
+				Clear_Emp_Button_Click(null,null);
 			}
 		}
 		#endregion
@@ -218,5 +223,27 @@ namespace Authentication.Home
 			}
 		}
 		#endregion
+
+		private void txt_UserMaster_TextChanged(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(txt_UserMaster.Text))
+			{
+				AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
+				BO.Employee oEmployee = new BO.Employee();
+				oEmployee = _employeeService.SearchEmp(txt_UserMaster.Text, txt_UserMaster.Text, txt_UserMaster.Text);
+				if (oEmployee != null)
+				{
+					SetSelectedEmployee(oEmployee);
+				}
+				else
+				{
+					this.ClearEmployeeProperty();
+				}
+			}
+			else
+			{
+				SetSelectedEmployee(null);
+			}
+		}
 	}
 }

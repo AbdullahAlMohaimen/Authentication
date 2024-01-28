@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Messaging;
 using Org.BouncyCastle.Ocsp;
 using System.Data;
+using MailKit.Search;
 
 namespace Authentication.Service
 {
@@ -225,7 +226,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Search Employee
+		#region Search Employee In Grid
 		internal static IDataReader SearchEmployee(string searchText)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -236,15 +237,62 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("select * from Employee where EmployeeNo like '%"+searchText+"%' or " +
-					"Name like '%"+searchText+"%' or Department like '%"+searchText+"%' or Designation like '%"+searchText+"%' " +
-					"or Gender like '%"+searchText+"%' or Religion like '%"+searchText+"%'", conn);
+				getCommand = new SqlCommand("select * from Employee where EmployeeNo like '"+searchText+"%' or " +
+					"Name like '"+searchText+"%' or Department like '"+searchText+"%' or Designation like '"+searchText+"%' " +
+					"or Gender like '"+searchText+"%' or Religion like '"+searchText+"%'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
 			{
 				conn.Close();
 			}
+			return dr;
+		}
+		#endregion
+
+		#region Search Employee In TextBox
+		internal static IDataReader SearchEmp(string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select * from Employee where EmployeeNo like '" + searchText + "%' or " +
+					"Name like '" + searchText + "%'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+		#region  SearchEmp
+		internal static IDataReader SearchEmp(string empNo, string empName, string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (!string.IsNullOrEmpty(empNo) && !string.IsNullOrEmpty(empName))
+				{
+					getCommand = new SqlCommand("Select * from Employee where EmployeeNo = '" + empNo + "' or Name = '" + empName + "' or concat('(',employeeNo,') - ',name) = '"+ searchText + "'", conn);
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			dr = getCommand.ExecuteReader();
 			return dr;
 		}
 		#endregion

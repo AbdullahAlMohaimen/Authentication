@@ -52,7 +52,7 @@ namespace Authentication.Role
 			{
 				this.Load();
 				txtHeader.Text = "Edit Role";
-
+				SaveRole.Text = "Edit";
 				txt_RoleName.Text = oRole.Name;
 				txt_RoleCode.Text = oRole.Code;
 				txt_RoleStatus.SelectedItem = oRole.Status;
@@ -61,6 +61,7 @@ namespace Authentication.Role
 			else
 			{
 				txtHeader.Text = "New Role Entry";
+				SaveRole.Text = "Save";
 				oRole = new BO.Role();
 				this.Load();
 				GenerateCode();

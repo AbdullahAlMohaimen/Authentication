@@ -62,6 +62,7 @@ namespace Authentication.Users
 			if (_user != null)
 			{
 				txtHeader.Text = "Edit User";
+				SaveUser.Text = "Edit";
 				txt_UserLoginID.Text = _user.LoginID.ToString();
 				txt_UserName.Text = _user.UserName.ToString();
 				txt_UserEmail.Text = _user.Email.ToString();
@@ -84,6 +85,7 @@ namespace Authentication.Users
 			else
 			{
 				txtHeader.Text = "New User Entry";
+				SaveUser.Text = "Save";
 				_user = new BO.Users();
 			}
 		}
@@ -257,7 +259,7 @@ namespace Authentication.Users
 			}
 			if (string.IsNullOrEmpty(txt_UserEmail.Text) || txt_UserEmail.Text == "")
 			{
-				invalidMessage = "Please select user role type";
+				invalidMessage = "User email can't be empty!\nPlease enter User email";
 				return invalidMessage;
 			}
 			if (string.IsNullOrEmpty(txt_UserMaster.Text) || txt_UserMaster.Text == "")
@@ -300,5 +302,24 @@ namespace Authentication.Users
 			}
 		}
 		#endregion
+
+
+		private void txt_UserMaster_TextChanged(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(txt_UserMaster.Text))
+			{
+				BO.Employee oEmployee = new BO.Employee();
+				oEmployee = employeeService.SearchEmp(txt_UserMaster.Text, txt_UserMaster.Text, txt_UserMaster.Text);
+				if (oEmployee != null)
+				{
+					txt_UserMaster.Text = "(" + oEmployee.EmployeeNo + ")" + oEmployee.Name;
+					SearchEmp = oEmployee;
+				}
+			}
+			else
+			{
+				SearchEmp = null;
+			}
+		}
 	}
 }

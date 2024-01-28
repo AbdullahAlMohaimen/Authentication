@@ -34,6 +34,8 @@
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.label21 = new System.Windows.Forms.Label();
+			this.txt_IsApprover = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.SearchEmployee = new Guna.UI2.WinForms.Guna2Button();
 			this.txt_UserName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,8 +61,6 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.txt_UserEmail = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.label21 = new System.Windows.Forms.Label();
-			this.txt_IsApprover = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -130,8 +130,6 @@
 			this.guna2Panel1.Controls.Add(this.SearchEmployee);
 			this.guna2Panel1.Controls.Add(this.txt_UserName);
 			this.guna2Panel1.Controls.Add(this.txt_UserMaster);
-			this.guna2Panel1.Controls.Add(this.Cancel);
-			this.guna2Panel1.Controls.Add(this.SaveUser);
 			this.guna2Panel1.Controls.Add(this.label2);
 			this.guna2Panel1.Controls.Add(this.label6);
 			this.guna2Panel1.Controls.Add(this.label33);
@@ -153,15 +151,42 @@
 			this.guna2Panel1.Controls.Add(this.label9);
 			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(945, 201);
+			this.guna2Panel1.Size = new System.Drawing.Size(945, 153);
 			this.guna2Panel1.TabIndex = 107;
+			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label21.Location = new System.Drawing.Point(631, 113);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(109, 21);
+			this.label21.TabIndex = 178;
+			this.label21.Text = "Is Approver";
+			// 
+			// txt_IsApprover
+			// 
+			this.txt_IsApprover.AutoSize = true;
+			this.txt_IsApprover.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_IsApprover.CheckedState.BorderRadius = 0;
+			this.txt_IsApprover.CheckedState.BorderThickness = 0;
+			this.txt_IsApprover.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_IsApprover.Location = new System.Drawing.Point(608, 117);
+			this.txt_IsApprover.Name = "txt_IsApprover";
+			this.txt_IsApprover.Size = new System.Drawing.Size(15, 14);
+			this.txt_IsApprover.TabIndex = 179;
+			this.txt_IsApprover.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_IsApprover.UncheckedState.BorderRadius = 0;
+			this.txt_IsApprover.UncheckedState.BorderThickness = 0;
+			this.txt_IsApprover.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.DarkRed;
-			this.label7.Location = new System.Drawing.Point(534, 19);
+			this.label7.Location = new System.Drawing.Point(530, 15);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(18, 24);
 			this.label7.TabIndex = 109;
@@ -178,7 +203,7 @@
 			this.SearchEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SearchEmployee.ForeColor = System.Drawing.Color.Wheat;
 			this.SearchEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SearchEmployee.Image")));
-			this.SearchEmployee.Location = new System.Drawing.Point(882, 66);
+			this.SearchEmployee.Location = new System.Drawing.Point(894, 60);
 			this.SearchEmployee.Name = "SearchEmployee";
 			this.SearchEmployee.Size = new System.Drawing.Size(36, 34);
 			this.SearchEmployee.TabIndex = 108;
@@ -199,12 +224,12 @@
 			this.txt_UserName.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_UserName.ForeColor = System.Drawing.Color.Black;
 			this.txt_UserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserName.Location = new System.Drawing.Point(196, 67);
+			this.txt_UserName.Location = new System.Drawing.Point(142, 60);
 			this.txt_UserName.Name = "txt_UserName";
 			this.txt_UserName.PasswordChar = '\0';
 			this.txt_UserName.PlaceholderText = "";
 			this.txt_UserName.SelectedText = "";
-			this.txt_UserName.Size = new System.Drawing.Size(252, 34);
+			this.txt_UserName.Size = new System.Drawing.Size(322, 34);
 			this.txt_UserName.TabIndex = 107;
 			// 
 			// txt_UserMaster
@@ -222,13 +247,14 @@
 			this.txt_UserMaster.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_UserMaster.ForeColor = System.Drawing.Color.Black;
 			this.txt_UserMaster.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserMaster.Location = new System.Drawing.Point(638, 67);
+			this.txt_UserMaster.Location = new System.Drawing.Point(607, 60);
 			this.txt_UserMaster.Name = "txt_UserMaster";
 			this.txt_UserMaster.PasswordChar = '\0';
 			this.txt_UserMaster.PlaceholderText = "";
 			this.txt_UserMaster.SelectedText = "";
-			this.txt_UserMaster.Size = new System.Drawing.Size(242, 34);
+			this.txt_UserMaster.Size = new System.Drawing.Size(286, 34);
 			this.txt_UserMaster.TabIndex = 106;
+			this.txt_UserMaster.TextChanged += new System.EventHandler(this.txt_UserMaster_TextChanged);
 			// 
 			// Cancel
 			// 
@@ -241,9 +267,9 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(665, 154);
+			this.Cancel.Location = new System.Drawing.Point(738, 213);
 			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(121, 31);
+			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 105;
 			this.Cancel.Text = " Cancel";
 			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -259,9 +285,9 @@
 			this.SaveUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SaveUser.ForeColor = System.Drawing.Color.Wheat;
 			this.SaveUser.Image = ((System.Drawing.Image)(resources.GetObject("SaveUser.Image")));
-			this.SaveUser.Location = new System.Drawing.Point(802, 154);
+			this.SaveUser.Location = new System.Drawing.Point(844, 213);
 			this.SaveUser.Name = "SaveUser";
-			this.SaveUser.Size = new System.Drawing.Size(115, 31);
+			this.SaveUser.Size = new System.Drawing.Size(100, 29);
 			this.SaveUser.TabIndex = 104;
 			this.SaveUser.Text = "  Save";
 			this.SaveUser.Click += new System.EventHandler(this.SaveUser_Click);
@@ -271,7 +297,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.DarkRed;
-			this.label2.Location = new System.Drawing.Point(106, 20);
+			this.label2.Location = new System.Drawing.Point(86, 16);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(18, 24);
 			this.label2.TabIndex = 13;
@@ -282,7 +308,7 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label6.Location = new System.Drawing.Point(27, 120);
+			this.label6.Location = new System.Drawing.Point(7, 110);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(91, 21);
 			this.label6.TabIndex = 52;
@@ -293,7 +319,7 @@
 			this.label33.AutoSize = true;
 			this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label33.Location = new System.Drawing.Point(612, 70);
+			this.label33.Location = new System.Drawing.Point(581, 63);
 			this.label33.Name = "label33";
 			this.label33.Size = new System.Drawing.Size(16, 24);
 			this.label33.TabIndex = 102;
@@ -304,7 +330,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label1.Location = new System.Drawing.Point(27, 22);
+			this.label1.Location = new System.Drawing.Point(7, 18);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(82, 21);
 			this.label1.TabIndex = 54;
@@ -315,7 +341,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.DarkRed;
-			this.label3.Location = new System.Drawing.Point(114, 118);
+			this.label3.Location = new System.Drawing.Point(94, 108);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(18, 24);
 			this.label3.TabIndex = 55;
@@ -326,7 +352,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label5.Location = new System.Drawing.Point(27, 72);
+			this.label5.Location = new System.Drawing.Point(7, 65);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(91, 21);
 			this.label5.TabIndex = 56;
@@ -337,7 +363,7 @@
 			this.label30.AutoSize = true;
 			this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label30.Location = new System.Drawing.Point(612, 22);
+			this.label30.Location = new System.Drawing.Point(581, 18);
 			this.label30.Name = "label30";
 			this.label30.Size = new System.Drawing.Size(16, 24);
 			this.label30.TabIndex = 99;
@@ -348,7 +374,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.DarkRed;
-			this.label4.Location = new System.Drawing.Point(114, 69);
+			this.label4.Location = new System.Drawing.Point(94, 62);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(18, 24);
 			this.label4.TabIndex = 58;
@@ -369,12 +395,12 @@
 			this.txt_UserLoginID.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_UserLoginID.ForeColor = System.Drawing.Color.Black;
 			this.txt_UserLoginID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserLoginID.Location = new System.Drawing.Point(196, 18);
+			this.txt_UserLoginID.Location = new System.Drawing.Point(142, 14);
 			this.txt_UserLoginID.Name = "txt_UserLoginID";
 			this.txt_UserLoginID.PasswordChar = '\0';
 			this.txt_UserLoginID.PlaceholderText = "";
 			this.txt_UserLoginID.SelectedText = "";
-			this.txt_UserLoginID.Size = new System.Drawing.Size(153, 34);
+			this.txt_UserLoginID.Size = new System.Drawing.Size(190, 34);
 			this.txt_UserLoginID.TabIndex = 61;
 			// 
 			// label27
@@ -382,7 +408,7 @@
 			this.label27.AutoSize = true;
 			this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label27.Location = new System.Drawing.Point(170, 22);
+			this.label27.Location = new System.Drawing.Point(116, 18);
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(16, 24);
 			this.label27.TabIndex = 96;
@@ -410,11 +436,11 @@
 			this.txt_UserRoleID.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txt_UserRoleID.IntegralHeight = false;
 			this.txt_UserRoleID.ItemHeight = 28;
-			this.txt_UserRoleID.Location = new System.Drawing.Point(196, 112);
+			this.txt_UserRoleID.Location = new System.Drawing.Point(142, 102);
 			this.txt_UserRoleID.MaxDropDownItems = 5;
 			this.txt_UserRoleID.Name = "txt_UserRoleID";
 			this.txt_UserRoleID.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.txt_UserRoleID.Size = new System.Drawing.Size(252, 34);
+			this.txt_UserRoleID.Size = new System.Drawing.Size(322, 34);
 			this.txt_UserRoleID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.txt_UserRoleID.TabIndex = 62;
 			// 
@@ -423,7 +449,7 @@
 			this.label26.AutoSize = true;
 			this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label26.Location = new System.Drawing.Point(170, 70);
+			this.label26.Location = new System.Drawing.Point(116, 63);
 			this.label26.Name = "label26";
 			this.label26.Size = new System.Drawing.Size(16, 24);
 			this.label26.TabIndex = 95;
@@ -434,7 +460,7 @@
 			this.label25.AutoSize = true;
 			this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label25.Location = new System.Drawing.Point(170, 120);
+			this.label25.Location = new System.Drawing.Point(116, 110);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(16, 24);
 			this.label25.TabIndex = 94;
@@ -445,7 +471,7 @@
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label12.Location = new System.Drawing.Point(388, 25);
+			this.label12.Location = new System.Drawing.Point(389, 21);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(46, 21);
 			this.label12.TabIndex = 70;
@@ -456,7 +482,7 @@
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label13.Location = new System.Drawing.Point(484, 22);
+			this.label13.Location = new System.Drawing.Point(480, 18);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(55, 21);
 			this.label13.TabIndex = 71;
@@ -469,7 +495,7 @@
 			this.txt_UserLoginIDAuto.CheckedState.BorderRadius = 0;
 			this.txt_UserLoginIDAuto.CheckedState.BorderThickness = 0;
 			this.txt_UserLoginIDAuto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserLoginIDAuto.Location = new System.Drawing.Point(366, 29);
+			this.txt_UserLoginIDAuto.Location = new System.Drawing.Point(367, 25);
 			this.txt_UserLoginIDAuto.Name = "txt_UserLoginIDAuto";
 			this.txt_UserLoginIDAuto.Size = new System.Drawing.Size(15, 14);
 			this.txt_UserLoginIDAuto.TabIndex = 89;
@@ -484,7 +510,7 @@
 			this.label14.AutoSize = true;
 			this.label14.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label14.Location = new System.Drawing.Point(484, 72);
+			this.label14.Location = new System.Drawing.Point(480, 65);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(82, 21);
 			this.label14.TabIndex = 72;
@@ -505,12 +531,12 @@
 			this.txt_UserEmail.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_UserEmail.ForeColor = System.Drawing.Color.Black;
 			this.txt_UserEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserEmail.Location = new System.Drawing.Point(638, 18);
+			this.txt_UserEmail.Location = new System.Drawing.Point(607, 14);
 			this.txt_UserEmail.Name = "txt_UserEmail";
 			this.txt_UserEmail.PasswordChar = '\0';
 			this.txt_UserEmail.PlaceholderText = "";
 			this.txt_UserEmail.SelectedText = "";
-			this.txt_UserEmail.Size = new System.Drawing.Size(279, 34);
+			this.txt_UserEmail.Size = new System.Drawing.Size(322, 34);
 			this.txt_UserEmail.TabIndex = 84;
 			// 
 			// label9
@@ -518,38 +544,11 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.DarkRed;
-			this.label9.Location = new System.Drawing.Point(562, 70);
+			this.label9.Location = new System.Drawing.Point(558, 63);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(18, 24);
 			this.label9.TabIndex = 77;
 			this.label9.Text = "*";
-			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label21.Location = new System.Drawing.Point(511, 123);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(109, 21);
-			this.label21.TabIndex = 178;
-			this.label21.Text = "Is Approver";
-			// 
-			// txt_IsApprover
-			// 
-			this.txt_IsApprover.AutoSize = true;
-			this.txt_IsApprover.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_IsApprover.CheckedState.BorderRadius = 0;
-			this.txt_IsApprover.CheckedState.BorderThickness = 0;
-			this.txt_IsApprover.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_IsApprover.Location = new System.Drawing.Point(488, 127);
-			this.txt_IsApprover.Name = "txt_IsApprover";
-			this.txt_IsApprover.Size = new System.Drawing.Size(15, 14);
-			this.txt_IsApprover.TabIndex = 179;
-			this.txt_IsApprover.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_IsApprover.UncheckedState.BorderRadius = 0;
-			this.txt_IsApprover.UncheckedState.BorderThickness = 0;
-			this.txt_IsApprover.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
 			// 
 			// UserEntry
 			// 
@@ -557,10 +556,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(969, 265);
+			this.ClientSize = new System.Drawing.Size(969, 249);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.SaveUser);
+			this.Controls.Add(this.Cancel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "UserEntry";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
