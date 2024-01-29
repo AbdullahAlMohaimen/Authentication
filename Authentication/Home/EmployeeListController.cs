@@ -55,49 +55,7 @@ namespace Authentication.Home
 			try
 			{
 				employees = employeeService.GetEmployees();
-				allEmployeeGrid.Columns.Clear();
-				allEmployeeGrid.DataSource = null;
-				allEmployeeDataTable.Rows.Clear();
-				this.GetGridColumn();
-				allEmployeeGrid.AllowUserToAddRows = false;
-
-				foreach (BO.Employee oEmployee in employees)
-				{
-					DataRow row = allEmployeeDataTable.NewRow();
-					row["Emp No"] = oEmployee.EmployeeNo;
-					row["Name"] = oEmployee.Name;
-					row["Gender"] = oEmployee.Gender;
-					row["DOJ"] = oEmployee.JoiningDate.ToString("dd MMM yyy");
-					row["Email"] = oEmployee.Email;
-					row["Phone"] = oEmployee.MobileNo;
-					row["Status"] = oEmployee.Status == EnumStatus.Active ? "Active" : "In-Active";
-					row["IsConfirm"] = oEmployee.IsConfirmed == true ? "Yes" : "No";
-					allEmployeeDataTable.Rows.Add(row);
-				}
-				allEmployeeGrid.DataSource = allEmployeeDataTable;
-				this.SetGridColumn();
-
-				DataGridViewButtonColumn statusChangedButton = new DataGridViewButtonColumn();
-				statusChangedButton.HeaderText = "Change Status";
-				statusChangedButton.Text = "Change Status";
-				statusChangedButton.UseColumnTextForButtonValue = true;
-				statusChangedButton.DefaultCellStyle.BackColor = SystemColors.Control;
-				statusChangedButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				statusChangedButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				statusChangedButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				statusChangedButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allEmployeeGrid.Columns.Add(statusChangedButton);
-
-				DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
-				editButton.HeaderText = "Edit";
-				editButton.Text = "Edit";
-				editButton.UseColumnTextForButtonValue = true;
-				editButton.DefaultCellStyle.BackColor = SystemColors.Control;
-				editButton.DefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
-				editButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				editButton.CellTemplate.Style.ForeColor = Color.Maroon;
-				editButton.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-				allEmployeeGrid.Columns.Add(editButton);
+				this.ProcessData();
 			}
 			catch(Exception ex)
 			{
@@ -106,67 +64,92 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region Get Grid Column
-		public void GetGridColumn()
+		#region ProcessData
+		public void ProcessData()
 		{
-			allEmployeeDataTable.Columns.Clear();
-			allEmployeeDataTable.Columns.Add("Emp No");
-			allEmployeeDataTable.Columns.Add("Name");
-			allEmployeeDataTable.Columns.Add("Gender");
-			allEmployeeDataTable.Columns.Add("DOJ");
-			allEmployeeDataTable.Columns.Add("Email");
-			allEmployeeDataTable.Columns.Add("Phone");
-			allEmployeeDataTable.Columns.Add("Status");
-			allEmployeeDataTable.Columns.Add("IsConfirm");
-		}
-		#endregion
+			total.Text = employees.Count().ToString();
+			DataRow dr = null;
+			DataTable empList = new DataTable();
+			empList.TableName = "Employee List";
+			empList.Columns.Add("ID", typeof(int));
+			empList.Columns.Add("EmployeeNo", typeof(string));
+			empList.Columns.Add("Name", typeof(string));
+			empList.Columns.Add("Gender", typeof(string));
+			empList.Columns.Add("Joining Date", typeof(string));
+			empList.Columns.Add("Email", typeof(string));
+			empList.Columns.Add("Phone", typeof(string));
+			empList.Columns.Add("Status", typeof(string));
+			empList.Columns.Add("IsConfirm", typeof(string));
 
-		#region Set Grid Column
-		public void SetGridColumn()
-		{
-			allEmployeeGrid.Columns["Emp No"].Width = 50;
-			allEmployeeGrid.Columns["Name"].Width = 150;
-			allEmployeeGrid.Columns["Gender"].Width =45;
-			allEmployeeGrid.Columns["DOJ"].Width = 70;
-			allEmployeeGrid.Columns["Email"].Width = 140;
-			allEmployeeGrid.Columns["Phone"].Width = 75;
-			allEmployeeGrid.Columns["Status"].Width = 45;
-			allEmployeeGrid.Columns["IsConfirm"].Width = 90;
-		}
+			allEmployeeListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			allEmployeeListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+
+			foreach (BO.Employee oEmployee in employees)
+			{
+				dr = empList.NewRow();
+				dr["ID"] = oEmployee.ID;
+				dr["Employee No"] = oEmployee.EmployeeNo;
+				dr["Name"] = oEmployee.Name;
+				dr["Gender"] = oEmployee.Gender;
+				dr["Joining Date"] = oEmployee.JoiningDate.ToString("dd MMM yyy");
+				dr["Email"] = oEmployee.Email;
+				dr["Phone"] = oEmployee.MobileNo;
+				dr["Status"] = oEmployee.Status == EnumStatus.Active ? "Active" : "In-Active";
+				dr["IsConfirm"] = oEmployee.IsConfirmed == true ? "Yes" : "No";
+				empList.Rows.Add(dr);
+			}
+			allEmployeeListTable.DataSource = empList;
+			//allEmployeeListTable.RowHeadersVisible = false;
+			//allEmployeeListTable.Columns["ID"].Visible = false;
+
+			foreach (DataGridViewColumn column in allEmployeeListTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			allEmployeeListTable.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+			allEmployeeListTable.RowHeadersVisible = false;
+			allEmployeeListTable.Columns["ID"].Visible = false;
+		}
 		#endregion
 
 		#region New User Butoon
 		private void AddNewUser_Click(object sender, EventArgs e)
 		{
-			EmployeeEntry userEntry = new EmployeeEntry(this);
-			userEntry.SetCurrentUser(this.oCurrentUser);
-			userEntry.EditEmployee(null);
-			userEntry._loginID = oCurrentUser.LoginID;
-			userEntry.Show();
+			EmployeeEntry employeeEntry = new EmployeeEntry(this);
+			employeeEntry.SetCurrentUser(this.oCurrentUser);
+			employeeEntry.EditEmployee(null);
+			employeeEntry._loginID = oCurrentUser.LoginID;
+			employeeEntry.EditingDone += EmployeeEntry_EditingDone;
+			employeeEntry.Show();
 		}
 		#endregion
 
-		#region Grid Button Click
-		private void allEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void EmployeeEntry_EditingDone(object sender, EventArgs e)
+		{
+			this.loadGrid();
+		}
+
+		#region Edit Button
+		private void editButton_click_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				BO.Employee oEmployee = new BO.Employee();
-				DataGridViewRow selectedRow = allEmployeeGrid.Rows[e.RowIndex];
-				string employeeNo = selectedRow.Cells["Emp No"].Value.ToString();
-				oEmployee = employeeService.GetEmployee(employeeNo);
-
-				if (allEmployeeGrid.Columns[e.ColumnIndex].HeaderText == "Edit")
+				DataGridView dataGridView = allEmployeeListTable;
+				if (dataGridView.SelectedRows.Count > 0)
 				{
-					#region Edit User
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oEmployee = employeeService.GetEmployee(empID);
+
 					EmployeeEntry employeeEntry = new EmployeeEntry(this);
 					employeeEntry.SetCurrentUser(this.oCurrentUser);
 					employeeEntry.EditEmployee(oEmployee);
 					employeeEntry._loginID = oCurrentUser.LoginID;
 					employeeEntry.EditingDone += EmployeeEntry_EditingDone;
 					employeeEntry.Show();
-					#endregion
 				}
 			}
 			catch (Exception ex)
@@ -176,9 +159,32 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		private void EmployeeEntry_EditingDone(object sender, EventArgs e)
+		#region Delete Button
+		private void deleteButton_Click_Click(object sender, EventArgs e)
 		{
-			this.loadGrid();
+
 		}
+		#endregion
+
+		#region Change Status
+		private void changeStatus_Click(object sender, EventArgs e)
+		{
+
+		}
+		#endregion
+
+		#region Employee Search
+		private void txt_EmployeeSearch_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+		#endregion
+
+		#region Password Reset
+		private void PasswordReset_Click(object sender, EventArgs e)
+		{
+
+		}
+		#endregion
 	}
 }
