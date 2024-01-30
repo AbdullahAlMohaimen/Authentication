@@ -160,24 +160,128 @@ namespace Authentication.Home
 
 		}
 
+		#region Edit Button
 		private void editButton_click_Click(object sender, EventArgs e)
 		{
+			DataGridView dataGridView = allUserListTable;
+			BO.Users oUser = new BO.Users();
 
+			try
+			{
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oUser = userService.GetUser(userID);
+
+					if (oUser != null)
+					{
+
+					}
+					UserEntry userEntry = new UserEntry(this);
+					userEntry.SetCurrentUser(this.oCurrentUser);
+					userEntry.EditUser(oUser);
+					userEntry._loginID = oCurrentUser.LoginID;
+					userEntry.EditingDone += UserEntry_EditingDone;
+					userEntry.Show();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
+		#endregion
 
+		#region Password Reset Button
 		private void passwordReset_btnClick_Click(object sender, EventArgs e)
 		{
+			DataGridView dataGridView = allUserListTable;
+			BO.Users oUser = new BO.Users();
+			try
+			{
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oUser = userService.GetUser(userID);
 
+					if (oUser.ID == oCurrentUser.ID)
+					{
+						MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
+					}
+					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+					if (result == DialogResult.OK)
+					{
+						oUser.PasswordResetByAdmin = true;
+						oUser.PasswordResetBy = oCurrentUser.ID;
+						oUser.PasswordResetDate = DateTime.Now;
+						string passwordResetStatus = userService.PasswordResetByAdmin(oUser);
+
+						if (passwordResetStatus == "Ok")
+						{
+							MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						}
+					}
+					return;
+				}
+				else
+				{
+					MessageBox.Show("Please select a row for reset password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
+		#endregion
 
 		private void changeStatus_Click(object sender, EventArgs e)
 		{
+			DataGridView dataGridView = allUserListTable;
+			BO.Users oUser = new BO.Users();
 
+			try
+			{
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oUser = userService.GetUser(userID);
+
+					if (oUser != null)
+					{
+						if (oUser.ID == oCurrentUser.ID)
+						{
+							MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't change his own status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							return;
+						}
+						string status = oUser.Status.ToString();
+					}
+				}
+				else
+				{
+					MessageBox.Show("Please select a row for reset password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
+		#region Add New User Button
 		private void AddNewUser_Click(object sender, EventArgs e)
 		{
-
+			UserEntry userEntry = new UserEntry(this);
+			userEntry.SetCurrentUser(this.oCurrentUser);
+			userEntry.EditUser(null);
+			userEntry._loginID = oCurrentUser.LoginID;
+			userEntry.EditingDone += UserEntry_EditingDone;
+			userEntry.Show();
 		}
+		#endregion
 	}
 }
