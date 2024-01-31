@@ -44,7 +44,7 @@
 			this.isActive = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.statusString = new System.Windows.Forms.Label();
-			this.SaveUser = new Guna.UI2.WinForms.Guna2Button();
+			this.ChangeStatus = new Guna.UI2.WinForms.Guna2Button();
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txt_User = new System.Windows.Forms.Label();
@@ -150,6 +150,7 @@
 			this.isPasswordExpired.UncheckedState.BorderRadius = 0;
 			this.isPasswordExpired.UncheckedState.BorderThickness = 0;
 			this.isPasswordExpired.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.isPasswordExpired.CheckedChanged += new System.EventHandler(this.isPasswordExpired_CheckedChanged);
 			// 
 			// label3
 			// 
@@ -177,6 +178,7 @@
 			this.isLocked.UncheckedState.BorderRadius = 0;
 			this.isLocked.UncheckedState.BorderThickness = 0;
 			this.isLocked.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.isLocked.CheckedChanged += new System.EventHandler(this.isLocked_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -204,6 +206,7 @@
 			this.isInActive.UncheckedState.BorderRadius = 0;
 			this.isInActive.UncheckedState.BorderThickness = 0;
 			this.isInActive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.isInActive.CheckedChanged += new System.EventHandler(this.isInActive_CheckedChanged);
 			// 
 			// label21
 			// 
@@ -231,6 +234,7 @@
 			this.isActive.UncheckedState.BorderRadius = 0;
 			this.isActive.UncheckedState.BorderThickness = 0;
 			this.isActive.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.isActive.CheckedChanged += new System.EventHandler(this.isActive_CheckedChanged);
 			// 
 			// label1
 			// 
@@ -253,22 +257,23 @@
 			this.statusString.Size = new System.Drawing.Size(0, 16);
 			this.statusString.TabIndex = 110;
 			// 
-			// SaveUser
+			// ChangeStatus
 			// 
-			this.SaveUser.BorderRadius = 8;
-			this.SaveUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.SaveUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.SaveUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.SaveUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.SaveUser.FillColor = System.Drawing.Color.SeaGreen;
-			this.SaveUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SaveUser.ForeColor = System.Drawing.Color.Wheat;
-			this.SaveUser.Image = ((System.Drawing.Image)(resources.GetObject("SaveUser.Image")));
-			this.SaveUser.Location = new System.Drawing.Point(452, 139);
-			this.SaveUser.Name = "SaveUser";
-			this.SaveUser.Size = new System.Drawing.Size(100, 29);
-			this.SaveUser.TabIndex = 111;
-			this.SaveUser.Text = "  Save";
+			this.ChangeStatus.BorderRadius = 8;
+			this.ChangeStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.ChangeStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.ChangeStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.ChangeStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.ChangeStatus.FillColor = System.Drawing.Color.SeaGreen;
+			this.ChangeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ChangeStatus.ForeColor = System.Drawing.Color.Wheat;
+			this.ChangeStatus.Image = ((System.Drawing.Image)(resources.GetObject("ChangeStatus.Image")));
+			this.ChangeStatus.Location = new System.Drawing.Point(452, 139);
+			this.ChangeStatus.Name = "ChangeStatus";
+			this.ChangeStatus.Size = new System.Drawing.Size(100, 29);
+			this.ChangeStatus.TabIndex = 111;
+			this.ChangeStatus.Text = "  Save";
+			this.ChangeStatus.Click += new System.EventHandler(this.ChangeStatus_Click);
 			// 
 			// Cancel
 			// 
@@ -286,6 +291,7 @@
 			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 112;
 			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
 			// 
 			// label5
 			// 
@@ -318,7 +324,7 @@
 			this.ControlBox = false;
 			this.Controls.Add(this.txt_User);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.SaveUser);
+			this.Controls.Add(this.ChangeStatus);
 			this.Controls.Add(this.Cancel);
 			this.Controls.Add(this.statusString);
 			this.Controls.Add(this.label1);
@@ -353,7 +359,7 @@
 		private Guna.UI2.WinForms.Guna2CheckBox isPasswordExpired;
 		private System.Windows.Forms.Label label3;
 		private Guna.UI2.WinForms.Guna2CheckBox isLocked;
-		private Guna.UI2.WinForms.Guna2Button SaveUser;
+		private Guna.UI2.WinForms.Guna2Button ChangeStatus;
 		private Guna.UI2.WinForms.Guna2Button Cancel;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label txt_User;

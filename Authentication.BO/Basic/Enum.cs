@@ -59,6 +59,7 @@
 	}
 	public enum EnumStatus : short
 	{
+		None = -1,
 		Regardless = 0,
 		Active = 1,
 		Inactive = 2,

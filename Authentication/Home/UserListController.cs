@@ -176,14 +176,13 @@ namespace Authentication.Home
 
 					if (oUser != null)
 					{
-
+						UserEntry userEntry = new UserEntry(this);
+						userEntry.SetCurrentUser(this.oCurrentUser);
+						userEntry.EditUser(oUser);
+						userEntry._loginID = oCurrentUser.LoginID;
+						userEntry.EditingDone += UserEntry_EditingDone;
+						userEntry.Show();
 					}
-					UserEntry userEntry = new UserEntry(this);
-					userEntry.SetCurrentUser(this.oCurrentUser);
-					userEntry.EditUser(oUser);
-					userEntry._loginID = oCurrentUser.LoginID;
-					userEntry.EditingDone += UserEntry_EditingDone;
-					userEntry.Show();
 				}
 			}
 			catch (Exception ex)
