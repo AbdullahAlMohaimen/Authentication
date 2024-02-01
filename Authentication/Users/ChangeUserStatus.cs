@@ -49,8 +49,6 @@ namespace Authentication.Users
 		public void EditUser(BO.Users oUser)
 		{
 			_user = oUser;
-			BO.Role role = new BO.Role();
-
 			string status;
 			if (_user != null)
 			{
@@ -141,6 +139,42 @@ namespace Authentication.Users
 				newStatus = EnumStatus.PasswordExpired;
 			else
 				newStatus = EnumStatus.None;
+
+			if (newStatus == EnumStatus.None)
+			{
+				MessageBox.Show("Please select any status, otherwize you can't change user's status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			if (_user.Status == newStatus)
+			{
+				MessageBox.Show("This is user's previous status.\nPlease choose another status.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			_user.Status = newStatus;
+			_user.StatusChangedDate = DateTime.Now;
+			_user.ModifiedBy = oCurrentUser.ID;
+			_user.ModifiedDate = DateTime.Now;
+
+			try
+			{
+				string result = userService.UpdateUserStatus(_user.ID, newStatus, oCurrentUser.ID, DateTime.Now, DateTime.Now);
+
+				if (result == "Ok")
+				{
+					MessageBox.Show($"User status changed successfully.\n{_user.UserName} is now {newStatus.ToString()}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					MessageBox.Show("Failed.\nPlease try again", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+
+				EditingDone?.Invoke(this, EventArgs.Empty);
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 		#endregion
 

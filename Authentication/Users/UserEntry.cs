@@ -226,7 +226,7 @@ namespace Authentication.Users
 				}
 				else
 				{
-					MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show(invalidMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 
 			}

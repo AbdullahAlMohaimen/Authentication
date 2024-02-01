@@ -48,6 +48,8 @@
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txt_User = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -60,7 +62,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(566, 30);
+			this.panel1.Size = new System.Drawing.Size(646, 30);
 			this.panel1.TabIndex = 13;
 			// 
 			// txtHeader
@@ -82,7 +84,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(494, 3);
+			this.Minimize.Location = new System.Drawing.Point(575, 3);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -97,7 +99,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(533, 3);
+			this.Exit.Location = new System.Drawing.Point(614, 3);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -121,7 +123,7 @@
 			this.guna2Panel1.Controls.Add(this.isActive);
 			this.guna2Panel1.Location = new System.Drawing.Point(6, 87);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(552, 47);
+			this.guna2Panel1.Size = new System.Drawing.Size(630, 47);
 			this.guna2Panel1.TabIndex = 108;
 			// 
 			// label4
@@ -129,7 +131,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(378, 12);
+			this.label4.Location = new System.Drawing.Point(461, 12);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(154, 21);
 			this.label4.TabIndex = 184;
@@ -142,7 +144,7 @@
 			this.isPasswordExpired.CheckedState.BorderRadius = 0;
 			this.isPasswordExpired.CheckedState.BorderThickness = 0;
 			this.isPasswordExpired.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.isPasswordExpired.Location = new System.Drawing.Point(355, 16);
+			this.isPasswordExpired.Location = new System.Drawing.Point(438, 16);
 			this.isPasswordExpired.Name = "isPasswordExpired";
 			this.isPasswordExpired.Size = new System.Drawing.Size(15, 14);
 			this.isPasswordExpired.TabIndex = 185;
@@ -157,7 +159,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(290, 12);
+			this.label3.Location = new System.Drawing.Point(326, 12);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(46, 21);
 			this.label3.TabIndex = 182;
@@ -170,7 +172,7 @@
 			this.isLocked.CheckedState.BorderRadius = 0;
 			this.isLocked.CheckedState.BorderThickness = 0;
 			this.isLocked.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.isLocked.Location = new System.Drawing.Point(267, 16);
+			this.isLocked.Location = new System.Drawing.Point(303, 16);
 			this.isLocked.Name = "isLocked";
 			this.isLocked.Size = new System.Drawing.Size(15, 14);
 			this.isLocked.TabIndex = 183;
@@ -185,7 +187,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label2.Location = new System.Drawing.Point(157, 12);
+			this.label2.Location = new System.Drawing.Point(170, 12);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(91, 21);
 			this.label2.TabIndex = 180;
@@ -198,7 +200,7 @@
 			this.isInActive.CheckedState.BorderRadius = 0;
 			this.isInActive.CheckedState.BorderThickness = 0;
 			this.isInActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.isInActive.Location = new System.Drawing.Point(134, 16);
+			this.isInActive.Location = new System.Drawing.Point(147, 16);
 			this.isInActive.Name = "isInActive";
 			this.isInActive.Size = new System.Drawing.Size(15, 14);
 			this.isInActive.TabIndex = 181;
@@ -213,7 +215,7 @@
 			this.label21.AutoSize = true;
 			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label21.Location = new System.Drawing.Point(45, 12);
+			this.label21.Location = new System.Drawing.Point(39, 12);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(64, 21);
 			this.label21.TabIndex = 178;
@@ -226,7 +228,7 @@
 			this.isActive.CheckedState.BorderRadius = 0;
 			this.isActive.CheckedState.BorderThickness = 0;
 			this.isActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.isActive.Location = new System.Drawing.Point(22, 16);
+			this.isActive.Location = new System.Drawing.Point(16, 16);
 			this.isActive.Name = "isActive";
 			this.isActive.Size = new System.Drawing.Size(15, 14);
 			this.isActive.TabIndex = 179;
@@ -243,16 +245,16 @@
 			this.label1.ForeColor = System.Drawing.Color.Maroon;
 			this.label1.Location = new System.Drawing.Point(8, 64);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(141, 16);
+			this.label1.Size = new System.Drawing.Size(87, 16);
 			this.label1.TabIndex = 109;
-			this.label1.Text = "This User is now  :  ";
+			this.label1.Text = "User Status";
 			// 
 			// statusString
 			// 
 			this.statusString.AutoSize = true;
 			this.statusString.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.statusString.ForeColor = System.Drawing.Color.SeaGreen;
-			this.statusString.Location = new System.Drawing.Point(141, 64);
+			this.statusString.Location = new System.Drawing.Point(123, 64);
 			this.statusString.Name = "statusString";
 			this.statusString.Size = new System.Drawing.Size(0, 16);
 			this.statusString.TabIndex = 110;
@@ -268,11 +270,11 @@
 			this.ChangeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ChangeStatus.ForeColor = System.Drawing.Color.Wheat;
 			this.ChangeStatus.Image = ((System.Drawing.Image)(resources.GetObject("ChangeStatus.Image")));
-			this.ChangeStatus.Location = new System.Drawing.Point(452, 139);
+			this.ChangeStatus.Location = new System.Drawing.Point(467, 139);
 			this.ChangeStatus.Name = "ChangeStatus";
-			this.ChangeStatus.Size = new System.Drawing.Size(100, 29);
+			this.ChangeStatus.Size = new System.Drawing.Size(169, 29);
 			this.ChangeStatus.TabIndex = 111;
-			this.ChangeStatus.Text = "  Save";
+			this.ChangeStatus.Text = "  Change Status";
 			this.ChangeStatus.Click += new System.EventHandler(this.ChangeStatus_Click);
 			// 
 			// Cancel
@@ -286,7 +288,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(346, 139);
+			this.Cancel.Location = new System.Drawing.Point(361, 139);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 112;
@@ -300,19 +302,41 @@
 			this.label5.ForeColor = System.Drawing.Color.Maroon;
 			this.label5.Location = new System.Drawing.Point(8, 46);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(52, 16);
+			this.label5.Size = new System.Drawing.Size(89, 16);
 			this.label5.TabIndex = 113;
-			this.label5.Text = "User  :";
+			this.label5.Text = "User  Name";
 			// 
 			// txt_User
 			// 
 			this.txt_User.AutoSize = true;
 			this.txt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_User.ForeColor = System.Drawing.Color.Maroon;
-			this.txt_User.Location = new System.Drawing.Point(66, 46);
+			this.txt_User.Location = new System.Drawing.Point(123, 46);
 			this.txt_User.Name = "txt_User";
 			this.txt_User.Size = new System.Drawing.Size(0, 16);
 			this.txt_User.TabIndex = 114;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.Maroon;
+			this.label6.Location = new System.Drawing.Point(101, 48);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(11, 16);
+			this.label6.TabIndex = 115;
+			this.label6.Text = ":";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.Maroon;
+			this.label7.Location = new System.Drawing.Point(101, 64);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(11, 16);
+			this.label7.TabIndex = 116;
+			this.label7.Text = ":";
 			// 
 			// ChangeUserStatus
 			// 
@@ -320,8 +344,10 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(564, 173);
+			this.ClientSize = new System.Drawing.Size(642, 173);
 			this.ControlBox = false;
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txt_User);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.ChangeStatus);
@@ -363,5 +389,7 @@
 		private Guna.UI2.WinForms.Guna2Button Cancel;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label txt_User;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
 	}
 }

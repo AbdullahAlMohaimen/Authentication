@@ -207,8 +207,8 @@ namespace Authentication.Login
 												}
 												else if(oHardPasswordSetup.PasswordExpDays - ts.Days <= oHardPasswordSetup.PasswordExpNotificationDays)
 												{
-													DialogResult result = MessageBox.Show("Your password will expire in" + (oHardPasswordSetup.PasswordExpDays - ts.Days).ToString() +" days. Do you want to change password now ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-													if (result == DialogResult.OK)
+													DialogResult result = MessageBox.Show("Your password will expire in " + (oHardPasswordSetup.PasswordExpDays - ts.Days).ToString() +" days. Do you want to change password now ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+													if (result == DialogResult.Yes)
 													{
 														ChangePassword changePassword = new ChangePassword(this);
 														changePassword._loginID = txt_UserLoginID.Text;
@@ -216,7 +216,6 @@ namespace Authentication.Login
 														changePassword.SetType("Login");
 														changePassword.Show();
 													}
-													return;
 												}
 											}
 										}

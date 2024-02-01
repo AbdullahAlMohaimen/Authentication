@@ -257,7 +257,13 @@ namespace Authentication.Home
 							MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't change his own status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							return;
 						}
-						string status = oUser.Status.ToString();
+
+						ChangeUserStatus changeStatus = new ChangeUserStatus(this);
+						changeStatus.SetCurrentUser(this.oCurrentUser);
+						changeStatus.EditUser(oUser);
+						changeStatus._loginID = oCurrentUser.LoginID;
+						changeStatus.EditingDone += UserEntry_EditingDone;
+						changeStatus.Show();
 					}
 				}
 				else
