@@ -28,11 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleListController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_RoleStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.txt_RoleSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allRoleListTable = new System.Windows.Forms.DataGridView();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -41,7 +42,6 @@
 			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
 			this.editButton_click = new Guna.UI2.WinForms.Guna2Button();
 			this.AddNewRole = new Guna.UI2.WinForms.Guna2Button();
-			this.txt_RoleStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allRoleListTable)).BeginInit();
 			this.SuspendLayout();
@@ -66,6 +66,37 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 110;
+			// 
+			// txt_RoleStatus
+			// 
+			this.txt_RoleStatus.BackColor = System.Drawing.Color.Wheat;
+			this.txt_RoleStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_RoleStatus.BorderRadius = 8;
+			this.txt_RoleStatus.BorderThickness = 0;
+			this.txt_RoleStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_RoleStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_RoleStatus.DropDownHeight = 150;
+			this.txt_RoleStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_RoleStatus.DropDownWidth = 120;
+			this.txt_RoleStatus.FillColor = System.Drawing.Color.Wheat;
+			this.txt_RoleStatus.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_RoleStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_RoleStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_RoleStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_RoleStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_RoleStatus.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_RoleStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_RoleStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_RoleStatus.IntegralHeight = false;
+			this.txt_RoleStatus.ItemHeight = 28;
+			this.txt_RoleStatus.Location = new System.Drawing.Point(645, 6);
+			this.txt_RoleStatus.MaxDropDownItems = 5;
+			this.txt_RoleStatus.Name = "txt_RoleStatus";
+			this.txt_RoleStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_RoleStatus.Size = new System.Drawing.Size(241, 34);
+			this.txt_RoleStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_RoleStatus.TabIndex = 148;
+			this.txt_RoleStatus.SelectedIndexChanged += new System.EventHandler(this.txt_EmpDesignation_SelectedIndexChanged);
 			// 
 			// txt_RoleSearch
 			// 
@@ -94,29 +125,29 @@
 			// 
 			// allRoleListTable
 			// 
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
-			this.allRoleListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allRoleListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allRoleListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allRoleListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allRoleListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allRoleListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allRoleListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allRoleListTable.DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allRoleListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allRoleListTable.EnableHeadersVisualStyles = false;
 			this.allRoleListTable.Location = new System.Drawing.Point(14, 47);
 			this.allRoleListTable.Name = "allRoleListTable";
@@ -208,38 +239,6 @@
 			this.AddNewRole.TabIndex = 106;
 			this.AddNewRole.Text = "Add New Role";
 			this.AddNewRole.Click += new System.EventHandler(this.AddNewRole_Click);
-			// 
-			// txt_RoleStatus
-			// 
-			this.txt_RoleStatus.BackColor = System.Drawing.Color.Wheat;
-			this.txt_RoleStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_RoleStatus.BorderRadius = 8;
-			this.txt_RoleStatus.BorderThickness = 0;
-			this.txt_RoleStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txt_RoleStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.txt_RoleStatus.DropDownHeight = 150;
-			this.txt_RoleStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.txt_RoleStatus.DropDownWidth = 120;
-			this.txt_RoleStatus.FillColor = System.Drawing.Color.Wheat;
-			this.txt_RoleStatus.FocusedColor = System.Drawing.Color.Empty;
-			this.txt_RoleStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_RoleStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.txt_RoleStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_RoleStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_RoleStatus.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.txt_RoleStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.txt_RoleStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_RoleStatus.IntegralHeight = false;
-			this.txt_RoleStatus.ItemHeight = 28;
-			this.txt_RoleStatus.Location = new System.Drawing.Point(645, 6);
-			this.txt_RoleStatus.MaxDropDownItems = 5;
-			this.txt_RoleStatus.Name = "txt_RoleStatus";
-			this.txt_RoleStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.txt_RoleStatus.Size = new System.Drawing.Size(241, 34);
-			this.txt_RoleStatus.StartIndex = 0;
-			this.txt_RoleStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.txt_RoleStatus.TabIndex = 148;
-			this.txt_RoleStatus.SelectedIndexChanged += new System.EventHandler(this.txt_EmpDesignation_SelectedIndexChanged);
 			// 
 			// RoleListController
 			// 

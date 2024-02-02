@@ -2,6 +2,7 @@
 using Authentication.Role;
 using Authentication.Service;
 using Authentication.Users;
+using MailKit.Search;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,13 +33,23 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 			this.loadGrid();
+
+			txt_UserStatus.Items.Add("Select Status...............");
+			txt_UserStatus.Items.Add("All");
+			foreach (EnumStatus status in Enum.GetValues(typeof(EnumStatus)))
+			{
+				if (status != EnumStatus.None)
+				{
+					txt_UserStatus.Items.Add(status);
+				}
+			}
+			txt_UserStatus.SelectedItem = "Select Status...............";
 		}
 		#endregion
 
 		#region LoadGrid
 		public void loadGrid()
 		{
-			this.GetAllRole();
 			this.GetAllUsers();
 		}
 		#endregion
@@ -55,7 +66,7 @@ namespace Authentication.Home
 		{
 			try
 			{
-				users = userService.GetUsers();
+				users = userService.Get(EnumStatus.Active);
 				this.ProcessData();
 			}
 			catch (Exception ex)
@@ -68,6 +79,7 @@ namespace Authentication.Home
 		#region Process User Data
 		public void ProcessData()
 		{
+			roles = roleService.GetAllRole();
 			allUsers = userService.GetUsers();
 			total.Text = users.Count().ToString();
 			DataRow dr = null;
@@ -94,7 +106,7 @@ namespace Authentication.Home
 				BO.Role oRole = new BO.Role();
 				oRole = roles.Where(x => x.ID == user.RoleID).FirstOrDefault();
 				dr["Role"] = oRole == null ? "" : oRole.Name;
-				dr["Status"] = user.Status == EnumStatus.Active ? "Active" : "In-Active";
+				dr["Status"] = user.Status.ToString();
 				dr["Email"] = user.Email;
 
 				BO.Users oUser = new BO.Users();
@@ -118,21 +130,6 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region Get ALL Role
-		public void GetAllRole()
-		{
-			try
-			{
-				roles = roleService.GetAllRole();
-			}
-			catch (Exception ex)
-			{
-				//MessageBox.Show("Please enter your login ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-		#endregion
-
 		private void UserEntry_EditingDone(object sender, EventArgs e)
 		{
 			this.loadGrid();
@@ -141,24 +138,79 @@ namespace Authentication.Home
 		#region Search User
 		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
 		{
+			EnumStatus status;
 			if (!string.IsNullOrEmpty(txt_UserSearch.Text))
 			{
 				string searchText = txt_UserSearch.Text;
-				this.GetAllRole();
-				users = new UserService().SearchUsers(searchText);
-				this.ProcessData();
+				if (txt_UserStatus.SelectedItem == "Select Status...............")
+				{
+					users = new UserService().SearchUsers(searchText, EnumStatus.Active);
+				}
+				else if (txt_UserStatus.SelectedItem == "All")
+				{
+					users = new UserService().SearchUsers(searchText);
+				}
+				else
+				{
+					status = (EnumStatus)txt_UserStatus.SelectedItem;
+					users = new UserService().SearchUsers(searchText, status);
+				}
+				
 			}
 			else
 			{
-				this.loadGrid();
+				if (txt_UserStatus.SelectedItem == "Select Status...............")
+				{
+					users = userService.Get(EnumStatus.Active);
+				}
+				else if (txt_UserStatus.SelectedItem == "All")
+				{
+					users = userService.GetUsers();
+				}
+				else
+				{
+					status = (EnumStatus)txt_UserStatus.SelectedItem;
+					users = userService.Get(status);
+				}
 			}
+			this.ProcessData();
 		}
 		#endregion
 
+		#region Delete Button
 		private void deleteButton_Click_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				DataGridView dataGridView = allUserListTable;
+				BO.Users oUser = new BO.Users();
 
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oUser = userService.GetUser(userID);
+
+					if (oUser != null)
+					{
+						DialogResult result = MessageBox.Show($"Are you sure to delete {oUser.UserName} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+						if (result == DialogResult.Yes)
+						{
+							string status = userService.Delete(oUser.ID);
+							if (status != null && status == "Ok")
+							{
+								MessageBox.Show("Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
+		#endregion
 
 		#region Edit Button
 		private void editButton_click_Click(object sender, EventArgs e)
@@ -207,11 +259,11 @@ namespace Authentication.Home
 
 					if (oUser.ID == oCurrentUser.ID)
 					{
-						MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
-					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-					if (result == DialogResult.OK)
+					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (result == DialogResult.Yes)
 					{
 						oUser.PasswordResetByAdmin = true;
 						oUser.PasswordResetBy = oCurrentUser.ID;
@@ -237,6 +289,7 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region Change status button
 		private void changeStatus_Click(object sender, EventArgs e)
 		{
 			DataGridView dataGridView = allUserListTable;
@@ -276,6 +329,7 @@ namespace Authentication.Home
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		#endregion
 
 		#region Add New User Button
 		private void AddNewUser_Click(object sender, EventArgs e)
@@ -286,6 +340,28 @@ namespace Authentication.Home
 			userEntry._loginID = oCurrentUser.LoginID;
 			userEntry.EditingDone += UserEntry_EditingDone;
 			userEntry.Show();
+		}
+		#endregion
+
+		#region user status Dropdown
+		private void txt_RoleStatus_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			EnumStatus Status;
+			if (txt_UserStatus.SelectedItem == "Select Status...............")
+			{
+				this.loadGrid();
+				return;
+			}
+			else if (txt_UserStatus.SelectedItem == "All")
+			{
+				users = userService.Get(EnumStatus.Regardless);
+			}
+			else
+			{
+				Status = (EnumStatus)txt_UserStatus.SelectedItem;
+				users = userService.Get(Status);
+			}
+			this.ProcessData();
 		}
 		#endregion
 	}

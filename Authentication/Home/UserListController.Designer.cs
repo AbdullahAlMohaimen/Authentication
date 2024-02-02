@@ -31,9 +31,9 @@ namespace Authentication.Home
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserListController));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
 			this.changeStatus = new Guna.UI2.WinForms.Guna2Button();
@@ -45,6 +45,7 @@ namespace Authentication.Home
 			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allUserListTable = new System.Windows.Forms.DataGridView();
 			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
+			this.txt_UserStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserListTable)).BeginInit();
 			this.SuspendLayout();
@@ -56,6 +57,7 @@ namespace Authentication.Home
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.txt_UserStatus);
 			this.guna2Panel1.Controls.Add(this.deleteButton_Click);
 			this.guna2Panel1.Controls.Add(this.changeStatus);
 			this.guna2Panel1.Controls.Add(this.total);
@@ -201,29 +203,29 @@ namespace Authentication.Home
 			// 
 			// allUserListTable
 			// 
-			dataGridViewCellStyle13.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allUserListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle14.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allUserListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle15.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserListTable.DefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserListTable.EnableHeadersVisualStyles = false;
 			this.allUserListTable.Location = new System.Drawing.Point(7, 47);
 			this.allUserListTable.Name = "allUserListTable";
@@ -248,6 +250,37 @@ namespace Authentication.Home
 			this.AddNewUser.TabIndex = 106;
 			this.AddNewUser.Text = "Add New User";
 			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
+			// 
+			// txt_UserStatus
+			// 
+			this.txt_UserStatus.BackColor = System.Drawing.Color.Wheat;
+			this.txt_UserStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.BorderRadius = 8;
+			this.txt_UserStatus.BorderThickness = 0;
+			this.txt_UserStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_UserStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_UserStatus.DropDownHeight = 150;
+			this.txt_UserStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_UserStatus.DropDownWidth = 120;
+			this.txt_UserStatus.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserStatus.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_UserStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_UserStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_UserStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.IntegralHeight = false;
+			this.txt_UserStatus.ItemHeight = 28;
+			this.txt_UserStatus.Location = new System.Drawing.Point(645, 6);
+			this.txt_UserStatus.MaxDropDownItems = 5;
+			this.txt_UserStatus.Name = "txt_UserStatus";
+			this.txt_UserStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_UserStatus.Size = new System.Drawing.Size(241, 34);
+			this.txt_UserStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_UserStatus.TabIndex = 149;
+			this.txt_UserStatus.SelectedIndexChanged += new System.EventHandler(this.txt_RoleStatus_SelectedIndexChanged);
 			// 
 			// UserListController
 			// 
@@ -277,5 +310,6 @@ namespace Authentication.Home
 		private Guna.UI2.WinForms.Guna2Button editButton_click;
 		private Guna.UI2.WinForms.Guna2Button changeStatus;
 		private Guna.UI2.WinForms.Guna2Button deleteButton_Click;
+		private Guna.UI2.WinForms.Guna2ComboBox txt_UserStatus;
 	}
 }

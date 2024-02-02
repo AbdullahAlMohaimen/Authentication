@@ -122,7 +122,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region  Insert
+		#region  Delete
 		internal static string Delete(int ID)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -232,7 +232,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Get By ID
+		#region Get By Code
 		internal static IDataReader GetByCode(string code)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";

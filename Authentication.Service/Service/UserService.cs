@@ -12,6 +12,7 @@ using Authentication.Service;
 using System.Net.Mail;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace Authentication.Service
 {
@@ -112,6 +113,25 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  AllUsers by status()
+		public List<Users> Get(EnumStatus status)
+		{
+			List<Users> users = new List<Users>();
+			try
+			{
+				DataReader dr = new DataReader(UsersDA.Get(status));
+				users = this.CreateObjects<Users>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+
+			return users;
+		}
+		#endregion
+
 		#region Save User
 		public string Save(Users user)
 		{
@@ -159,21 +179,47 @@ namespace Authentication.Service
 		#endregion
 
 		#region Delete User
-		public void Delete(int userID)
+		public string Delete(int userID)
 		{
-
+			RoleDA roleDA = new RoleDA();
+			string status = string.Empty;
+			try
+			{
+				status = UsersDA.Delete(userID);
+			}
+			catch (Exception ex)
+			{
+				status = "Failed";
+			}
+			return status;
 		}
 		#endregion
 
 		#endregion
 
-		#region SearchRole
+		#region SearchUsers
 		public List<Users> SearchUsers(string searchText)
 		{
 			List<Users> users = new List<Users>();
 			try
 			{
 				DataReader dr = new DataReader(UsersDA.SearchUser(searchText));
+				users = this.CreateObjects<Users>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				users = null;
+			}
+			return users;
+		}
+
+		public List<Users> SearchUsers(string searchText, EnumStatus status)
+		{
+			List<Users> users = new List<Users>();
+			try
+			{
+				DataReader dr = new DataReader(UsersDA.SearchUser(searchText, status));
 				users = this.CreateObjects<Users>(dr);
 				dr.Close();
 			}

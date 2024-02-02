@@ -258,7 +258,7 @@ namespace Authentication.BO
 		Users GetUser(int ID);
 		List<Users> GetUsers();
 		string Save(Users user);
-		void Delete(int ID);
+		string Delete(int ID);
 	}
 	#endregion
 }

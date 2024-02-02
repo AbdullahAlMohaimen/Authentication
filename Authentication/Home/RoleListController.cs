@@ -162,13 +162,13 @@ namespace Authentication.Home
 			DataGridView dataGridView = allRoleListTable;
 			if (dataGridView.SelectedRows.Count > 0)
 			{
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int roleID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+				BO.Role selectedRole = roleService.GetRoleByID(roleID);
+
 				DialogResult result = MessageBox.Show($"Are you sure to delete this Role?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (result == DialogResult.Yes)
 				{
-					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-					int roleID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-					BO.Role selectedRole = roleService.GetRoleByID(roleID);
-
 					string rslt = new RoleService().Delete(selectedRole.ID);
 					if (rslt == "Ok")
 					{
@@ -236,7 +236,6 @@ namespace Authentication.Home
 		#region Dropdown
 		private void txt_EmpDesignation_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			txt_RoleSearch.Text = null;
 			EnumStatus Status;
 			roles = new List<BO.Role>();
 			userList = new UserService().GetUsers();

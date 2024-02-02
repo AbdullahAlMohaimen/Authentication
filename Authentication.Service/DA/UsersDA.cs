@@ -92,6 +92,41 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  Delete
+		internal static string Delete(int ID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand insertCommand = new SqlCommand("Delete from Users where UserID = '" + ID + "'", conn, tc);
+					insertCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+
+			return status;
+		}
+		#endregion
+
 		#region Update User for Deactivate
 		internal static string UpdateUserDeactivate(Users oUser)
 		{
@@ -254,7 +289,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Search Role
+		#region Search User
 		internal static IDataReader SearchUser(string searchText)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -276,9 +311,31 @@ namespace Authentication.Service
 			}
 			return dr;
 		}
+
+		internal static IDataReader SearchUser(string searchText, EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select u.* from Users u, Role r where u.RoleID = r.RoleID and " +
+					"(u.LoginID like '" + searchText + "%' or u.UserName like '" + searchText + "%' or u.Email like '" + searchText + "%' " +
+					"or r.Name like '" + searchText + "%') and u.status = '"+(int)status+"'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
 		#endregion
 
-		#region GET
+		#region GET All
 		internal static IDataReader Get()
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -300,7 +357,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region Get
+		#region Get By ID
 		internal static IDataReader Get(int ID)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -341,6 +398,35 @@ namespace Authentication.Service
 					getCommand = new SqlCommand("Select * from Users where LoginID = '" + loginID + "'", conn);
 					dr = getCommand.ExecuteReader();
 				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region  GET By Status
+		internal static IDataReader Get(EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (status == EnumStatus.Regardless)
+				{
+					getCommand = new SqlCommand("Select * from Users Order by UserID", conn);
+				}
+				else
+				{
+					getCommand = new SqlCommand("Select * from Users where status = '" + (int)status + "' Order by UserID", conn);
+				}
+				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
 			{
