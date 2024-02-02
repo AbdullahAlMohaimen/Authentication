@@ -342,7 +342,7 @@ namespace Authentication.BO
 		Employee GetEmployee(int ID);
 		List<Employee> GetEmployees();
 		string Save(Employee employee);
-		void Delete(int ID);
+		string Delete(int ID);
 	}
 	#endregion
 }

@@ -95,6 +95,41 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  Delete
+		internal static string Delete(int ID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand insertCommand = new SqlCommand("Delete from Employee where EmployeeID = '" + ID + "'", conn, tc);
+					insertCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+
+			return status;
+		}
+		#endregion
+
 		#region Update Basic Information
 		internal static string UpdateEmpBasicInfo(Employee oEmployee)
 		{
@@ -216,6 +251,26 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("Select * from Employee", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+
+		internal static IDataReader Get(EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from Employee where status = '"+(int)status + "'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

@@ -35,6 +35,7 @@ namespace Authentication.Home
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_UserStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.deleteButton_Click = new Guna.UI2.WinForms.Guna2Button();
 			this.changeStatus = new Guna.UI2.WinForms.Guna2Button();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,7 +46,6 @@ namespace Authentication.Home
 			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allUserListTable = new System.Windows.Forms.DataGridView();
 			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
-			this.txt_UserStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserListTable)).BeginInit();
 			this.SuspendLayout();
@@ -72,6 +72,37 @@ namespace Authentication.Home
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
+			// 
+			// txt_UserStatus
+			// 
+			this.txt_UserStatus.BackColor = System.Drawing.Color.Wheat;
+			this.txt_UserStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.BorderRadius = 8;
+			this.txt_UserStatus.BorderThickness = 0;
+			this.txt_UserStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_UserStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_UserStatus.DropDownHeight = 150;
+			this.txt_UserStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_UserStatus.DropDownWidth = 120;
+			this.txt_UserStatus.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserStatus.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_UserStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_UserStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_UserStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_UserStatus.IntegralHeight = false;
+			this.txt_UserStatus.ItemHeight = 28;
+			this.txt_UserStatus.Location = new System.Drawing.Point(645, 6);
+			this.txt_UserStatus.MaxDropDownItems = 5;
+			this.txt_UserStatus.Name = "txt_UserStatus";
+			this.txt_UserStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_UserStatus.Size = new System.Drawing.Size(241, 34);
+			this.txt_UserStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_UserStatus.TabIndex = 149;
+			this.txt_UserStatus.SelectedIndexChanged += new System.EventHandler(this.txt_RoleStatus_SelectedIndexChanged);
 			// 
 			// deleteButton_Click
 			// 
@@ -250,37 +281,6 @@ namespace Authentication.Home
 			this.AddNewUser.TabIndex = 106;
 			this.AddNewUser.Text = "Add New User";
 			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
-			// 
-			// txt_UserStatus
-			// 
-			this.txt_UserStatus.BackColor = System.Drawing.Color.Wheat;
-			this.txt_UserStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_UserStatus.BorderRadius = 8;
-			this.txt_UserStatus.BorderThickness = 0;
-			this.txt_UserStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txt_UserStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.txt_UserStatus.DropDownHeight = 150;
-			this.txt_UserStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.txt_UserStatus.DropDownWidth = 120;
-			this.txt_UserStatus.FillColor = System.Drawing.Color.Wheat;
-			this.txt_UserStatus.FocusedColor = System.Drawing.Color.Empty;
-			this.txt_UserStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.txt_UserStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_UserStatus.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.txt_UserStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.txt_UserStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_UserStatus.IntegralHeight = false;
-			this.txt_UserStatus.ItemHeight = 28;
-			this.txt_UserStatus.Location = new System.Drawing.Point(645, 6);
-			this.txt_UserStatus.MaxDropDownItems = 5;
-			this.txt_UserStatus.Name = "txt_UserStatus";
-			this.txt_UserStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.txt_UserStatus.Size = new System.Drawing.Size(241, 34);
-			this.txt_UserStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.txt_UserStatus.TabIndex = 149;
-			this.txt_UserStatus.SelectedIndexChanged += new System.EventHandler(this.txt_RoleStatus_SelectedIndexChanged);
 			// 
 			// UserListController
 			// 

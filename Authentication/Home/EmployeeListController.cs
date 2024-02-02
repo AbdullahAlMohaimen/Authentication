@@ -32,6 +32,17 @@ namespace Authentication.Home
 		{
 			InitializeComponent();
 			this.loadGrid();
+
+			txt_EmployeeStatus.Items.Add("Select Status...............");
+			txt_EmployeeStatus.Items.Add("All");
+			foreach (EnumStatus status in Enum.GetValues(typeof(EnumStatus)))
+			{
+				if (status != EnumStatus.None)
+				{
+					txt_EmployeeStatus.Items.Add(status);
+				}
+			}
+			txt_EmployeeStatus.SelectedItem = "Select Status...............";
 		}
 		#endregion
 
@@ -54,7 +65,7 @@ namespace Authentication.Home
 		{
 			try
 			{
-				employees = employeeService.GetEmployees();
+				employees = employeeService.GetEmployees(EnumStatus.Active);
 				this.ProcessData();
 			}
 			catch(Exception ex)
@@ -72,7 +83,7 @@ namespace Authentication.Home
 			DataTable empList = new DataTable();
 			empList.TableName = "Employee List";
 			empList.Columns.Add("ID", typeof(int));
-			empList.Columns.Add("EmployeeNo", typeof(string));
+			empList.Columns.Add("Employee No", typeof(string));
 			empList.Columns.Add("Name", typeof(string));
 			empList.Columns.Add("Gender", typeof(string));
 			empList.Columns.Add("Joining Date", typeof(string));
@@ -95,7 +106,7 @@ namespace Authentication.Home
 				dr["Joining Date"] = oEmployee.JoiningDate.ToString("dd MMM yyy");
 				dr["Email"] = oEmployee.Email;
 				dr["Phone"] = oEmployee.MobileNo;
-				dr["Status"] = oEmployee.Status == EnumStatus.Active ? "Active" : "In-Active";
+				dr["Status"] = oEmployee.Status.ToString();
 				dr["IsConfirm"] = oEmployee.IsConfirmed == true ? "Yes" : "No";
 				empList.Rows.Add(dr);
 			}
@@ -176,14 +187,62 @@ namespace Authentication.Home
 		#region Employee Search
 		private void txt_EmployeeSearch_TextChanged(object sender, EventArgs e)
 		{
+			try
+			{
+				DataGridView dataGridView = allEmployeeListTable;
+				BO.Employee oEmployee = new BO.Employee();
 
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oEmployee = employeeService.GetEmployee(empID);
+
+					if (oEmployee != null)
+					{
+						DialogResult result = MessageBox.Show($"Are you sure to delete {oEmployee.Name} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+						if (result == DialogResult.Yes)
+						{
+							string status = employeeService.Delete(oEmployee.ID);
+							if (status != null && status == "Ok")
+							{
+								MessageBox.Show("Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 
 		#region Password Reset
 		private void PasswordReset_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				DataGridView dataGridView = allEmployeeListTable;
+				BO.Employee oEmployee = new BO.Employee();
 
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oEmployee = employeeService.GetEmployee(empID);
+
+					if (oEmployee != null)
+					{
+						
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 	}

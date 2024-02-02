@@ -202,8 +202,9 @@ namespace Authentication.Login
 														changePassword.SetLoginID(txt_UserLoginID.Text);
 														changePassword.SetType("Login");
 														changePassword.Show();
+
+														return;
 													}
-													return;
 												}
 												else if(oHardPasswordSetup.PasswordExpDays - ts.Days <= oHardPasswordSetup.PasswordExpNotificationDays)
 												{
@@ -215,6 +216,8 @@ namespace Authentication.Login
 														changePassword.SetLoginID(txt_UserLoginID.Text);
 														changePassword.SetType("Login");
 														changePassword.Show();
+
+														return;
 													}
 												}
 											}
@@ -224,9 +227,7 @@ namespace Authentication.Login
 
 								if (oUser.ChangePasswordNextLogon == 1)
 								{
-									MessageBox.Show("", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-									DialogResult result = MessageBox.Show("This a temporary password, and this password is valid with in 24 hours.\nPlease change your password now", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+									DialogResult result = MessageBox.Show("This is a temporary password, and this password is valid with in 24 hours.\nPlease change your password now", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 									if (result == DialogResult.OK)
 									{
 										ChangePassword changePassword = new ChangePassword(this);
@@ -234,6 +235,7 @@ namespace Authentication.Login
 										changePassword.SetLoginID(txt_UserLoginID.Text);
 										changePassword.SetType("Login");
 										changePassword.Show();
+
 									}
 									return;
 								}

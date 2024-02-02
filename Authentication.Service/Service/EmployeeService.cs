@@ -135,6 +135,22 @@ namespace Authentication.Service
 			}
 			return oEmployees;
 		}
+
+		public List<Employee> GetEmployees(EnumStatus status)
+		{
+			List<Employee> oEmployees = new List<Employee>();
+			try
+			{
+				DataReader dr = new DataReader(EmployeeDA.Get(status));
+				oEmployees = this.CreateObjects<Employee>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oEmployees;
+		}
 		#endregion
 
 		#region Save Employee
@@ -195,9 +211,18 @@ namespace Authentication.Service
 
 
 		#region Delete Employee
-		public void Delete(int ID)
+		public string Delete(int ID)
 		{
-
+			string status = string.Empty;
+			try
+			{
+				status = EmployeeDA.Delete(ID);
+			}
+			catch (Exception ex)
+			{
+				status = "Failed";
+			}
+			return status;
 		}
 		#endregion
 

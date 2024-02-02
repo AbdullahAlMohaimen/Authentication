@@ -307,6 +307,12 @@
     <Compile Include="ChangePassword\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee\ChangeEmployeeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\ChangeEmployeeStatus.Designer.cs">
+      <DependentUpon>ChangeEmployeeStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee\EmployeeEntry.cs">
       <SubType>Form</SubType>
     </Compile>

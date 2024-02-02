@@ -28,11 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListController));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeListController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.PasswordReset = new Guna.UI2.WinForms.Guna2Button();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,7 +43,7 @@
 			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
 			this.txt_EmployeeSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
-			this.PasswordReset = new Guna.UI2.WinForms.Guna2Button();
+			this.txt_EmployeeStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).BeginInit();
 			this.SuspendLayout();
@@ -54,6 +55,7 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.txt_EmployeeStatus);
 			this.guna2Panel1.Controls.Add(this.PasswordReset);
 			this.guna2Panel1.Controls.Add(this.total);
 			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
@@ -68,6 +70,24 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
+			// 
+			// PasswordReset
+			// 
+			this.PasswordReset.BorderRadius = 8;
+			this.PasswordReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.PasswordReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.PasswordReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.PasswordReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.PasswordReset.FillColor = System.Drawing.Color.Crimson;
+			this.PasswordReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PasswordReset.ForeColor = System.Drawing.Color.Wheat;
+			this.PasswordReset.Image = ((System.Drawing.Image)(resources.GetObject("PasswordReset.Image")));
+			this.PasswordReset.Location = new System.Drawing.Point(703, 549);
+			this.PasswordReset.Name = "PasswordReset";
+			this.PasswordReset.Size = new System.Drawing.Size(159, 29);
+			this.PasswordReset.TabIndex = 136;
+			this.PasswordReset.Text = "Password Reset";
+			this.PasswordReset.Click += new System.EventHandler(this.PasswordReset_Click);
 			// 
 			// total
 			// 
@@ -229,23 +249,35 @@
 			this.AddNewUser.Text = "Add New Employee";
 			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
 			// 
-			// PasswordReset
+			// txt_EmployeeStatus
 			// 
-			this.PasswordReset.BorderRadius = 8;
-			this.PasswordReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.PasswordReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.PasswordReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.PasswordReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.PasswordReset.FillColor = System.Drawing.Color.Crimson;
-			this.PasswordReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.PasswordReset.ForeColor = System.Drawing.Color.Wheat;
-			this.PasswordReset.Image = ((System.Drawing.Image)(resources.GetObject("PasswordReset.Image")));
-			this.PasswordReset.Location = new System.Drawing.Point(703, 549);
-			this.PasswordReset.Name = "PasswordReset";
-			this.PasswordReset.Size = new System.Drawing.Size(159, 29);
-			this.PasswordReset.TabIndex = 136;
-			this.PasswordReset.Text = "Password Reset";
-			this.PasswordReset.Click += new System.EventHandler(this.PasswordReset_Click);
+			this.txt_EmployeeStatus.BackColor = System.Drawing.Color.Wheat;
+			this.txt_EmployeeStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.BorderRadius = 8;
+			this.txt_EmployeeStatus.BorderThickness = 0;
+			this.txt_EmployeeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_EmployeeStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_EmployeeStatus.DropDownHeight = 150;
+			this.txt_EmployeeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_EmployeeStatus.DropDownWidth = 120;
+			this.txt_EmployeeStatus.FillColor = System.Drawing.Color.Wheat;
+			this.txt_EmployeeStatus.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_EmployeeStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmployeeStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_EmployeeStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmployeeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_EmployeeStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_EmployeeStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.IntegralHeight = false;
+			this.txt_EmployeeStatus.ItemHeight = 28;
+			this.txt_EmployeeStatus.Location = new System.Drawing.Point(687, 6);
+			this.txt_EmployeeStatus.MaxDropDownItems = 5;
+			this.txt_EmployeeStatus.Name = "txt_EmployeeStatus";
+			this.txt_EmployeeStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_EmployeeStatus.Size = new System.Drawing.Size(241, 34);
+			this.txt_EmployeeStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_EmployeeStatus.TabIndex = 150;
 			// 
 			// EmployeeListController
 			// 
@@ -275,5 +307,6 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
 		private Guna.UI2.WinForms.Guna2Button PasswordReset;
+		private Guna.UI2.WinForms.Guna2ComboBox txt_EmployeeStatus;
 	}
 }
