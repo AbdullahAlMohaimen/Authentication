@@ -173,14 +173,71 @@ namespace Authentication.Home
 		#region Delete Button
 		private void deleteButton_Click_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				DataGridView dataGridView = allEmployeeListTable;
+				BO.Employee oEmployee = new BO.Employee();
 
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oEmployee = employeeService.GetEmployee(empID);
+
+					if (oEmployee != null)
+					{
+						DialogResult result = MessageBox.Show($"Are you sure to delete {oEmployee.Name} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+						if (result == DialogResult.Yes)
+						{
+							string status = employeeService.Delete(oEmployee.ID);
+							if (status != null && status == "Ok")
+							{
+								MessageBox.Show("Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+						}
+						return;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 
 		#region Change Status
 		private void changeStatus_Click(object sender, EventArgs e)
 		{
+			DataGridView dataGridView = allEmployeeListTable;
+			BO.Employee oEmployee = new BO.Employee();
+			try
+			{
+				if (dataGridView.SelectedRows.Count > 0)
+				{
+					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+					oEmployee = employeeService.GetEmployee(empID);
 
+					if (oEmployee != null)
+					{
+						ChangeEmployeeStatus changeStatus = new ChangeEmployeeStatus(this);
+						changeStatus.SetCurrentUser(this.oCurrentUser);
+						changeStatus.EditEmployee(oEmployee);
+						changeStatus._loginID = oCurrentUser.LoginID;
+						changeStatus.EditingDone += EmployeeEntry_EditingDone;
+						changeStatus.Show();
+					}
+				}
+				else
+				{
+					MessageBox.Show("Please select a row for reset password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 
@@ -235,8 +292,26 @@ namespace Authentication.Home
 
 					if (oEmployee != null)
 					{
-						
+						DialogResult result = MessageBox.Show($"Are you sure to reset the password to this Employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+						if (result == DialogResult.Yes)
+						{
+							oEmployee.PasswordResetByAdmin = true;
+							oEmployee.PasswordResetBy = oCurrentUser.ID;
+							oEmployee.PasswordResetDate = DateTime.Now;
+
+							string passwordResetStatus = employeeService.PasswordResetByAdmin(oEmployee);
+
+							if (passwordResetStatus == "Ok")
+							{
+								MessageBox.Show("You have successfully reset a new password to this employee email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							}
+						}
+						return;
 					}
+				}
+				else
+				{
+					MessageBox.Show("Please select a row for reset password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 				}
 			}
 			catch (Exception ex)

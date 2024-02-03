@@ -209,7 +209,6 @@ namespace Authentication.Service
 		}
 		#endregion
 
-
 		#region Delete Employee
 		public string Delete(int ID)
 		{
@@ -304,6 +303,88 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#endregion
+
+		#region Password Reset By Administrator
+		public string PasswordResetByAdmin(Employee oEmployee)
+		{
+			Password password = new Password();
+			string result = null;
+			string randomPassword = null;
+			if (oEmployee != null)
+			{
+				randomPassword = password.GenerateRandomPassword();
+				oEmployee.Salt = password.CreateSalt(128);
+				oEmployee.Password = password.GenerateHash(randomPassword, oEmployee.Salt);
+
+				result = EmployeeDA.UpdatePasswordByAdmin(oEmployee);
+				if (result == "Ok")
+				{
+					SendEmail sendEmail = new SendEmail();
+					sendEmail.To = oEmployee.Email;
+					sendEmail.Subject = "Admin Reset Password (Do not replay this mail)";
+					sendEmail.Body = $@"<html><body><p><b>Dear</b> {oEmployee.Name},</p>
+								 <p><b>An admin can reset your password.</p>
+			                     <p><b>This is system generated password : </b>{randomPassword}</p>
+								 <p><b>This password is valid within 24 hours. Please change your password now.</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+					sendEmail.SendigEmail(sendEmail);
+				}
+				else
+				{
+					result = "failed";
+				}
+			}
+			return result;
+		}
+		#endregion
+
+		#region UpdateEmployeeStatus
+		public string UpdateUserStatus(int empID, EnumStatus status, int modifiedBy, DateTime modifiedDate)
+		{
+			string result = null;
+			BO.Employee oEmployee = new BO.Employee();
+			string statusString = "";
+			try
+			{
+				if (status == EnumStatus.Active)
+					statusString = "ACTIVE";
+				if (status == EnumStatus.Inactive)
+					statusString = "INACTIVE";
+				if (status == EnumStatus.Locked)
+					statusString = "LOCKED";
+				if (status == EnumStatus.PasswordExpired)
+					statusString = "Password Expired";
+
+				if (empID != null)
+				{
+					result = EmployeeDA.UpdateEmployeeStatus(empID, status, modifiedBy, modifiedDate);
+
+					oEmployee = this.GetEmployee(empID);
+					if (result == "Ok")
+					{
+						SendEmail sendEmail = new SendEmail();
+						sendEmail.To = oEmployee.Email;
+						sendEmail.Subject = "User Profile Activation (Do not replay this mail)";
+						sendEmail.Body = $@"<html><body><p><b>Dear</b> {oEmployee.Name},</p>
+								 <p><b>An admin can {statusString} your profile</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+						sendEmail.SendigEmail(sendEmail);
+					}
+					else
+					{
+						result = "failed";
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "Failed";
+			}
+			return result;
+		}
 		#endregion
 	}
 }

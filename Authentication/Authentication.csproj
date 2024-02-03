@@ -435,6 +435,9 @@
     <EmbeddedResource Include="ChangePassword\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\ChangeEmployeeStatus.resx">
+      <DependentUpon>ChangeEmployeeStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeEntry.resx">
       <DependentUpon>EmployeeEntry.cs</DependentUpon>
     </EmbeddedResource>

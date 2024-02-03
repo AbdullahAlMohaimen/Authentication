@@ -327,6 +327,7 @@ namespace Authentication.Service
 			return dr;
 		}
 		#endregion
+
 		#region  SearchEmp
 		internal static IDataReader SearchEmp(string empNo, string empName, string searchText)
 		{
@@ -349,6 +350,59 @@ namespace Authentication.Service
 			}
 			dr = getCommand.ExecuteReader();
 			return dr;
+		}
+		#endregion
+
+		#region Update Password By Admin
+		internal static string UpdatePasswordByAdmin(Employee oEmployee)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Employee set Password = '" + oEmployee.Password + "'," +
+						"Salt = '" + oEmployee.Salt + "', PasswordResetByAdmin = '" + oEmployee.PasswordResetByAdmin + "'," +
+						"PasswordResetBy = '" + oEmployee.PasswordResetBy + "', PasswordResetDate = '" + oEmployee.PasswordResetDate + "' where EmployeeID = '" + oEmployee.ID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
+		}
+		#endregion
+
+		#region UpdateEmployeeStatus
+		internal static string UpdateEmployeeStatus(int empID, EnumStatus status, int modifiedBy, DateTime modifiedDate)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand updateCommand = new SqlCommand("Update Employee set Status = '" + (int)status + "', ModifiedBy = '" + (int)modifiedBy + "'," +
+								" ModifiedDate = '" + modifiedDate + "' " +
+								"where EmployeeID = '" + empID + "'", conn, tc);
+					updateCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					return "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				return "Failed";
+			}
 		}
 		#endregion
 	}
