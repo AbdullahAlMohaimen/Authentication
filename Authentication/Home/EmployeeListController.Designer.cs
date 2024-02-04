@@ -33,6 +33,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_EmployeeStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.PasswordReset = new Guna.UI2.WinForms.Guna2Button();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -43,7 +44,6 @@
 			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
 			this.txt_EmployeeSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.AddNewUser = new Guna.UI2.WinForms.Guna2Button();
-			this.txt_EmployeeStatus = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).BeginInit();
 			this.SuspendLayout();
@@ -70,6 +70,37 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
+			// 
+			// txt_EmployeeStatus
+			// 
+			this.txt_EmployeeStatus.BackColor = System.Drawing.Color.Wheat;
+			this.txt_EmployeeStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.BorderRadius = 8;
+			this.txt_EmployeeStatus.BorderThickness = 0;
+			this.txt_EmployeeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_EmployeeStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_EmployeeStatus.DropDownHeight = 150;
+			this.txt_EmployeeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_EmployeeStatus.DropDownWidth = 120;
+			this.txt_EmployeeStatus.FillColor = System.Drawing.Color.Wheat;
+			this.txt_EmployeeStatus.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_EmployeeStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmployeeStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_EmployeeStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_EmployeeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_EmployeeStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_EmployeeStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_EmployeeStatus.IntegralHeight = false;
+			this.txt_EmployeeStatus.ItemHeight = 28;
+			this.txt_EmployeeStatus.Location = new System.Drawing.Point(687, 6);
+			this.txt_EmployeeStatus.MaxDropDownItems = 5;
+			this.txt_EmployeeStatus.Name = "txt_EmployeeStatus";
+			this.txt_EmployeeStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_EmployeeStatus.Size = new System.Drawing.Size(241, 34);
+			this.txt_EmployeeStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_EmployeeStatus.TabIndex = 150;
+			this.txt_EmployeeStatus.SelectedIndexChanged += new System.EventHandler(this.txt_EmployeeStatus_SelectedIndexChanged);
 			// 
 			// PasswordReset
 			// 
@@ -248,36 +279,6 @@
 			this.AddNewUser.TabIndex = 107;
 			this.AddNewUser.Text = "Add New Employee";
 			this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
-			// 
-			// txt_EmployeeStatus
-			// 
-			this.txt_EmployeeStatus.BackColor = System.Drawing.Color.Wheat;
-			this.txt_EmployeeStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeStatus.BorderRadius = 8;
-			this.txt_EmployeeStatus.BorderThickness = 0;
-			this.txt_EmployeeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txt_EmployeeStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.txt_EmployeeStatus.DropDownHeight = 150;
-			this.txt_EmployeeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.txt_EmployeeStatus.DropDownWidth = 120;
-			this.txt_EmployeeStatus.FillColor = System.Drawing.Color.Wheat;
-			this.txt_EmployeeStatus.FocusedColor = System.Drawing.Color.Empty;
-			this.txt_EmployeeStatus.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_EmployeeStatus.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.txt_EmployeeStatus.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_EmployeeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeStatus.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.txt_EmployeeStatus.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.txt_EmployeeStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeStatus.IntegralHeight = false;
-			this.txt_EmployeeStatus.ItemHeight = 28;
-			this.txt_EmployeeStatus.Location = new System.Drawing.Point(687, 6);
-			this.txt_EmployeeStatus.MaxDropDownItems = 5;
-			this.txt_EmployeeStatus.Name = "txt_EmployeeStatus";
-			this.txt_EmployeeStatus.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.txt_EmployeeStatus.Size = new System.Drawing.Size(241, 34);
-			this.txt_EmployeeStatus.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.txt_EmployeeStatus.TabIndex = 150;
 			// 
 			// EmployeeListController
 			// 

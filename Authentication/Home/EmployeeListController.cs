@@ -244,30 +244,44 @@ namespace Authentication.Home
 		#region Employee Search
 		private void txt_EmployeeSearch_TextChanged(object sender, EventArgs e)
 		{
+			EnumStatus status;
 			try
 			{
-				DataGridView dataGridView = allEmployeeListTable;
-				BO.Employee oEmployee = new BO.Employee();
-
-				if (dataGridView.SelectedRows.Count > 0)
+				if (!string.IsNullOrEmpty(txt_EmployeeSearch.Text))
 				{
-					DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-					int empID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
-					oEmployee = employeeService.GetEmployee(empID);
-
-					if (oEmployee != null)
+					string searchText = txt_EmployeeSearch.Text;
+					if (txt_EmployeeStatus.SelectedItem == "Select Status...............")
 					{
-						DialogResult result = MessageBox.Show($"Are you sure to delete {oEmployee.Name} ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-						if (result == DialogResult.Yes)
-						{
-							string status = employeeService.Delete(oEmployee.ID);
-							if (status != null && status == "Ok")
-							{
-								MessageBox.Show("Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							}
-						}
+						employees = new EmployeeService().SearchEmployee(searchText, EnumStatus.Active);
+					}
+					else if (txt_EmployeeStatus.SelectedItem == "All")
+					{
+						employees = new EmployeeService().SearchEmployee(searchText);
+					}
+					else
+					{
+						status = (EnumStatus)txt_EmployeeStatus.SelectedItem;
+						employees = new EmployeeService().SearchEmployee(searchText, status);
 					}
 				}
+				else
+				{
+					if (txt_EmployeeStatus.SelectedItem == "Select Status...............")
+					{
+						employees = employeeService.GetEmployees(EnumStatus.Active);
+					}
+					else if (txt_EmployeeStatus.SelectedItem == "All")
+					{
+						employees = employeeService.GetEmployees();
+					}
+					else
+					{
+						status = (EnumStatus)txt_EmployeeStatus.SelectedItem;
+						employees = employeeService.GetEmployees(status);
+					}
+				}
+
+				this.ProcessData();
 			}
 			catch (Exception ex)
 			{
@@ -318,6 +332,28 @@ namespace Authentication.Home
 			{
 				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+		#endregion
+
+		#region Employee Status Dropdown
+		private void txt_EmployeeStatus_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			EnumStatus Status;
+			if (txt_EmployeeStatus.SelectedItem == "Select Status...............")
+			{
+				this.loadGrid();
+				return;
+			}
+			else if (txt_EmployeeStatus.SelectedItem == "All")
+			{
+				employees = employeeService.GetEmployees(EnumStatus.Regardless);
+			}
+			else
+			{
+				Status = (EnumStatus)txt_EmployeeStatus.SelectedItem;
+				employees = employeeService.GetEmployees(Status);
+			}
+			this.ProcessData();
 		}
 		#endregion
 	}

@@ -139,41 +139,49 @@ namespace Authentication.Home
 		private void txt_RoleSearch_TextChanged(object sender, EventArgs e)
 		{
 			EnumStatus status;
-			if (!string.IsNullOrEmpty(txt_UserSearch.Text))
+
+			try
 			{
-				string searchText = txt_UserSearch.Text;
-				if (txt_UserStatus.SelectedItem == "Select Status...............")
+				if (!string.IsNullOrEmpty(txt_UserSearch.Text))
 				{
-					users = new UserService().SearchUsers(searchText, EnumStatus.Active);
-				}
-				else if (txt_UserStatus.SelectedItem == "All")
-				{
-					users = new UserService().SearchUsers(searchText);
+					string searchText = txt_UserSearch.Text;
+					if (txt_UserStatus.SelectedItem == "Select Status...............")
+					{
+						users = new UserService().SearchUsers(searchText, EnumStatus.Active);
+					}
+					else if (txt_UserStatus.SelectedItem == "All")
+					{
+						users = new UserService().SearchUsers(searchText);
+					}
+					else
+					{
+						status = (EnumStatus)txt_UserStatus.SelectedItem;
+						users = new UserService().SearchUsers(searchText, status);
+					}
+
 				}
 				else
 				{
-					status = (EnumStatus)txt_UserStatus.SelectedItem;
-					users = new UserService().SearchUsers(searchText, status);
+					if (txt_UserStatus.SelectedItem == "Select Status...............")
+					{
+						users = userService.Get(EnumStatus.Active);
+					}
+					else if (txt_UserStatus.SelectedItem == "All")
+					{
+						users = userService.GetUsers();
+					}
+					else
+					{
+						status = (EnumStatus)txt_UserStatus.SelectedItem;
+						users = userService.Get(status);
+					}
 				}
-				
+				this.ProcessData();
 			}
-			else
+			catch (Exception ex)
 			{
-				if (txt_UserStatus.SelectedItem == "Select Status...............")
-				{
-					users = userService.Get(EnumStatus.Active);
-				}
-				else if (txt_UserStatus.SelectedItem == "All")
-				{
-					users = userService.GetUsers();
-				}
-				else
-				{
-					status = (EnumStatus)txt_UserStatus.SelectedItem;
-					users = userService.Get(status);
-				}
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			this.ProcessData();
 		}
 		#endregion
 

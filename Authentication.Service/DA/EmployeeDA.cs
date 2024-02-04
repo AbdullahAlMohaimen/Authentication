@@ -270,7 +270,14 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from Employee where status = '"+(int)status + "'", conn);
+				if (status == EnumStatus.Regardless)
+				{
+					getCommand = new SqlCommand("Select * from Employee", conn);
+				}
+				else
+				{
+					getCommand = new SqlCommand("Select * from Employee where status = '" + (int)status + "'", conn);
+				}
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
@@ -303,6 +310,29 @@ namespace Authentication.Service
 			}
 			return dr;
 		}
+
+		internal static IDataReader SearchEmployee(string searchText, EnumStatus status)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select * from Employee where status = '"+(int)status+"' and (EmployeeNo like '" + searchText + "%' or " +
+					"Name like '" + searchText + "%' or Department like '" + searchText + "%' or Designation like '" + searchText + "%' " +
+					"or Gender like '" + searchText + "%' or Religion like '" + searchText + "%')", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+
 		#endregion
 
 		#region Search Employee In TextBox
