@@ -135,6 +135,7 @@ namespace Authentication.Employee
 				else
 				{
 					MessageBox.Show(invalidMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
 				}
 				if (employee.IsNew == true)
 				{
