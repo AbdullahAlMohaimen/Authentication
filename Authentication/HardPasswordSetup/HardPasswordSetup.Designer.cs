@@ -81,7 +81,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(971, 36);
+			this.panel1.Size = new System.Drawing.Size(884, 30);
 			this.panel1.TabIndex = 12;
 			// 
 			// label35
@@ -89,7 +89,7 @@
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
+			this.label35.Location = new System.Drawing.Point(8, 0);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(342, 25);
 			this.label35.TabIndex = 106;
@@ -103,7 +103,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(896, 6);
+			this.Minimize.Location = new System.Drawing.Point(818, 3);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -118,7 +118,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(935, 6);
+			this.Exit.Location = new System.Drawing.Point(851, 3);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -162,14 +162,12 @@
 			this.guna2Panel1.Controls.Add(this.label4);
 			this.guna2Panel1.Controls.Add(this.label3);
 			this.guna2Panel1.Controls.Add(this.label2);
-			this.guna2Panel1.Controls.Add(this.Cancel);
-			this.guna2Panel1.Controls.Add(this.SaveHardPasswordPolicy);
 			this.guna2Panel1.Controls.Add(this.label1);
 			this.guna2Panel1.Controls.Add(this.txt_PasswordPolicyNo);
 			this.guna2Panel1.Controls.Add(this.IsContainSpecialCharacter);
-			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
+			this.guna2Panel1.Location = new System.Drawing.Point(9, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(945, 280);
+			this.guna2Panel1.Size = new System.Drawing.Size(863, 264);
 			this.guna2Panel1.TabIndex = 107;
 			// 
 			// label17
@@ -177,7 +175,7 @@
 			this.label17.AutoSize = true;
 			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label17.Location = new System.Drawing.Point(642, 18);
+			this.label17.Location = new System.Drawing.Point(592, 15);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(16, 24);
 			this.label17.TabIndex = 135;
@@ -188,7 +186,7 @@
 			this.label18.AutoSize = true;
 			this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label18.Location = new System.Drawing.Point(642, 52);
+			this.label18.Location = new System.Drawing.Point(592, 49);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(16, 24);
 			this.label18.TabIndex = 134;
@@ -199,7 +197,7 @@
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label15.Location = new System.Drawing.Point(642, 86);
+			this.label15.Location = new System.Drawing.Point(592, 83);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(16, 24);
 			this.label15.TabIndex = 133;
@@ -210,7 +208,7 @@
 			this.label16.AutoSize = true;
 			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label16.Location = new System.Drawing.Point(642, 120);
+			this.label16.Location = new System.Drawing.Point(592, 117);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(16, 24);
 			this.label16.TabIndex = 132;
@@ -221,7 +219,7 @@
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label12.Location = new System.Drawing.Point(642, 154);
+			this.label12.Location = new System.Drawing.Point(592, 151);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(16, 24);
 			this.label12.TabIndex = 131;
@@ -232,7 +230,7 @@
 			this.label25.AutoSize = true;
 			this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label25.Location = new System.Drawing.Point(642, 189);
+			this.label25.Location = new System.Drawing.Point(592, 186);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(16, 24);
 			this.label25.TabIndex = 130;
@@ -245,7 +243,7 @@
 			this.IsSamePassword.CheckedState.BorderRadius = 0;
 			this.IsSamePassword.CheckedState.BorderThickness = 0;
 			this.IsSamePassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsSamePassword.Location = new System.Drawing.Point(610, 195);
+			this.IsSamePassword.Location = new System.Drawing.Point(569, 192);
 			this.IsSamePassword.Name = "IsSamePassword";
 			this.IsSamePassword.Size = new System.Drawing.Size(15, 14);
 			this.IsSamePassword.TabIndex = 129;
@@ -261,7 +259,7 @@
 			this.IsContainNumber.CheckedState.BorderRadius = 0;
 			this.IsContainNumber.CheckedState.BorderThickness = 0;
 			this.IsContainNumber.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsContainNumber.Location = new System.Drawing.Point(610, 161);
+			this.IsContainNumber.Location = new System.Drawing.Point(569, 158);
 			this.IsContainNumber.Name = "IsContainNumber";
 			this.IsContainNumber.Size = new System.Drawing.Size(15, 14);
 			this.IsContainNumber.TabIndex = 128;
@@ -277,7 +275,7 @@
 			this.IsContainLatter.CheckedState.BorderRadius = 0;
 			this.IsContainLatter.CheckedState.BorderThickness = 0;
 			this.IsContainLatter.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsContainLatter.Location = new System.Drawing.Point(610, 126);
+			this.IsContainLatter.Location = new System.Drawing.Point(569, 123);
 			this.IsContainLatter.Name = "IsContainLatter";
 			this.IsContainLatter.Size = new System.Drawing.Size(15, 14);
 			this.IsContainLatter.TabIndex = 127;
@@ -293,7 +291,7 @@
 			this.IsContainLowerCase.CheckedState.BorderRadius = 0;
 			this.IsContainLowerCase.CheckedState.BorderThickness = 0;
 			this.IsContainLowerCase.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsContainLowerCase.Location = new System.Drawing.Point(610, 93);
+			this.IsContainLowerCase.Location = new System.Drawing.Point(569, 90);
 			this.IsContainLowerCase.Name = "IsContainLowerCase";
 			this.IsContainLowerCase.Size = new System.Drawing.Size(15, 14);
 			this.IsContainLowerCase.TabIndex = 126;
@@ -309,7 +307,7 @@
 			this.IsConatinUpperCase.CheckedState.BorderRadius = 0;
 			this.IsConatinUpperCase.CheckedState.BorderThickness = 0;
 			this.IsConatinUpperCase.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsConatinUpperCase.Location = new System.Drawing.Point(610, 59);
+			this.IsConatinUpperCase.Location = new System.Drawing.Point(569, 56);
 			this.IsConatinUpperCase.Name = "IsConatinUpperCase";
 			this.IsConatinUpperCase.Size = new System.Drawing.Size(15, 14);
 			this.IsConatinUpperCase.TabIndex = 125;
@@ -321,9 +319,9 @@
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel2.Location = new System.Drawing.Point(581, 19);
+			this.panel2.Location = new System.Drawing.Point(551, 11);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(3, 240);
+			this.panel2.Size = new System.Drawing.Size(3, 242);
 			this.panel2.TabIndex = 124;
 			// 
 			// txt_PasswordExpDays
@@ -341,7 +339,7 @@
 			this.txt_PasswordExpDays.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PasswordExpDays.ForeColor = System.Drawing.Color.Black;
 			this.txt_PasswordExpDays.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordExpDays.Location = new System.Drawing.Point(303, 165);
+			this.txt_PasswordExpDays.Location = new System.Drawing.Point(285, 154);
 			this.txt_PasswordExpDays.Name = "txt_PasswordExpDays";
 			this.txt_PasswordExpDays.PasswordChar = '\0';
 			this.txt_PasswordExpDays.PlaceholderText = "";
@@ -364,7 +362,7 @@
 			this.txt_PassExpNotificationDays.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PassExpNotificationDays.ForeColor = System.Drawing.Color.Black;
 			this.txt_PassExpNotificationDays.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PassExpNotificationDays.Location = new System.Drawing.Point(303, 104);
+			this.txt_PassExpNotificationDays.Location = new System.Drawing.Point(285, 94);
 			this.txt_PassExpNotificationDays.Name = "txt_PassExpNotificationDays";
 			this.txt_PassExpNotificationDays.PasswordChar = '\0';
 			this.txt_PassExpNotificationDays.PlaceholderText = "";
@@ -387,7 +385,7 @@
 			this.txt_PasswordMinAge.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PasswordMinAge.ForeColor = System.Drawing.Color.Black;
 			this.txt_PasswordMinAge.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordMinAge.Location = new System.Drawing.Point(303, 40);
+			this.txt_PasswordMinAge.Location = new System.Drawing.Point(285, 31);
 			this.txt_PasswordMinAge.Name = "txt_PasswordMinAge";
 			this.txt_PasswordMinAge.PasswordChar = '\0';
 			this.txt_PasswordMinAge.PlaceholderText = "";
@@ -410,7 +408,7 @@
 			this.txt_SuperUserPassMinLength.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_SuperUserPassMinLength.ForeColor = System.Drawing.Color.Black;
 			this.txt_SuperUserPassMinLength.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_SuperUserPassMinLength.Location = new System.Drawing.Point(31, 227);
+			this.txt_SuperUserPassMinLength.Location = new System.Drawing.Point(15, 214);
 			this.txt_SuperUserPassMinLength.Name = "txt_SuperUserPassMinLength";
 			this.txt_SuperUserPassMinLength.PasswordChar = '\0';
 			this.txt_SuperUserPassMinLength.PlaceholderText = "";
@@ -433,7 +431,7 @@
 			this.txt_PasswordMinLength.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PasswordMinLength.ForeColor = System.Drawing.Color.Black;
 			this.txt_PasswordMinLength.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordMinLength.Location = new System.Drawing.Point(27, 165);
+			this.txt_PasswordMinLength.Location = new System.Drawing.Point(15, 154);
 			this.txt_PasswordMinLength.Name = "txt_PasswordMinLength";
 			this.txt_PasswordMinLength.PasswordChar = '\0';
 			this.txt_PasswordMinLength.PlaceholderText = "";
@@ -456,7 +454,7 @@
 			this.txt_PasswordMaxLength.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PasswordMaxLength.ForeColor = System.Drawing.Color.Black;
 			this.txt_PasswordMaxLength.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordMaxLength.Location = new System.Drawing.Point(27, 104);
+			this.txt_PasswordMaxLength.Location = new System.Drawing.Point(15, 94);
 			this.txt_PasswordMaxLength.Name = "txt_PasswordMaxLength";
 			this.txt_PasswordMaxLength.PasswordChar = '\0';
 			this.txt_PasswordMaxLength.PlaceholderText = "";
@@ -469,7 +467,7 @@
 			this.label14.AutoSize = true;
 			this.label14.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label14.Location = new System.Drawing.Point(299, 141);
+			this.label14.Location = new System.Drawing.Point(281, 130);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(190, 21);
 			this.label14.TabIndex = 117;
@@ -480,7 +478,7 @@
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label13.Location = new System.Drawing.Point(299, 78);
+			this.label13.Location = new System.Drawing.Point(281, 68);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(262, 21);
 			this.label13.TabIndex = 116;
@@ -491,7 +489,7 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(673, 191);
+			this.label11.Location = new System.Drawing.Point(612, 188);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(136, 21);
 			this.label11.TabIndex = 115;
@@ -502,7 +500,7 @@
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label10.Location = new System.Drawing.Point(673, 123);
+			this.label10.Location = new System.Drawing.Point(612, 120);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(145, 21);
 			this.label10.TabIndex = 114;
@@ -513,7 +511,7 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label9.Location = new System.Drawing.Point(673, 157);
+			this.label9.Location = new System.Drawing.Point(612, 154);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(145, 21);
 			this.label9.TabIndex = 113;
@@ -524,7 +522,7 @@
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label8.Location = new System.Drawing.Point(673, 21);
+			this.label8.Location = new System.Drawing.Point(612, 18);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(244, 21);
 			this.label8.TabIndex = 112;
@@ -535,7 +533,7 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label7.Location = new System.Drawing.Point(673, 89);
+			this.label7.Location = new System.Drawing.Point(612, 86);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(181, 21);
 			this.label7.TabIndex = 111;
@@ -546,7 +544,7 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label6.Location = new System.Drawing.Point(673, 55);
+			this.label6.Location = new System.Drawing.Point(612, 52);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(181, 21);
 			this.label6.TabIndex = 110;
@@ -557,7 +555,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label5.Location = new System.Drawing.Point(299, 16);
+			this.label5.Location = new System.Drawing.Point(281, 7);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(190, 21);
 			this.label5.TabIndex = 109;
@@ -568,7 +566,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(27, 202);
+			this.label4.Location = new System.Drawing.Point(15, 190);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(253, 21);
 			this.label4.TabIndex = 108;
@@ -579,7 +577,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(23, 141);
+			this.label3.Location = new System.Drawing.Point(11, 130);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(136, 21);
 			this.label3.TabIndex = 107;
@@ -590,7 +588,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label2.Location = new System.Drawing.Point(23, 78);
+			this.label2.Location = new System.Drawing.Point(11, 68);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(136, 21);
 			this.label2.TabIndex = 106;
@@ -607,9 +605,9 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(665, 230);
+			this.Cancel.Location = new System.Drawing.Point(675, 319);
 			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(121, 31);
+			this.Cancel.Size = new System.Drawing.Size(96, 29);
 			this.Cancel.TabIndex = 105;
 			this.Cancel.Text = " Cancel";
 			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -625,9 +623,9 @@
 			this.SaveHardPasswordPolicy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SaveHardPasswordPolicy.ForeColor = System.Drawing.Color.Wheat;
 			this.SaveHardPasswordPolicy.Image = ((System.Drawing.Image)(resources.GetObject("SaveHardPasswordPolicy.Image")));
-			this.SaveHardPasswordPolicy.Location = new System.Drawing.Point(802, 230);
+			this.SaveHardPasswordPolicy.Location = new System.Drawing.Point(777, 319);
 			this.SaveHardPasswordPolicy.Name = "SaveHardPasswordPolicy";
-			this.SaveHardPasswordPolicy.Size = new System.Drawing.Size(115, 31);
+			this.SaveHardPasswordPolicy.Size = new System.Drawing.Size(94, 29);
 			this.SaveHardPasswordPolicy.TabIndex = 104;
 			this.SaveHardPasswordPolicy.Text = "  Save";
 			this.SaveHardPasswordPolicy.Click += new System.EventHandler(this.SaveHardPasswordPolicy_Click);
@@ -637,7 +635,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label1.Location = new System.Drawing.Point(23, 16);
+			this.label1.Location = new System.Drawing.Point(11, 7);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(91, 21);
 			this.label1.TabIndex = 54;
@@ -658,7 +656,7 @@
 			this.txt_PasswordPolicyNo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_PasswordPolicyNo.ForeColor = System.Drawing.Color.Black;
 			this.txt_PasswordPolicyNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordPolicyNo.Location = new System.Drawing.Point(27, 40);
+			this.txt_PasswordPolicyNo.Location = new System.Drawing.Point(15, 31);
 			this.txt_PasswordPolicyNo.Name = "txt_PasswordPolicyNo";
 			this.txt_PasswordPolicyNo.PasswordChar = '\0';
 			this.txt_PasswordPolicyNo.PlaceholderText = "";
@@ -673,7 +671,7 @@
 			this.IsContainSpecialCharacter.CheckedState.BorderRadius = 0;
 			this.IsContainSpecialCharacter.CheckedState.BorderThickness = 0;
 			this.IsContainSpecialCharacter.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsContainSpecialCharacter.Location = new System.Drawing.Point(610, 25);
+			this.IsContainSpecialCharacter.Location = new System.Drawing.Point(569, 22);
 			this.IsContainSpecialCharacter.Name = "IsContainSpecialCharacter";
 			this.IsContainSpecialCharacter.Size = new System.Drawing.Size(15, 14);
 			this.IsContainSpecialCharacter.TabIndex = 89;
@@ -688,10 +686,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(969, 345);
+			this.ClientSize = new System.Drawing.Size(881, 353);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.SaveHardPasswordPolicy);
+			this.Controls.Add(this.Cancel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "HardPasswordSetup";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

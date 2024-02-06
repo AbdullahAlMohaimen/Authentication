@@ -40,8 +40,6 @@
 			this.SearchEmployee = new Guna.UI2.WinForms.Guna2Button();
 			this.txt_UserName = new Guna.UI2.WinForms.Guna2TextBox();
 			this.txt_UserMaster = new Guna.UI2.WinForms.Guna2TextBox();
-			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
-			this.SaveUser = new Guna.UI2.WinForms.Guna2Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label33 = new System.Windows.Forms.Label();
@@ -61,6 +59,8 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.txt_UserEmail = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label9 = new System.Windows.Forms.Label();
+			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
+			this.SaveUser = new Guna.UI2.WinForms.Guna2Button();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -73,7 +73,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(971, 36);
+			this.panel1.Size = new System.Drawing.Size(964, 29);
 			this.panel1.TabIndex = 12;
 			// 
 			// txtHeader
@@ -81,7 +81,7 @@
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
-			this.txtHeader.Location = new System.Drawing.Point(8, 2);
+			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(166, 25);
 			this.txtHeader.TabIndex = 106;
@@ -95,7 +95,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(896, 6);
+			this.Minimize.Location = new System.Drawing.Point(896, 4);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -110,9 +110,9 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(935, 6);
+			this.Exit.Location = new System.Drawing.Point(931, 4);
 			this.Exit.Name = "Exit";
-			this.Exit.Size = new System.Drawing.Size(24, 24);
+			this.Exit.Size = new System.Drawing.Size(25, 24);
 			this.Exit.TabIndex = 11;
 			this.Exit.UseVisualStyleBackColor = false;
 			this.Exit.Click += new System.EventHandler(this.Exit_Click);
@@ -149,7 +149,7 @@
 			this.guna2Panel1.Controls.Add(this.label14);
 			this.guna2Panel1.Controls.Add(this.txt_UserEmail);
 			this.guna2Panel1.Controls.Add(this.label9);
-			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
+			this.guna2Panel1.Location = new System.Drawing.Point(8, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(945, 153);
 			this.guna2Panel1.TabIndex = 107;
@@ -255,42 +255,6 @@
 			this.txt_UserMaster.Size = new System.Drawing.Size(286, 34);
 			this.txt_UserMaster.TabIndex = 106;
 			this.txt_UserMaster.TextChanged += new System.EventHandler(this.txt_UserMaster_TextChanged);
-			// 
-			// Cancel
-			// 
-			this.Cancel.BorderRadius = 8;
-			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Cancel.FillColor = System.Drawing.Color.Brown;
-			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
-			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(738, 213);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(100, 29);
-			this.Cancel.TabIndex = 105;
-			this.Cancel.Text = " Cancel";
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-			// 
-			// SaveUser
-			// 
-			this.SaveUser.BorderRadius = 8;
-			this.SaveUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.SaveUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.SaveUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.SaveUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.SaveUser.FillColor = System.Drawing.Color.SeaGreen;
-			this.SaveUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SaveUser.ForeColor = System.Drawing.Color.Wheat;
-			this.SaveUser.Image = ((System.Drawing.Image)(resources.GetObject("SaveUser.Image")));
-			this.SaveUser.Location = new System.Drawing.Point(844, 213);
-			this.SaveUser.Name = "SaveUser";
-			this.SaveUser.Size = new System.Drawing.Size(100, 29);
-			this.SaveUser.TabIndex = 104;
-			this.SaveUser.Text = "  Save";
-			this.SaveUser.Click += new System.EventHandler(this.SaveUser_Click);
 			// 
 			// label2
 			// 
@@ -550,13 +514,49 @@
 			this.label9.TabIndex = 77;
 			this.label9.Text = "*";
 			// 
+			// Cancel
+			// 
+			this.Cancel.BorderRadius = 8;
+			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Cancel.FillColor = System.Drawing.Color.Brown;
+			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
+			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+			this.Cancel.Location = new System.Drawing.Point(756, 208);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(100, 29);
+			this.Cancel.TabIndex = 105;
+			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+			// 
+			// SaveUser
+			// 
+			this.SaveUser.BorderRadius = 8;
+			this.SaveUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.SaveUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.SaveUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.SaveUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.SaveUser.FillColor = System.Drawing.Color.SeaGreen;
+			this.SaveUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SaveUser.ForeColor = System.Drawing.Color.Wheat;
+			this.SaveUser.Image = ((System.Drawing.Image)(resources.GetObject("SaveUser.Image")));
+			this.SaveUser.Location = new System.Drawing.Point(862, 208);
+			this.SaveUser.Name = "SaveUser";
+			this.SaveUser.Size = new System.Drawing.Size(87, 29);
+			this.SaveUser.TabIndex = 104;
+			this.SaveUser.Text = "  Save";
+			this.SaveUser.Click += new System.EventHandler(this.SaveUser_Click);
+			// 
 			// UserEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(969, 249);
+			this.ClientSize = new System.Drawing.Size(961, 242);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);

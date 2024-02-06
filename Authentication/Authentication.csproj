@@ -355,6 +355,12 @@
     <Compile Include="Home\EmployeeListController.Designer.cs">
       <DependentUpon>EmployeeListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\HardPasswordController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\HardPasswordController.Designer.cs">
+      <DependentUpon>HardPasswordController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home\EmployeeListController.resx">
       <DependentUpon>EmployeeListController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\HardPasswordController.resx">
+      <DependentUpon>HardPasswordController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

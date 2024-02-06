@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchEmployee));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1000, 36);
+			this.panel1.Size = new System.Drawing.Size(993, 29);
 			this.panel1.TabIndex = 13;
 			// 
 			// label35
@@ -92,7 +92,7 @@
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
+			this.label35.Location = new System.Drawing.Point(8, 0);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(177, 25);
 			this.label35.TabIndex = 106;
@@ -106,7 +106,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(930, 6);
+			this.Minimize.Location = new System.Drawing.Point(921, 4);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -121,7 +121,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(968, 6);
+			this.Exit.Location = new System.Drawing.Point(959, 4);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -142,7 +142,7 @@
 			this.guna2Panel1.Controls.Add(this.label1);
 			this.guna2Panel1.Controls.Add(this.txt_ID);
 			this.guna2Panel1.Controls.Add(this.label27);
-			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
+			this.guna2Panel1.Location = new System.Drawing.Point(8, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(974, 54);
 			this.guna2Panel1.TabIndex = 108;
@@ -277,7 +277,7 @@
 			this.guna2Panel2.Controls.Add(this.label12);
 			this.guna2Panel2.Controls.Add(this.label13);
 			this.guna2Panel2.Controls.Add(this.label15);
-			this.guna2Panel2.Location = new System.Drawing.Point(12, 114);
+			this.guna2Panel2.Location = new System.Drawing.Point(8, 110);
 			this.guna2Panel2.Name = "guna2Panel2";
 			this.guna2Panel2.Size = new System.Drawing.Size(974, 73);
 			this.guna2Panel2.TabIndex = 111;
@@ -453,7 +453,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(763, 407);
+			this.Cancel.Location = new System.Drawing.Point(782, 402);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(101, 29);
 			this.Cancel.TabIndex = 109;
@@ -471,9 +471,9 @@
 			this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Select.ForeColor = System.Drawing.Color.Wheat;
 			this.Select.Image = ((System.Drawing.Image)(resources.GetObject("Select.Image")));
-			this.Select.Location = new System.Drawing.Point(875, 407);
+			this.Select.Location = new System.Drawing.Point(889, 402);
 			this.Select.Name = "Select";
-			this.Select.Size = new System.Drawing.Size(101, 29);
+			this.Select.Size = new System.Drawing.Size(87, 29);
 			this.Select.TabIndex = 104;
 			this.Select.Text = "Select";
 			this.Select.Click += new System.EventHandler(this.Select_Click);
@@ -488,7 +488,7 @@
 			this.guna2Panel3.Controls.Add(this.txt_UserSearch);
 			this.guna2Panel3.Controls.Add(this.allEmployeeListTable);
 			this.guna2Panel3.Controls.Add(this.btn_findAllEmployee);
-			this.guna2Panel3.Location = new System.Drawing.Point(12, 194);
+			this.guna2Panel3.Location = new System.Drawing.Point(8, 190);
 			this.guna2Panel3.Name = "guna2Panel3";
 			this.guna2Panel3.Size = new System.Drawing.Size(974, 208);
 			this.guna2Panel3.TabIndex = 112;
@@ -520,29 +520,29 @@
 			// 
 			// allEmployeeListTable
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
-			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allEmployeeListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
 			this.allEmployeeListTable.Location = new System.Drawing.Point(7, 42);
 			this.allEmployeeListTable.Name = "allEmployeeListTable";
@@ -574,7 +574,7 @@
 			this.total.BackColor = System.Drawing.Color.Transparent;
 			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.total.ForeColor = System.Drawing.Color.DarkRed;
-			this.total.Location = new System.Drawing.Point(80, 414);
+			this.total.Location = new System.Drawing.Point(80, 409);
 			this.total.Name = "total";
 			this.total.Size = new System.Drawing.Size(11, 18);
 			this.total.TabIndex = 131;
@@ -584,7 +584,7 @@
 			// 
 			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
 			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2HtmlLabel2.Location = new System.Drawing.Point(65, 413);
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(65, 408);
 			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
 			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
 			this.guna2HtmlLabel2.TabIndex = 130;
@@ -594,7 +594,7 @@
 			// 
 			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2HtmlLabel1.Location = new System.Drawing.Point(16, 414);
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(16, 409);
 			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
 			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
 			this.guna2HtmlLabel1.TabIndex = 129;
@@ -606,7 +606,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(998, 442);
+			this.ClientSize = new System.Drawing.Size(990, 437);
 			this.ControlBox = false;
 			this.Controls.Add(this.total);
 			this.Controls.Add(this.guna2HtmlLabel2);

@@ -97,7 +97,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(862, 6);
+			this.Minimize.Location = new System.Drawing.Point(863, 3);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -112,7 +112,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(901, 6);
+			this.Exit.Location = new System.Drawing.Point(902, 3);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -127,7 +127,7 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(939, 36);
+			this.panel1.Size = new System.Drawing.Size(934, 30);
 			this.panel1.TabIndex = 11;
 			// 
 			// txtHeader
@@ -135,7 +135,7 @@
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
-			this.txtHeader.Location = new System.Drawing.Point(8, 2);
+			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(210, 25);
 			this.txtHeader.TabIndex = 106;
@@ -347,7 +347,7 @@
 			this.SaveEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.SaveEmployee.ForeColor = System.Drawing.Color.Wheat;
 			this.SaveEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SaveEmployee.Image")));
-			this.SaveEmployee.Location = new System.Drawing.Point(823, 419);
+			this.SaveEmployee.Location = new System.Drawing.Point(823, 387);
 			this.SaveEmployee.Name = "SaveEmployee";
 			this.SaveEmployee.Size = new System.Drawing.Size(100, 29);
 			this.SaveEmployee.TabIndex = 104;
@@ -365,7 +365,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(717, 419);
+			this.Cancel.Location = new System.Drawing.Point(717, 387);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 105;
@@ -428,9 +428,9 @@
 			this.guna2Panel1.Controls.Add(this.label19);
 			this.guna2Panel1.Controls.Add(this.label21);
 			this.guna2Panel1.Controls.Add(this.label20);
-			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
+			this.guna2Panel1.Location = new System.Drawing.Point(9, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(913, 359);
+			this.guna2Panel1.Size = new System.Drawing.Size(913, 331);
 			this.guna2Panel1.TabIndex = 106;
 			// 
 			// label35
@@ -476,7 +476,7 @@
 			this.txt_EmpAddress.PasswordChar = '\0';
 			this.txt_EmpAddress.PlaceholderText = "";
 			this.txt_EmpAddress.SelectedText = "";
-			this.txt_EmpAddress.Size = new System.Drawing.Size(721, 90);
+			this.txt_EmpAddress.Size = new System.Drawing.Size(721, 64);
 			this.txt_EmpAddress.TabIndex = 170;
 			// 
 			// label11
@@ -1012,7 +1012,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(936, 455);
+			this.ClientSize = new System.Drawing.Size(930, 422);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);

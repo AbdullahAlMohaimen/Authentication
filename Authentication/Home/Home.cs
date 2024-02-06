@@ -115,6 +115,11 @@ namespace Authentication.Home
 
 			menuTreeView.Nodes.Add("Administration");
 			TreeNode administrationNode = menuTreeView.Nodes[2];
+
+			TreeNode hardPasswordNode = administrationNode.Nodes["Hard Password"];
+			hardPasswordNode = administrationNode.Nodes.Add("Hard Password");
+			hardPasswordNode.Nodes.Add("Hard Password");
+
 			TreeNode roleNode = administrationNode.Nodes["Role"];
 			roleNode = administrationNode.Nodes.Add("Role");
 			roleNode.Nodes.Add("Role List");

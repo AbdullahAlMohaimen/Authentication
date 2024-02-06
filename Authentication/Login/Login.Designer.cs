@@ -71,14 +71,14 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(354, 36);
+			this.panel1.Size = new System.Drawing.Size(354, 29);
 			this.panel1.TabIndex = 13;
 			// 
 			// panel3
 			// 
 			this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
 			this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel3.Location = new System.Drawing.Point(175, 6);
+			this.panel3.Location = new System.Drawing.Point(175, 3);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(28, 25);
 			this.panel3.TabIndex = 15;
@@ -88,7 +88,7 @@
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
+			this.label35.Location = new System.Drawing.Point(8, -1);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(166, 25);
 			this.label35.TabIndex = 106;
@@ -102,7 +102,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(285, 6);
+			this.Minimize.Location = new System.Drawing.Point(285, 3);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -117,7 +117,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(320, 6);
+			this.Exit.Location = new System.Drawing.Point(320, 3);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;

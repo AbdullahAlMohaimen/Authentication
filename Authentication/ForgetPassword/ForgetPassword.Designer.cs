@@ -54,14 +54,14 @@
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(519, 36);
+			this.panel1.Size = new System.Drawing.Size(492, 30);
 			this.panel1.TabIndex = 14;
 			// 
 			// panel3
 			// 
 			this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
 			this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel3.Location = new System.Drawing.Point(185, 6);
+			this.panel3.Location = new System.Drawing.Point(185, 3);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(28, 25);
 			this.panel3.TabIndex = 15;
@@ -71,7 +71,7 @@
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 2);
+			this.label35.Location = new System.Drawing.Point(8, -1);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(177, 25);
 			this.label35.TabIndex = 106;
@@ -85,7 +85,7 @@
 			this.Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Minimize.FlatAppearance.BorderSize = 0;
 			this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Minimize.Location = new System.Drawing.Point(450, 6);
+			this.Minimize.Location = new System.Drawing.Point(424, 3);
 			this.Minimize.Name = "Minimize";
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
@@ -100,7 +100,7 @@
 			this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Exit.FlatAppearance.BorderSize = 0;
 			this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Exit.Location = new System.Drawing.Point(485, 6);
+			this.Exit.Location = new System.Drawing.Point(459, 3);
 			this.Exit.Name = "Exit";
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
@@ -115,14 +115,12 @@
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
 			this.guna2Panel1.Controls.Add(this.label3);
-			this.guna2Panel1.Controls.Add(this.Cancel);
-			this.guna2Panel1.Controls.Add(this.Submit);
 			this.guna2Panel1.Controls.Add(this.label1);
 			this.guna2Panel1.Controls.Add(this.txt_LoginID);
 			this.guna2Panel1.Controls.Add(this.label27);
-			this.guna2Panel1.Location = new System.Drawing.Point(12, 54);
+			this.guna2Panel1.Location = new System.Drawing.Point(8, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.Size = new System.Drawing.Size(494, 160);
+			this.guna2Panel1.Size = new System.Drawing.Size(473, 118);
 			this.guna2Panel1.TabIndex = 108;
 			// 
 			// label3
@@ -130,12 +128,12 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Maroon;
-			this.label3.Location = new System.Drawing.Point(45, 65);
+			this.label3.Location = new System.Drawing.Point(38, 65);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(404, 32);
 			this.label3.TabIndex = 106;
 			this.label3.Text = "                     If you click on submit button \r\na temporary password will be" +
-	" send in your email address.";
+    " send in your email address.";
 			// 
 			// Cancel
 			// 
@@ -148,9 +146,9 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(203, 114);
+			this.Cancel.Location = new System.Drawing.Point(271, 173);
 			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(121, 31);
+			this.Cancel.Size = new System.Drawing.Size(103, 29);
 			this.Cancel.TabIndex = 105;
 			this.Cancel.Text = " Cancel";
 			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -166,9 +164,9 @@
 			this.Submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Submit.ForeColor = System.Drawing.Color.Wheat;
 			this.Submit.Image = ((System.Drawing.Image)(resources.GetObject("Submit.Image")));
-			this.Submit.Location = new System.Drawing.Point(350, 114);
+			this.Submit.Location = new System.Drawing.Point(380, 173);
 			this.Submit.Name = "Submit";
-			this.Submit.Size = new System.Drawing.Size(115, 31);
+			this.Submit.Size = new System.Drawing.Size(99, 29);
 			this.Submit.TabIndex = 104;
 			this.Submit.Text = " Submit";
 			this.Submit.Click += new System.EventHandler(this.Submit_Click);
@@ -178,7 +176,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label1.Location = new System.Drawing.Point(27, 21);
+			this.label1.Location = new System.Drawing.Point(15, 19);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(82, 21);
 			this.label1.TabIndex = 54;
@@ -199,7 +197,7 @@
 			this.txt_LoginID.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_LoginID.ForeColor = System.Drawing.Color.Black;
 			this.txt_LoginID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_LoginID.Location = new System.Drawing.Point(137, 17);
+			this.txt_LoginID.Location = new System.Drawing.Point(125, 15);
 			this.txt_LoginID.Name = "txt_LoginID";
 			this.txt_LoginID.PasswordChar = '\0';
 			this.txt_LoginID.PlaceholderText = "";
@@ -212,7 +210,7 @@
 			this.label27.AutoSize = true;
 			this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label27.Location = new System.Drawing.Point(115, 21);
+			this.label27.Location = new System.Drawing.Point(103, 19);
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(16, 24);
 			this.label27.TabIndex = 96;
@@ -223,10 +221,12 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
-			this.ClientSize = new System.Drawing.Size(517, 225);
+			this.ClientSize = new System.Drawing.Size(489, 207);
 			this.ControlBox = false;
 			this.Controls.Add(this.guna2Panel1);
+			this.Controls.Add(this.Cancel);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.Submit);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "ForgetPassword";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
