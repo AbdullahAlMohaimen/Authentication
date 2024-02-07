@@ -1,30 +1,54 @@
-﻿using Authentication.Service;
+﻿using Authentication.BO;
+using Authentication.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Authentication.HardPasswordSetup
 {
 	public partial class HardPasswordSetup : Form
 	{
+		#region property / Variable
+		public event EventHandler EditingDone;
 		HardPasswordSetupService service = new HardPasswordSetupService();
+		private UserControl callingForm;
+		BO.CurrentUser oCurrentUser = new CurrentUser();
+		public string _loginID;
+		public string LoginID { get { return _loginID; } set { _loginID = value; } }
+		#endregion
 
 		#region Constructor
-		public HardPasswordSetup()
+		public HardPasswordSetup(UserControl caller)
 		{
 			InitializeComponent();
+			callingForm = caller;
 			GeneratePolicyNo();
 		}
 		#endregion
 
-		#region Role Code Generate
+		#region SetCurrentUser & Type
+		public void SetCurrentUser(BO.CurrentUser oCUser)
+		{
+			oCurrentUser = oCUser;
+		}
+		#endregion
+
+		#region SetEditedRole & Type
+		public void EditHardPassword(BO.HardPasswordSetup oHardPassword)
+		{
+
+		}
+		#endregion
+
+		#region HardPassword Code Generate
 		public void GeneratePolicyNo()
 		{
 			string policyNo = service.GetPolicyNo();

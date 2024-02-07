@@ -172,6 +172,11 @@ namespace Authentication.Home
 					profileController.SetCurrentUser(this.oCurrentUser);
 					AddControl(profileController);
 					break;
+				case "Hard Password":
+					HardPasswordController hardPassController = new HardPasswordController();
+					hardPassController.SetCurrentUser(this.oCurrentUser);
+					AddControl(hardPassController);
+					break;
 				case "Role List":
 					RoleListController roleListController = new RoleListController();
 					roleListController.SetCurrentUser(this.oCurrentUser);
