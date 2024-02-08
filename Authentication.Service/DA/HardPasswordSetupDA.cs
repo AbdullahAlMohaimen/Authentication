@@ -44,6 +44,28 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  GET By Status
+		internal static IDataReader GetAll()
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from HardPasswordSetup Order by PolicyNo", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
 		#region  GET PolicyNo
 		public int GetPolicyID()
 		{
@@ -119,5 +141,39 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  Delete
+		internal static string Delete(int ID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand deleteCommand = new SqlCommand("Delete from HardPasswordSetup where PolicyID = '" + ID + "'", conn, tc);
+					deleteCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+
+			return status;
+		}
+		#endregion
 	}
 }

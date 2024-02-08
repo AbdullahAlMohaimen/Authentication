@@ -154,7 +154,7 @@ namespace Authentication.BO
 		HardPasswordSetup GetHardPasswordSetup(int ID);
 		List<HardPasswordSetup> GetHardPasswordSetups();
 		string Save(HardPasswordSetup oHP);
-		void Delete(int ID);
+		string Delete(int ID);
 	}
 	#endregion
 }

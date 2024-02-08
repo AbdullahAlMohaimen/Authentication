@@ -183,7 +183,7 @@ namespace Authentication.Home
 			}
 			else
 			{
-				MessageBox.Show("Please select a row for edit", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				MessageBox.Show("Please select a row for Delete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 		}
 		#endregion

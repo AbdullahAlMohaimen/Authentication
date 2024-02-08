@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Data;
 using Authentication.BO;
 using Authentication.Service;
+using System.Web.Security;
 
 namespace Authentication.Service
 {
@@ -83,7 +84,16 @@ namespace Authentication.Service
 		public List<HardPasswordSetup> GetHardPasswordSetups()
 		{
 			List<HardPasswordSetup> hardPasswordSetups = new List<HardPasswordSetup>();
+			try
+			{
+				DataReader dr = new DataReader(HardPasswordSetupDA.GetAll());
+				hardPasswordSetups = this.CreateObjects<HardPasswordSetup>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
 
+			}
 			return hardPasswordSetups;
 		}
 		#endregion
@@ -106,9 +116,18 @@ namespace Authentication.Service
 		#endregion
 
 		#region Delete HardPasswordSetup
-		public void Delete(int ID)
+		public string Delete(int ID)
 		{
-
+			string status = string.Empty;
+			try
+			{
+				status = HardPasswordSetupDA.Delete(ID);
+			}
+			catch (Exception ex)
+			{
+				status = "Failed";
+			}
+			return status;
 		}
 		#endregion
 

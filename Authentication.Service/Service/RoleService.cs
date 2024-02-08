@@ -142,7 +142,6 @@ namespace Authentication.Service
 		#region Delete
 		public string Delete(int RoleID)
 		{
-			RoleDA roleDA = new RoleDA();
 			string status = string.Empty;
 			try
 			{
