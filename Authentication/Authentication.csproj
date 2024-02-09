@@ -385,6 +385,12 @@
     <Compile Include="Home\UserListController.Designer.cs">
       <DependentUpon>UserListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\UserLoginInfoController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\UserLoginInfoController.Designer.cs">
+      <DependentUpon>UserLoginInfoController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home\UserListController.resx">
       <DependentUpon>UserListController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\UserLoginInfoController.resx">
+      <DependentUpon>UserLoginInfoController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -105,7 +105,15 @@ namespace Authentication.Service
 			string status = string.Empty;
 			try
 			{
-				status = HardPasswordSetupDA.Insert(oHP);
+				if (oHP.IsNew == true)
+				{
+					status = HardPasswordSetupDA.Insert(oHP);
+				}
+				else
+				{
+					status = HardPasswordSetupDA.Update(oHP);
+				}
+				
 			}
 			catch (Exception ex)
 			{
@@ -128,6 +136,24 @@ namespace Authentication.Service
 				status = "Failed";
 			}
 			return status;
+		}
+		#endregion
+
+		#region Search HardPassword
+		public List<HardPasswordSetup> SearchHardPassword(string searchText)
+		{
+			List<HardPasswordSetup> hardPasswords = new List<HardPasswordSetup>();
+			try
+			{
+				DataReader dr = new DataReader(HardPasswordSetupDA.SearchHardPassword(searchText));
+				hardPasswords = this.CreateObjects<HardPasswordSetup>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				hardPasswords = null;
+			}
+			return hardPasswords;
 		}
 		#endregion
 
@@ -242,5 +268,6 @@ namespace Authentication.Service
 			return bValid;
 		}
 		#endregion
+
 	}
 }

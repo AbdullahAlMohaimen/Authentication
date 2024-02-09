@@ -69,6 +69,7 @@ namespace Authentication.Home
 		{
 			try
 			{
+				allHardPasswordSetup = new List<BO.HardPasswordSetup>();
 				allHardPasswordSetup = hpService.GetHardPasswordSetups();
 
 				if (allHardPasswordSetup.Count != 0)
@@ -129,7 +130,18 @@ namespace Authentication.Home
 		#region Search
 		private void txt_HardPasswordSearch_TextChanged(object sender, EventArgs e)
 		{
+			allHardPasswordSetup = new List<BO.HardPasswordSetup>();
+			if (!string.IsNullOrEmpty(txt_HardPasswordSearch.Text))
+			{
+				string searchText = txt_HardPasswordSearch.Text;
+				allHardPasswordSetup = hpService.SearchHardPassword(searchText);
 
+				this.ProcessData();
+			}
+			else
+			{
+				this.loadGrid();
+			}
 		}
 		#endregion
 

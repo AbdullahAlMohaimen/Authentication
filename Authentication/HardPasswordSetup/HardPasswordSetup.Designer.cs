@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HardPasswordSetup));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label35 = new System.Windows.Forms.Label();
+			this.txt_Header = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -64,11 +64,11 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
-			this.SaveHardPasswordPolicy = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_PasswordPolicyNo = new Guna.UI2.WinForms.Guna2TextBox();
 			this.IsContainSpecialCharacter = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
+			this.SaveHardPasswordPolicy = new Guna.UI2.WinForms.Guna2Button();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -76,7 +76,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.SeaGreen;
-			this.panel1.Controls.Add(this.label35);
+			this.panel1.Controls.Add(this.txt_Header);
 			this.panel1.Controls.Add(this.Minimize);
 			this.panel1.Controls.Add(this.Exit);
 			this.panel1.Location = new System.Drawing.Point(-2, 12);
@@ -84,16 +84,16 @@
 			this.panel1.Size = new System.Drawing.Size(884, 30);
 			this.panel1.TabIndex = 12;
 			// 
-			// label35
+			// txt_Header
 			// 
-			this.label35.AutoSize = true;
-			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
-			this.label35.Location = new System.Drawing.Point(8, 0);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(342, 25);
-			this.label35.TabIndex = 106;
-			this.label35.Text = "New Hard Password Policy Setup";
+			this.txt_Header.AutoSize = true;
+			this.txt_Header.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_Header.ForeColor = System.Drawing.Color.Salmon;
+			this.txt_Header.Location = new System.Drawing.Point(8, 0);
+			this.txt_Header.Name = "txt_Header";
+			this.txt_Header.Size = new System.Drawing.Size(342, 25);
+			this.txt_Header.TabIndex = 106;
+			this.txt_Header.Text = "New Hard Password Policy Setup";
 			// 
 			// Minimize
 			// 
@@ -594,42 +594,6 @@
 			this.label2.TabIndex = 106;
 			this.label2.Text = "Maximum Length";
 			// 
-			// Cancel
-			// 
-			this.Cancel.BorderRadius = 8;
-			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Cancel.FillColor = System.Drawing.Color.Brown;
-			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
-			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(675, 319);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(96, 29);
-			this.Cancel.TabIndex = 105;
-			this.Cancel.Text = " Cancel";
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-			// 
-			// SaveHardPasswordPolicy
-			// 
-			this.SaveHardPasswordPolicy.BorderRadius = 8;
-			this.SaveHardPasswordPolicy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.SaveHardPasswordPolicy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.SaveHardPasswordPolicy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.SaveHardPasswordPolicy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.SaveHardPasswordPolicy.FillColor = System.Drawing.Color.SeaGreen;
-			this.SaveHardPasswordPolicy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SaveHardPasswordPolicy.ForeColor = System.Drawing.Color.Wheat;
-			this.SaveHardPasswordPolicy.Image = ((System.Drawing.Image)(resources.GetObject("SaveHardPasswordPolicy.Image")));
-			this.SaveHardPasswordPolicy.Location = new System.Drawing.Point(777, 319);
-			this.SaveHardPasswordPolicy.Name = "SaveHardPasswordPolicy";
-			this.SaveHardPasswordPolicy.Size = new System.Drawing.Size(94, 29);
-			this.SaveHardPasswordPolicy.TabIndex = 104;
-			this.SaveHardPasswordPolicy.Text = "  Save";
-			this.SaveHardPasswordPolicy.Click += new System.EventHandler(this.SaveHardPasswordPolicy_Click);
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -680,6 +644,42 @@
 			this.IsContainSpecialCharacter.UncheckedState.BorderThickness = 0;
 			this.IsContainSpecialCharacter.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
 			// 
+			// Cancel
+			// 
+			this.Cancel.BorderRadius = 8;
+			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Cancel.FillColor = System.Drawing.Color.Brown;
+			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
+			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+			this.Cancel.Location = new System.Drawing.Point(675, 319);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(96, 29);
+			this.Cancel.TabIndex = 105;
+			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+			// 
+			// SaveHardPasswordPolicy
+			// 
+			this.SaveHardPasswordPolicy.BorderRadius = 8;
+			this.SaveHardPasswordPolicy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.SaveHardPasswordPolicy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.SaveHardPasswordPolicy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.SaveHardPasswordPolicy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.SaveHardPasswordPolicy.FillColor = System.Drawing.Color.SeaGreen;
+			this.SaveHardPasswordPolicy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SaveHardPasswordPolicy.ForeColor = System.Drawing.Color.Wheat;
+			this.SaveHardPasswordPolicy.Image = ((System.Drawing.Image)(resources.GetObject("SaveHardPasswordPolicy.Image")));
+			this.SaveHardPasswordPolicy.Location = new System.Drawing.Point(777, 319);
+			this.SaveHardPasswordPolicy.Name = "SaveHardPasswordPolicy";
+			this.SaveHardPasswordPolicy.Size = new System.Drawing.Size(94, 29);
+			this.SaveHardPasswordPolicy.TabIndex = 104;
+			this.SaveHardPasswordPolicy.Text = "  Save";
+			this.SaveHardPasswordPolicy.Click += new System.EventHandler(this.SaveHardPasswordPolicy_Click);
+			// 
 			// HardPasswordSetup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,7 +706,7 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.Label txt_Header;
 		private System.Windows.Forms.Button Minimize;
 		private System.Windows.Forms.Button Exit;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;

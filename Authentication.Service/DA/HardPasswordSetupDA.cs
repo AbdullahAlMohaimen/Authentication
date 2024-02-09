@@ -141,6 +141,46 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  Save
+		public static string Update(HardPasswordSetup oHP)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Open();
+			string status = string.Empty;
+
+			try
+			{
+				using (SqlTransaction tc = conn.BeginTransaction())
+				{
+					SqlCommand insertCommand = new SqlCommand("update HardPasswordSetup set MaxLength = '"+oHP.PassMaxLength+ "', MinLength = '"+oHP.PassMinLength+"', " +
+						"SuperUserPassMinLength = '"+oHP.SuperUserPassMinLength+ "', MinPasswordAge = '"+oHP.PasswordMinimumAge+"', " +
+						"ContainUppercase = '"+oHP.IsContainUpperCase+"',ContainLowercase = '"+oHP.IsContainLowerCase+"',ContainSpecialCharacter = '"+oHP.IsContainSpecialCharacter+"', " +
+						"ContainNumber = '"+oHP.IsContainNumber+"',ContainLetter = '"+oHP.IsContainLatter+"'," +
+						"UserPasswordSame = '"+oHP.IsUserPasswordSame+"',PasswordExpireNotificationDays = '"+oHP.PasswordExpNotificationDays+"',PasswordExpireDays = '"+oHP.PasswordExpDays+"' " +
+						"where policyID = '"+oHP.ID+"'", conn, tc);
+					insertCommand.ExecuteNonQuery();
+					tc.Commit();
+					conn.Close();
+					status = "Ok";
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				status = "Failed";
+				#region Handle Exception
+
+				#endregion
+			}
+			finally
+			{
+				conn.Close();
+			}
+			return status;
+		}
+		#endregion
+
 		#region  Delete
 		internal static string Delete(int ID)
 		{
@@ -173,6 +213,29 @@ namespace Authentication.Service
 			}
 
 			return status;
+		}
+		#endregion
+
+		#region Search Role
+		internal static IDataReader SearchHardPassword(string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("select * from HardPasswordSetup where PolicyNo like '" + searchText + "%' or MaxLength like '"+ searchText + "%' or MinLength like '"+ searchText + "%' " +
+					"or MinPasswordAge like '" + searchText + "%' or PasswordExpireDays like '"+ searchText + "%'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
 		}
 		#endregion
 	}

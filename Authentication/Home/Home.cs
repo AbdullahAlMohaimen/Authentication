@@ -182,6 +182,11 @@ namespace Authentication.Home
 					roleListController.SetCurrentUser(this.oCurrentUser);
 					AddControl(roleListController);
 					break;
+				case "User Login Info":
+					UserLoginInfoController userLoginInfoController = new UserLoginInfoController();
+					userLoginInfoController.SetCurrentUser(this.oCurrentUser);
+					AddControl(userLoginInfoController);
+					break;
 				case "User List":
 					UserListController userListController = new UserListController();
 					userListController.SetCurrentUser(this.oCurrentUser);

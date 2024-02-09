@@ -48,6 +48,8 @@ namespace Authentication.Employee
 			if (employee != null)
 			{
 				txtHeader.Text = "Edit Employee";
+				SaveEmployee.Text = "Edit";
+
 				txt_EmpName.Text = employee.Name;
 				txt_EmpGender.SelectedItem = employee.Gender;
 				txt_EmpReligion.SelectedItem = employee.Religion;
@@ -65,6 +67,7 @@ namespace Authentication.Employee
 			else
 			{
 				txtHeader.Text = "New Employee Entry";
+				SaveEmployee.Text = "Edit";
 				employee = new BO.Employee();
 			}
 

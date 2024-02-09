@@ -20,6 +20,7 @@ namespace Authentication.HardPasswordSetup
 		public event EventHandler EditingDone;
 		HardPasswordSetupService service = new HardPasswordSetupService();
 		private UserControl callingForm;
+		BO.HardPasswordSetup hardPasswordSetup = new BO.HardPasswordSetup();
 		BO.CurrentUser oCurrentUser = new CurrentUser();
 		public string _loginID;
 		public string LoginID { get { return _loginID; } set { _loginID = value; } }
@@ -30,7 +31,6 @@ namespace Authentication.HardPasswordSetup
 		{
 			InitializeComponent();
 			callingForm = caller;
-			GeneratePolicyNo();
 		}
 		#endregion
 
@@ -44,7 +44,33 @@ namespace Authentication.HardPasswordSetup
 		#region SetEditedRole & Type
 		public void EditHardPassword(BO.HardPasswordSetup oHardPassword)
 		{
+			hardPasswordSetup = oHardPassword;
+			if (hardPasswordSetup != null)
+			{
+				txt_Header.Text = "Edit Hard Password Setup";
+				SaveHardPasswordPolicy.Text = "Edit";
 
+				txt_PasswordPolicyNo.Text = hardPasswordSetup.PolicyNo;
+				txt_PasswordMaxLength.Text = Convert.ToString(hardPasswordSetup.PassMaxLength);
+				txt_PasswordMinLength.Text = Convert.ToString(hardPasswordSetup.PassMinLength);
+				txt_SuperUserPassMinLength.Text = Convert.ToString(hardPasswordSetup.SuperUserPassMinLength);
+				txt_PasswordMinAge.Text = Convert.ToString(hardPasswordSetup.PasswordMinimumAge);
+				txt_PassExpNotificationDays.Text = Convert.ToString(hardPasswordSetup.PasswordExpNotificationDays);
+				txt_PasswordExpDays.Text = Convert.ToString(hardPasswordSetup.PasswordExpDays);
+
+				IsContainSpecialCharacter.Checked = (bool)hardPasswordSetup.IsContainSpecialCharacter;
+				IsConatinUpperCase.Checked = (bool)hardPasswordSetup.IsContainUpperCase;
+				IsContainLowerCase.Checked = (bool)hardPasswordSetup.IsContainLowerCase;
+				IsContainLatter.Checked = (bool)hardPasswordSetup.IsContainLatter;
+				IsContainNumber.Checked = (bool)hardPasswordSetup.IsContainNumber;
+				IsSamePassword.Checked = (bool)hardPasswordSetup.IsUserPasswordSame;
+			}
+			else
+			{
+				hardPasswordSetup = new BO.HardPasswordSetup();
+				SaveHardPasswordPolicy.Text = "Save";
+				GeneratePolicyNo();
+			}
 		}
 		#endregion
 
@@ -76,7 +102,7 @@ namespace Authentication.HardPasswordSetup
 		#region Save Hard Password Policy
 		private void SaveHardPasswordPolicy_Click(object sender, EventArgs e)
 		{
-			BO.HardPasswordSetup hardPasswordSetup = new BO.HardPasswordSetup();
+			
 			string invalidMessage;
 			try
 			{
@@ -90,29 +116,74 @@ namespace Authentication.HardPasswordSetup
 					hardPasswordSetup.PasswordExpNotificationDays = (int)Convert.ToInt32(txt_PassExpNotificationDays.Text);
 					hardPasswordSetup.PasswordExpDays = (int)Convert.ToInt32(txt_PasswordExpDays.Text);
 					if (IsContainSpecialCharacter.Checked)
+					{
 						hardPasswordSetup.IsContainSpecialCharacter = true;
+					}
+					else
+					{
+						hardPasswordSetup.IsContainSpecialCharacter = false;
+					}
 					if (IsConatinUpperCase.Checked)
+					{
 						hardPasswordSetup.IsContainUpperCase = true;
+					}
+					else
+					{
+						hardPasswordSetup.IsContainUpperCase = false;
+					}
 					if (IsContainLowerCase.Checked)
-						hardPasswordSetup._isContainLowerCase = true;
-					if (IsContainNumber.Checked)
+					{
+						hardPasswordSetup.IsContainLowerCase = true;
+					}
+					else
+					{
+						hardPasswordSetup.IsContainLowerCase = false;
+					}
+					if (IsContainLatter.Checked)
+					{
 						hardPasswordSetup.IsContainLatter = true;
+					}
+					else
+					{
+						hardPasswordSetup.IsContainLatter = false;
+					}
 					if (IsContainNumber.Checked)
+					{
 						hardPasswordSetup.IsContainNumber = true;
-					if (IsSamePassword.Checked)
+					}
+                    else
+                    {
+						hardPasswordSetup.IsContainNumber = false;
+					}
+                    if (IsSamePassword.Checked)
+					{
 						hardPasswordSetup.IsUserPasswordSame = true;
+					}
+					else
+					{
+						hardPasswordSetup.IsUserPasswordSame = false;
+					}
 
 					string status = service.Save(hardPasswordSetup);
 					if (status == "Ok")
 					{
-						MessageBox.Show("New password policy added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						if (hardPasswordSetup.IsNew == true)
+						{
+							MessageBox.Show("New password policy added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						}
+						else
+						{
+							MessageBox.Show("Password policy edited successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+						}
 					}
 					else
 					{
 						MessageBox.Show("New roll added failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
-					this.GeneratePolicyNo();
 					this.Clear();
+
+					EditingDone?.Invoke(this, EventArgs.Empty);
+					this.Close();
 				}
 				else
 				{
