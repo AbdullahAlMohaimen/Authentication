@@ -43,14 +43,22 @@ namespace Authentication.Service
 		#endregion
 
 		#region Service Implementation
+
+		#region GetLoginInfo By ID
 		public LoginInfo GetLoginInfo(int ID)
 		{
 			return null;
 		}
+		#endregion
+
+		#region GetLoginInfos
 		public List<LoginInfo> GetLoginInfos()
 		{
 			return null;
 		}
+		#endregion
+
+		#region Save
 		public string Save(LoginInfo loginInfo)
 		{
 			string result;
@@ -71,9 +79,32 @@ namespace Authentication.Service
 			}
 			return result;
 		}
+		#endregion
+
+		#region Delete
 		public void Delete(int ID)
 		{
 
+		}
+		#endregion
+
+		#endregion
+
+		#region GetLoginInfos (fromDate - toDate)
+		public List<LoginInfo> GetLoginInfos(DateTime fromDate, DateTime toDate)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfos(fromDate, toDate));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
 		}
 		#endregion
 
