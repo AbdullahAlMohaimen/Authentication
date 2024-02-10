@@ -126,8 +126,12 @@ namespace Authentication.Home
 
 			TreeNode loginInfo = administrationNode.Nodes["Login Information"];
 			loginInfo = administrationNode.Nodes.Add("Login Information");
-			loginInfo.Nodes.Add("User Login Info");
-			loginInfo.Nodes.Add("Employee Login Info");
+			TreeNode userLoginInfoNode = loginInfo.Nodes.Add("User");
+			userLoginInfoNode.Nodes.Add("Login Information");
+			userLoginInfoNode.Nodes.Add("User Wise Login Info");
+			TreeNode employeeLoginInfoNode = loginInfo.Nodes.Add("Employee");
+			employeeLoginInfoNode.Nodes.Add("Login Info");
+			employeeLoginInfoNode.Nodes.Add("Employee Wise Login Info");
 
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");
@@ -151,12 +155,12 @@ namespace Authentication.Home
 		#region TreeView Click
 		private void menuTreeView_AfterSelect(object sender, TreeViewEventArgs e)
 		{
-			OpenUserListWindow(e.Node.Text);
+			OpenUserListWindow(e.Node.Text, Convert.ToString(e.Node.Parent));
 		}
 		#endregion
 
 		#region Menu wiz call
-		public void OpenUserListWindow(string node)
+		public void OpenUserListWindow(string node, string parent)
 		{
 			string nodeName = node;
 			this.headerTitle.Text = nodeName;
@@ -182,10 +186,17 @@ namespace Authentication.Home
 					roleListController.SetCurrentUser(this.oCurrentUser);
 					AddControl(roleListController);
 					break;
-				case "User Login Info":
-					UserLoginInfoController userLoginInfoController = new UserLoginInfoController();
-					userLoginInfoController.SetCurrentUser(this.oCurrentUser);
-					AddControl(userLoginInfoController);
+				case "Login Information":
+					if(parent == "TreeNode: User")
+					{
+						UserLoginInfoController userLoginInfoController = new UserLoginInfoController();
+						userLoginInfoController.SetCurrentUser(this.oCurrentUser);
+						AddControl(userLoginInfoController);
+					}
+					if(parent == "TreeNode: Employee")
+					{
+
+					}
 					break;
 				case "User List":
 					UserListController userListController = new UserListController();
