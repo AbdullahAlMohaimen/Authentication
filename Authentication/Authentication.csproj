@@ -355,6 +355,18 @@
     <Compile Include="Home\EmployeeListController.Designer.cs">
       <DependentUpon>EmployeeListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\EmployeeLoginInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\EmployeeLoginInformation.Designer.cs">
+      <DependentUpon>EmployeeLoginInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\EmployeeWiseLoginInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\EmployeeWiseLoginInformation.Designer.cs">
+      <DependentUpon>EmployeeWiseLoginInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home\HardPasswordController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,6 +402,12 @@
     </Compile>
     <Compile Include="Home\UserLoginInfoController.Designer.cs">
       <DependentUpon>UserLoginInfoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\UserWiseLoginInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\UserWiseLoginInformation.Designer.cs">
+      <DependentUpon>UserWiseLoginInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>

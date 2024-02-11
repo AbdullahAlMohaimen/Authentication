@@ -128,10 +128,10 @@ namespace Authentication.Home
 			loginInfo = administrationNode.Nodes.Add("Login Information");
 			TreeNode userLoginInfoNode = loginInfo.Nodes.Add("User");
 			userLoginInfoNode.Nodes.Add("Login Information");
-			userLoginInfoNode.Nodes.Add("User Wise Login Info");
+			userLoginInfoNode.Nodes.Add("User Login Info");
 			TreeNode employeeLoginInfoNode = loginInfo.Nodes.Add("Employee");
 			employeeLoginInfoNode.Nodes.Add("Login Info");
-			employeeLoginInfoNode.Nodes.Add("Employee Wise Login Info");
+			employeeLoginInfoNode.Nodes.Add("Employee Login Info");
 
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");

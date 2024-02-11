@@ -108,6 +108,24 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region GetLoginInfos (fromDate - toDate - week)
+		public List<LoginInfo> GetLoginInfos(DateTime fromDate, DateTime toDate, EnumWeek week)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfos(fromDate, toDate, week));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
+		}
+		#endregion
+
 		#region GetLoginInfoByLoginID
 		public List<LoginInfo> GetLoginInfoByLoginID(string loginID)
 		{
@@ -195,6 +213,40 @@ namespace Authentication.Service
 				oLoginInfo = null;
 			}
 			return oLoginInfo;
+		}
+		#endregion
+
+		#region SearchLoginInfos (fromDate - toDate)
+		public List<LoginInfo> SearchLoginInfos(DateTime fromDate, DateTime toDate, string searchText)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.SearchLoginInfos(fromDate, toDate, searchText));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
+		}
+
+		public List<LoginInfo> SearchLoginInfos(DateTime fromDate, DateTime toDate, string searchText,EnumWeek week)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.SearchLoginInfos(fromDate, toDate, searchText, week));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
 		}
 		#endregion
 	}

@@ -33,7 +33,6 @@ namespace Authentication.Home
 			InitializeComponent();
 
 			txt_week.Items.Add("Select Week...");
-			txt_week.Items.Add("All");
 			foreach (EnumWeek week in Enum.GetValues(typeof(EnumWeek)))
 			{
 				txt_week.Items.Add(week);
@@ -54,8 +53,8 @@ namespace Authentication.Home
 		#region LoadGrid
 		public void loadGrid()
 		{
-			txt_fromDate.Value = DateTime.Now.AddDays(-2);
-			txt_toDate.Value = DateTime.Now;
+			txt_fromDate.Value = DateTime.Today.AddDays(-2);
+			txt_toDate.Value = DateTime.Today.AddDays(1).AddTicks(-1);
 
 			this.GetLoginInfo();
 		}
@@ -102,8 +101,9 @@ namespace Authentication.Home
 				dr["Login ID"] = oLoginInfo.LoginID;
 				dr["User Name"] = oLoginInfo.UserName;
 				dr["PC Number"] = oLoginInfo.PCNumber;
-				dr["Login Time"] = oLoginInfo.LoginTime.ToString("dd MM yyy-hh:mm tt");
-				dr["Logout Time"] = oLoginInfo.LogoutTime == DateTime.MinValue ? "" : oLoginInfo.LogoutTime.Value.ToString("dd MMM yyy-hh:mm tt");
+				dr["Login Time"] = $"{oLoginInfo.LoginTime.ToString("dd MMM yyyy-hh:mm tt")} ({oLoginInfo.LoginTime.DayOfWeek.ToString()})";
+				dr["Logout Time"] = oLoginInfo.LogoutTime == DateTime.MinValue? "" : (oLoginInfo.LogoutTime.Value.Year == 1900 ? "" : $"{oLoginInfo.LogoutTime.Value.ToString("dd MMM yyyy-hh:mm tt")} ({oLoginInfo.LogoutTime.Value.DayOfWeek.ToString()})");
+
 				loginList.Rows.Add(dr);
 			}
 			allUserLoginInfoListTable.DataSource = loginList;
@@ -121,6 +121,111 @@ namespace Authentication.Home
 
 			allUserLoginInfoListTable.RowHeadersVisible = false;
 			allUserLoginInfoListTable.Columns["ID"].Visible = false;
+		}
+		#endregion
+
+		#region Checked Today
+		private void IsSamePassword_CheckedChanged(object sender, EventArgs e)
+		{
+			if (IsToDay.Checked == true)
+			{
+				DateTime fromDate = DateTime.Today;
+				DateTime toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+
+				allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+
+				this.ProcessData();
+			}
+			else
+			{
+				this.GetLoginInfo();
+			}
+		}
+		#endregion
+
+		#region Week Select
+		private void txt_week_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			EnumWeek week;
+			IsToDay.Checked = false;
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+			if (txt_week.SelectedItem == "Select Week...")
+			{
+				this.GetLoginInfo();
+				return;
+			}
+			else
+			{
+				week = (EnumWeek)txt_week.SelectedItem;
+				allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate, week);
+			}
+			this.ProcessData();
+		}
+		#endregion
+
+		#region Search LoginInfo
+		private void txt_UserLoginInfoSearch_TextChanged(object sender, EventArgs e)
+		{
+			EnumWeek week;
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+
+			if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
+			{
+				if (IsToDay.Checked == true)
+				{
+					fromDate = DateTime.Today;
+					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+					allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
+				}
+				else
+				{
+					if (txt_week.SelectedItem == "Select Week...")
+					{
+						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
+					}
+					else
+					{
+						week = (EnumWeek)txt_week.SelectedItem;
+						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text, week);
+					}
+				}
+			}
+			else
+			{
+				if (IsToDay.Checked == true)
+				{
+					fromDate = DateTime.Today;
+					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+					allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+				}
+				else
+				{
+					if (txt_week.SelectedItem == "Select Week...")
+					{
+						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+					}
+					else
+					{
+						week = (EnumWeek)txt_week.SelectedItem;
+						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate, week);
+					}
+				}
+			}
+			this.ProcessData();
+		}
+		#endregion
+
+		#region Search Click
+		private void EmpSearch_Click(object sender, EventArgs e)
+		{
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+
+			allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+
+			this.ProcessData();
 		}
 		#endregion
 	}

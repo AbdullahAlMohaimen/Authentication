@@ -172,7 +172,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region 
+		#region GetLoginInfos (frmDate - toDate)
 		internal static IDataReader GetLoginInfos(DateTime fromDate, DateTime toDate)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -183,7 +183,78 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '"+ toDate +"'", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '"+ toDate +"' order by LoginTime desc", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region GetLoginInfos (frmDate - toDate - week)
+		internal static IDataReader GetLoginInfos(DateTime fromDate, DateTime toDate, EnumWeek week)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' " +
+											"and DATEPART(WEEKDAY, loginTime) = '"+(int)week+"' order by LoginTime desc", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region Search LoginInfo (frmDate - toDate)
+		internal static IDataReader SearchLoginInfos(DateTime fromDate, DateTime toDate, string SearchString)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' " +
+					"and (LoginID like '"+SearchString+"%' or UserName like '"+SearchString+"%' or PCNumber like '"+SearchString+"%' or " +
+					"PcNumber like '%-"+SearchString+ "%' or CONVERT(NVARCHAR, LoginTime, 120) like '%"+SearchString+ "%' or " +
+					"CONVERT(NVARCHAR, LogOutTime, 120) like '%"+SearchString+"%') order by LoginTime desc", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+
+		internal static IDataReader SearchLoginInfos(DateTime fromDate, DateTime toDate, string SearchString, EnumWeek week)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' and and DATEPART(WEEKDAY, loginTime) = '"+(int)week+"' " +
+					"and (LoginID like '" + SearchString + "%' or UserName like '" + SearchString + "%' or PCNumber like '" + SearchString + "%' or " +
+					"PcNumber like '%-" + SearchString + "%' or CONVERT(NVARCHAR, LoginTime, 120) like '%" + SearchString + "%' or " +
+					"CONVERT(NVARCHAR, LogOutTime, 120) like '%" + SearchString + "%') order by LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
