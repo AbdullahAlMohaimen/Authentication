@@ -27,6 +27,7 @@ namespace Authentication.BO
 			_passwordResetBy = 0;
 			_passwordResetDate = null;
 			_isApprover = false;
+			_userNo = null;
 		}
 		#endregion
 
@@ -47,6 +48,15 @@ namespace Authentication.BO
 		{
 			get { return _userName; }
 			set { _userName = value; }
+		}
+		#endregion
+
+		#region UserNo : String 
+		private string _userNo;
+		public string UserNo
+		{
+			get { return _userNo; }
+			set { _userNo = value; }
 		}
 		#endregion
 

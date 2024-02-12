@@ -228,10 +228,10 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' " +
-					"and (LoginID like '"+SearchString+"%' or UserName like '"+SearchString+"%' or PCNumber like '"+SearchString+"%' or " +
-					"PcNumber like '%-"+SearchString+ "%' or CONVERT(NVARCHAR, LoginTime, 120) like '%"+SearchString+ "%' or " +
-					"CONVERT(NVARCHAR, LogOutTime, 120) like '%"+SearchString+"%') order by LoginTime desc", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo l,Users u where l.LoginID = u.LoginID and l.LoginTime between '" + fromDate + "' and '" + toDate + "' " +
+					"and (u.UserNo like '"+SearchString+"%' or l.UserName like '"+SearchString+"%' or l.PCNumber like '"+SearchString+"%' or " +
+					"l.PcNumber like '%-"+SearchString+ "%' or CONVERT(NVARCHAR, l.LoginTime, 120) like '%"+SearchString+ "%' or " +
+					"CONVERT(NVARCHAR, l.LogOutTime, 120) like '%"+SearchString+"%') order by l.LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
@@ -251,10 +251,10 @@ namespace Authentication.Service
 			conn.Open();
 			try
 			{
-				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' and and DATEPART(WEEKDAY, loginTime) = '"+(int)week+"' " +
-					"and (LoginID like '" + SearchString + "%' or UserName like '" + SearchString + "%' or PCNumber like '" + SearchString + "%' or " +
-					"PcNumber like '%-" + SearchString + "%' or CONVERT(NVARCHAR, LoginTime, 120) like '%" + SearchString + "%' or " +
-					"CONVERT(NVARCHAR, LogOutTime, 120) like '%" + SearchString + "%') order by LoginTime desc", conn);
+				getCommand = new SqlCommand("Select * from LoginInfo l, Users u where l.LoginID = u.LoginID and l.LoginTime between '" + fromDate + "' and '" + toDate + "' and and DATEPART(WEEKDAY, l.loginTime) = '"+(int)week+"' " +
+					"and (u.UserNo like '" + SearchString + "%' or l.UserName like '" + SearchString + "%' or l.PCNumber like '" + SearchString + "%' or " +
+					"l.PcNumber like '%-" + SearchString + "%' or CONVERT(NVARCHAR, l.LoginTime, 120) like '%" + SearchString + "%' or " +
+					"CONVERT(NVARCHAR, l.LogOutTime, 120) like '%" + SearchString + "%') order by l.LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

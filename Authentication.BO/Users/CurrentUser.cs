@@ -18,6 +18,7 @@ namespace Authentication.BO
 		#region Property
 		public string LoginID { get; set; }
 		public string UserName { get; set; }
+		public string UserNo { get; set; }
 		public EnumStatus Status { get; set; }
 		public string Email { get; set; }
 		public int RoleID { get; set; }

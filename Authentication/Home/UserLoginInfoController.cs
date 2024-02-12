@@ -38,7 +38,7 @@ namespace Authentication.Home
 				txt_week.Items.Add(week);
 			}
 			txt_week.SelectedItem = "Select Week...";
-
+			userList = userService.GetUsers();
 			this.loadGrid();
 		}
 		#endregion
@@ -86,6 +86,7 @@ namespace Authentication.Home
 			loginList.TableName = "Login List";
 			loginList.Columns.Add("ID", typeof(int));
 			loginList.Columns.Add("Login ID", typeof(string));
+			loginList.Columns.Add("User No", typeof(string));
 			loginList.Columns.Add("User Name", typeof(string));
 			loginList.Columns.Add("PC Number", typeof(string));
 			loginList.Columns.Add("Login Time", typeof(string));
@@ -99,6 +100,7 @@ namespace Authentication.Home
 				dr = loginList.NewRow();
 				dr["ID"] = oLoginInfo.ID;
 				dr["Login ID"] = oLoginInfo.LoginID;
+				dr["User No"] = userList.Where(x => x.LoginID == oLoginInfo.LoginID).FirstOrDefault() == null ? "": userList.Where(x => x.LoginID == oLoginInfo.LoginID).FirstOrDefault().UserNo;
 				dr["User Name"] = oLoginInfo.UserName;
 				dr["PC Number"] = oLoginInfo.PCNumber;
 				dr["Login Time"] = $"{oLoginInfo.LoginTime.ToString("dd MMM yyyy-hh:mm tt")} ({oLoginInfo.LoginTime.DayOfWeek.ToString()})";
@@ -121,6 +123,7 @@ namespace Authentication.Home
 
 			allUserLoginInfoListTable.RowHeadersVisible = false;
 			allUserLoginInfoListTable.Columns["ID"].Visible = false;
+			allUserLoginInfoListTable.Columns["Login ID"].Visible = false;
 		}
 		#endregion
 

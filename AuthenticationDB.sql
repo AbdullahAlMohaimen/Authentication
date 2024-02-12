@@ -187,3 +187,6 @@ ADD ModifiedBy INT null;
 ALTER TABLE Role
 ADD ModifiedDate DateTime null;
 
+ALter table Users
+add UserNO varchar(25) null;
+

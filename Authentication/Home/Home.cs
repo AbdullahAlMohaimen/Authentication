@@ -198,6 +198,11 @@ namespace Authentication.Home
 
 					}
 					break;
+				case "User Login Info":
+					UserWiseLoginInformation userWiseLoginInformation = new UserWiseLoginInformation();
+					userWiseLoginInformation.SetCurrentUser(this.oCurrentUser);
+					AddControl(userWiseLoginInformation);
+					break;
 				case "User List":
 					UserListController userListController = new UserListController();
 					userListController.SetCurrentUser(this.oCurrentUser);

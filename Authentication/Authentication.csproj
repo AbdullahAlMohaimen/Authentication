@@ -447,6 +447,12 @@
     <Compile Include="SearchEmployee\SearchEmployeeInformation.Designer.cs">
       <DependentUpon>SearchEmployeeInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchUser\SearchUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchUser\SearchUser.Designer.cs">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\ChangeUserStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +510,9 @@
     <EmbeddedResource Include="Home\UserLoginInfoController.resx">
       <DependentUpon>UserLoginInfoController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home\UserWiseLoginInformation.resx">
+      <DependentUpon>UserWiseLoginInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchEmployee\SearchEmployeeInformation.resx">
       <DependentUpon>SearchEmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchUser\SearchUser.resx">
+      <DependentUpon>SearchUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\ChangeUserStatus.resx">
       <DependentUpon>ChangeUserStatus.cs</DependentUpon>

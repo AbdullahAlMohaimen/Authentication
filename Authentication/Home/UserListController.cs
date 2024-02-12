@@ -25,14 +25,13 @@ namespace Authentication.Home
 		DataTable allUserDataTable = new DataTable();
 		RoleService roleService = new RoleService();
 		UserService userService = new UserService();
-		List<BO.Users> allUsers = new List<BO.Users>();
+		List<BO.Users> userList = new List<BO.Users>();
 		#endregion
 
 		#region Load
 		public UserListController()
 		{
 			InitializeComponent();
-			this.loadGrid();
 
 			txt_UserStatus.Items.Add("Select Status...............");
 			txt_UserStatus.Items.Add("All");
@@ -44,6 +43,8 @@ namespace Authentication.Home
 				}
 			}
 			txt_UserStatus.SelectedItem = "Select Status...............";
+			userList = userService.GetUsers();
+			this.loadGrid();
 		}
 		#endregion
 
@@ -80,13 +81,13 @@ namespace Authentication.Home
 		public void ProcessData()
 		{
 			roles = roleService.GetAllRole();
-			allUsers = userService.GetUsers();
 			total.Text = users.Count().ToString();
 			DataRow dr = null;
 			DataTable UserList = new DataTable();
 			UserList.TableName = "User List";
 			UserList.Columns.Add("ID", typeof(int));
 			UserList.Columns.Add("Login ID", typeof(string));
+			UserList.Columns.Add("User No", typeof(string));
 			UserList.Columns.Add("User Name", typeof(string));
 			UserList.Columns.Add("Role", typeof(string));
 			UserList.Columns.Add("Status", typeof(string));
@@ -101,6 +102,7 @@ namespace Authentication.Home
 				dr = UserList.NewRow();
 				dr["ID"] = user.ID;
 				dr["Login ID"] = user.LoginID;
+				dr["User No"] = user.UserNo;
 				dr["User Name"] = user.UserName;
 
 				BO.Role oRole = new BO.Role();
@@ -110,7 +112,7 @@ namespace Authentication.Home
 				dr["Email"] = user.Email;
 
 				BO.Users oUser = new BO.Users();
-				oUser = allUsers.Where(x => x.ID == user.CreatedBy).FirstOrDefault();
+				oUser = userList.Where(x => x.ID == user.CreatedBy).FirstOrDefault();
 				dr["Created By"] = oUser == null ? "" : oUser.UserName;
 				UserList.Rows.Add(dr);
 			}
@@ -127,6 +129,7 @@ namespace Authentication.Home
 
 			allUserListTable.RowHeadersVisible = false;
 			allUserListTable.Columns["ID"].Visible = false;
+			allUserListTable.Columns["Login ID"].Visible = false;
 		}
 		#endregion
 

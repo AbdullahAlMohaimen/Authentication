@@ -301,7 +301,7 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select u.* from Users u, Role r where u.RoleID = r.RoleID and " +
-					"(u.LoginID like '"+ searchText + "%' or u.UserName like '"+ searchText + "%' or u.Email like '"+ searchText + "%' " +
+					"(u.UserNo like '"+ searchText + "%' or u.UserName like '"+ searchText + "%' or u.Email like '"+ searchText + "%' " +
 					"or r.Name like '"+ searchText + "%')", conn);
 				dr = getCommand.ExecuteReader();
 			}
@@ -323,7 +323,7 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select u.* from Users u, Role r where u.RoleID = r.RoleID and " +
-					"(u.LoginID like '" + searchText + "%' or u.UserName like '" + searchText + "%' or u.Email like '" + searchText + "%' " +
+					"(u.UserNo like '" + searchText + "%' or u.UserName like '" + searchText + "%' or u.Email like '" + searchText + "%' " +
 					"or r.Name like '" + searchText + "%') and u.status = '"+(int)status+"'", conn);
 				dr = getCommand.ExecuteReader();
 			}

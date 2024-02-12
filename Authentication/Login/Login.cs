@@ -250,6 +250,7 @@ namespace Authentication.Login
 								oCurrentUser.ID = oUser.ID;
 								oCurrentUser.LoginID = oUser.LoginID;
 								oCurrentUser.UserName = oUser.UserName;
+								oCurrentUser.UserNo = oUser.UserNo;
 								oCurrentUser.Status = (EnumStatus)oUser.Status;
 								oCurrentUser.Email = oUser.Email;
 								oCurrentUser.RoleID = oUser.RoleID;
