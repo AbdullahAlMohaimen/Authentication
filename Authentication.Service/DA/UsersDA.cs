@@ -36,11 +36,11 @@ namespace Authentication.Service
 				{
 					SqlCommand insertCommand = new SqlCommand("INSERT INTO Users(LoginID,UserName,Status,Email,RoleID,MasterID," +
 						"AuthorizedDate,Password,PasswordHints,Salt,TempStatus,ChangePasswordAtNextLogon,PasswordResetByAdmin," +
-						"CreatedBy,CreatedDate,IsApprover)" +
+						"CreatedBy,CreatedDate,IsApprover,UserNo)" +
 						"values('"+oUser.LoginID+"','"+oUser.UserName+"','"+(int)oUser.Status+"','"+oUser.Email+"','"+oUser.RoleID+"'," +
 						"'"+oUser.MasterID+"','"+oUser.AuthorizedDate+"','"+oUser.Password+"','"+oUser.PasswordHints+"','"+oUser.Salt+"'," +
 						"'"+(int)oUser.TempStatus+"','"+oUser.ChangePasswordNextLogon+"','"+oUser.PasswordResetByAdmin+"'," +
-						"'"+oUser.CreatedBy+"','"+oUser.CreatedDate+"','"+oUser.IsApprover+"')", conn,tc);
+						"'"+oUser.CreatedBy+"','"+oUser.CreatedDate+"','"+oUser.IsApprover+"','"+oUser.UserNo+"')", conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();

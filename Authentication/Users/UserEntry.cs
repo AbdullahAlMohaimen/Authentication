@@ -16,6 +16,7 @@ using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json.Linq;
 using Authentication.Home;
 using System.IO;
+using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace Authentication.Users
 {
@@ -63,6 +64,10 @@ namespace Authentication.Users
 			{
 				txtHeader.Text = "Edit User";
 				SaveUser.Text = "Edit";
+
+				txt_UserNo.ReadOnly = true;
+				txt_UserLoginID.ReadOnly = true;
+
 				txt_UserLoginID.Text = _user.LoginID.ToString();
 				txt_UserName.Text = _user.UserName.ToString();
 				txt_UserEmail.Text = _user.Email.ToString();
@@ -86,6 +91,10 @@ namespace Authentication.Users
 			{
 				txtHeader.Text = "New User Entry";
 				SaveUser.Text = "Save";
+
+				txt_UserNo.ReadOnly = false;
+				txt_UserLoginID.ReadOnly = false;
+
 				_user = new BO.Users();
 			}
 		}
@@ -178,12 +187,26 @@ namespace Authentication.Users
 			string result;
 			try
 			{
+				_users = userService.GetUsers();
 				_role = _roles.Find(item => item.Name == roleName);
 				invalidMessage = this.isValidate();
 				if (string.IsNullOrEmpty(invalidMessage) || invalidMessage == "")
 				{
 					if (_user.IsNew == true)
 					{
+						if(_users.Any(user => user.UserNo == txt_UserNo.Text))
+						{
+							MessageBox.Show($"{txt_UserNo.Text}, you can't use this USER NO.\nPlease choose new USER NO.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							return;
+						}
+
+						if (_users.Any(user => user.LoginID == txt_UserLoginID.Text))
+						{
+							MessageBox.Show($"{txt_UserLoginID.Text}, you can't use this LOGIN ID.\nPlease choose new LOGIN ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							return;
+						}
+
+						_user.UserNo = txt_UserNo.Text;
 						_user.LoginID = txt_UserLoginID.Text;
 						_user.UserName = txt_UserName.Text;
 						_user.RoleID = _role.ID;
@@ -303,7 +326,6 @@ namespace Authentication.Users
 		}
 		#endregion
 
-
 		private void txt_UserMaster_TextChanged(object sender, EventArgs e)
 		{
 			if (!string.IsNullOrEmpty(txt_UserMaster.Text))
@@ -320,6 +342,47 @@ namespace Authentication.Users
 			{
 				SearchEmp = null;
 			}
+		}
+
+		#region UserNo Auto Generate
+		private void txt_UserNoAuto_CheckedChanged(object sender, EventArgs e)
+		{
+			string userNo = null;
+			bool isUserNoUnique = false;
+			if (txt_UserNoAuto.Checked)
+			{
+				_users = userService.GetUsers();
+				while (!isUserNoUnique)
+				{
+					userNo = _password.GenerateRandomUserNo();
+					isUserNoUnique = !_users.Any(user => user.UserNo == userNo);
+					if (isUserNoUnique)
+					{
+						txt_UserNo.Text = userNo;
+					}
+				}
+			}
+			else
+			{
+				txt_UserNo.Text = string.Empty;
+			}
+		}
+		#endregion
+
+		private void txt_UserNo_TextChanged(object sender, EventArgs e)
+		{
+			//if(!string.IsNullOrEmpty(txt_UserNo.Text))
+			//{
+			//	txt_UserNoAuto.Checked = false;
+			//}
+		}
+
+		private void txt_UserLoginID_TextChanged(object sender, EventArgs e)
+		{
+			//if (!string.IsNullOrEmpty(txt_UserLoginID.Text))
+			//{
+			//	txt_UserLoginIDAuto.Checked = false;
+			//}
 		}
 	}
 }

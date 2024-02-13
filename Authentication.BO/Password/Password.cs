@@ -158,6 +158,23 @@ namespace Authentication.BO
 			return password.ToString();
 		}
 		#endregion
+
+		#region Random UserNo
+		public string GenerateRandomUserNo()
+		{
+			const string validChars = "0123456789";
+			Random random = new Random();
+			int length = random.Next(5,5);
+			StringBuilder userNo = new StringBuilder();
+			userNo.Append("01");
+			for (int i = 0; i < length-2; i++)
+			{
+				int index = random.Next(validChars.Length);
+				userNo.Append(validChars[index]);
+			}
+			return userNo.ToString();
+		}
+		#endregion
 	}
 	#endregion
 }
