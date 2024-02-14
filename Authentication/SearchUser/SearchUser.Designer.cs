@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUser));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -40,17 +40,17 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.txt_Name = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.EmpSearch = new Guna.UI2.WinForms.Guna2Button();
+			this.btn_UserSearch = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_ID = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label27 = new System.Windows.Forms.Label();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.btn_findAllUsers = new Guna.UI2.WinForms.Guna2Button();
+			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
+			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
 			this.Select = new Guna.UI2.WinForms.Guna2Button();
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
-			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
-			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
-			this.btn_findAllEmployee = new Guna.UI2.WinForms.Guna2Button();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -120,7 +120,7 @@
 			this.guna2Panel1.Controls.Add(this.label4);
 			this.guna2Panel1.Controls.Add(this.txt_Name);
 			this.guna2Panel1.Controls.Add(this.label2);
-			this.guna2Panel1.Controls.Add(this.EmpSearch);
+			this.guna2Panel1.Controls.Add(this.btn_UserSearch);
 			this.guna2Panel1.Controls.Add(this.label1);
 			this.guna2Panel1.Controls.Add(this.txt_ID);
 			this.guna2Panel1.Controls.Add(this.label27);
@@ -174,22 +174,22 @@
 			this.label2.TabIndex = 105;
 			this.label2.Text = "User Name";
 			// 
-			// EmpSearch
+			// btn_UserSearch
 			// 
-			this.EmpSearch.BorderRadius = 8;
-			this.EmpSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.EmpSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.EmpSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.EmpSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.EmpSearch.FillColor = System.Drawing.Color.SeaGreen;
-			this.EmpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.EmpSearch.ForeColor = System.Drawing.Color.Wheat;
-			this.EmpSearch.Image = ((System.Drawing.Image)(resources.GetObject("EmpSearch.Image")));
-			this.EmpSearch.Location = new System.Drawing.Point(864, 12);
-			this.EmpSearch.Name = "EmpSearch";
-			this.EmpSearch.Size = new System.Drawing.Size(101, 29);
-			this.EmpSearch.TabIndex = 104;
-			this.EmpSearch.Text = "Search";
+			this.btn_UserSearch.BorderRadius = 8;
+			this.btn_UserSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btn_UserSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btn_UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btn_UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btn_UserSearch.FillColor = System.Drawing.Color.SeaGreen;
+			this.btn_UserSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_UserSearch.ForeColor = System.Drawing.Color.Wheat;
+			this.btn_UserSearch.Image = ((System.Drawing.Image)(resources.GetObject("btn_UserSearch.Image")));
+			this.btn_UserSearch.Location = new System.Drawing.Point(864, 12);
+			this.btn_UserSearch.Name = "btn_UserSearch";
+			this.btn_UserSearch.Size = new System.Drawing.Size(101, 29);
+			this.btn_UserSearch.TabIndex = 104;
+			this.btn_UserSearch.Text = "Search";
 			// 
 			// label1
 			// 
@@ -243,13 +243,87 @@
 			this.guna2Panel2.BorderRadius = 10;
 			this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel2.BorderThickness = 2;
-			this.guna2Panel2.Controls.Add(this.btn_findAllEmployee);
+			this.guna2Panel2.Controls.Add(this.btn_findAllUsers);
 			this.guna2Panel2.Controls.Add(this.txt_UserSearch);
 			this.guna2Panel2.Controls.Add(this.allEmployeeListTable);
 			this.guna2Panel2.Location = new System.Drawing.Point(12, 110);
 			this.guna2Panel2.Name = "guna2Panel2";
 			this.guna2Panel2.Size = new System.Drawing.Size(678, 278);
 			this.guna2Panel2.TabIndex = 117;
+			// 
+			// btn_findAllUsers
+			// 
+			this.btn_findAllUsers.BorderRadius = 8;
+			this.btn_findAllUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btn_findAllUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btn_findAllUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btn_findAllUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btn_findAllUsers.FillColor = System.Drawing.Color.SeaGreen;
+			this.btn_findAllUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_findAllUsers.ForeColor = System.Drawing.Color.Wheat;
+			this.btn_findAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btn_findAllUsers.Image")));
+			this.btn_findAllUsers.Location = new System.Drawing.Point(571, 11);
+			this.btn_findAllUsers.Name = "btn_findAllUsers";
+			this.btn_findAllUsers.Size = new System.Drawing.Size(101, 29);
+			this.btn_findAllUsers.TabIndex = 129;
+			this.btn_findAllUsers.Text = "Find All";
+			this.btn_findAllUsers.Click += new System.EventHandler(this.btn_findAllUsers_Click);
+			// 
+			// txt_UserSearch
+			// 
+			this.txt_UserSearch.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_UserSearch.BorderRadius = 6;
+			this.txt_UserSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_UserSearch.DefaultText = "";
+			this.txt_UserSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserSearch.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserSearch.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserSearch.Location = new System.Drawing.Point(7, 11);
+			this.txt_UserSearch.Name = "txt_UserSearch";
+			this.txt_UserSearch.PasswordChar = '\0';
+			this.txt_UserSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
+			this.txt_UserSearch.PlaceholderText = "Search in all columns.....";
+			this.txt_UserSearch.SelectedText = "";
+			this.txt_UserSearch.Size = new System.Drawing.Size(365, 29);
+			this.txt_UserSearch.TabIndex = 128;
+			// 
+			// allEmployeeListTable
+			// 
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
+			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			this.allEmployeeListTable.ColumnHeadersHeight = 30;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
+			this.allEmployeeListTable.Location = new System.Drawing.Point(6, 46);
+			this.allEmployeeListTable.Name = "allEmployeeListTable";
+			this.allEmployeeListTable.ReadOnly = true;
+			this.allEmployeeListTable.Size = new System.Drawing.Size(666, 225);
+			this.allEmployeeListTable.TabIndex = 127;
 			// 
 			// guna2Panel3
 			// 
@@ -296,79 +370,6 @@
 			this.Cancel.Size = new System.Drawing.Size(101, 29);
 			this.Cancel.TabIndex = 120;
 			this.Cancel.Text = " Cancel";
-			// 
-			// allEmployeeListTable
-			// 
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
-			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-			this.allEmployeeListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle9;
-			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
-			this.allEmployeeListTable.Location = new System.Drawing.Point(6, 46);
-			this.allEmployeeListTable.Name = "allEmployeeListTable";
-			this.allEmployeeListTable.ReadOnly = true;
-			this.allEmployeeListTable.Size = new System.Drawing.Size(666, 225);
-			this.allEmployeeListTable.TabIndex = 127;
-			// 
-			// txt_UserSearch
-			// 
-			this.txt_UserSearch.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_UserSearch.BorderRadius = 6;
-			this.txt_UserSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_UserSearch.DefaultText = "";
-			this.txt_UserSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_UserSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_UserSearch.FillColor = System.Drawing.Color.Wheat;
-			this.txt_UserSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserSearch.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserSearch.ForeColor = System.Drawing.Color.Black;
-			this.txt_UserSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserSearch.Location = new System.Drawing.Point(7, 11);
-			this.txt_UserSearch.Name = "txt_UserSearch";
-			this.txt_UserSearch.PasswordChar = '\0';
-			this.txt_UserSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
-			this.txt_UserSearch.PlaceholderText = "Search in all columns.....";
-			this.txt_UserSearch.SelectedText = "";
-			this.txt_UserSearch.Size = new System.Drawing.Size(365, 29);
-			this.txt_UserSearch.TabIndex = 128;
-			// 
-			// btn_findAllEmployee
-			// 
-			this.btn_findAllEmployee.BorderRadius = 8;
-			this.btn_findAllEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.btn_findAllEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.btn_findAllEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.btn_findAllEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.btn_findAllEmployee.FillColor = System.Drawing.Color.SeaGreen;
-			this.btn_findAllEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_findAllEmployee.ForeColor = System.Drawing.Color.Wheat;
-			this.btn_findAllEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btn_findAllEmployee.Image")));
-			this.btn_findAllEmployee.Location = new System.Drawing.Point(571, 11);
-			this.btn_findAllEmployee.Name = "btn_findAllEmployee";
-			this.btn_findAllEmployee.Size = new System.Drawing.Size(101, 29);
-			this.btn_findAllEmployee.TabIndex = 129;
-			this.btn_findAllEmployee.Text = "Find All";
 			// 
 			// total
 			// 
@@ -442,7 +443,7 @@
 		private System.Windows.Forms.Label label4;
 		private Guna.UI2.WinForms.Guna2TextBox txt_Name;
 		private System.Windows.Forms.Label label2;
-		private Guna.UI2.WinForms.Guna2Button EmpSearch;
+		private Guna.UI2.WinForms.Guna2Button btn_UserSearch;
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2TextBox txt_ID;
 		private System.Windows.Forms.Label label27;
@@ -452,7 +453,7 @@
 		private Guna.UI2.WinForms.Guna2Button Cancel;
 		private System.Windows.Forms.DataGridView allEmployeeListTable;
 		private Guna.UI2.WinForms.Guna2TextBox txt_UserSearch;
-		private Guna.UI2.WinForms.Guna2Button btn_findAllEmployee;
+		private Guna.UI2.WinForms.Guna2Button btn_findAllUsers;
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

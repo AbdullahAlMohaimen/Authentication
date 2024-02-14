@@ -16,5 +16,10 @@ namespace Authentication.SearchUser
 		{
 			InitializeComponent();
 		}
+
+		private void btn_findAllUsers_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
