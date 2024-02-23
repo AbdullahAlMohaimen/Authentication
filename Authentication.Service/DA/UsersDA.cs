@@ -290,6 +290,36 @@ namespace Authentication.Service
 		#endregion
 
 		#region Search User
+		internal static IDataReader GetSearchUser(string userNo, string userName)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (!string.IsNullOrEmpty(userNo) && !string.IsNullOrEmpty(userName))
+				{
+					getCommand = new SqlCommand("Select * from Users where UserNo = '" + userNo + "' and UserName = '" + userName + "'", conn);
+				}
+				if (!string.IsNullOrEmpty(userNo) && string.IsNullOrEmpty(userName))
+				{
+					getCommand = new SqlCommand("Select * from Users where UserNo = '" + userNo + "'", conn);
+				}
+				if (string.IsNullOrEmpty(userNo) && !string.IsNullOrEmpty(userName))
+				{
+					getCommand = new SqlCommand("Select * from Users where UserName = '" + userName + "'", conn);
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			dr = getCommand.ExecuteReader();
+			return dr;
+		}
 		internal static IDataReader SearchUser(string searchText)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";

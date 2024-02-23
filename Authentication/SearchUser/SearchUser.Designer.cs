@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUser));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -54,10 +54,29 @@
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txt_UserNo = new System.Windows.Forms.Label();
+			this.txt_UserName = new System.Windows.Forms.Label();
+			this.txt_UserRole = new System.Windows.Forms.Label();
+			this.txt_UserStatus = new System.Windows.Forms.Label();
+			this.txt_UserEmail = new System.Windows.Forms.Label();
+			this.txt_UserApprover = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).BeginInit();
+			this.guna2Panel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -95,6 +114,7 @@
 			this.Minimize.Size = new System.Drawing.Size(24, 24);
 			this.Minimize.TabIndex = 12;
 			this.Minimize.UseVisualStyleBackColor = false;
+			this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
 			// 
 			// Exit
 			// 
@@ -109,6 +129,7 @@
 			this.Exit.Size = new System.Drawing.Size(24, 24);
 			this.Exit.TabIndex = 11;
 			this.Exit.UseVisualStyleBackColor = false;
+			this.Exit.Click += new System.EventHandler(this.Exit_Click);
 			// 
 			// guna2Panel1
 			// 
@@ -160,7 +181,7 @@
 			this.txt_Name.PasswordChar = '\0';
 			this.txt_Name.PlaceholderText = "";
 			this.txt_Name.SelectedText = "";
-			this.txt_Name.Size = new System.Drawing.Size(452, 34);
+			this.txt_Name.Size = new System.Drawing.Size(471, 34);
 			this.txt_Name.TabIndex = 106;
 			// 
 			// label2
@@ -190,6 +211,7 @@
 			this.btn_UserSearch.Size = new System.Drawing.Size(101, 29);
 			this.btn_UserSearch.TabIndex = 104;
 			this.btn_UserSearch.Text = "Search";
+			this.btn_UserSearch.Click += new System.EventHandler(this.btn_UserSearch_Click);
 			// 
 			// label1
 			// 
@@ -246,9 +268,9 @@
 			this.guna2Panel2.Controls.Add(this.btn_findAllUsers);
 			this.guna2Panel2.Controls.Add(this.txt_UserSearch);
 			this.guna2Panel2.Controls.Add(this.allEmployeeListTable);
-			this.guna2Panel2.Location = new System.Drawing.Point(12, 110);
+			this.guna2Panel2.Location = new System.Drawing.Point(8, 110);
 			this.guna2Panel2.Name = "guna2Panel2";
-			this.guna2Panel2.Size = new System.Drawing.Size(678, 278);
+			this.guna2Panel2.Size = new System.Drawing.Size(639, 278);
 			this.guna2Panel2.TabIndex = 117;
 			// 
 			// btn_findAllUsers
@@ -262,7 +284,7 @@
 			this.btn_findAllUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_findAllUsers.ForeColor = System.Drawing.Color.Wheat;
 			this.btn_findAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btn_findAllUsers.Image")));
-			this.btn_findAllUsers.Location = new System.Drawing.Point(571, 11);
+			this.btn_findAllUsers.Location = new System.Drawing.Point(529, 11);
 			this.btn_findAllUsers.Name = "btn_findAllUsers";
 			this.btn_findAllUsers.Size = new System.Drawing.Size(101, 29);
 			this.btn_findAllUsers.TabIndex = 129;
@@ -295,34 +317,34 @@
 			// 
 			// allEmployeeListTable
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
-			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allEmployeeListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
 			this.allEmployeeListTable.Location = new System.Drawing.Point(6, 46);
 			this.allEmployeeListTable.Name = "allEmployeeListTable";
 			this.allEmployeeListTable.ReadOnly = true;
-			this.allEmployeeListTable.Size = new System.Drawing.Size(666, 225);
+			this.allEmployeeListTable.Size = new System.Drawing.Size(627, 225);
 			this.allEmployeeListTable.TabIndex = 127;
 			// 
 			// guna2Panel3
@@ -332,9 +354,27 @@
 			this.guna2Panel3.BorderRadius = 10;
 			this.guna2Panel3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel3.BorderThickness = 2;
-			this.guna2Panel3.Location = new System.Drawing.Point(696, 110);
+			this.guna2Panel3.Controls.Add(this.txt_UserApprover);
+			this.guna2Panel3.Controls.Add(this.txt_UserEmail);
+			this.guna2Panel3.Controls.Add(this.txt_UserStatus);
+			this.guna2Panel3.Controls.Add(this.txt_UserRole);
+			this.guna2Panel3.Controls.Add(this.txt_UserName);
+			this.guna2Panel3.Controls.Add(this.txt_UserNo);
+			this.guna2Panel3.Controls.Add(this.label14);
+			this.guna2Panel3.Controls.Add(this.label15);
+			this.guna2Panel3.Controls.Add(this.label5);
+			this.guna2Panel3.Controls.Add(this.label12);
+			this.guna2Panel3.Controls.Add(this.label13);
+			this.guna2Panel3.Controls.Add(this.label10);
+			this.guna2Panel3.Controls.Add(this.label11);
+			this.guna2Panel3.Controls.Add(this.label8);
+			this.guna2Panel3.Controls.Add(this.label9);
+			this.guna2Panel3.Controls.Add(this.label6);
+			this.guna2Panel3.Controls.Add(this.label7);
+			this.guna2Panel3.Controls.Add(this.label3);
+			this.guna2Panel3.Location = new System.Drawing.Point(653, 110);
 			this.guna2Panel3.Name = "guna2Panel3";
-			this.guna2Panel3.Size = new System.Drawing.Size(286, 278);
+			this.guna2Panel3.Size = new System.Drawing.Size(330, 278);
 			this.guna2Panel3.TabIndex = 118;
 			// 
 			// Select
@@ -370,6 +410,7 @@
 			this.Cancel.Size = new System.Drawing.Size(101, 29);
 			this.Cancel.TabIndex = 120;
 			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
 			// 
 			// total
 			// 
@@ -402,6 +443,198 @@
 			this.guna2HtmlLabel1.TabIndex = 135;
 			this.guna2HtmlLabel1.Text = "Total";
 			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label14.Location = new System.Drawing.Point(6, 139);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(72, 17);
+			this.label14.TabIndex = 121;
+			this.label14.Text = "Approver";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label15.Location = new System.Drawing.Point(72, 135);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(16, 24);
+			this.label15.TabIndex = 122;
+			this.label15.Text = ":";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label5.Location = new System.Drawing.Point(72, 10);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(16, 24);
+			this.label5.TabIndex = 120;
+			this.label5.Text = ":";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label12.Location = new System.Drawing.Point(6, 114);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(48, 17);
+			this.label12.TabIndex = 118;
+			this.label12.Text = "Email";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label13.Location = new System.Drawing.Point(72, 110);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(16, 24);
+			this.label13.TabIndex = 119;
+			this.label13.Text = ":";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label10.Location = new System.Drawing.Point(6, 89);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(56, 17);
+			this.label10.TabIndex = 116;
+			this.label10.Text = "Status";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label11.Location = new System.Drawing.Point(72, 85);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(16, 24);
+			this.label11.TabIndex = 117;
+			this.label11.Text = ":";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label8.Location = new System.Drawing.Point(6, 64);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(40, 17);
+			this.label8.TabIndex = 114;
+			this.label8.Text = "Role";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label9.Location = new System.Drawing.Point(72, 60);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(16, 24);
+			this.label9.TabIndex = 115;
+			this.label9.Text = ":";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label6.Location = new System.Drawing.Point(6, 39);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(40, 17);
+			this.label6.TabIndex = 112;
+			this.label6.Text = "Name";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label7.Location = new System.Drawing.Point(72, 35);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(16, 24);
+			this.label7.TabIndex = 113;
+			this.label7.Text = ":";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label3.Location = new System.Drawing.Point(6, 14);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 17);
+			this.label3.TabIndex = 111;
+			this.label3.Text = "User No";
+			// 
+			// txt_UserNo
+			// 
+			this.txt_UserNo.AutoSize = true;
+			this.txt_UserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserNo.Location = new System.Drawing.Point(88, 16);
+			this.txt_UserNo.Name = "txt_UserNo";
+			this.txt_UserNo.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserNo.TabIndex = 123;
+			// 
+			// txt_UserName
+			// 
+			this.txt_UserName.AutoSize = true;
+			this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserName.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserName.Location = new System.Drawing.Point(88, 41);
+			this.txt_UserName.Name = "txt_UserName";
+			this.txt_UserName.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserName.TabIndex = 124;
+			// 
+			// txt_UserRole
+			// 
+			this.txt_UserRole.AutoSize = true;
+			this.txt_UserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserRole.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserRole.Location = new System.Drawing.Point(88, 66);
+			this.txt_UserRole.Name = "txt_UserRole";
+			this.txt_UserRole.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserRole.TabIndex = 125;
+			// 
+			// txt_UserStatus
+			// 
+			this.txt_UserStatus.AutoSize = true;
+			this.txt_UserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserStatus.Location = new System.Drawing.Point(88, 91);
+			this.txt_UserStatus.Name = "txt_UserStatus";
+			this.txt_UserStatus.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserStatus.TabIndex = 126;
+			// 
+			// txt_UserEmail
+			// 
+			this.txt_UserEmail.AutoSize = true;
+			this.txt_UserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserEmail.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserEmail.Location = new System.Drawing.Point(88, 116);
+			this.txt_UserEmail.Name = "txt_UserEmail";
+			this.txt_UserEmail.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserEmail.TabIndex = 127;
+			// 
+			// txt_UserApprover
+			// 
+			this.txt_UserApprover.AutoSize = true;
+			this.txt_UserApprover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserApprover.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserApprover.Location = new System.Drawing.Point(88, 141);
+			this.txt_UserApprover.Name = "txt_UserApprover";
+			this.txt_UserApprover.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserApprover.TabIndex = 128;
+			// 
 			// SearchUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +661,8 @@
 			this.guna2Panel1.PerformLayout();
 			this.guna2Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).EndInit();
+			this.guna2Panel3.ResumeLayout(false);
+			this.guna2Panel3.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -457,5 +692,23 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+		private System.Windows.Forms.Label txt_UserApprover;
+		private System.Windows.Forms.Label txt_UserEmail;
+		private System.Windows.Forms.Label txt_UserStatus;
+		private System.Windows.Forms.Label txt_UserRole;
+		private System.Windows.Forms.Label txt_UserName;
+		private System.Windows.Forms.Label txt_UserNo;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label3;
 	}
 }

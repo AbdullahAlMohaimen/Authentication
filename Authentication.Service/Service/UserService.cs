@@ -199,6 +199,25 @@ namespace Authentication.Service
 		#endregion
 
 		#region SearchUsers
+
+		public Users SearchUsers(string userNo, string userName)
+		{
+			Users oUser = new Users();
+			try
+			{
+				DataReader dr = new DataReader(UsersDA.GetSearchUser(userNo, userName));
+				if (dr.Read())
+				{
+					oUser = this.CreateObject<Users>(dr);
+				}
+			}
+			catch (Exception ex)
+			{
+				oUser = null;
+			}
+			return oUser;
+		}
+
 		public List<Users> SearchUsers(string searchText)
 		{
 			List<Users> users = new List<Users>();

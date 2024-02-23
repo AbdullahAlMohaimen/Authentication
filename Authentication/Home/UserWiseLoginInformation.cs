@@ -38,5 +38,11 @@ namespace Authentication.Home
 			oCurrentUser = oUser;
 		}
 		#endregion
+
+		private void SearchEmployee_Click(object sender, EventArgs e)
+		{
+			SearchUser.SearchUser searchUser = new SearchUser.SearchUser(this);
+			searchUser.Show();
+		}
 	}
 }

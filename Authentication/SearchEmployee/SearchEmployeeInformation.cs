@@ -34,7 +34,6 @@ namespace Authentication.SearchEmployee
 		{
 			this.Close();
 		}
-
 		#endregion
 
 		#region Cancel Button
@@ -57,7 +56,7 @@ namespace Authentication.SearchEmployee
 		{
 			if (string.IsNullOrEmpty(txt_ID.Text) && string.IsNullOrEmpty(txt_Name.Text))
 			{
-				MessageBox.Show("PLease enter employee ID or employee NAME first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show("PLease enter employee NO or employee NAME first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			if (!string.IsNullOrEmpty(txt_ID.Text) || !string.IsNullOrEmpty(txt_Name.Text))

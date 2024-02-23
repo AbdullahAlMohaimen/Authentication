@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserWiseLoginInformation));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserWiseLoginInformation));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.IsToDay = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -51,6 +51,11 @@
 			this.txt_week = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.allUserLoginInfoListTable = new System.Windows.Forms.DataGridView();
 			this.txt_UserLoginInfoSearch = new Guna.UI2.WinForms.Guna2TextBox();
+			this.Clear_Emp_Button = new System.Windows.Forms.Button();
+			this.SearchEmployee = new Guna.UI2.WinForms.Guna2Button();
+			this.txt_FindUser = new Guna.UI2.WinForms.Guna2TextBox();
+			this.label33 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserLoginInfoListTable)).BeginInit();
@@ -63,6 +68,8 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.IsToDay);
+			this.guna2Panel1.Controls.Add(this.label11);
 			this.guna2Panel1.Controls.Add(this.guna2Panel2);
 			this.guna2Panel1.Controls.Add(this.total);
 			this.guna2Panel1.Controls.Add(this.label5);
@@ -84,13 +91,16 @@
 			this.guna2Panel2.BorderRadius = 10;
 			this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel2.BorderThickness = 2;
-			this.guna2Panel2.Controls.Add(this.IsToDay);
-			this.guna2Panel2.Controls.Add(this.label11);
 			this.guna2Panel2.Controls.Add(this.label3);
+			this.guna2Panel2.Controls.Add(this.Clear_Emp_Button);
 			this.guna2Panel2.Controls.Add(this.txt_toDate);
 			this.guna2Panel2.Controls.Add(this.label4);
+			this.guna2Panel2.Controls.Add(this.SearchEmployee);
 			this.guna2Panel2.Controls.Add(this.label2);
+			this.guna2Panel2.Controls.Add(this.txt_FindUser);
+			this.guna2Panel2.Controls.Add(this.label33);
 			this.guna2Panel2.Controls.Add(this.txt_fromDate);
+			this.guna2Panel2.Controls.Add(this.label14);
 			this.guna2Panel2.Controls.Add(this.EmpSearch);
 			this.guna2Panel2.Controls.Add(this.label1);
 			this.guna2Panel2.Location = new System.Drawing.Point(6, 7);
@@ -105,7 +115,7 @@
 			this.IsToDay.CheckedState.BorderRadius = 0;
 			this.IsToDay.CheckedState.BorderThickness = 0;
 			this.IsToDay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsToDay.Location = new System.Drawing.Point(370, 20);
+			this.IsToDay.Location = new System.Drawing.Point(496, 77);
 			this.IsToDay.Name = "IsToDay";
 			this.IsToDay.Size = new System.Drawing.Size(15, 14);
 			this.IsToDay.TabIndex = 155;
@@ -119,7 +129,7 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(392, 15);
+			this.label11.Location = new System.Drawing.Point(518, 72);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(55, 21);
 			this.label11.TabIndex = 154;
@@ -130,7 +140,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(221, 14);
+			this.label3.Location = new System.Drawing.Point(770, 15);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(19, 21);
 			this.label3.TabIndex = 141;
@@ -145,11 +155,11 @@
 			this.txt_toDate.CalendarTitleForeColor = System.Drawing.Color.Wheat;
 			this.txt_toDate.CalendarTrailingForeColor = System.Drawing.Color.Wheat;
 			this.txt_toDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.txt_toDate.Location = new System.Drawing.Point(244, 11);
+			this.txt_toDate.Location = new System.Drawing.Point(792, 12);
 			this.txt_toDate.Margin = new System.Windows.Forms.Padding(0);
 			this.txt_toDate.MinimumSize = new System.Drawing.Size(0, 29);
 			this.txt_toDate.Name = "txt_toDate";
-			this.txt_toDate.Size = new System.Drawing.Size(110, 29);
+			this.txt_toDate.Size = new System.Drawing.Size(120, 29);
 			this.txt_toDate.TabIndex = 140;
 			// 
 			// label4
@@ -157,7 +167,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label4.Location = new System.Drawing.Point(195, 14);
+			this.label4.Location = new System.Drawing.Point(744, 15);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(28, 21);
 			this.label4.TabIndex = 139;
@@ -168,7 +178,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label2.Location = new System.Drawing.Point(49, 14);
+			this.label2.Location = new System.Drawing.Point(595, 15);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(19, 21);
 			this.label2.TabIndex = 138;
@@ -183,10 +193,10 @@
 			this.txt_fromDate.CalendarTitleForeColor = System.Drawing.Color.Wheat;
 			this.txt_fromDate.CalendarTrailingForeColor = System.Drawing.Color.Wheat;
 			this.txt_fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.txt_fromDate.Location = new System.Drawing.Point(72, 11);
+			this.txt_fromDate.Location = new System.Drawing.Point(618, 12);
 			this.txt_fromDate.MinimumSize = new System.Drawing.Size(0, 29);
 			this.txt_fromDate.Name = "txt_fromDate";
-			this.txt_fromDate.Size = new System.Drawing.Size(110, 29);
+			this.txt_fromDate.Size = new System.Drawing.Size(120, 29);
 			this.txt_fromDate.TabIndex = 137;
 			// 
 			// EmpSearch
@@ -211,7 +221,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label1.Location = new System.Drawing.Point(6, 14);
+			this.label1.Location = new System.Drawing.Point(552, 15);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(46, 21);
 			this.label1.TabIndex = 54;
@@ -359,6 +369,84 @@
 			this.txt_UserLoginInfoSearch.Size = new System.Drawing.Size(469, 29);
 			this.txt_UserLoginInfoSearch.TabIndex = 124;
 			// 
+			// Clear_Emp_Button
+			// 
+			this.Clear_Emp_Button.BackColor = System.Drawing.Color.Wheat;
+			this.Clear_Emp_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_Emp_Button.BackgroundImage")));
+			this.Clear_Emp_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.Clear_Emp_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Clear_Emp_Button.FlatAppearance.BorderSize = 0;
+			this.Clear_Emp_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Clear_Emp_Button.Location = new System.Drawing.Point(473, 14);
+			this.Clear_Emp_Button.Name = "Clear_Emp_Button";
+			this.Clear_Emp_Button.Size = new System.Drawing.Size(27, 23);
+			this.Clear_Emp_Button.TabIndex = 183;
+			this.Clear_Emp_Button.UseVisualStyleBackColor = false;
+			// 
+			// SearchEmployee
+			// 
+			this.SearchEmployee.BorderRadius = 8;
+			this.SearchEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.SearchEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.SearchEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.SearchEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.SearchEmployee.FillColor = System.Drawing.Color.Maroon;
+			this.SearchEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SearchEmployee.ForeColor = System.Drawing.Color.Wheat;
+			this.SearchEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SearchEmployee.Image")));
+			this.SearchEmployee.Location = new System.Drawing.Point(508, 10);
+			this.SearchEmployee.Name = "SearchEmployee";
+			this.SearchEmployee.Size = new System.Drawing.Size(36, 31);
+			this.SearchEmployee.TabIndex = 182;
+			this.SearchEmployee.Click += new System.EventHandler(this.SearchEmployee_Click);
+			// 
+			// txt_FindUser
+			// 
+			this.txt_FindUser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.txt_FindUser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.txt_FindUser.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_FindUser.BorderRadius = 6;
+			this.txt_FindUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_FindUser.DefaultText = "";
+			this.txt_FindUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_FindUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_FindUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_FindUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_FindUser.FillColor = System.Drawing.Color.Wheat;
+			this.txt_FindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_FindUser.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_FindUser.ForeColor = System.Drawing.Color.Black;
+			this.txt_FindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_FindUser.Location = new System.Drawing.Point(131, 10);
+			this.txt_FindUser.Name = "txt_FindUser";
+			this.txt_FindUser.PasswordChar = '\0';
+			this.txt_FindUser.PlaceholderText = "";
+			this.txt_FindUser.SelectedText = "";
+			this.txt_FindUser.Size = new System.Drawing.Size(374, 31);
+			this.txt_FindUser.TabIndex = 181;
+			// 
+			// label33
+			// 
+			this.label33.AutoSize = true;
+			this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label33.Location = new System.Drawing.Point(113, 13);
+			this.label33.Name = "label33";
+			this.label33.Size = new System.Drawing.Size(16, 24);
+			this.label33.TabIndex = 180;
+			this.label33.Text = ":";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label14.Location = new System.Drawing.Point(8, 15);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(109, 21);
+			this.label14.TabIndex = 179;
+			this.label14.Text = "Select User";
+			// 
 			// UserWiseLoginInformation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,5 +485,10 @@
 		private Guna.UI2.WinForms.Guna2ComboBox txt_week;
 		private System.Windows.Forms.DataGridView allUserLoginInfoListTable;
 		private Guna.UI2.WinForms.Guna2TextBox txt_UserLoginInfoSearch;
+		private System.Windows.Forms.Button Clear_Emp_Button;
+		private Guna.UI2.WinForms.Guna2Button SearchEmployee;
+		private Guna.UI2.WinForms.Guna2TextBox txt_FindUser;
+		private System.Windows.Forms.Label label33;
+		private System.Windows.Forms.Label label14;
 	}
 }
