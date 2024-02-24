@@ -37,7 +37,16 @@ namespace Authentication.SearchUser
 		#region Find All Button
 		private void btn_findAllUsers_Click(object sender, EventArgs e)
 		{
-
+			try
+			{
+				oUsers = userService.GetUsers();
+				total.Text = oUsers.Count().ToString();
+				this.ProcessData();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 
@@ -69,6 +78,8 @@ namespace Authentication.SearchUser
 					txt_UserStatus.Text = "";
 					txt_UserEmail.Text = "";
 					txt_UserApprover.Text = "";
+					MessageBox.Show("User not found\nPLease try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
 				}
 			}
 		}

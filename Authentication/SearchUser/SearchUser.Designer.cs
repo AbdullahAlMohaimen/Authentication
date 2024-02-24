@@ -47,13 +47,14 @@
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.btn_findAllUsers = new Guna.UI2.WinForms.Guna2Button();
 			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
-			this.allEmployeeListTable = new System.Windows.Forms.DataGridView();
+			this.allUserListDataTable = new System.Windows.Forms.DataGridView();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-			this.Select = new Guna.UI2.WinForms.Guna2Button();
-			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
-			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
-			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.txt_UserApprover = new System.Windows.Forms.Label();
+			this.txt_UserEmail = new System.Windows.Forms.Label();
+			this.txt_UserStatus = new System.Windows.Forms.Label();
+			this.txt_UserRole = new System.Windows.Forms.Label();
+			this.txt_UserName = new System.Windows.Forms.Label();
+			this.txt_UserNo = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -66,16 +67,15 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.txt_UserNo = new System.Windows.Forms.Label();
-			this.txt_UserName = new System.Windows.Forms.Label();
-			this.txt_UserRole = new System.Windows.Forms.Label();
-			this.txt_UserStatus = new System.Windows.Forms.Label();
-			this.txt_UserEmail = new System.Windows.Forms.Label();
-			this.txt_UserApprover = new System.Windows.Forms.Label();
+			this.Select = new Guna.UI2.WinForms.Guna2Button();
+			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
+			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.allUserListDataTable)).BeginInit();
 			this.guna2Panel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -267,7 +267,7 @@
 			this.guna2Panel2.BorderThickness = 2;
 			this.guna2Panel2.Controls.Add(this.btn_findAllUsers);
 			this.guna2Panel2.Controls.Add(this.txt_UserSearch);
-			this.guna2Panel2.Controls.Add(this.allEmployeeListTable);
+			this.guna2Panel2.Controls.Add(this.allUserListDataTable);
 			this.guna2Panel2.Location = new System.Drawing.Point(8, 110);
 			this.guna2Panel2.Name = "guna2Panel2";
 			this.guna2Panel2.Size = new System.Drawing.Size(639, 278);
@@ -315,14 +315,14 @@
 			this.txt_UserSearch.Size = new System.Drawing.Size(365, 29);
 			this.txt_UserSearch.TabIndex = 128;
 			// 
-			// allEmployeeListTable
+			// allUserListDataTable
 			// 
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
-			this.allEmployeeListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.allEmployeeListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.allUserListDataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.allUserListDataTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.allEmployeeListTable.BackgroundColor = System.Drawing.Color.Wheat;
+			this.allUserListDataTable.BackgroundColor = System.Drawing.Color.Wheat;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,8 +330,8 @@
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allEmployeeListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.allEmployeeListTable.ColumnHeadersHeight = 30;
+			this.allUserListDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.allUserListDataTable.ColumnHeadersHeight = 30;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,13 +339,13 @@
 			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allEmployeeListTable.DefaultCellStyle = dataGridViewCellStyle3;
-			this.allEmployeeListTable.EnableHeadersVisualStyles = false;
-			this.allEmployeeListTable.Location = new System.Drawing.Point(6, 46);
-			this.allEmployeeListTable.Name = "allEmployeeListTable";
-			this.allEmployeeListTable.ReadOnly = true;
-			this.allEmployeeListTable.Size = new System.Drawing.Size(627, 225);
-			this.allEmployeeListTable.TabIndex = 127;
+			this.allUserListDataTable.DefaultCellStyle = dataGridViewCellStyle3;
+			this.allUserListDataTable.EnableHeadersVisualStyles = false;
+			this.allUserListDataTable.Location = new System.Drawing.Point(6, 46);
+			this.allUserListDataTable.Name = "allUserListDataTable";
+			this.allUserListDataTable.ReadOnly = true;
+			this.allUserListDataTable.Size = new System.Drawing.Size(627, 225);
+			this.allUserListDataTable.TabIndex = 127;
 			// 
 			// guna2Panel3
 			// 
@@ -377,71 +377,65 @@
 			this.guna2Panel3.Size = new System.Drawing.Size(330, 278);
 			this.guna2Panel3.TabIndex = 118;
 			// 
-			// Select
+			// txt_UserApprover
 			// 
-			this.Select.BorderRadius = 8;
-			this.Select.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Select.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Select.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Select.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Select.FillColor = System.Drawing.Color.SeaGreen;
-			this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Select.ForeColor = System.Drawing.Color.Wheat;
-			this.Select.Image = ((System.Drawing.Image)(resources.GetObject("Select.Image")));
-			this.Select.Location = new System.Drawing.Point(878, 394);
-			this.Select.Name = "Select";
-			this.Select.Size = new System.Drawing.Size(101, 29);
-			this.Select.TabIndex = 119;
-			this.Select.Text = "Select";
+			this.txt_UserApprover.AutoSize = true;
+			this.txt_UserApprover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserApprover.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserApprover.Location = new System.Drawing.Point(88, 141);
+			this.txt_UserApprover.Name = "txt_UserApprover";
+			this.txt_UserApprover.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserApprover.TabIndex = 128;
 			// 
-			// Cancel
+			// txt_UserEmail
 			// 
-			this.Cancel.BorderRadius = 8;
-			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Cancel.FillColor = System.Drawing.Color.Brown;
-			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
-			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(766, 394);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(101, 29);
-			this.Cancel.TabIndex = 120;
-			this.Cancel.Text = " Cancel";
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+			this.txt_UserEmail.AutoSize = true;
+			this.txt_UserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserEmail.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserEmail.Location = new System.Drawing.Point(88, 116);
+			this.txt_UserEmail.Name = "txt_UserEmail";
+			this.txt_UserEmail.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserEmail.TabIndex = 127;
 			// 
-			// total
+			// txt_UserStatus
 			// 
-			this.total.BackColor = System.Drawing.Color.Transparent;
-			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.total.ForeColor = System.Drawing.Color.DarkRed;
-			this.total.Location = new System.Drawing.Point(82, 400);
-			this.total.Name = "total";
-			this.total.Size = new System.Drawing.Size(11, 18);
-			this.total.TabIndex = 137;
-			this.total.Text = "0";
+			this.txt_UserStatus.AutoSize = true;
+			this.txt_UserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserStatus.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserStatus.Location = new System.Drawing.Point(88, 91);
+			this.txt_UserStatus.Name = "txt_UserStatus";
+			this.txt_UserStatus.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserStatus.TabIndex = 126;
 			// 
-			// guna2HtmlLabel2
+			// txt_UserRole
 			// 
-			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2HtmlLabel2.Location = new System.Drawing.Point(67, 399);
-			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
-			this.guna2HtmlLabel2.TabIndex = 136;
-			this.guna2HtmlLabel2.Text = ":";
+			this.txt_UserRole.AutoSize = true;
+			this.txt_UserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserRole.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserRole.Location = new System.Drawing.Point(88, 66);
+			this.txt_UserRole.Name = "txt_UserRole";
+			this.txt_UserRole.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserRole.TabIndex = 125;
 			// 
-			// guna2HtmlLabel1
+			// txt_UserName
 			// 
-			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2HtmlLabel1.Location = new System.Drawing.Point(18, 400);
-			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
-			this.guna2HtmlLabel1.TabIndex = 135;
-			this.guna2HtmlLabel1.Text = "Total";
+			this.txt_UserName.AutoSize = true;
+			this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserName.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserName.Location = new System.Drawing.Point(88, 41);
+			this.txt_UserName.Name = "txt_UserName";
+			this.txt_UserName.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserName.TabIndex = 124;
+			// 
+			// txt_UserNo
+			// 
+			this.txt_UserNo.AutoSize = true;
+			this.txt_UserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserNo.Location = new System.Drawing.Point(88, 16);
+			this.txt_UserNo.Name = "txt_UserNo";
+			this.txt_UserNo.Size = new System.Drawing.Size(0, 15);
+			this.txt_UserNo.TabIndex = 123;
 			// 
 			// label14
 			// 
@@ -575,65 +569,71 @@
 			this.label3.TabIndex = 111;
 			this.label3.Text = "User No";
 			// 
-			// txt_UserNo
+			// Select
 			// 
-			this.txt_UserNo.AutoSize = true;
-			this.txt_UserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserNo.Location = new System.Drawing.Point(88, 16);
-			this.txt_UserNo.Name = "txt_UserNo";
-			this.txt_UserNo.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserNo.TabIndex = 123;
+			this.Select.BorderRadius = 8;
+			this.Select.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Select.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Select.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Select.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Select.FillColor = System.Drawing.Color.SeaGreen;
+			this.Select.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Select.ForeColor = System.Drawing.Color.Wheat;
+			this.Select.Image = ((System.Drawing.Image)(resources.GetObject("Select.Image")));
+			this.Select.Location = new System.Drawing.Point(878, 394);
+			this.Select.Name = "Select";
+			this.Select.Size = new System.Drawing.Size(101, 29);
+			this.Select.TabIndex = 119;
+			this.Select.Text = "Select";
 			// 
-			// txt_UserName
+			// Cancel
 			// 
-			this.txt_UserName.AutoSize = true;
-			this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserName.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserName.Location = new System.Drawing.Point(88, 41);
-			this.txt_UserName.Name = "txt_UserName";
-			this.txt_UserName.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserName.TabIndex = 124;
+			this.Cancel.BorderRadius = 8;
+			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Cancel.FillColor = System.Drawing.Color.Brown;
+			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
+			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+			this.Cancel.Location = new System.Drawing.Point(766, 394);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(101, 29);
+			this.Cancel.TabIndex = 120;
+			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
 			// 
-			// txt_UserRole
+			// total
 			// 
-			this.txt_UserRole.AutoSize = true;
-			this.txt_UserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserRole.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserRole.Location = new System.Drawing.Point(88, 66);
-			this.txt_UserRole.Name = "txt_UserRole";
-			this.txt_UserRole.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserRole.TabIndex = 125;
+			this.total.BackColor = System.Drawing.Color.Transparent;
+			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.total.ForeColor = System.Drawing.Color.DarkRed;
+			this.total.Location = new System.Drawing.Point(82, 400);
+			this.total.Name = "total";
+			this.total.Size = new System.Drawing.Size(11, 18);
+			this.total.TabIndex = 137;
+			this.total.Text = "0";
 			// 
-			// txt_UserStatus
+			// guna2HtmlLabel2
 			// 
-			this.txt_UserStatus.AutoSize = true;
-			this.txt_UserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserStatus.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserStatus.Location = new System.Drawing.Point(88, 91);
-			this.txt_UserStatus.Name = "txt_UserStatus";
-			this.txt_UserStatus.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserStatus.TabIndex = 126;
+			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(67, 399);
+			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
+			this.guna2HtmlLabel2.TabIndex = 136;
+			this.guna2HtmlLabel2.Text = ":";
 			// 
-			// txt_UserEmail
+			// guna2HtmlLabel1
 			// 
-			this.txt_UserEmail.AutoSize = true;
-			this.txt_UserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserEmail.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserEmail.Location = new System.Drawing.Point(88, 116);
-			this.txt_UserEmail.Name = "txt_UserEmail";
-			this.txt_UserEmail.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserEmail.TabIndex = 127;
-			// 
-			// txt_UserApprover
-			// 
-			this.txt_UserApprover.AutoSize = true;
-			this.txt_UserApprover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserApprover.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.txt_UserApprover.Location = new System.Drawing.Point(88, 141);
-			this.txt_UserApprover.Name = "txt_UserApprover";
-			this.txt_UserApprover.Size = new System.Drawing.Size(0, 15);
-			this.txt_UserApprover.TabIndex = 128;
+			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(18, 400);
+			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
+			this.guna2HtmlLabel1.TabIndex = 135;
+			this.guna2HtmlLabel1.Text = "Total";
 			// 
 			// SearchUser
 			// 
@@ -660,7 +660,7 @@
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
 			this.guna2Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.allEmployeeListTable)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.allUserListDataTable)).EndInit();
 			this.guna2Panel3.ResumeLayout(false);
 			this.guna2Panel3.PerformLayout();
 			this.ResumeLayout(false);
@@ -686,7 +686,7 @@
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
 		private Guna.UI2.WinForms.Guna2Button Select;
 		private Guna.UI2.WinForms.Guna2Button Cancel;
-		private System.Windows.Forms.DataGridView allEmployeeListTable;
+		private System.Windows.Forms.DataGridView allUserListDataTable;
 		private Guna.UI2.WinForms.Guna2TextBox txt_UserSearch;
 		private Guna.UI2.WinForms.Guna2Button btn_findAllUsers;
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
