@@ -50,6 +50,13 @@ namespace Authentication.SearchUser
 		}
 		#endregion
 
+		#region Process Search Employee
+		public void ProcessData()
+		{
+
+		}
+		#endregion
+
 		#region Search Button Click
 		private void btn_UserSearch_Click(object sender, EventArgs e)
 		{
