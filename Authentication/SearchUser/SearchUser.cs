@@ -1,4 +1,5 @@
-﻿using Authentication.Service;
+﻿using Authentication.BO;
+using Authentication.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,8 +40,7 @@ namespace Authentication.SearchUser
 		{
 			try
 			{
-				oUsers = userService.GetUsers();
-				total.Text = oUsers.Count().ToString();
+				oUsers = userService.Get(EnumStatus.Active);
 				this.ProcessData();
 			}
 			catch (Exception ex)
@@ -50,10 +50,45 @@ namespace Authentication.SearchUser
 		}
 		#endregion
 
-		#region Process Search Employee
+		#region Process Search Users
 		public void ProcessData()
 		{
+			total.Text = oUsers.Count().ToString();
+			DataRow dr = null;
+			DataTable userList = new DataTable();
+			userList.TableName = "User List";
 
+			userList.Columns.Add("ID", typeof(int));
+			userList.Columns.Add("User No", typeof(string));
+			userList.Columns.Add("Name", typeof(string));
+			userList.Columns.Add("Role", typeof(string));
+			userList.Columns.Add("Status", typeof(string));
+
+			allUserListDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			allUserListDataTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			foreach (BO.Users oUser in oUsers)
+			{
+				dr = userList.NewRow();
+				dr["ID"] = oUser.ID;
+				dr["User No"] = oUser.UserNo;
+				dr["Name"] = oUser.UserName;
+				BO.Role oRole= allRoles.Find(x => x.ID == oUser.RoleID);
+				dr["Role"] = oRole == null ? "" : oRole.Name;
+				dr["Status"] = oUser.Status.ToString();
+
+				userList.Rows.Add(dr);
+			}
+			allUserListDataTable.DataSource = userList;
+
+			foreach (DataGridViewColumn column in allUserListDataTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			allUserListDataTable.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+			allUserListDataTable.RowHeadersVisible = false;
+			allUserListDataTable.Columns["ID"].Visible = false;
 		}
 		#endregion
 
@@ -110,6 +145,41 @@ namespace Authentication.SearchUser
 		private void Minimize_Click(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
+		}
+		#endregion
+
+		#region Active Checked
+		private void txt_Active_CheckedChanged(object sender, EventArgs e)
+		{
+			if (txt_Active.Checked == true)
+			{
+				txt_All.Checked = false;
+				oUsers = userService.Get(EnumStatus.Active);
+				this.ProcessData();
+			}
+		}
+		#endregion
+
+		#region All Checked
+		private void txt_All_CheckedChanged(object sender, EventArgs e)
+		{
+			if (txt_All.Checked == true)
+			{
+				txt_Active.Checked = false;
+				oUsers = userService.GetUsers();
+				this.ProcessData();
+			}
+			else
+			{
+				btn_findAllUsers_Click(null,null);
+			}
+		}
+		#endregion
+
+		#region Search
+		private void txt_UserSearch_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 		#endregion
 	}

@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUser));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -72,6 +72,10 @@
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.label21 = new System.Windows.Forms.Label();
+			this.txt_Active = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.txt_All = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
@@ -265,6 +269,10 @@
 			this.guna2Panel2.BorderRadius = 10;
 			this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel2.BorderThickness = 2;
+			this.guna2Panel2.Controls.Add(this.label16);
+			this.guna2Panel2.Controls.Add(this.txt_All);
+			this.guna2Panel2.Controls.Add(this.label21);
+			this.guna2Panel2.Controls.Add(this.txt_Active);
 			this.guna2Panel2.Controls.Add(this.btn_findAllUsers);
 			this.guna2Panel2.Controls.Add(this.txt_UserSearch);
 			this.guna2Panel2.Controls.Add(this.allUserListDataTable);
@@ -312,34 +320,35 @@
 			this.txt_UserSearch.PlaceholderForeColor = System.Drawing.Color.DarkRed;
 			this.txt_UserSearch.PlaceholderText = "Search in all columns.....";
 			this.txt_UserSearch.SelectedText = "";
-			this.txt_UserSearch.Size = new System.Drawing.Size(365, 29);
+			this.txt_UserSearch.Size = new System.Drawing.Size(311, 29);
 			this.txt_UserSearch.TabIndex = 128;
+			this.txt_UserSearch.TextChanged += new System.EventHandler(this.txt_UserSearch_TextChanged);
 			// 
 			// allUserListDataTable
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserListDataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserListDataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
 			this.allUserListDataTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserListDataTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserListDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserListDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.allUserListDataTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserListDataTable.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserListDataTable.DefaultCellStyle = dataGridViewCellStyle9;
 			this.allUserListDataTable.EnableHeadersVisualStyles = false;
 			this.allUserListDataTable.Location = new System.Drawing.Point(6, 46);
 			this.allUserListDataTable.Name = "allUserListDataTable";
@@ -635,6 +644,62 @@
 			this.guna2HtmlLabel1.TabIndex = 135;
 			this.guna2HtmlLabel1.Text = "Total";
 			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label21.Location = new System.Drawing.Point(343, 15);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(64, 21);
+			this.label21.TabIndex = 178;
+			this.label21.Text = "Active";
+			// 
+			// txt_Active
+			// 
+			this.txt_Active.AutoSize = true;
+			this.txt_Active.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.CheckedState.BorderRadius = 0;
+			this.txt_Active.CheckedState.BorderThickness = 0;
+			this.txt_Active.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.Location = new System.Drawing.Point(325, 19);
+			this.txt_Active.Name = "txt_Active";
+			this.txt_Active.Size = new System.Drawing.Size(15, 14);
+			this.txt_Active.TabIndex = 179;
+			this.txt_Active.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.UncheckedState.BorderRadius = 0;
+			this.txt_Active.UncheckedState.BorderThickness = 0;
+			this.txt_Active.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.CheckedChanged += new System.EventHandler(this.txt_Active_CheckedChanged);
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label16.Location = new System.Drawing.Point(431, 16);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(37, 21);
+			this.label16.TabIndex = 180;
+			this.label16.Text = "All";
+			// 
+			// txt_All
+			// 
+			this.txt_All.AutoSize = true;
+			this.txt_All.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_All.CheckedState.BorderRadius = 0;
+			this.txt_All.CheckedState.BorderThickness = 0;
+			this.txt_All.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_All.Location = new System.Drawing.Point(413, 20);
+			this.txt_All.Name = "txt_All";
+			this.txt_All.Size = new System.Drawing.Size(15, 14);
+			this.txt_All.TabIndex = 181;
+			this.txt_All.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_All.UncheckedState.BorderRadius = 0;
+			this.txt_All.UncheckedState.BorderThickness = 0;
+			this.txt_All.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_All.CheckedChanged += new System.EventHandler(this.txt_All_CheckedChanged);
+			// 
 			// SearchUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +725,7 @@
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
 			this.guna2Panel2.ResumeLayout(false);
+			this.guna2Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserListDataTable)).EndInit();
 			this.guna2Panel3.ResumeLayout(false);
 			this.guna2Panel3.PerformLayout();
@@ -710,5 +776,9 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label16;
+		private Guna.UI2.WinForms.Guna2CheckBox txt_All;
+		private System.Windows.Forms.Label label21;
+		private Guna.UI2.WinForms.Guna2CheckBox txt_Active;
 	}
 }
