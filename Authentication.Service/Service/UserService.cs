@@ -199,7 +199,6 @@ namespace Authentication.Service
 		#endregion
 
 		#region SearchUsers
-
 		public Users SearchUsers(string userNo, string userName)
 		{
 			Users oUser = new Users();

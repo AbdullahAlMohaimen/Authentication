@@ -179,7 +179,33 @@ namespace Authentication.SearchUser
 		#region Search
 		private void txt_UserSearch_TextChanged(object sender, EventArgs e)
 		{
+			if (txt_UserSearch.Text == string.Empty)
+			{
+				return;
+			}
+			if (oUsers.Count == 0)
+			{
+				MessageBox.Show("No data in grid.\nFind grid data first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				txt_UserSearch.Text = string.Empty;
+				return;
+			}
+			if (txt_Active.Checked == false && txt_All.Checked == false)
+			{
+				oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Active);
+			}
+			else
+			{
+				if (txt_Active.Checked == true)
+				{
+					oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Active);
+				}
+				if (txt_All.Checked == true)
+				{
+					oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Regardless);
+				}
+			}
 
+			this.ProcessData();
 		}
 		#endregion
 	}
