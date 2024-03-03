@@ -102,6 +102,7 @@ namespace Authentication.SearchUser
 			}
 			if (!string.IsNullOrEmpty(txt_ID.Text) || !string.IsNullOrEmpty(txt_Name.Text))
 			{
+				oUser = new BO.Users();
 				oUser = userService.SearchUsers(txt_ID.Text,txt_Name.Text);
 				if (oUser != null)
 				{
@@ -121,6 +122,9 @@ namespace Authentication.SearchUser
 					txt_UserEmail.Text = "";
 					txt_UserApprover.Text = "";
 					MessageBox.Show("User not found\nPLease try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+					txt_ID.Text = string.Empty;
+					txt_Name.Text = string.Empty;
 					return;
 				}
 			}
@@ -179,33 +183,97 @@ namespace Authentication.SearchUser
 		#region Search
 		private void txt_UserSearch_TextChanged(object sender, EventArgs e)
 		{
-			if (txt_UserSearch.Text == string.Empty)
+			if (oUsers.Count != 0)
 			{
-				return;
-			}
-			if (oUsers.Count == 0)
-			{
-				MessageBox.Show("No data in grid.\nFind grid data first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				txt_UserSearch.Text = string.Empty;
-				return;
-			}
-			if (txt_Active.Checked == false && txt_All.Checked == false)
-			{
-				oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Active);
+				if (!string.IsNullOrEmpty(txt_UserSearch.Text))
+				{
+					if (txt_Active.Checked == false && txt_All.Checked == false)
+					{
+						oUsers = userService.UserSearch(txt_UserSearch.Text, EnumStatus.Active);
+					}
+					else
+					{
+						if (txt_Active.Checked == true)
+						{
+							oUsers = userService.UserSearch(txt_UserSearch.Text, EnumStatus.Active);
+						}
+						if (txt_All.Checked == true)
+						{
+							oUsers = userService.UserSearch(txt_UserSearch.Text, EnumStatus.Regardless);
+						}
+					}
+				}
+				else
+				{
+					if (txt_Active.Checked == true)
+					{
+						oUsers = userService.Get(EnumStatus.Active);
+					}
+					else if (txt_All.Checked == true)
+					{
+						oUsers = userService.GetUsers();
+					}
+					else
+					{
+						oUsers = userService.Get(EnumStatus.Active);
+					}
+				}
 			}
 			else
 			{
-				if (txt_Active.Checked == true)
+				return;
+			}
+			this.ProcessData();
+		}
+		#endregion
+
+		#region Grid Click
+		private void allUserListDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			DataGridView dataGridView = allUserListDataTable;
+			if (dataGridView.SelectedRows.Count > 0)
+			{
+				DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+				int userID = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
+
+				oUser = new BO.Users();
+				oUser = oUsers.Where(x => x.ID == userID).FirstOrDefault();
+				if (oUser != null)
 				{
-					oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Active);
-				}
-				if (txt_All.Checked == true)
-				{
-					oUsers = userService.SearchUsers(txt_UserSearch.Text, EnumStatus.Regardless);
+					txt_UserNo.Text = oUser.UserNo;
+					txt_UserName.Text = oUser.UserName;
+					txt_UserRole.Text = allRoles.Where(x => x.ID == oUser.RoleID).FirstOrDefault().Name;
+					txt_UserStatus.Text = oUser.Status.ToString();
+					txt_UserEmail.Text = oUser.Email;
+					txt_UserApprover.Text = oUser.IsApprover == true ? "Yes" : "No";
 				}
 			}
+		}
+		#endregion
 
-			this.ProcessData();
+		#region Select Button
+		private void Select_Click(object sender, EventArgs e)
+		{
+			if (oUser != null)
+			{
+				if (oUser.ID > 0)
+				{
+					if (callingController is Home.UserWiseLoginInformation oUserLoginInfo)
+					{
+						oUserLoginInfo.SetSelectedUser(oUser);
+						oUserLoginInfo.Show();
+					}
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+			}
+			else
+			{
+				MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
 		}
 		#endregion
 	}

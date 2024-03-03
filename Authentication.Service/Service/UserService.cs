@@ -209,6 +209,10 @@ namespace Authentication.Service
 				{
 					oUser = this.CreateObject<Users>(dr);
 				}
+				else
+				{
+					oUser = null;
+				}
 			}
 			catch (Exception ex)
 			{
@@ -239,6 +243,22 @@ namespace Authentication.Service
 			try
 			{
 				DataReader dr = new DataReader(UsersDA.SearchUser(searchText, status));
+				users = this.CreateObjects<Users>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				users = null;
+			}
+			return users;
+		}
+
+		public List<Users> UserSearch(string searchText, EnumStatus status)
+		{
+			List<Users> users = new List<Users>();
+			try
+			{
+				DataReader dr = new DataReader(UsersDA.UserSearch(searchText, status));
 				users = this.CreateObjects<Users>(dr);
 				dr.Close();
 			}

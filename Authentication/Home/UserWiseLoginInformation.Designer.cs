@@ -28,20 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserWiseLoginInformation));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.IsToDay = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label11 = new System.Windows.Forms.Label();
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.label3 = new System.Windows.Forms.Label();
+			this.Clear_User_Button = new System.Windows.Forms.Button();
 			this.txt_toDate = new MetroFramework.Controls.MetroDateTime();
 			this.label4 = new System.Windows.Forms.Label();
+			this.SearchEmployee = new Guna.UI2.WinForms.Guna2Button();
 			this.label2 = new System.Windows.Forms.Label();
+			this.txt_FindUser = new Guna.UI2.WinForms.Guna2TextBox();
+			this.label33 = new System.Windows.Forms.Label();
 			this.txt_fromDate = new MetroFramework.Controls.MetroDateTime();
-			this.EmpSearch = new Guna.UI2.WinForms.Guna2Button();
+			this.label14 = new System.Windows.Forms.Label();
+			this.UserSearch = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.label5 = new System.Windows.Forms.Label();
@@ -51,11 +56,6 @@
 			this.txt_week = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.allUserLoginInfoListTable = new System.Windows.Forms.DataGridView();
 			this.txt_UserLoginInfoSearch = new Guna.UI2.WinForms.Guna2TextBox();
-			this.Clear_Emp_Button = new System.Windows.Forms.Button();
-			this.SearchEmployee = new Guna.UI2.WinForms.Guna2Button();
-			this.txt_FindUser = new Guna.UI2.WinForms.Guna2TextBox();
-			this.label33 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserLoginInfoListTable)).BeginInit();
@@ -84,30 +84,6 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 111;
 			// 
-			// guna2Panel2
-			// 
-			this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.guna2Panel2.BorderRadius = 10;
-			this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-			this.guna2Panel2.BorderThickness = 2;
-			this.guna2Panel2.Controls.Add(this.label3);
-			this.guna2Panel2.Controls.Add(this.Clear_Emp_Button);
-			this.guna2Panel2.Controls.Add(this.txt_toDate);
-			this.guna2Panel2.Controls.Add(this.label4);
-			this.guna2Panel2.Controls.Add(this.SearchEmployee);
-			this.guna2Panel2.Controls.Add(this.label2);
-			this.guna2Panel2.Controls.Add(this.txt_FindUser);
-			this.guna2Panel2.Controls.Add(this.label33);
-			this.guna2Panel2.Controls.Add(this.txt_fromDate);
-			this.guna2Panel2.Controls.Add(this.label14);
-			this.guna2Panel2.Controls.Add(this.EmpSearch);
-			this.guna2Panel2.Controls.Add(this.label1);
-			this.guna2Panel2.Location = new System.Drawing.Point(6, 7);
-			this.guna2Panel2.Name = "guna2Panel2";
-			this.guna2Panel2.Size = new System.Drawing.Size(1047, 52);
-			this.guna2Panel2.TabIndex = 136;
-			// 
 			// IsToDay
 			// 
 			this.IsToDay.AutoSize = true;
@@ -135,6 +111,30 @@
 			this.label11.TabIndex = 154;
 			this.label11.Text = "Today";
 			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.guna2Panel2.BorderRadius = 10;
+			this.guna2Panel2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+			this.guna2Panel2.BorderThickness = 2;
+			this.guna2Panel2.Controls.Add(this.label3);
+			this.guna2Panel2.Controls.Add(this.Clear_User_Button);
+			this.guna2Panel2.Controls.Add(this.txt_toDate);
+			this.guna2Panel2.Controls.Add(this.label4);
+			this.guna2Panel2.Controls.Add(this.SearchEmployee);
+			this.guna2Panel2.Controls.Add(this.label2);
+			this.guna2Panel2.Controls.Add(this.txt_FindUser);
+			this.guna2Panel2.Controls.Add(this.label33);
+			this.guna2Panel2.Controls.Add(this.txt_fromDate);
+			this.guna2Panel2.Controls.Add(this.label14);
+			this.guna2Panel2.Controls.Add(this.UserSearch);
+			this.guna2Panel2.Controls.Add(this.label1);
+			this.guna2Panel2.Location = new System.Drawing.Point(6, 7);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.Size = new System.Drawing.Size(1047, 52);
+			this.guna2Panel2.TabIndex = 136;
+			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
@@ -145,6 +145,21 @@
 			this.label3.Size = new System.Drawing.Size(19, 21);
 			this.label3.TabIndex = 141;
 			this.label3.Text = ":";
+			// 
+			// Clear_User_Button
+			// 
+			this.Clear_User_Button.BackColor = System.Drawing.Color.Wheat;
+			this.Clear_User_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_User_Button.BackgroundImage")));
+			this.Clear_User_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.Clear_User_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Clear_User_Button.FlatAppearance.BorderSize = 0;
+			this.Clear_User_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Clear_User_Button.Location = new System.Drawing.Point(473, 14);
+			this.Clear_User_Button.Name = "Clear_User_Button";
+			this.Clear_User_Button.Size = new System.Drawing.Size(27, 23);
+			this.Clear_User_Button.TabIndex = 183;
+			this.Clear_User_Button.UseVisualStyleBackColor = false;
+			this.Clear_User_Button.Click += new System.EventHandler(this.Clear_User_Button_Click);
 			// 
 			// txt_toDate
 			// 
@@ -173,6 +188,23 @@
 			this.label4.TabIndex = 139;
 			this.label4.Text = "To";
 			// 
+			// SearchEmployee
+			// 
+			this.SearchEmployee.BorderRadius = 8;
+			this.SearchEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.SearchEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.SearchEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.SearchEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.SearchEmployee.FillColor = System.Drawing.Color.Maroon;
+			this.SearchEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SearchEmployee.ForeColor = System.Drawing.Color.Wheat;
+			this.SearchEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SearchEmployee.Image")));
+			this.SearchEmployee.Location = new System.Drawing.Point(508, 10);
+			this.SearchEmployee.Name = "SearchEmployee";
+			this.SearchEmployee.Size = new System.Drawing.Size(36, 31);
+			this.SearchEmployee.TabIndex = 182;
+			this.SearchEmployee.Click += new System.EventHandler(this.SearchEmployee_Click);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -183,6 +215,42 @@
 			this.label2.Size = new System.Drawing.Size(19, 21);
 			this.label2.TabIndex = 138;
 			this.label2.Text = ":";
+			// 
+			// txt_FindUser
+			// 
+			this.txt_FindUser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.txt_FindUser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+			this.txt_FindUser.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_FindUser.BorderRadius = 6;
+			this.txt_FindUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_FindUser.DefaultText = "";
+			this.txt_FindUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_FindUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_FindUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_FindUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_FindUser.FillColor = System.Drawing.Color.Wheat;
+			this.txt_FindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_FindUser.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_FindUser.ForeColor = System.Drawing.Color.Black;
+			this.txt_FindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_FindUser.Location = new System.Drawing.Point(131, 10);
+			this.txt_FindUser.Name = "txt_FindUser";
+			this.txt_FindUser.PasswordChar = '\0';
+			this.txt_FindUser.PlaceholderText = "";
+			this.txt_FindUser.SelectedText = "";
+			this.txt_FindUser.Size = new System.Drawing.Size(374, 31);
+			this.txt_FindUser.TabIndex = 181;
+			// 
+			// label33
+			// 
+			this.label33.AutoSize = true;
+			this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label33.Location = new System.Drawing.Point(113, 13);
+			this.label33.Name = "label33";
+			this.label33.Size = new System.Drawing.Size(16, 24);
+			this.label33.TabIndex = 180;
+			this.label33.Text = ":";
 			// 
 			// txt_fromDate
 			// 
@@ -199,22 +267,34 @@
 			this.txt_fromDate.Size = new System.Drawing.Size(120, 29);
 			this.txt_fromDate.TabIndex = 137;
 			// 
-			// EmpSearch
+			// label14
 			// 
-			this.EmpSearch.BorderRadius = 8;
-			this.EmpSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.EmpSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.EmpSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.EmpSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.EmpSearch.FillColor = System.Drawing.Color.SeaGreen;
-			this.EmpSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.EmpSearch.ForeColor = System.Drawing.Color.Wheat;
-			this.EmpSearch.Image = ((System.Drawing.Image)(resources.GetObject("EmpSearch.Image")));
-			this.EmpSearch.Location = new System.Drawing.Point(930, 12);
-			this.EmpSearch.Name = "EmpSearch";
-			this.EmpSearch.Size = new System.Drawing.Size(101, 29);
-			this.EmpSearch.TabIndex = 104;
-			this.EmpSearch.Text = "Search";
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label14.Location = new System.Drawing.Point(8, 15);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(109, 21);
+			this.label14.TabIndex = 179;
+			this.label14.Text = "Select User";
+			// 
+			// UserSearch
+			// 
+			this.UserSearch.BorderRadius = 8;
+			this.UserSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.UserSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.UserSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.UserSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.UserSearch.FillColor = System.Drawing.Color.SeaGreen;
+			this.UserSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.UserSearch.ForeColor = System.Drawing.Color.Wheat;
+			this.UserSearch.Image = ((System.Drawing.Image)(resources.GetObject("UserSearch.Image")));
+			this.UserSearch.Location = new System.Drawing.Point(930, 12);
+			this.UserSearch.Name = "UserSearch";
+			this.UserSearch.Size = new System.Drawing.Size(101, 29);
+			this.UserSearch.TabIndex = 104;
+			this.UserSearch.Text = "Search";
+			this.UserSearch.Click += new System.EventHandler(this.UserSearch_Click);
 			// 
 			// label1
 			// 
@@ -315,29 +395,29 @@
 			// 
 			// allUserLoginInfoListTable
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserLoginInfoListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserLoginInfoListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
 			this.allUserLoginInfoListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserLoginInfoListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserLoginInfoListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserLoginInfoListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.allUserLoginInfoListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserLoginInfoListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserLoginInfoListTable.DefaultCellStyle = dataGridViewCellStyle9;
 			this.allUserLoginInfoListTable.EnableHeadersVisualStyles = false;
 			this.allUserLoginInfoListTable.Location = new System.Drawing.Point(7, 103);
 			this.allUserLoginInfoListTable.Name = "allUserLoginInfoListTable";
@@ -369,84 +449,6 @@
 			this.txt_UserLoginInfoSearch.Size = new System.Drawing.Size(469, 29);
 			this.txt_UserLoginInfoSearch.TabIndex = 124;
 			// 
-			// Clear_Emp_Button
-			// 
-			this.Clear_Emp_Button.BackColor = System.Drawing.Color.Wheat;
-			this.Clear_Emp_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_Emp_Button.BackgroundImage")));
-			this.Clear_Emp_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.Clear_Emp_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Clear_Emp_Button.FlatAppearance.BorderSize = 0;
-			this.Clear_Emp_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Clear_Emp_Button.Location = new System.Drawing.Point(473, 14);
-			this.Clear_Emp_Button.Name = "Clear_Emp_Button";
-			this.Clear_Emp_Button.Size = new System.Drawing.Size(27, 23);
-			this.Clear_Emp_Button.TabIndex = 183;
-			this.Clear_Emp_Button.UseVisualStyleBackColor = false;
-			// 
-			// SearchEmployee
-			// 
-			this.SearchEmployee.BorderRadius = 8;
-			this.SearchEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.SearchEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.SearchEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.SearchEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.SearchEmployee.FillColor = System.Drawing.Color.Maroon;
-			this.SearchEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SearchEmployee.ForeColor = System.Drawing.Color.Wheat;
-			this.SearchEmployee.Image = ((System.Drawing.Image)(resources.GetObject("SearchEmployee.Image")));
-			this.SearchEmployee.Location = new System.Drawing.Point(508, 10);
-			this.SearchEmployee.Name = "SearchEmployee";
-			this.SearchEmployee.Size = new System.Drawing.Size(36, 31);
-			this.SearchEmployee.TabIndex = 182;
-			this.SearchEmployee.Click += new System.EventHandler(this.SearchEmployee_Click);
-			// 
-			// txt_FindUser
-			// 
-			this.txt_FindUser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.txt_FindUser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			this.txt_FindUser.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_FindUser.BorderRadius = 6;
-			this.txt_FindUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_FindUser.DefaultText = "";
-			this.txt_FindUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_FindUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_FindUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_FindUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_FindUser.FillColor = System.Drawing.Color.Wheat;
-			this.txt_FindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_FindUser.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_FindUser.ForeColor = System.Drawing.Color.Black;
-			this.txt_FindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_FindUser.Location = new System.Drawing.Point(131, 10);
-			this.txt_FindUser.Name = "txt_FindUser";
-			this.txt_FindUser.PasswordChar = '\0';
-			this.txt_FindUser.PlaceholderText = "";
-			this.txt_FindUser.SelectedText = "";
-			this.txt_FindUser.Size = new System.Drawing.Size(374, 31);
-			this.txt_FindUser.TabIndex = 181;
-			// 
-			// label33
-			// 
-			this.label33.AutoSize = true;
-			this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label33.Location = new System.Drawing.Point(113, 13);
-			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(16, 24);
-			this.label33.TabIndex = 180;
-			this.label33.Text = ":";
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label14.Location = new System.Drawing.Point(8, 15);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(109, 21);
-			this.label14.TabIndex = 179;
-			this.label14.Text = "Select User";
-			// 
 			// UserWiseLoginInformation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,7 +477,7 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
 		private MetroFramework.Controls.MetroDateTime txt_fromDate;
-		private Guna.UI2.WinForms.Guna2Button EmpSearch;
+		private Guna.UI2.WinForms.Guna2Button UserSearch;
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2HtmlLabel total;
 		private System.Windows.Forms.Label label5;
@@ -485,7 +487,7 @@
 		private Guna.UI2.WinForms.Guna2ComboBox txt_week;
 		private System.Windows.Forms.DataGridView allUserLoginInfoListTable;
 		private Guna.UI2.WinForms.Guna2TextBox txt_UserLoginInfoSearch;
-		private System.Windows.Forms.Button Clear_Emp_Button;
+		private System.Windows.Forms.Button Clear_User_Button;
 		private Guna.UI2.WinForms.Guna2Button SearchEmployee;
 		private Guna.UI2.WinForms.Guna2TextBox txt_FindUser;
 		private System.Windows.Forms.Label label33;

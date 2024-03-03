@@ -106,6 +106,22 @@ namespace Authentication.Service
 			}
 			return oLoginInfos;
 		}
+
+		public List<LoginInfo> GetLoginInfosByUserID(int userID, DateTime fromDate, DateTime toDate)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfosByUserID(userID, fromDate, toDate));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
+		}
 		#endregion
 
 		#region GetLoginInfos (fromDate - toDate - week)

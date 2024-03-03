@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUser));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -45,6 +45,10 @@
 			this.txt_ID = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label27 = new System.Windows.Forms.Label();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.label16 = new System.Windows.Forms.Label();
+			this.txt_All = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label21 = new System.Windows.Forms.Label();
+			this.txt_Active = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.btn_findAllUsers = new Guna.UI2.WinForms.Guna2Button();
 			this.txt_UserSearch = new Guna.UI2.WinForms.Guna2TextBox();
 			this.allUserListDataTable = new System.Windows.Forms.DataGridView();
@@ -72,10 +76,6 @@
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-			this.label21 = new System.Windows.Forms.Label();
-			this.txt_Active = new Guna.UI2.WinForms.Guna2CheckBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.txt_All = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
@@ -281,6 +281,62 @@
 			this.guna2Panel2.Size = new System.Drawing.Size(639, 278);
 			this.guna2Panel2.TabIndex = 117;
 			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label16.Location = new System.Drawing.Point(431, 16);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(37, 21);
+			this.label16.TabIndex = 180;
+			this.label16.Text = "All";
+			// 
+			// txt_All
+			// 
+			this.txt_All.AutoSize = true;
+			this.txt_All.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_All.CheckedState.BorderRadius = 0;
+			this.txt_All.CheckedState.BorderThickness = 0;
+			this.txt_All.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_All.Location = new System.Drawing.Point(413, 20);
+			this.txt_All.Name = "txt_All";
+			this.txt_All.Size = new System.Drawing.Size(15, 14);
+			this.txt_All.TabIndex = 181;
+			this.txt_All.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_All.UncheckedState.BorderRadius = 0;
+			this.txt_All.UncheckedState.BorderThickness = 0;
+			this.txt_All.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_All.CheckedChanged += new System.EventHandler(this.txt_All_CheckedChanged);
+			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label21.Location = new System.Drawing.Point(343, 15);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(64, 21);
+			this.label21.TabIndex = 178;
+			this.label21.Text = "Active";
+			// 
+			// txt_Active
+			// 
+			this.txt_Active.AutoSize = true;
+			this.txt_Active.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.CheckedState.BorderRadius = 0;
+			this.txt_Active.CheckedState.BorderThickness = 0;
+			this.txt_Active.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_Active.Location = new System.Drawing.Point(325, 19);
+			this.txt_Active.Name = "txt_Active";
+			this.txt_Active.Size = new System.Drawing.Size(15, 14);
+			this.txt_Active.TabIndex = 179;
+			this.txt_Active.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.UncheckedState.BorderRadius = 0;
+			this.txt_Active.UncheckedState.BorderThickness = 0;
+			this.txt_Active.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_Active.CheckedChanged += new System.EventHandler(this.txt_Active_CheckedChanged);
+			// 
 			// btn_findAllUsers
 			// 
 			this.btn_findAllUsers.BorderRadius = 8;
@@ -326,35 +382,36 @@
 			// 
 			// allUserListDataTable
 			// 
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserListDataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserListDataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.allUserListDataTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserListDataTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserListDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserListDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.allUserListDataTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserListDataTable.DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserListDataTable.DefaultCellStyle = dataGridViewCellStyle6;
 			this.allUserListDataTable.EnableHeadersVisualStyles = false;
 			this.allUserListDataTable.Location = new System.Drawing.Point(6, 46);
 			this.allUserListDataTable.Name = "allUserListDataTable";
 			this.allUserListDataTable.ReadOnly = true;
 			this.allUserListDataTable.Size = new System.Drawing.Size(627, 225);
 			this.allUserListDataTable.TabIndex = 127;
+			this.allUserListDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allUserListDataTable_CellContentClick);
 			// 
 			// guna2Panel3
 			// 
@@ -390,7 +447,7 @@
 			// 
 			this.txt_UserApprover.AutoSize = true;
 			this.txt_UserApprover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserApprover.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserApprover.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserApprover.Location = new System.Drawing.Point(88, 141);
 			this.txt_UserApprover.Name = "txt_UserApprover";
 			this.txt_UserApprover.Size = new System.Drawing.Size(0, 15);
@@ -400,7 +457,7 @@
 			// 
 			this.txt_UserEmail.AutoSize = true;
 			this.txt_UserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserEmail.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserEmail.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserEmail.Location = new System.Drawing.Point(88, 116);
 			this.txt_UserEmail.Name = "txt_UserEmail";
 			this.txt_UserEmail.Size = new System.Drawing.Size(0, 15);
@@ -410,7 +467,7 @@
 			// 
 			this.txt_UserStatus.AutoSize = true;
 			this.txt_UserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserStatus.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserStatus.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserStatus.Location = new System.Drawing.Point(88, 91);
 			this.txt_UserStatus.Name = "txt_UserStatus";
 			this.txt_UserStatus.Size = new System.Drawing.Size(0, 15);
@@ -420,7 +477,7 @@
 			// 
 			this.txt_UserRole.AutoSize = true;
 			this.txt_UserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserRole.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserRole.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserRole.Location = new System.Drawing.Point(88, 66);
 			this.txt_UserRole.Name = "txt_UserRole";
 			this.txt_UserRole.Size = new System.Drawing.Size(0, 15);
@@ -430,7 +487,7 @@
 			// 
 			this.txt_UserName.AutoSize = true;
 			this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserName.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserName.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserName.Location = new System.Drawing.Point(88, 41);
 			this.txt_UserName.Name = "txt_UserName";
 			this.txt_UserName.Size = new System.Drawing.Size(0, 15);
@@ -440,7 +497,7 @@
 			// 
 			this.txt_UserNo.AutoSize = true;
 			this.txt_UserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserNo.ForeColor = System.Drawing.Color.DarkSlateGray;
+			this.txt_UserNo.ForeColor = System.Drawing.Color.DarkGreen;
 			this.txt_UserNo.Location = new System.Drawing.Point(88, 16);
 			this.txt_UserNo.Name = "txt_UserNo";
 			this.txt_UserNo.Size = new System.Drawing.Size(0, 15);
@@ -462,7 +519,7 @@
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label15.Location = new System.Drawing.Point(72, 135);
+			this.label15.Location = new System.Drawing.Point(73, 135);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(16, 24);
 			this.label15.TabIndex = 122;
@@ -473,7 +530,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label5.Location = new System.Drawing.Point(72, 10);
+			this.label5.Location = new System.Drawing.Point(73, 10);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(16, 24);
 			this.label5.TabIndex = 120;
@@ -495,7 +552,7 @@
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label13.Location = new System.Drawing.Point(72, 110);
+			this.label13.Location = new System.Drawing.Point(73, 110);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(16, 24);
 			this.label13.TabIndex = 119;
@@ -517,7 +574,7 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(72, 85);
+			this.label11.Location = new System.Drawing.Point(73, 85);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(16, 24);
 			this.label11.TabIndex = 117;
@@ -539,7 +596,7 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label9.Location = new System.Drawing.Point(72, 60);
+			this.label9.Location = new System.Drawing.Point(73, 60);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(16, 24);
 			this.label9.TabIndex = 115;
@@ -561,7 +618,7 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label7.Location = new System.Drawing.Point(72, 35);
+			this.label7.Location = new System.Drawing.Point(73, 35);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(16, 24);
 			this.label7.TabIndex = 113;
@@ -594,6 +651,7 @@
 			this.Select.Size = new System.Drawing.Size(101, 29);
 			this.Select.TabIndex = 119;
 			this.Select.Text = "Select";
+			this.Select.Click += new System.EventHandler(this.Select_Click);
 			// 
 			// Cancel
 			// 
@@ -643,62 +701,6 @@
 			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
 			this.guna2HtmlLabel1.TabIndex = 135;
 			this.guna2HtmlLabel1.Text = "Total";
-			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label21.Location = new System.Drawing.Point(343, 15);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(64, 21);
-			this.label21.TabIndex = 178;
-			this.label21.Text = "Active";
-			// 
-			// txt_Active
-			// 
-			this.txt_Active.AutoSize = true;
-			this.txt_Active.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Active.CheckedState.BorderRadius = 0;
-			this.txt_Active.CheckedState.BorderThickness = 0;
-			this.txt_Active.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_Active.Location = new System.Drawing.Point(325, 19);
-			this.txt_Active.Name = "txt_Active";
-			this.txt_Active.Size = new System.Drawing.Size(15, 14);
-			this.txt_Active.TabIndex = 179;
-			this.txt_Active.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Active.UncheckedState.BorderRadius = 0;
-			this.txt_Active.UncheckedState.BorderThickness = 0;
-			this.txt_Active.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_Active.CheckedChanged += new System.EventHandler(this.txt_Active_CheckedChanged);
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label16.Location = new System.Drawing.Point(431, 16);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(37, 21);
-			this.label16.TabIndex = 180;
-			this.label16.Text = "All";
-			// 
-			// txt_All
-			// 
-			this.txt_All.AutoSize = true;
-			this.txt_All.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_All.CheckedState.BorderRadius = 0;
-			this.txt_All.CheckedState.BorderThickness = 0;
-			this.txt_All.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_All.Location = new System.Drawing.Point(413, 20);
-			this.txt_All.Name = "txt_All";
-			this.txt_All.Size = new System.Drawing.Size(15, 14);
-			this.txt_All.TabIndex = 181;
-			this.txt_All.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_All.UncheckedState.BorderRadius = 0;
-			this.txt_All.UncheckedState.BorderThickness = 0;
-			this.txt_All.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_All.CheckedChanged += new System.EventHandler(this.txt_All_CheckedChanged);
 			// 
 			// SearchUser
 			// 
