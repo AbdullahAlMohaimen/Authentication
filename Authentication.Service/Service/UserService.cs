@@ -490,5 +490,25 @@ namespace Authentication.Service
 			return result;
 		}
 		#endregion
+
+		#region SearchUser 
+		public Users SearchUser(string UserNo, string UserName, string searchText)
+		{
+			Users oUser = null;
+			try
+			{
+				DataReader oreader = new DataReader(UsersDA.SearchUser(UserNo, UserName, searchText));
+				if (oreader.Read())
+				{
+					oUser = this.CreateObject<Users>(oreader);
+				}
+			}
+			catch (Exception e)
+			{
+
+			}
+			return oUser;
+		}
+		#endregion
 	}
 }

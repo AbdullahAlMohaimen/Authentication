@@ -99,6 +99,7 @@
 			this.IsToDay.UncheckedState.BorderRadius = 0;
 			this.IsToDay.UncheckedState.BorderThickness = 0;
 			this.IsToDay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.IsToDay.CheckedChanged += new System.EventHandler(this.IsToDay_CheckedChanged);
 			// 
 			// label11
 			// 
@@ -240,6 +241,7 @@
 			this.txt_FindUser.SelectedText = "";
 			this.txt_FindUser.Size = new System.Drawing.Size(374, 31);
 			this.txt_FindUser.TabIndex = 181;
+			this.txt_FindUser.TextChanged += new System.EventHandler(this.txt_FindUser_TextChanged);
 			// 
 			// label33
 			// 
@@ -392,6 +394,7 @@
 			this.txt_week.Size = new System.Drawing.Size(238, 34);
 			this.txt_week.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.txt_week.TabIndex = 151;
+			this.txt_week.SelectedIndexChanged += new System.EventHandler(this.txt_week_SelectedIndexChanged);
 			// 
 			// allUserLoginInfoListTable
 			// 

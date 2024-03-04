@@ -20,6 +20,15 @@ namespace Authentication.BO
 
 		#region Property
 
+		#region UserID : INT 
+		private int _userID;
+		public int UserID
+		{
+			get { return _userID; }
+			set { _userID = value; }
+		}
+		#endregion
+
 		#region LoginID : String 
 		private string _loginID;
 		public string LoginID

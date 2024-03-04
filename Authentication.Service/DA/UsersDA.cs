@@ -127,6 +127,31 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region  SearchEmp
+		internal static IDataReader SearchUser(string userNo, string userName, string searchText)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlDataReader dr = null;
+			SqlCommand getCommand = null;
+			conn.Open();
+			try
+			{
+				if (!string.IsNullOrEmpty(userNo) && !string.IsNullOrEmpty(userName))
+				{
+					getCommand = new SqlCommand("Select * from Users where UserNo = '" + userNo + "' or UserName = '" + userName + "' or concat('(',UserNo,') - ',UserName) = '" + searchText + "'", conn);
+				}
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			dr = getCommand.ExecuteReader();
+			return dr;
+		}
+		#endregion
+
 		#region Update User for Deactivate
 		internal static string UpdateUserDeactivate(Users oUser)
 		{

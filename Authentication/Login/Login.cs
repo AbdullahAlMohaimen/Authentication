@@ -241,6 +241,7 @@ namespace Authentication.Login
 								}
 
 								LoginInfo oLoginInfo = new LoginInfo();
+								oLoginInfo.UserID = oUser.ID;
 								oLoginInfo.UserName = oUser.UserName;
 								oLoginInfo.LoginID = oUser.LoginID;
 								oLoginInfo.Type = new RoleService().GetRoleByID(oUser.RoleID).Name;

@@ -190,3 +190,5 @@ ADD ModifiedDate DateTime null;
 ALter table Users
 add UserNO varchar(25) null;
 
+Alter table LoginInfo 
+add UserID int null;

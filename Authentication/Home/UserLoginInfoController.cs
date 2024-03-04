@@ -100,7 +100,7 @@ namespace Authentication.Home
 				dr = loginList.NewRow();
 				dr["ID"] = oLoginInfo.ID;
 				dr["Login ID"] = oLoginInfo.LoginID;
-				dr["User No"] = userList.Where(x => x.LoginID == oLoginInfo.LoginID).FirstOrDefault() == null ? "": userList.Where(x => x.LoginID == oLoginInfo.LoginID).FirstOrDefault().UserNo;
+				dr["User No"] = userList.Where(x => x.ID == oLoginInfo.UserID).FirstOrDefault() == null ? "": userList.Where(x => x.ID == oLoginInfo.UserID).FirstOrDefault().UserNo;
 				dr["User Name"] = oLoginInfo.UserName;
 				dr["PC Number"] = oLoginInfo.PCNumber;
 				dr["Login Time"] = $"{oLoginInfo.LoginTime.ToString("dd MMM yyyy-hh:mm tt")} ({oLoginInfo.LoginTime.DayOfWeek.ToString()})";
@@ -223,8 +223,8 @@ namespace Authentication.Home
 		#region Search Click
 		private void EmpSearch_Click(object sender, EventArgs e)
 		{
-			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
-			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value).Date;
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value).Date.AddDays(1).AddSeconds(-1);
 
 			allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
 

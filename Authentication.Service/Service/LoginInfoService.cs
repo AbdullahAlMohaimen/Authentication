@@ -24,6 +24,7 @@ namespace Authentication.Service
 			oLoginInfo.LoginTime = oReader.GetDateTime("LoginTime", DateTime.MinValue);
 			oLoginInfo.LogoutTime = oReader.GetDateTime("LogoutTime", DateTime.MinValue);
 			oLoginInfo.IsLogout = oReader.GetBoolean("isLogout",false);
+			oLoginInfo.UserID = oReader.GetInt32("UserID") == null ? 0 : oReader.GetInt32("UserID").Value;
 			this.SetObjectState(oLoginInfo, BO.ObjectState.Saved);
 		}
 
@@ -131,6 +132,24 @@ namespace Authentication.Service
 			try
 			{
 				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfos(fromDate, toDate, week));
+				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oLoginInfos;
+		}
+		#endregion
+
+		#region GetLoginInfos (userID - fromDate - toDate - week)
+		public List<LoginInfo> GetLoginInfos(int userID,DateTime fromDate, DateTime toDate, EnumWeek week)
+		{
+			List<LoginInfo> oLoginInfos = new List<LoginInfo>();
+			try
+			{
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfos(userID, fromDate, toDate, week));
 				oLoginInfos = this.CreateObjects<LoginInfo>(dr);
 				dr.Close();
 			}

@@ -34,9 +34,9 @@ namespace Authentication.Service
 			{
 				using (SqlTransaction tc = conn.BeginTransaction())
 				{
-					SqlCommand insertCommand = new SqlCommand("Insert into LoginInfo(LoginID,UserName,Type,PcNumber,LoginTime,LogoutTime,IsLogout)" +
+					SqlCommand insertCommand = new SqlCommand("Insert into LoginInfo(LoginID,UserName,Type,PcNumber,LoginTime,LogoutTime,IsLogout,UserID)" +
 						"values('"+oLoginInfo.LoginID+"','"+oLoginInfo.UserName+"','"+oLoginInfo.Type+"','"+oLoginInfo.PCNumber+"'," +
-						"'"+oLoginInfo.LoginTime+"','"+oLoginInfo.LogoutTime+"','"+oLoginInfo.IsLogout+"')",conn,tc);
+						"'"+oLoginInfo.LoginTime+"','"+oLoginInfo.LogoutTime+"','"+oLoginInfo.IsLogout+"','"+oLoginInfo.UserID+"')",conn,tc);
 					insertCommand.ExecuteNonQuery();
 					tc.Commit();
 					conn.Close();
@@ -227,6 +227,29 @@ namespace Authentication.Service
 			{
 				getCommand = new SqlCommand("Select * from LoginInfo where LoginTime between '" + fromDate + "' and '" + toDate + "' " +
 											"and DATEPART(WEEKDAY, loginTime) = '"+(int)week+"' order by LoginTime desc", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region GetLoginInfos (userID - frmDate - toDate - week)
+		internal static IDataReader GetLoginInfos(int userID,DateTime fromDate, DateTime toDate, EnumWeek week)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+			try
+			{
+				getCommand = new SqlCommand("Select * from LoginInfo where UserID = '"+userID+"' and LoginTime between '" + fromDate + "' and '" + toDate + "' " +
+											"and DATEPART(WEEKDAY, loginTime) = '" + (int)week + "' order by LoginTime desc", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
