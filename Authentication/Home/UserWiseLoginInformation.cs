@@ -241,5 +241,70 @@ namespace Authentication.Home
 			}
 		}
 		#endregion
+
+		#region IN Grid Search
+		private void txt_UserLoginInfoSearch_TextChanged(object sender, EventArgs e)
+		{
+			EnumWeek week;
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+
+			if (oSelectedUser != null)
+			{
+				if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
+				{
+
+				}
+			}
+			else
+			{
+				return;
+			}
+
+			if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
+			{
+				if (IsToDay.Checked == true)
+				{
+					fromDate = DateTime.Today;
+					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+					allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
+				}
+				else
+				{
+					if (txt_week.SelectedItem == "Select Week...")
+					{
+						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
+					}
+					else
+					{
+						week = (EnumWeek)txt_week.SelectedItem;
+						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text, week);
+					}
+				}
+			}
+			else
+			{
+				if (IsToDay.Checked == true)
+				{
+					fromDate = DateTime.Today;
+					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+					allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+				}
+				else
+				{
+					if (txt_week.SelectedItem == "Select Week...")
+					{
+						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
+					}
+					else
+					{
+						week = (EnumWeek)txt_week.SelectedItem;
+						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate, week);
+					}
+				}
+			}
+			this.ProcessData();
+		}
+		#endregion
 	}
 }
