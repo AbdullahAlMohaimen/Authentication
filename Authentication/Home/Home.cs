@@ -116,13 +116,23 @@ namespace Authentication.Home
 			menuTreeView.Nodes.Add("Administration");
 			TreeNode administrationNode = menuTreeView.Nodes[2];
 
-			TreeNode hardPasswordNode = administrationNode.Nodes["Hard Password"];
-			hardPasswordNode = administrationNode.Nodes.Add("Hard Password");
-			hardPasswordNode.Nodes.Add("Hard Password");
+			TreeNode securityNode = administrationNode.Nodes.Add("Security");
+			TreeNode hardPasswordNode = securityNode.Nodes.Add("Hard Password");
+			hardPasswordNode.Nodes.Add("Hard Password Policy");
 
 			TreeNode roleNode = administrationNode.Nodes["Role"];
 			roleNode = administrationNode.Nodes.Add("Role");
 			roleNode.Nodes.Add("Role List");
+
+			TreeNode userNode = administrationNode.Nodes["User"];
+			userNode = administrationNode.Nodes.Add("User");
+			userNode.Nodes.Add("User List");
+
+			TreeNode employeeNode = administrationNode.Nodes["Employee"];
+			employeeNode = administrationNode.Nodes.Add("Employee");
+			employeeNode.Nodes.Add("Employee Information");
+			employeeNode.Nodes.Add("Employee List");
+
 
 			TreeNode loginInfo = administrationNode.Nodes["Login Information"];
 			loginInfo = administrationNode.Nodes.Add("Login Information");
@@ -133,14 +143,31 @@ namespace Authentication.Home
 			employeeLoginInfoNode.Nodes.Add("Login Info");
 			employeeLoginInfoNode.Nodes.Add("Employee Login Info");
 
-			TreeNode userNode = administrationNode.Nodes["User"];
-			userNode = administrationNode.Nodes.Add("User");
-			userNode.Nodes.Add("User List");
+			menuTreeView.Nodes.Add("Authentication");
+			TreeNode authenticationNode = menuTreeView.Nodes[3];
 
-			TreeNode employeeNode = administrationNode.Nodes["Employee"];
-			employeeNode = administrationNode.Nodes.Add("Employee");
-			employeeNode.Nodes.Add("Employee Information");
-			employeeNode.Nodes.Add("Employee List");
+			// Multi-Factor Authentication (MFA)
+			TreeNode mfaNode = authenticationNode.Nodes.Add("Multi-Factor Authentication");
+			mfaNode.Nodes.Add("Enable/Disable MFA");
+			mfaNode.Nodes.Add("MFA Settings");
+
+			// Biometric Authentication
+			TreeNode biometricNode = authenticationNode.Nodes.Add("Biometric Authentication");
+			biometricNode.Nodes.Add("Configure Biometric Options");
+			biometricNode.Nodes.Add("Biometric Settings");
+
+			// Password Management
+			TreeNode passwordNode = authenticationNode.Nodes.Add("Password Management");
+			passwordNode.Nodes.Add("Password Policies");
+			passwordNode.Nodes.Add("Password Expiry Settings");
+			passwordNode.Nodes.Add("Password Reset Options");
+			passwordNode.Nodes.Add("Forgotten Password Recovery");
+
+			// Session Management
+			TreeNode sessionNode = authenticationNode.Nodes.Add("Session Management");
+			sessionNode.Nodes.Add("Session Timeout Settings");
+			sessionNode.Nodes.Add("Concurrent Session Control");
+			sessionNode.Nodes.Add("Session Monitoring");
 
 			//menuTreeView.Nodes.Add("Leave");
 			//TreeNode leaveNode = menuTreeView.Nodes[3];
@@ -176,7 +203,7 @@ namespace Authentication.Home
 					profileController.SetCurrentUser(this.oCurrentUser);
 					AddControl(profileController);
 					break;
-				case "Hard Password":
+				case "Hard Password Policy":
 					HardPasswordController hardPassController = new HardPasswordController();
 					hardPassController.SetCurrentUser(this.oCurrentUser);
 					AddControl(hardPassController);

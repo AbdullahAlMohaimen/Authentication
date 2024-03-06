@@ -246,62 +246,64 @@ namespace Authentication.Home
 		private void txt_UserLoginInfoSearch_TextChanged(object sender, EventArgs e)
 		{
 			EnumWeek week;
-			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value);
-			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value);
+			DateTime fromDate = (DateTime)Convert.ToDateTime(txt_fromDate.Value).Date;
+			DateTime toDate = (DateTime)Convert.ToDateTime(txt_toDate.Value).Date.AddDays(1).AddSeconds(-1);
 
 			if (oSelectedUser != null)
 			{
-				if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
+				if (allLoginInfo.Count > 0)
 				{
-
+					if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
+					{
+						if (IsToDay.Checked == true)
+						{
+							fromDate = DateTime.Today;
+							toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+							allLoginInfo = loginInfoService.SearchEmpWiseLoginInfos(oSelectedUser.ID, fromDate, toDate, txt_UserLoginInfoSearch.Text);
+						}
+						else
+						{
+							if (txt_week.SelectedItem == "Select Week...")
+							{
+								allLoginInfo = loginInfoService.SearchEmpWiseLoginInfos(oSelectedUser.ID, fromDate, toDate, txt_UserLoginInfoSearch.Text);
+							}
+							else
+							{
+								week = (EnumWeek)txt_week.SelectedItem;
+								allLoginInfo = loginInfoService.SearchEmpWiseLoginInfos(oSelectedUser.ID, fromDate, toDate, txt_UserLoginInfoSearch.Text, week);
+							}
+						}
+					}
+					else
+					{
+						if (IsToDay.Checked == true)
+						{
+							fromDate = DateTime.Today;
+							toDate = DateTime.Today.AddDays(1).AddTicks(-1);
+							allLoginInfo = loginInfoService.GetLoginInfosByUserID(oSelectedUser.ID, fromDate, toDate);
+						}
+						else
+						{
+							if (txt_week.SelectedItem == "Select Week...")
+							{
+								allLoginInfo = loginInfoService.GetLoginInfosByUserID(oSelectedUser.ID, fromDate, toDate);
+							}
+							else
+							{
+								week = (EnumWeek)txt_week.SelectedItem;
+								allLoginInfo = loginInfoService.GetLoginInfos(oSelectedUser.ID, fromDate, toDate, week);
+							}
+						}
+					}
+				}
+				else
+				{
+					return;
 				}
 			}
 			else
 			{
 				return;
-			}
-
-			if (!string.IsNullOrEmpty(txt_UserLoginInfoSearch.Text))
-			{
-				if (IsToDay.Checked == true)
-				{
-					fromDate = DateTime.Today;
-					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
-					allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
-				}
-				else
-				{
-					if (txt_week.SelectedItem == "Select Week...")
-					{
-						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text);
-					}
-					else
-					{
-						week = (EnumWeek)txt_week.SelectedItem;
-						allLoginInfo = loginInfoService.SearchLoginInfos(fromDate, toDate, txt_UserLoginInfoSearch.Text, week);
-					}
-				}
-			}
-			else
-			{
-				if (IsToDay.Checked == true)
-				{
-					fromDate = DateTime.Today;
-					toDate = DateTime.Today.AddDays(1).AddTicks(-1);
-					allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
-				}
-				else
-				{
-					if (txt_week.SelectedItem == "Select Week...")
-					{
-						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate);
-					}
-					else
-					{
-						week = (EnumWeek)txt_week.SelectedItem;
-						allLoginInfo = loginInfoService.GetLoginInfos(fromDate, toDate, week);
-					}
-				}
 			}
 			this.ProcessData();
 		}
