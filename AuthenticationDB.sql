@@ -192,3 +192,9 @@ add UserNO varchar(25) null;
 
 Alter table LoginInfo 
 add UserID int null;
+
+Alter Table Role
+Add PasswordPolicyID int null;
+
+Alter Table Role
+Add PasswordPolicyNo int null;

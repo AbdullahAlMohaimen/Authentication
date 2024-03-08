@@ -96,6 +96,24 @@ namespace Authentication.BO
 		}
 		#endregion
 
+		#region PasswordPolicyID : INT
+		public int _passwordPolicyID;
+		public int PasswordPolicyID
+		{
+			get { return _passwordPolicyID; }
+			set { _passwordPolicyID = value; }
+		}
+		#endregion
+
+		#region PasswordPolicyNo : INT
+		public string _passwordPolicyNo;
+		public string PasswordPolicyNo
+		{
+			get { return _passwordPolicyNo; }
+			set { _passwordPolicyNo = value; }
+		}
+		#endregion
+
 		#endregion
 	}
 	#endregion
