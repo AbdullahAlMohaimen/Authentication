@@ -116,10 +116,6 @@ namespace Authentication.Home
 			menuTreeView.Nodes.Add("Administration");
 			TreeNode administrationNode = menuTreeView.Nodes[2];
 
-			TreeNode securityNode = administrationNode.Nodes.Add("Security");
-			TreeNode hardPasswordNode = securityNode.Nodes.Add("Hard Password");
-			hardPasswordNode.Nodes.Add("Hard Password Policy");
-
 			TreeNode roleNode = administrationNode.Nodes["Role"];
 			roleNode = administrationNode.Nodes.Add("Role");
 			roleNode.Nodes.Add("Role List");
@@ -127,47 +123,58 @@ namespace Authentication.Home
 			TreeNode userNode = administrationNode.Nodes["User"];
 			userNode = administrationNode.Nodes.Add("User");
 			userNode.Nodes.Add("User List");
+			userNode.Nodes.Add("User Information");
 
 			TreeNode employeeNode = administrationNode.Nodes["Employee"];
 			employeeNode = administrationNode.Nodes.Add("Employee");
-			employeeNode.Nodes.Add("Employee Information");
 			employeeNode.Nodes.Add("Employee List");
+			employeeNode.Nodes.Add("Employee Information");
 
+			menuTreeView.Nodes.Add("Login Information");
+			TreeNode loginInformationNode = menuTreeView.Nodes[3];
 
-			TreeNode loginInfo = administrationNode.Nodes["Login Information"];
-			loginInfo = administrationNode.Nodes.Add("Login Information");
-			TreeNode userLoginInfoNode = loginInfo.Nodes.Add("User");
+			TreeNode userLoginInfoNode = loginInformationNode.Nodes.Add("User");
 			userLoginInfoNode.Nodes.Add("Login Information");
-			userLoginInfoNode.Nodes.Add("User Login Info");
-			TreeNode employeeLoginInfoNode = loginInfo.Nodes.Add("Employee");
-			employeeLoginInfoNode.Nodes.Add("Login Info");
-			employeeLoginInfoNode.Nodes.Add("Employee Login Info");
+			userLoginInfoNode.Nodes.Add("User Wise Login Info");
+			TreeNode employeeLoginInfoNode = loginInformationNode.Nodes.Add("Employee");
+			employeeLoginInfoNode.Nodes.Add("Login Information");
+			employeeLoginInfoNode.Nodes.Add("Employee Wise Login Info");
 
 			menuTreeView.Nodes.Add("Authentication");
-			TreeNode authenticationNode = menuTreeView.Nodes[3];
+			TreeNode authenticationNode = menuTreeView.Nodes[4];
 
-			// Multi-Factor Authentication (MFA)
-			TreeNode mfaNode = authenticationNode.Nodes.Add("Multi-Factor Authentication");
-			mfaNode.Nodes.Add("Enable/Disable MFA");
-			mfaNode.Nodes.Add("MFA Settings");
-
-			// Biometric Authentication
-			TreeNode biometricNode = authenticationNode.Nodes.Add("Biometric Authentication");
-			biometricNode.Nodes.Add("Configure Biometric Options");
-			biometricNode.Nodes.Add("Biometric Settings");
-
-			// Password Management
 			TreeNode passwordNode = authenticationNode.Nodes.Add("Password Management");
-			passwordNode.Nodes.Add("Password Policies");
-			passwordNode.Nodes.Add("Password Expiry Settings");
+			passwordNode.Nodes.Add("Password Policy");
 			passwordNode.Nodes.Add("Password Reset Options");
 			passwordNode.Nodes.Add("Forgotten Password Recovery");
 
+			TreeNode accessControlNode = authenticationNode.Nodes.Add("Access Control");
+			accessControlNode.Nodes.Add("User Permissions");
+			accessControlNode.Nodes.Add("Role Permissions");
+
+			TreeNode accountLockoutNode = authenticationNode.Nodes.Add("Account Lockout");
+			accountLockoutNode.Nodes.Add("Lockout Settings");
+			accountLockoutNode.Nodes.Add("View Locked Accounts");
+
+			TreeNode accountDeactivationNode = authenticationNode.Nodes.Add("Account Deactivation");
+			accountDeactivationNode.Nodes.Add("Deactivation Settings");
+			accountDeactivationNode.Nodes.Add("View Deactivated Accounts");
+
+			// Multi-Factor Authentication (MFA)
+			//TreeNode mfaNode = authenticationNode.Nodes.Add("Multi-Factor Authentication");
+			//mfaNode.Nodes.Add("Enable/Disable MFA");
+			//mfaNode.Nodes.Add("MFA Settings");
+
+			// Biometric Authentication
+			//TreeNode biometricNode = authenticationNode.Nodes.Add("Biometric Authentication");
+			//biometricNode.Nodes.Add("Configure Biometric Options");
+			//biometricNode.Nodes.Add("Biometric Settings");
+
 			// Session Management
-			TreeNode sessionNode = authenticationNode.Nodes.Add("Session Management");
-			sessionNode.Nodes.Add("Session Timeout Settings");
-			sessionNode.Nodes.Add("Concurrent Session Control");
-			sessionNode.Nodes.Add("Session Monitoring");
+			//TreeNode sessionNode = authenticationNode.Nodes.Add("Session Management");
+			//sessionNode.Nodes.Add("Session Timeout Settings");
+			//sessionNode.Nodes.Add("Concurrent Session Control");
+			//sessionNode.Nodes.Add("Session Monitoring");
 
 			//menuTreeView.Nodes.Add("Leave");
 			//TreeNode leaveNode = menuTreeView.Nodes[3];
@@ -190,7 +197,23 @@ namespace Authentication.Home
 		public void OpenUserListWindow(string node, string parent)
 		{
 			string nodeName = node;
-			this.headerTitle.Text = nodeName;
+			string headerName = "";
+			if(nodeName == "Login Information")
+			{
+				if (parent == "TreeNode: User")
+				{
+					headerName = "User Login Information";
+				}
+				if (parent == "TreeNode: Employee")
+				{
+					headerName = "Employee Login Information";
+				}
+			}
+			else
+			{
+				headerName = nodeName;
+			}
+			this.headerTitle.Text = headerName;
 			switch (nodeName)
 			{
 				case "Home":
@@ -203,7 +226,7 @@ namespace Authentication.Home
 					profileController.SetCurrentUser(this.oCurrentUser);
 					AddControl(profileController);
 					break;
-				case "Hard Password Policy":
+				case "Password Policy":
 					HardPasswordController hardPassController = new HardPasswordController();
 					hardPassController.SetCurrentUser(this.oCurrentUser);
 					AddControl(hardPassController);
@@ -225,7 +248,7 @@ namespace Authentication.Home
 
 					}
 					break;
-				case "User Login Info":
+				case "User Wise Login Info":
 					UserWiseLoginInformation userWiseLoginInformation = new UserWiseLoginInformation();
 					userWiseLoginInformation.SetCurrentUser(this.oCurrentUser);
 					AddControl(userWiseLoginInformation);

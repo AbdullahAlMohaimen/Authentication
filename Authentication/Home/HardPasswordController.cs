@@ -84,7 +84,7 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region Process Role Data
+		#region Process Hard Password Data
 		public void ProcessData()
 		{
 			try
@@ -96,10 +96,12 @@ namespace Authentication.Home
 				hpList.TableName = "Hard Password Policy List";
 				hpList.Columns.Add("ID", typeof(int));
 				hpList.Columns.Add("Policy No", typeof(string));
-				hpList.Columns.Add("Max. Length", typeof(int));
-				hpList.Columns.Add("Min. Length", typeof(int));
-				hpList.Columns.Add("Pass. Min. Age", typeof(int));
-				hpList.Columns.Add("Pass Exp. Days", typeof(int));
+				hpList.Columns.Add("Maximum Length", typeof(int));
+				hpList.Columns.Add("Minimum Length", typeof(int));
+				hpList.Columns.Add("Is Uppercase", typeof(string));
+				hpList.Columns.Add("Is LowerCase", typeof(string));
+				hpList.Columns.Add("Minimum Age", typeof(int));
+				hpList.Columns.Add("Expire Days", typeof(int));
 
 				allHardPasswordListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 				allHardPasswordListTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -109,10 +111,12 @@ namespace Authentication.Home
 					dr = hpList.NewRow();
 					dr["ID"] = oHP.ID;
 					dr["Policy No"] = oHP.PolicyNo;
-					dr["Max. Length"] = oHP.PassMaxLength;
-					dr["Min. Length"] = oHP.PassMinLength;
-					dr["Pass. Min. Age"] = oHP.PasswordMinimumAge;
-					dr["Pass Exp. Days"] = oHP.PasswordExpDays;
+					dr["Maximum Length"] = oHP.PassMaxLength;
+					dr["Minimum Length"] = oHP.PassMinLength;
+					dr["Is Uppercase"] = oHP.IsContainUpperCase == true ? "Yes" : "No";
+					dr["Is LowerCase"] = oHP.IsContainLowerCase == true ? "Yes" : "No";
+					dr["Minimum Age"] = oHP.PasswordMinimumAge;
+					dr["Expire Days"] = oHP.PasswordExpDays;
 
 					hpList.Rows.Add(dr);
 				}

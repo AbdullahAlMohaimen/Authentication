@@ -102,6 +102,7 @@ namespace Authentication.Home
 			roleList.Columns.Add("Code", typeof(string));
 			roleList.Columns.Add("Name", typeof(string));
 			roleList.Columns.Add("Status", typeof(string));
+			roleList.Columns.Add("Description", typeof(string));
 			roleList.Columns.Add("Created By", typeof(string));
 
 			allRoleListTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -114,7 +115,7 @@ namespace Authentication.Home
 				dr["Code"] = oRole.Code;
 				dr["Name"] = oRole.Name;
 				dr["Status"] = oRole.Status.ToString();
-
+				dr["Description"] = oRole.Description;
 				BO.Users oUser = new BO.Users();
 				oUser = userList.Where(x => x.ID == oRole.CreatedBy).FirstOrDefault();
 				dr["Created By"] = oUser == null ? "" : oUser.UserName;
@@ -122,6 +123,17 @@ namespace Authentication.Home
 				roleList.Rows.Add(dr);
 			}
 			allRoleListTable.DataSource = roleList;
+
+
+
+			foreach (DataGridViewColumn column in allRoleListTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			allRoleListTable.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			allRoleListTable.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			allRoleListTable.Columns["Created By"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 			allRoleListTable.RowHeadersVisible = false;
 			allRoleListTable.Columns["ID"].Visible = false;
 		}

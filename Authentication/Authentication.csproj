@@ -391,6 +391,12 @@
     <Compile Include="Home\RoleListController.Designer.cs">
       <DependentUpon>RoleListController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home\UserInformationController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\UserInformationController.Designer.cs">
+      <DependentUpon>UserInformationController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home\UserListController.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -503,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home\RoleListController.resx">
       <DependentUpon>RoleListController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\UserInformationController.resx">
+      <DependentUpon>UserInformationController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home\UserListController.resx">
       <DependentUpon>UserListController.cs</DependentUpon>

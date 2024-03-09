@@ -269,7 +269,7 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select r.* from Role r, Users u where r.CreatedBy = u.UserID and " +
-					"(r.name like '"+ searchText + "%' or r.code like '"+ searchText + "%' or u.UserName like '"+ searchText +"%')", conn);
+					"(r.name like '"+ searchText + "%' or r.code like '"+ searchText + "%' or u.UserName like '"+ searchText +"%' or r.Description like '"+ searchText +"%')", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)
@@ -290,7 +290,7 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("select r.* from Role r, Users u where R.status = '"+(int)status+"' and r.CreatedBy = u.UserID and " +
-					"(r.name like '" + searchText + "%' or r.code like '" + searchText + "%' or u.UserName like '" + searchText + "%')", conn);
+					"(r.name like '" + searchText + "%' or r.code like '" + searchText + "%' or u.UserName like '" + searchText + "%' or r.Description like '"+searchText+"%')", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

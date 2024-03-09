@@ -104,7 +104,6 @@ Create Table UserPasswordHistory(
 	EntryDate DATETIME,
 );
 
-
 --LoginInfo TABLE
 Create Table LoginInfo(
 	LoginInfoID INT IDENTITY(1,1) not null PRIMARY KEY,
@@ -198,3 +197,15 @@ Add PasswordPolicyID int null;
 
 Alter Table Role
 Add PasswordPolicyNo int null;
+
+-- USER PasswordHistory TABLE
+Create Table PasswordResetHistory(
+	PasswordResetID INT IDENTITY(1,1) not null PRIMARY KEY,
+	LoginID INT not null,
+	Type int not null,
+	Password VARCHAR(100) not null,
+	Salt VARCHAR(255) not null,
+	PasswordResetBy varchar(255) not null,
+	PasswordResetDate DATETIME not null,
+	Reason varchar(1000) null
+);
