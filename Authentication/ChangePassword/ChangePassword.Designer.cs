@@ -30,6 +30,9 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel16 = new System.Windows.Forms.Panel();
+			this.panel14 = new System.Windows.Forms.Panel();
+			this.panel13 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label35 = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
@@ -70,9 +73,6 @@
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-			this.panel13 = new System.Windows.Forms.Panel();
-			this.panel14 = new System.Windows.Forms.Panel();
-			this.panel16 = new System.Windows.Forms.Panel();
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.panel22 = new System.Windows.Forms.Panel();
 			this.panel23 = new System.Windows.Forms.Panel();
@@ -95,6 +95,33 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(634, 30);
 			this.panel1.TabIndex = 14;
+			// 
+			// panel16
+			// 
+			this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
+			this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel16.Location = new System.Drawing.Point(381, 7);
+			this.panel16.Name = "panel16";
+			this.panel16.Size = new System.Drawing.Size(24, 23);
+			this.panel16.TabIndex = 132;
+			// 
+			// panel14
+			// 
+			this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
+			this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel14.Location = new System.Drawing.Point(473, 9);
+			this.panel14.Name = "panel14";
+			this.panel14.Size = new System.Drawing.Size(24, 23);
+			this.panel14.TabIndex = 136;
+			// 
+			// panel13
+			// 
+			this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
+			this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.panel13.Location = new System.Drawing.Point(276, -3);
+			this.panel13.Name = "panel13";
+			this.panel13.Size = new System.Drawing.Size(24, 23);
+			this.panel13.TabIndex = 136;
 			// 
 			// panel3
 			// 
@@ -565,6 +592,7 @@
 			// 
 			// guna2Panel1
 			// 
+			this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
 			this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.guna2Panel1.BorderRadius = 10;
@@ -607,35 +635,9 @@
 			this.guna2Panel1.Controls.Add(this.label27);
 			this.guna2Panel1.Location = new System.Drawing.Point(8, 50);
 			this.guna2Panel1.Name = "guna2Panel1";
+			this.guna2Panel1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			this.guna2Panel1.Size = new System.Drawing.Size(614, 324);
 			this.guna2Panel1.TabIndex = 109;
-			// 
-			// panel13
-			// 
-			this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
-			this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel13.Location = new System.Drawing.Point(276, -3);
-			this.panel13.Name = "panel13";
-			this.panel13.Size = new System.Drawing.Size(24, 23);
-			this.panel13.TabIndex = 136;
-			// 
-			// panel14
-			// 
-			this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
-			this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel14.Location = new System.Drawing.Point(473, 9);
-			this.panel14.Name = "panel14";
-			this.panel14.Size = new System.Drawing.Size(24, 23);
-			this.panel14.TabIndex = 136;
-			// 
-			// panel16
-			// 
-			this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
-			this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel16.Location = new System.Drawing.Point(381, 7);
-			this.panel16.Name = "panel16";
-			this.panel16.Size = new System.Drawing.Size(24, 23);
-			this.panel16.TabIndex = 132;
 			// 
 			// panel21
 			// 
