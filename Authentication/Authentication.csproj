@@ -459,6 +459,9 @@
     <Compile Include="SearchUser\SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shadow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Users\ChangeUserStatus.cs">
       <SubType>Form</SubType>
     </Compile>
