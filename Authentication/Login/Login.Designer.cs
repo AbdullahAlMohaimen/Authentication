@@ -59,6 +59,11 @@
 			this.panel20 = new System.Windows.Forms.Panel();
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.panel22 = new System.Windows.Forms.Panel();
+			this.panel23 = new System.Windows.Forms.Panel();
+			this.panel24 = new System.Windows.Forms.Panel();
+			this.panel25 = new System.Windows.Forms.Panel();
+			this.panel26 = new System.Windows.Forms.Panel();
+			this.panel27 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -434,6 +439,46 @@
 			this.panel22.Size = new System.Drawing.Size(24, 23);
 			this.panel22.TabIndex = 22;
 			// 
+			// panel23
+			// 
+			this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+			this.panel23.Location = new System.Drawing.Point(70, 0);
+			this.panel23.Name = "panel23";
+			this.panel23.Size = new System.Drawing.Size(70, 13);
+			this.panel23.TabIndex = 107;
+			// 
+			// panel24
+			// 
+			this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
+			this.panel24.Location = new System.Drawing.Point(0, 0);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(70, 13);
+			this.panel24.TabIndex = 108;
+			// 
+			// panel25
+			// 
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(214)))), ((int)(((byte)(160)))));
+			this.panel25.Location = new System.Drawing.Point(140, 0);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(70, 13);
+			this.panel25.TabIndex = 110;
+			// 
+			// panel26
+			// 
+			this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(138)))), ((int)(((byte)(178)))));
+			this.panel26.Location = new System.Drawing.Point(210, 0);
+			this.panel26.Name = "panel26";
+			this.panel26.Size = new System.Drawing.Size(71, 13);
+			this.panel26.TabIndex = 109;
+			// 
+			// panel27
+			// 
+			this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(59)))), ((int)(((byte)(76)))));
+			this.panel27.Location = new System.Drawing.Point(281, 0);
+			this.panel27.Name = "panel27";
+			this.panel27.Size = new System.Drawing.Size(71, 13);
+			this.panel27.TabIndex = 111;
+			// 
 			// Login
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +486,11 @@
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(351, 560);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel27);
+			this.Controls.Add(this.panel25);
+			this.Controls.Add(this.panel26);
+			this.Controls.Add(this.panel24);
+			this.Controls.Add(this.panel23);
 			this.Controls.Add(this.panel22);
 			this.Controls.Add(this.panel21);
 			this.Controls.Add(this.panel17);
@@ -509,5 +559,10 @@
 		private System.Windows.Forms.Panel panel20;
 		private System.Windows.Forms.Panel panel21;
 		private System.Windows.Forms.Panel panel22;
+		private System.Windows.Forms.Panel panel23;
+		private System.Windows.Forms.Panel panel24;
+		private System.Windows.Forms.Panel panel25;
+		private System.Windows.Forms.Panel panel26;
+		private System.Windows.Forms.Panel panel27;
 	}
 }

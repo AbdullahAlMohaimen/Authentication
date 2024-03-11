@@ -37,6 +37,16 @@
 			this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
 			this.menuTreeView = new System.Windows.Forms.TreeView();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.panel9 = new System.Windows.Forms.Panel();
+			this.panel10 = new System.Windows.Forms.Panel();
+			this.panel11 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -160,12 +170,102 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(236, 586);
 			this.guna2Panel1.TabIndex = 108;
 			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(18)))), ((int)(((byte)(25)))));
+			this.panel2.Location = new System.Drawing.Point(0, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(130, 13);
+			this.panel2.TabIndex = 0;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(115)))));
+			this.panel3.Location = new System.Drawing.Point(130, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(130, 13);
+			this.panel3.TabIndex = 1;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(189)))));
+			this.panel4.Location = new System.Drawing.Point(390, 0);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(130, 13);
+			this.panel4.TabIndex = 3;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(147)))), ((int)(((byte)(150)))));
+			this.panel5.Location = new System.Drawing.Point(260, 0);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(130, 13);
+			this.panel5.TabIndex = 2;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(62)))), ((int)(((byte)(3)))));
+			this.panel6.Location = new System.Drawing.Point(911, 0);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(131, 13);
+			this.panel6.TabIndex = 7;
+			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(155)))), ((int)(((byte)(0)))));
+			this.panel7.Location = new System.Drawing.Point(650, 0);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(130, 13);
+			this.panel7.TabIndex = 5;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(103)))), ((int)(((byte)(2)))));
+			this.panel8.Location = new System.Drawing.Point(780, 0);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(131, 13);
+			this.panel8.TabIndex = 6;
+			// 
+			// panel9
+			// 
+			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(216)))), ((int)(((byte)(166)))));
+			this.panel9.Location = new System.Drawing.Point(520, 0);
+			this.panel9.Name = "panel9";
+			this.panel9.Size = new System.Drawing.Size(130, 13);
+			this.panel9.TabIndex = 4;
+			// 
+			// panel10
+			// 
+			this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(34)))), ((int)(((byte)(38)))));
+			this.panel10.Location = new System.Drawing.Point(1174, 0);
+			this.panel10.Name = "panel10";
+			this.panel10.Size = new System.Drawing.Size(133, 13);
+			this.panel10.TabIndex = 9;
+			// 
+			// panel11
+			// 
+			this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
+			this.panel11.Location = new System.Drawing.Point(1042, 0);
+			this.panel11.Name = "panel11";
+			this.panel11.Size = new System.Drawing.Size(132, 13);
+			this.panel11.TabIndex = 8;
+			// 
 			// Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(1307, 639);
+			this.Controls.Add(this.panel10);
+			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.panel11);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel7);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel8);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel9);
+			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panelContainer);
 			this.Controls.Add(this.panel1);
@@ -189,5 +289,15 @@
 		private System.Windows.Forms.TreeView menuTreeView;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 		private Guna.UI2.WinForms.Guna2ComboBox homeDropDown;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.Panel panel9;
+		private System.Windows.Forms.Panel panel10;
+		private System.Windows.Forms.Panel panel11;
 	}
 }

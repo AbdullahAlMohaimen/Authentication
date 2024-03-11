@@ -77,6 +77,13 @@
 			this.panel22 = new System.Windows.Forms.Panel();
 			this.panel23 = new System.Windows.Forms.Panel();
 			this.panel24 = new System.Windows.Forms.Panel();
+			this.panel25 = new System.Windows.Forms.Panel();
+			this.panel26 = new System.Windows.Forms.Panel();
+			this.panel27 = new System.Windows.Forms.Panel();
+			this.panel28 = new System.Windows.Forms.Panel();
+			this.panel29 = new System.Windows.Forms.Panel();
+			this.panel30 = new System.Windows.Forms.Panel();
+			this.panel31 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -675,6 +682,62 @@
 			this.panel24.Size = new System.Drawing.Size(24, 23);
 			this.panel24.TabIndex = 133;
 			// 
+			// panel25
+			// 
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
+			this.panel25.Location = new System.Drawing.Point(0, -1);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(90, 13);
+			this.panel25.TabIndex = 136;
+			// 
+			// panel26
+			// 
+			this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(174)))), ((int)(((byte)(160)))));
+			this.panel26.Location = new System.Drawing.Point(89, -1);
+			this.panel26.Name = "panel26";
+			this.panel26.Size = new System.Drawing.Size(90, 13);
+			this.panel26.TabIndex = 137;
+			// 
+			// panel27
+			// 
+			this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(201)))), ((int)(((byte)(112)))));
+			this.panel27.Location = new System.Drawing.Point(268, -1);
+			this.panel27.Name = "panel27";
+			this.panel27.Size = new System.Drawing.Size(90, 13);
+			this.panel27.TabIndex = 139;
+			// 
+			// panel28
+			// 
+			this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(98)))), ((int)(((byte)(66)))));
+			this.panel28.Location = new System.Drawing.Point(179, -1);
+			this.panel28.Name = "panel28";
+			this.panel28.Size = new System.Drawing.Size(90, 13);
+			this.panel28.TabIndex = 138;
+			// 
+			// panel29
+			// 
+			this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(116)))), ((int)(((byte)(104)))));
+			this.panel29.Location = new System.Drawing.Point(540, -1);
+			this.panel29.Name = "panel29";
+			this.panel29.Size = new System.Drawing.Size(90, 13);
+			this.panel29.TabIndex = 142;
+			// 
+			// panel30
+			// 
+			this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(181)))), ((int)(((byte)(156)))));
+			this.panel30.Location = new System.Drawing.Point(449, -1);
+			this.panel30.Name = "panel30";
+			this.panel30.Size = new System.Drawing.Size(91, 13);
+			this.panel30.TabIndex = 141;
+			// 
+			// panel31
+			// 
+			this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(175)))), ((int)(((byte)(73)))));
+			this.panel31.Location = new System.Drawing.Point(357, -1);
+			this.panel31.Name = "panel31";
+			this.panel31.Size = new System.Drawing.Size(90, 13);
+			this.panel31.TabIndex = 140;
+			// 
 			// ChangePassword
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,6 +745,13 @@
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(630, 416);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel29);
+			this.Controls.Add(this.panel27);
+			this.Controls.Add(this.panel28);
+			this.Controls.Add(this.panel30);
+			this.Controls.Add(this.panel26);
+			this.Controls.Add(this.panel31);
+			this.Controls.Add(this.panel25);
 			this.Controls.Add(this.panel24);
 			this.Controls.Add(this.panel23);
 			this.Controls.Add(this.guna2Panel1);
@@ -749,5 +819,12 @@
 		private System.Windows.Forms.Panel panel22;
 		private System.Windows.Forms.Panel panel23;
 		private System.Windows.Forms.Panel panel24;
+		private System.Windows.Forms.Panel panel25;
+		private System.Windows.Forms.Panel panel26;
+		private System.Windows.Forms.Panel panel27;
+		private System.Windows.Forms.Panel panel28;
+		private System.Windows.Forms.Panel panel29;
+		private System.Windows.Forms.Panel panel30;
+		private System.Windows.Forms.Panel panel31;
 	}
 }

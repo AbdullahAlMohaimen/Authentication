@@ -50,6 +50,7 @@
 			this.txtHeader = new System.Windows.Forms.Label();
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
+			this.panel25 = new System.Windows.Forms.Panel();
 			this.guna2Panel1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -59,7 +60,7 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.Maroon;
-			this.label7.Location = new System.Drawing.Point(142, 60);
+			this.label7.Location = new System.Drawing.Point(142, 65);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(11, 16);
 			this.label7.TabIndex = 126;
@@ -70,7 +71,7 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.Maroon;
-			this.label6.Location = new System.Drawing.Point(142, 44);
+			this.label6.Location = new System.Drawing.Point(142, 48);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(11, 16);
 			this.label6.TabIndex = 125;
@@ -81,7 +82,7 @@
 			this.txt_User.AutoSize = true;
 			this.txt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_User.ForeColor = System.Drawing.Color.Maroon;
-			this.txt_User.Location = new System.Drawing.Point(164, 42);
+			this.txt_User.Location = new System.Drawing.Point(164, 46);
 			this.txt_User.Name = "txt_User";
 			this.txt_User.Size = new System.Drawing.Size(0, 16);
 			this.txt_User.TabIndex = 124;
@@ -91,7 +92,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.Maroon;
-			this.label5.Location = new System.Drawing.Point(8, 42);
+			this.label5.Location = new System.Drawing.Point(8, 46);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(126, 16);
 			this.label5.TabIndex = 123;
@@ -108,7 +109,7 @@
 			this.ChangeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ChangeStatus.ForeColor = System.Drawing.Color.Wheat;
 			this.ChangeStatus.Image = ((System.Drawing.Image)(resources.GetObject("ChangeStatus.Image")));
-			this.ChangeStatus.Location = new System.Drawing.Point(467, 135);
+			this.ChangeStatus.Location = new System.Drawing.Point(467, 142);
 			this.ChangeStatus.Name = "ChangeStatus";
 			this.ChangeStatus.Size = new System.Drawing.Size(169, 29);
 			this.ChangeStatus.TabIndex = 121;
@@ -126,7 +127,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(361, 135);
+			this.Cancel.Location = new System.Drawing.Point(361, 142);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 122;
@@ -138,7 +139,7 @@
 			this.statusString.AutoSize = true;
 			this.statusString.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.statusString.ForeColor = System.Drawing.Color.SeaGreen;
-			this.statusString.Location = new System.Drawing.Point(164, 60);
+			this.statusString.Location = new System.Drawing.Point(164, 65);
 			this.statusString.Name = "statusString";
 			this.statusString.Size = new System.Drawing.Size(0, 16);
 			this.statusString.TabIndex = 120;
@@ -148,7 +149,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Maroon;
-			this.label1.Location = new System.Drawing.Point(8, 60);
+			this.label1.Location = new System.Drawing.Point(8, 65);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(103, 16);
 			this.label1.TabIndex = 119;
@@ -169,7 +170,7 @@
 			this.guna2Panel1.Controls.Add(this.isInActive);
 			this.guna2Panel1.Controls.Add(this.label21);
 			this.guna2Panel1.Controls.Add(this.isActive);
-			this.guna2Panel1.Location = new System.Drawing.Point(6, 83);
+			this.guna2Panel1.Location = new System.Drawing.Point(6, 88);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(630, 47);
 			this.guna2Panel1.TabIndex = 118;
@@ -292,7 +293,7 @@
 			this.panel1.Controls.Add(this.txtHeader);
 			this.panel1.Controls.Add(this.Minimize);
 			this.panel1.Controls.Add(this.Exit);
-			this.panel1.Location = new System.Drawing.Point(-2, 8);
+			this.panel1.Location = new System.Drawing.Point(-2, 12);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(646, 30);
 			this.panel1.TabIndex = 117;
@@ -338,14 +339,23 @@
 			this.Exit.UseVisualStyleBackColor = false;
 			this.Exit.Click += new System.EventHandler(this.Exit_Click);
 			// 
+			// panel25
+			// 
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(214)))), ((int)(((byte)(160)))));
+			this.panel25.Location = new System.Drawing.Point(0, -1);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(70, 13);
+			this.panel25.TabIndex = 127;
+			// 
 			// ChangeEmployeeStatus
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(642, 173);
+			this.ClientSize = new System.Drawing.Size(642, 177);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel25);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txt_User);
@@ -391,5 +401,6 @@
 		private System.Windows.Forms.Label txtHeader;
 		private System.Windows.Forms.Button Minimize;
 		private System.Windows.Forms.Button Exit;
+		private System.Windows.Forms.Panel panel25;
 	}
 }
