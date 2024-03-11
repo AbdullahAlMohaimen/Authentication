@@ -92,7 +92,7 @@
 			// 
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
+			this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.label35.Location = new System.Drawing.Point(8, -1);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(166, 25);
@@ -444,7 +444,7 @@
 			this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
 			this.panel23.Location = new System.Drawing.Point(70, 0);
 			this.panel23.Name = "panel23";
-			this.panel23.Size = new System.Drawing.Size(70, 13);
+			this.panel23.Size = new System.Drawing.Size(70, 8);
 			this.panel23.TabIndex = 107;
 			// 
 			// panel24
@@ -452,7 +452,7 @@
 			this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
 			this.panel24.Location = new System.Drawing.Point(0, 0);
 			this.panel24.Name = "panel24";
-			this.panel24.Size = new System.Drawing.Size(70, 13);
+			this.panel24.Size = new System.Drawing.Size(70, 8);
 			this.panel24.TabIndex = 108;
 			// 
 			// panel25
@@ -460,7 +460,7 @@
 			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(214)))), ((int)(((byte)(160)))));
 			this.panel25.Location = new System.Drawing.Point(140, 0);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(70, 13);
+			this.panel25.Size = new System.Drawing.Size(70, 8);
 			this.panel25.TabIndex = 110;
 			// 
 			// panel26
@@ -468,7 +468,7 @@
 			this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(138)))), ((int)(((byte)(178)))));
 			this.panel26.Location = new System.Drawing.Point(210, 0);
 			this.panel26.Name = "panel26";
-			this.panel26.Size = new System.Drawing.Size(71, 13);
+			this.panel26.Size = new System.Drawing.Size(71, 8);
 			this.panel26.TabIndex = 109;
 			// 
 			// panel27
@@ -476,7 +476,7 @@
 			this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(59)))), ((int)(((byte)(76)))));
 			this.panel27.Location = new System.Drawing.Point(281, 0);
 			this.panel27.Name = "panel27";
-			this.panel27.Size = new System.Drawing.Size(71, 13);
+			this.panel27.Size = new System.Drawing.Size(71, 8);
 			this.panel27.TabIndex = 111;
 			// 
 			// Login

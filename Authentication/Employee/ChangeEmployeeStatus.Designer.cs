@@ -51,6 +51,13 @@
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.panel25 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
 			this.guna2Panel1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -60,7 +67,7 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.ForeColor = System.Drawing.Color.Maroon;
-			this.label7.Location = new System.Drawing.Point(142, 65);
+			this.label7.Location = new System.Drawing.Point(142, 64);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(11, 16);
 			this.label7.TabIndex = 126;
@@ -71,7 +78,7 @@
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.Maroon;
-			this.label6.Location = new System.Drawing.Point(142, 48);
+			this.label6.Location = new System.Drawing.Point(142, 47);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(11, 16);
 			this.label6.TabIndex = 125;
@@ -82,7 +89,7 @@
 			this.txt_User.AutoSize = true;
 			this.txt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_User.ForeColor = System.Drawing.Color.Maroon;
-			this.txt_User.Location = new System.Drawing.Point(164, 46);
+			this.txt_User.Location = new System.Drawing.Point(164, 45);
 			this.txt_User.Name = "txt_User";
 			this.txt_User.Size = new System.Drawing.Size(0, 16);
 			this.txt_User.TabIndex = 124;
@@ -92,7 +99,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.Maroon;
-			this.label5.Location = new System.Drawing.Point(8, 46);
+			this.label5.Location = new System.Drawing.Point(8, 45);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(126, 16);
 			this.label5.TabIndex = 123;
@@ -109,7 +116,7 @@
 			this.ChangeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ChangeStatus.ForeColor = System.Drawing.Color.Wheat;
 			this.ChangeStatus.Image = ((System.Drawing.Image)(resources.GetObject("ChangeStatus.Image")));
-			this.ChangeStatus.Location = new System.Drawing.Point(467, 142);
+			this.ChangeStatus.Location = new System.Drawing.Point(467, 141);
 			this.ChangeStatus.Name = "ChangeStatus";
 			this.ChangeStatus.Size = new System.Drawing.Size(169, 29);
 			this.ChangeStatus.TabIndex = 121;
@@ -127,7 +134,7 @@
 			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
 			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(361, 142);
+			this.Cancel.Location = new System.Drawing.Point(361, 141);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(100, 29);
 			this.Cancel.TabIndex = 122;
@@ -139,7 +146,7 @@
 			this.statusString.AutoSize = true;
 			this.statusString.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.statusString.ForeColor = System.Drawing.Color.SeaGreen;
-			this.statusString.Location = new System.Drawing.Point(164, 65);
+			this.statusString.Location = new System.Drawing.Point(164, 64);
 			this.statusString.Name = "statusString";
 			this.statusString.Size = new System.Drawing.Size(0, 16);
 			this.statusString.TabIndex = 120;
@@ -149,7 +156,7 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Maroon;
-			this.label1.Location = new System.Drawing.Point(8, 65);
+			this.label1.Location = new System.Drawing.Point(8, 64);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(103, 16);
 			this.label1.TabIndex = 119;
@@ -170,7 +177,7 @@
 			this.guna2Panel1.Controls.Add(this.isInActive);
 			this.guna2Panel1.Controls.Add(this.label21);
 			this.guna2Panel1.Controls.Add(this.isActive);
-			this.guna2Panel1.Location = new System.Drawing.Point(6, 88);
+			this.guna2Panel1.Location = new System.Drawing.Point(6, 87);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(630, 47);
 			this.guna2Panel1.TabIndex = 118;
@@ -293,7 +300,7 @@
 			this.panel1.Controls.Add(this.txtHeader);
 			this.panel1.Controls.Add(this.Minimize);
 			this.panel1.Controls.Add(this.Exit);
-			this.panel1.Location = new System.Drawing.Point(-2, 12);
+			this.panel1.Location = new System.Drawing.Point(-2, 11);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(646, 30);
 			this.panel1.TabIndex = 117;
@@ -302,7 +309,7 @@
 			// 
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(254, 25);
@@ -341,11 +348,67 @@
 			// 
 			// panel25
 			// 
-			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(214)))), ((int)(((byte)(160)))));
-			this.panel25.Location = new System.Drawing.Point(0, -1);
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+			this.panel25.Location = new System.Drawing.Point(-1, -1);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(70, 13);
+			this.panel25.Size = new System.Drawing.Size(80, 8);
 			this.panel25.TabIndex = 127;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+			this.panel2.Location = new System.Drawing.Point(79, -1);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(80, 8);
+			this.panel2.TabIndex = 128;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(81)))));
+			this.panel3.Location = new System.Drawing.Point(159, -1);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(80, 8);
+			this.panel3.TabIndex = 129;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(131)))), ((int)(((byte)(128)))));
+			this.panel4.Location = new System.Drawing.Point(398, -1);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(82, 8);
+			this.panel4.TabIndex = 132;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(17)))), ((int)(((byte)(89)))));
+			this.panel5.Location = new System.Drawing.Point(318, -1);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(80, 8);
+			this.panel5.TabIndex = 131;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(66)))));
+			this.panel6.Location = new System.Drawing.Point(238, -1);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(80, 8);
+			this.panel6.TabIndex = 130;
+			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(17)))), ((int)(((byte)(89)))));
+			this.panel7.Location = new System.Drawing.Point(562, -1);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(80, 8);
+			this.panel7.TabIndex = 134;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
+			this.panel8.Location = new System.Drawing.Point(480, -1);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(82, 8);
+			this.panel8.TabIndex = 133;
 			// 
 			// ChangeEmployeeStatus
 			// 
@@ -355,6 +418,13 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(642, 177);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel7);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel8);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.panel25);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
@@ -402,5 +472,12 @@
 		private System.Windows.Forms.Button Minimize;
 		private System.Windows.Forms.Button Exit;
 		private System.Windows.Forms.Panel panel25;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Panel panel8;
 	}
 }

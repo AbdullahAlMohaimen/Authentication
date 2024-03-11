@@ -687,7 +687,7 @@
 			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
 			this.panel25.Location = new System.Drawing.Point(0, -1);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(90, 13);
+			this.panel25.Size = new System.Drawing.Size(90, 8);
 			this.panel25.TabIndex = 136;
 			// 
 			// panel26
@@ -695,7 +695,7 @@
 			this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(174)))), ((int)(((byte)(160)))));
 			this.panel26.Location = new System.Drawing.Point(89, -1);
 			this.panel26.Name = "panel26";
-			this.panel26.Size = new System.Drawing.Size(90, 13);
+			this.panel26.Size = new System.Drawing.Size(90, 8);
 			this.panel26.TabIndex = 137;
 			// 
 			// panel27
@@ -703,7 +703,7 @@
 			this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(201)))), ((int)(((byte)(112)))));
 			this.panel27.Location = new System.Drawing.Point(268, -1);
 			this.panel27.Name = "panel27";
-			this.panel27.Size = new System.Drawing.Size(90, 13);
+			this.panel27.Size = new System.Drawing.Size(90, 8);
 			this.panel27.TabIndex = 139;
 			// 
 			// panel28
@@ -711,7 +711,7 @@
 			this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(98)))), ((int)(((byte)(66)))));
 			this.panel28.Location = new System.Drawing.Point(179, -1);
 			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(90, 13);
+			this.panel28.Size = new System.Drawing.Size(90, 8);
 			this.panel28.TabIndex = 138;
 			// 
 			// panel29
@@ -719,15 +719,15 @@
 			this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(116)))), ((int)(((byte)(104)))));
 			this.panel29.Location = new System.Drawing.Point(540, -1);
 			this.panel29.Name = "panel29";
-			this.panel29.Size = new System.Drawing.Size(90, 13);
+			this.panel29.Size = new System.Drawing.Size(90, 8);
 			this.panel29.TabIndex = 142;
 			// 
 			// panel30
 			// 
 			this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(181)))), ((int)(((byte)(156)))));
-			this.panel30.Location = new System.Drawing.Point(449, -1);
+			this.panel30.Location = new System.Drawing.Point(447, -1);
 			this.panel30.Name = "panel30";
-			this.panel30.Size = new System.Drawing.Size(91, 13);
+			this.panel30.Size = new System.Drawing.Size(93, 8);
 			this.panel30.TabIndex = 141;
 			// 
 			// panel31
@@ -735,7 +735,7 @@
 			this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(175)))), ((int)(((byte)(73)))));
 			this.panel31.Location = new System.Drawing.Point(357, -1);
 			this.panel31.Name = "panel31";
-			this.panel31.Size = new System.Drawing.Size(90, 13);
+			this.panel31.Size = new System.Drawing.Size(90, 8);
 			this.panel31.TabIndex = 140;
 			// 
 			// ChangePassword
