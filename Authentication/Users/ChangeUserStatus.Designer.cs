@@ -50,6 +50,14 @@
 			this.txt_User = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel25 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -69,7 +77,7 @@
 			// 
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(210, 25);
@@ -338,6 +346,70 @@
 			this.label7.TabIndex = 116;
 			this.label7.Text = ":";
 			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(17)))), ((int)(((byte)(89)))));
+			this.panel7.Location = new System.Drawing.Point(562, -1);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(80, 8);
+			this.panel7.TabIndex = 142;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(131)))), ((int)(((byte)(128)))));
+			this.panel4.Location = new System.Drawing.Point(398, -1);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(82, 8);
+			this.panel4.TabIndex = 140;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
+			this.panel8.Location = new System.Drawing.Point(480, -1);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(82, 8);
+			this.panel8.TabIndex = 141;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(81)))));
+			this.panel3.Location = new System.Drawing.Point(159, -1);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(80, 8);
+			this.panel3.TabIndex = 137;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(17)))), ((int)(((byte)(89)))));
+			this.panel5.Location = new System.Drawing.Point(318, -1);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(80, 8);
+			this.panel5.TabIndex = 139;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+			this.panel2.Location = new System.Drawing.Point(79, -1);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(80, 8);
+			this.panel2.TabIndex = 136;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(66)))));
+			this.panel6.Location = new System.Drawing.Point(238, -1);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(80, 8);
+			this.panel6.TabIndex = 138;
+			// 
+			// panel25
+			// 
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+			this.panel25.Location = new System.Drawing.Point(-1, -1);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(80, 8);
+			this.panel25.TabIndex = 135;
+			// 
 			// ChangeUserStatus
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +418,14 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(642, 173);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel7);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel8);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.panel25);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txt_User);
@@ -391,5 +471,13 @@
 		private System.Windows.Forms.Label txt_User;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel25;
 	}
 }

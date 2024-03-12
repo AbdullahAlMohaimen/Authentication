@@ -34,6 +34,12 @@
 			this.Minimize = new System.Windows.Forms.Button();
 			this.Exit = new System.Windows.Forms.Button();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.txt_UserNo = new Guna.UI2.WinForms.Guna2TextBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.txt_UserNoAuto = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label21 = new System.Windows.Forms.Label();
 			this.txt_IsApprover = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label7 = new System.Windows.Forms.Label();
@@ -61,12 +67,16 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.SaveUser = new Guna.UI2.WinForms.Guna2Button();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.txt_UserNo = new Guna.UI2.WinForms.Guna2TextBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.txt_UserNoAuto = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.panel24 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.panel9 = new System.Windows.Forms.Panel();
+			this.panel10 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -86,7 +96,7 @@
 			// 
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(166, 25);
@@ -165,6 +175,91 @@
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.Size = new System.Drawing.Size(945, 199);
 			this.guna2Panel1.TabIndex = 107;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.ForeColor = System.Drawing.Color.DarkRed;
+			this.label8.Location = new System.Drawing.Point(79, 15);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(18, 24);
+			this.label8.TabIndex = 180;
+			this.label8.Text = "*";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label10.Location = new System.Drawing.Point(7, 17);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(73, 21);
+			this.label10.TabIndex = 181;
+			this.label10.Text = "User No";
+			// 
+			// txt_UserNo
+			// 
+			this.txt_UserNo.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_UserNo.BorderRadius = 6;
+			this.txt_UserNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_UserNo.DefaultText = "";
+			this.txt_UserNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_UserNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_UserNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_UserNo.FillColor = System.Drawing.Color.Wheat;
+			this.txt_UserNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserNo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_UserNo.ForeColor = System.Drawing.Color.Black;
+			this.txt_UserNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserNo.Location = new System.Drawing.Point(142, 13);
+			this.txt_UserNo.Name = "txt_UserNo";
+			this.txt_UserNo.PasswordChar = '\0';
+			this.txt_UserNo.PlaceholderText = "";
+			this.txt_UserNo.SelectedText = "";
+			this.txt_UserNo.Size = new System.Drawing.Size(190, 34);
+			this.txt_UserNo.TabIndex = 182;
+			this.txt_UserNo.TextChanged += new System.EventHandler(this.txt_UserNo_TextChanged);
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label11.Location = new System.Drawing.Point(116, 17);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(16, 24);
+			this.label11.TabIndex = 185;
+			this.label11.Text = ":";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label15.Location = new System.Drawing.Point(374, 20);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(46, 21);
+			this.label15.TabIndex = 183;
+			this.label15.Text = "Auto";
+			// 
+			// txt_UserNoAuto
+			// 
+			this.txt_UserNoAuto.AutoSize = true;
+			this.txt_UserNoAuto.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserNoAuto.CheckedState.BorderRadius = 0;
+			this.txt_UserNoAuto.CheckedState.BorderThickness = 0;
+			this.txt_UserNoAuto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_UserNoAuto.Location = new System.Drawing.Point(352, 24);
+			this.txt_UserNoAuto.Name = "txt_UserNoAuto";
+			this.txt_UserNoAuto.Size = new System.Drawing.Size(15, 14);
+			this.txt_UserNoAuto.TabIndex = 184;
+			this.txt_UserNoAuto.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_UserNoAuto.UncheckedState.BorderRadius = 0;
+			this.txt_UserNoAuto.UncheckedState.BorderThickness = 0;
+			this.txt_UserNoAuto.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.txt_UserNoAuto.CheckedChanged += new System.EventHandler(this.txt_UserNoAuto_CheckedChanged);
 			// 
 			// label21
 			// 
@@ -563,90 +658,85 @@
 			this.SaveUser.Text = "  Save";
 			this.SaveUser.Click += new System.EventHandler(this.SaveUser_Click);
 			// 
-			// label8
+			// panel24
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.ForeColor = System.Drawing.Color.DarkRed;
-			this.label8.Location = new System.Drawing.Point(79, 15);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(18, 24);
-			this.label8.TabIndex = 180;
-			this.label8.Text = "*";
+			this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(37)))), ((int)(((byte)(133)))));
+			this.panel24.Location = new System.Drawing.Point(0, 0);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(96, 8);
+			this.panel24.TabIndex = 109;
 			// 
-			// label10
+			// panel2
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label10.Location = new System.Drawing.Point(7, 17);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(73, 21);
-			this.label10.TabIndex = 181;
-			this.label10.Text = "User No";
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(23)))), ((int)(((byte)(158)))));
+			this.panel2.Location = new System.Drawing.Point(96, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(96, 8);
+			this.panel2.TabIndex = 110;
 			// 
-			// txt_UserNo
+			// panel3
 			// 
-			this.txt_UserNo.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_UserNo.BorderRadius = 6;
-			this.txt_UserNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_UserNo.DefaultText = "";
-			this.txt_UserNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_UserNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_UserNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_UserNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_UserNo.FillColor = System.Drawing.Color.Wheat;
-			this.txt_UserNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserNo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_UserNo.ForeColor = System.Drawing.Color.Black;
-			this.txt_UserNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserNo.Location = new System.Drawing.Point(142, 13);
-			this.txt_UserNo.Name = "txt_UserNo";
-			this.txt_UserNo.PasswordChar = '\0';
-			this.txt_UserNo.PlaceholderText = "";
-			this.txt_UserNo.SelectedText = "";
-			this.txt_UserNo.Size = new System.Drawing.Size(190, 34);
-			this.txt_UserNo.TabIndex = 182;
-			this.txt_UserNo.TextChanged += new System.EventHandler(this.txt_UserNo_TextChanged);
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
+			this.panel3.Location = new System.Drawing.Point(288, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(96, 8);
+			this.panel3.TabIndex = 112;
 			// 
-			// label11
+			// panel4
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(116, 17);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(16, 24);
-			this.label11.TabIndex = 185;
-			this.label11.Text = ":";
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(9)))), ((int)(((byte)(183)))));
+			this.panel4.Location = new System.Drawing.Point(192, 0);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(97, 8);
+			this.panel4.TabIndex = 111;
 			// 
-			// label15
+			// panel5
 			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label15.Location = new System.Drawing.Point(374, 20);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(46, 21);
-			this.label15.TabIndex = 183;
-			this.label15.Text = "Auto";
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(12)))), ((int)(((byte)(163)))));
+			this.panel5.Location = new System.Drawing.Point(480, 0);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(96, 8);
+			this.panel5.TabIndex = 112;
 			// 
-			// txt_UserNoAuto
+			// panel6
 			// 
-			this.txt_UserNoAuto.AutoSize = true;
-			this.txt_UserNoAuto.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserNoAuto.CheckedState.BorderRadius = 0;
-			this.txt_UserNoAuto.CheckedState.BorderThickness = 0;
-			this.txt_UserNoAuto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_UserNoAuto.Location = new System.Drawing.Point(352, 24);
-			this.txt_UserNoAuto.Name = "txt_UserNoAuto";
-			this.txt_UserNoAuto.Size = new System.Drawing.Size(15, 14);
-			this.txt_UserNoAuto.TabIndex = 184;
-			this.txt_UserNoAuto.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_UserNoAuto.UncheckedState.BorderRadius = 0;
-			this.txt_UserNoAuto.UncheckedState.BorderThickness = 0;
-			this.txt_UserNoAuto.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.txt_UserNoAuto.CheckedChanged += new System.EventHandler(this.txt_UserNoAuto_CheckedChanged);
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+			this.panel6.Location = new System.Drawing.Point(384, 0);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(96, 8);
+			this.panel6.TabIndex = 111;
+			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
+			this.panel7.Location = new System.Drawing.Point(672, 0);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(96, 8);
+			this.panel7.TabIndex = 114;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(146)))), ((int)(((byte)(55)))));
+			this.panel8.Location = new System.Drawing.Point(576, 0);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(96, 8);
+			this.panel8.TabIndex = 113;
+			// 
+			// panel9
+			// 
+			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(201)))), ((int)(((byte)(240)))));
+			this.panel9.Location = new System.Drawing.Point(864, 0);
+			this.panel9.Name = "panel9";
+			this.panel9.Size = new System.Drawing.Size(98, 8);
+			this.panel9.TabIndex = 112;
+			// 
+			// panel10
+			// 
+			this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(149)))), ((int)(((byte)(239)))));
+			this.panel10.Location = new System.Drawing.Point(768, 0);
+			this.panel10.Name = "panel10";
+			this.panel10.Size = new System.Drawing.Size(96, 8);
+			this.panel10.TabIndex = 111;
 			// 
 			// UserEntry
 			// 
@@ -656,6 +746,16 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(961, 288);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel9);
+			this.Controls.Add(this.panel7);
+			this.Controls.Add(this.panel10);
+			this.Controls.Add(this.panel8);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel24);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.SaveUser);
@@ -711,5 +811,15 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label15;
 		private Guna.UI2.WinForms.Guna2CheckBox txt_UserNoAuto;
+		private System.Windows.Forms.Panel panel24;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.Panel panel9;
+		private System.Windows.Forms.Panel panel10;
 	}
 }

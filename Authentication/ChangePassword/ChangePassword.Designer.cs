@@ -143,7 +143,7 @@
 			// 
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
+			this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.label35.Location = new System.Drawing.Point(8, 0);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(177, 25);

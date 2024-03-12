@@ -47,6 +47,12 @@
 			this.panel9 = new System.Windows.Forms.Panel();
 			this.panel10 = new System.Windows.Forms.Panel();
 			this.panel11 = new System.Windows.Forms.Panel();
+			this.btnNotification = new System.Windows.Forms.Button();
+			this.btnApproval = new System.Windows.Forms.Button();
+			this.btnMessage = new System.Windows.Forms.Button();
+			this.totalMessage = new System.Windows.Forms.Label();
+			this.totalApprovalPending = new System.Windows.Forms.Label();
+			this.totalNotification = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -54,6 +60,12 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+			this.panel1.Controls.Add(this.totalNotification);
+			this.panel1.Controls.Add(this.totalApprovalPending);
+			this.panel1.Controls.Add(this.totalMessage);
+			this.panel1.Controls.Add(this.btnMessage);
+			this.panel1.Controls.Add(this.btnApproval);
+			this.panel1.Controls.Add(this.btnNotification);
 			this.panel1.Controls.Add(this.homeDropDown);
 			this.panel1.Controls.Add(this.headerTitle);
 			this.panel1.Controls.Add(this.Minimize);
@@ -250,6 +262,84 @@
 			this.panel11.Size = new System.Drawing.Size(132, 13);
 			this.panel11.TabIndex = 8;
 			// 
+			// btnNotification
+			// 
+			this.btnNotification.BackColor = System.Drawing.Color.SeaGreen;
+			this.btnNotification.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNotification.BackgroundImage")));
+			this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnNotification.FlatAppearance.BorderSize = 0;
+			this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNotification.Location = new System.Drawing.Point(772, 6);
+			this.btnNotification.Name = "btnNotification";
+			this.btnNotification.Size = new System.Drawing.Size(27, 24);
+			this.btnNotification.TabIndex = 109;
+			this.btnNotification.UseVisualStyleBackColor = false;
+			this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
+			// 
+			// btnApproval
+			// 
+			this.btnApproval.BackColor = System.Drawing.Color.SeaGreen;
+			this.btnApproval.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnApproval.BackgroundImage")));
+			this.btnApproval.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnApproval.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnApproval.FlatAppearance.BorderSize = 0;
+			this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnApproval.Location = new System.Drawing.Point(834, 6);
+			this.btnApproval.Name = "btnApproval";
+			this.btnApproval.Size = new System.Drawing.Size(27, 24);
+			this.btnApproval.TabIndex = 110;
+			this.btnApproval.UseVisualStyleBackColor = false;
+			this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
+			// 
+			// btnMessage
+			// 
+			this.btnMessage.BackColor = System.Drawing.Color.SeaGreen;
+			this.btnMessage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMessage.BackgroundImage")));
+			this.btnMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnMessage.FlatAppearance.BorderSize = 0;
+			this.btnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnMessage.Location = new System.Drawing.Point(896, 6);
+			this.btnMessage.Name = "btnMessage";
+			this.btnMessage.Size = new System.Drawing.Size(27, 24);
+			this.btnMessage.TabIndex = 111;
+			this.btnMessage.UseVisualStyleBackColor = false;
+			this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+			// 
+			// totalMessage
+			// 
+			this.totalMessage.AutoSize = true;
+			this.totalMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.totalMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.totalMessage.Location = new System.Drawing.Point(921, 0);
+			this.totalMessage.Name = "totalMessage";
+			this.totalMessage.Size = new System.Drawing.Size(15, 16);
+			this.totalMessage.TabIndex = 123;
+			this.totalMessage.Text = "0";
+			// 
+			// totalApprovalPending
+			// 
+			this.totalApprovalPending.AutoSize = true;
+			this.totalApprovalPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.totalApprovalPending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.totalApprovalPending.Location = new System.Drawing.Point(856, 0);
+			this.totalApprovalPending.Name = "totalApprovalPending";
+			this.totalApprovalPending.Size = new System.Drawing.Size(15, 16);
+			this.totalApprovalPending.TabIndex = 124;
+			this.totalApprovalPending.Text = "0";
+			// 
+			// totalNotification
+			// 
+			this.totalNotification.AutoSize = true;
+			this.totalNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.totalNotification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.totalNotification.Location = new System.Drawing.Point(794, 0);
+			this.totalNotification.Name = "totalNotification";
+			this.totalNotification.Size = new System.Drawing.Size(15, 16);
+			this.totalNotification.TabIndex = 125;
+			this.totalNotification.Text = "0";
+			// 
 			// Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,5 +389,11 @@
 		private System.Windows.Forms.Panel panel9;
 		private System.Windows.Forms.Panel panel10;
 		private System.Windows.Forms.Panel panel11;
+		private System.Windows.Forms.Button btnMessage;
+		private System.Windows.Forms.Button btnApproval;
+		private System.Windows.Forms.Button btnNotification;
+		private System.Windows.Forms.Label totalNotification;
+		private System.Windows.Forms.Label totalApprovalPending;
+		private System.Windows.Forms.Label totalMessage;
 	}
 }

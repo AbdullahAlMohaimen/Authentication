@@ -144,7 +144,7 @@
 			// 
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txtHeader.Location = new System.Drawing.Point(8, 0);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(210, 25);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Authentication.Notification
 {
-	public partial class Notification : Form
+	public partial class NotificationController : UserControl
 	{
-		public Notification()
+		public NotificationController()
 		{
 			InitializeComponent();
 		}

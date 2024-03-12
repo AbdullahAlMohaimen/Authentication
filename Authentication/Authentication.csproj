@@ -422,11 +422,23 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notification\Notification.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Notification\ApprovalPendingController.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Notification\Notification.Designer.cs">
-      <DependentUpon>Notification.cs</DependentUpon>
+    <Compile Include="Notification\ApprovalPendingController.Designer.cs">
+      <DependentUpon>ApprovalPendingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification\MessageController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notification\MessageController.Designer.cs">
+      <DependentUpon>MessageController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification\NotificationController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notification\NotificationController.Designer.cs">
+      <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

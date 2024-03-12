@@ -36,11 +36,16 @@
 			this.Exit = new System.Windows.Forms.Button();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.label3 = new System.Windows.Forms.Label();
-			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
-			this.Submit = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_LoginID = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label27 = new System.Windows.Forms.Label();
+			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
+			this.Submit = new Guna.UI2.WinForms.Guna2Button();
+			this.panel24 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -70,7 +75,7 @@
 			// 
 			this.label35.AutoSize = true;
 			this.label35.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label35.ForeColor = System.Drawing.Color.Salmon;
+			this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.label35.Location = new System.Drawing.Point(8, -1);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(177, 25);
@@ -135,42 +140,6 @@
 			this.label3.Text = "                     If you click on submit button \r\na temporary password will be" +
     " send in your email address.";
 			// 
-			// Cancel
-			// 
-			this.Cancel.BorderRadius = 8;
-			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Cancel.FillColor = System.Drawing.Color.Brown;
-			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
-			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-			this.Cancel.Location = new System.Drawing.Point(271, 173);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(103, 29);
-			this.Cancel.TabIndex = 105;
-			this.Cancel.Text = " Cancel";
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-			// 
-			// Submit
-			// 
-			this.Submit.BorderRadius = 8;
-			this.Submit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.Submit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.Submit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.Submit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.Submit.FillColor = System.Drawing.Color.SeaGreen;
-			this.Submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Submit.ForeColor = System.Drawing.Color.Wheat;
-			this.Submit.Image = ((System.Drawing.Image)(resources.GetObject("Submit.Image")));
-			this.Submit.Location = new System.Drawing.Point(380, 173);
-			this.Submit.Name = "Submit";
-			this.Submit.Size = new System.Drawing.Size(99, 29);
-			this.Submit.TabIndex = 104;
-			this.Submit.Text = " Submit";
-			this.Submit.Click += new System.EventHandler(this.Submit_Click);
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -216,6 +185,82 @@
 			this.label27.TabIndex = 96;
 			this.label27.Text = ":";
 			// 
+			// Cancel
+			// 
+			this.Cancel.BorderRadius = 8;
+			this.Cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Cancel.FillColor = System.Drawing.Color.Brown;
+			this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.ForeColor = System.Drawing.Color.Wheat;
+			this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+			this.Cancel.Location = new System.Drawing.Point(271, 173);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(103, 29);
+			this.Cancel.TabIndex = 105;
+			this.Cancel.Text = " Cancel";
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+			// 
+			// Submit
+			// 
+			this.Submit.BorderRadius = 8;
+			this.Submit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.Submit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.Submit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.Submit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.Submit.FillColor = System.Drawing.Color.SeaGreen;
+			this.Submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Submit.ForeColor = System.Drawing.Color.Wheat;
+			this.Submit.Image = ((System.Drawing.Image)(resources.GetObject("Submit.Image")));
+			this.Submit.Location = new System.Drawing.Point(380, 173);
+			this.Submit.Name = "Submit";
+			this.Submit.Size = new System.Drawing.Size(99, 29);
+			this.Submit.TabIndex = 104;
+			this.Submit.Text = " Submit";
+			this.Submit.Click += new System.EventHandler(this.Submit_Click);
+			// 
+			// panel24
+			// 
+			this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+			this.panel24.Location = new System.Drawing.Point(0, 0);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(98, 8);
+			this.panel24.TabIndex = 109;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.panel2.Location = new System.Drawing.Point(98, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(98, 8);
+			this.panel2.TabIndex = 110;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
+			this.panel4.Location = new System.Drawing.Point(294, 0);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(98, 8);
+			this.panel4.TabIndex = 112;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+			this.panel5.Location = new System.Drawing.Point(196, 0);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(98, 8);
+			this.panel5.TabIndex = 111;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+			this.panel6.Location = new System.Drawing.Point(391, 0);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(98, 8);
+			this.panel6.TabIndex = 112;
+			// 
 			// ForgetPassword
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +268,11 @@
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(489, 207);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel24);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.Cancel);
 			this.Controls.Add(this.panel1);
@@ -252,5 +302,10 @@
 		private Guna.UI2.WinForms.Guna2TextBox txt_LoginID;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Panel panel24;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
 	}
 }

@@ -69,6 +69,16 @@
 			this.IsContainSpecialCharacter = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.SaveHardPasswordPolicy = new Guna.UI2.WinForms.Guna2Button();
+			this.panel23 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.panel9 = new System.Windows.Forms.Panel();
+			this.panel10 = new System.Windows.Forms.Panel();
+			this.panel11 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -88,7 +98,7 @@
 			// 
 			this.txt_Header.AutoSize = true;
 			this.txt_Header.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_Header.ForeColor = System.Drawing.Color.Salmon;
+			this.txt_Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txt_Header.Location = new System.Drawing.Point(8, 0);
 			this.txt_Header.Name = "txt_Header";
 			this.txt_Header.Size = new System.Drawing.Size(342, 25);
@@ -680,6 +690,86 @@
 			this.SaveHardPasswordPolicy.Text = "  Save";
 			this.SaveHardPasswordPolicy.Click += new System.EventHandler(this.SaveHardPasswordPolicy_Click);
 			// 
+			// panel23
+			// 
+			this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(65)))), ((int)(((byte)(68)))));
+			this.panel23.Location = new System.Drawing.Point(0, 0);
+			this.panel23.Name = "panel23";
+			this.panel23.Size = new System.Drawing.Size(88, 8);
+			this.panel23.TabIndex = 136;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(114)))), ((int)(((byte)(44)))));
+			this.panel3.Location = new System.Drawing.Point(88, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(88, 8);
+			this.panel3.TabIndex = 137;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(74)))));
+			this.panel4.Location = new System.Drawing.Point(264, 0);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(88, 8);
+			this.panel4.TabIndex = 139;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(150)))), ((int)(((byte)(30)))));
+			this.panel5.Location = new System.Drawing.Point(176, 0);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(88, 8);
+			this.panel5.TabIndex = 138;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(190)))), ((int)(((byte)(109)))));
+			this.panel6.Location = new System.Drawing.Point(440, 0);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(88, 8);
+			this.panel6.TabIndex = 139;
+			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(199)))), ((int)(((byte)(79)))));
+			this.panel7.Location = new System.Drawing.Point(352, 0);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(88, 8);
+			this.panel7.TabIndex = 138;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(144)))), ((int)(((byte)(142)))));
+			this.panel8.Location = new System.Drawing.Point(616, 0);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(88, 8);
+			this.panel8.TabIndex = 139;
+			// 
+			// panel9
+			// 
+			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(170)))), ((int)(((byte)(139)))));
+			this.panel9.Location = new System.Drawing.Point(528, 0);
+			this.panel9.Name = "panel9";
+			this.panel9.Size = new System.Drawing.Size(88, 8);
+			this.panel9.TabIndex = 138;
+			// 
+			// panel10
+			// 
+			this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(125)))), ((int)(((byte)(161)))));
+			this.panel10.Location = new System.Drawing.Point(792, 0);
+			this.panel10.Name = "panel10";
+			this.panel10.Size = new System.Drawing.Size(89, 8);
+			this.panel10.TabIndex = 139;
+			// 
+			// panel11
+			// 
+			this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(117)))), ((int)(((byte)(144)))));
+			this.panel11.Location = new System.Drawing.Point(704, 0);
+			this.panel11.Name = "panel11";
+			this.panel11.Size = new System.Drawing.Size(88, 8);
+			this.panel11.TabIndex = 138;
+			// 
 			// HardPasswordSetup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -688,6 +778,16 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(881, 353);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel10);
+			this.Controls.Add(this.panel8);
+			this.Controls.Add(this.panel11);
+			this.Controls.Add(this.panel6);
+			this.Controls.Add(this.panel9);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel7);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel23);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.SaveHardPasswordPolicy);
@@ -745,5 +845,15 @@
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label25;
+		private System.Windows.Forms.Panel panel23;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.Panel panel9;
+		private System.Windows.Forms.Panel panel10;
+		private System.Windows.Forms.Panel panel11;
 	}
 }

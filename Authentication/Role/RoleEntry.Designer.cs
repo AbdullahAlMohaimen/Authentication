@@ -51,6 +51,11 @@
 			this.label24 = new System.Windows.Forms.Label();
 			this.Cancel = new Guna.UI2.WinForms.Guna2Button();
 			this.SaveRole = new Guna.UI2.WinForms.Guna2Button();
+			this.panel25 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.guna2Panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -70,7 +75,7 @@
 			// 
 			this.txtHeader.AutoSize = true;
 			this.txtHeader.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHeader.ForeColor = System.Drawing.Color.Salmon;
+			this.txtHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.txtHeader.Location = new System.Drawing.Point(8, -1);
 			this.txtHeader.Name = "txtHeader";
 			this.txtHeader.Size = new System.Drawing.Size(166, 25);
@@ -392,6 +397,46 @@
 			this.SaveRole.Text = "  Save";
 			this.SaveRole.Click += new System.EventHandler(this.SaveRole_Click);
 			// 
+			// panel25
+			// 
+			this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(0)))), ((int)(((byte)(153)))));
+			this.panel25.Location = new System.Drawing.Point(0, 0);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(100, 8);
+			this.panel25.TabIndex = 111;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(0)))), ((int)(((byte)(89)))));
+			this.panel2.Location = new System.Drawing.Point(100, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(100, 8);
+			this.panel2.TabIndex = 112;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+			this.panel3.Location = new System.Drawing.Point(300, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(100, 8);
+			this.panel3.TabIndex = 114;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(84)))));
+			this.panel4.Location = new System.Drawing.Point(200, 0);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(100, 8);
+			this.panel4.TabIndex = 113;
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(0)))));
+			this.panel5.Location = new System.Drawing.Point(400, 0);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(98, 8);
+			this.panel5.TabIndex = 114;
+			// 
 			// RoleEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +445,11 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(497, 308);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel5);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel25);
 			this.Controls.Add(this.guna2Panel1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.Cancel);
@@ -439,5 +489,10 @@
 		private Guna.UI2.WinForms.Guna2ComboBox txt_RoleStatus;
 		private Guna.UI2.WinForms.Guna2TextBox txt_RoleDescription;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Panel panel25;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
 	}
 }

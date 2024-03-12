@@ -320,5 +320,20 @@ namespace Authentication.Home
 			}
 		}
 		#endregion
+
+		private void btnNotification_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnApproval_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnMessage_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
