@@ -28,10 +28,35 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
+			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.SuspendLayout();
+			// 
+			// guna2Panel1
+			// 
+			this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.guna2Panel1.BorderRadius = 10;
+			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+			this.guna2Panel1.Name = "guna2Panel1";
+			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
+			this.guna2Panel1.TabIndex = 110;
+			// 
+			// ApprovalPendingController
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Wheat;
+			this.Controls.Add(this.guna2Panel1);
+			this.Name = "ApprovalPendingController";
+			this.Size = new System.Drawing.Size(1067, 590);
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
 	}
 }

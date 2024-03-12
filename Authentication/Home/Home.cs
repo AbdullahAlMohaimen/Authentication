@@ -274,16 +274,6 @@ namespace Authentication.Home
 		}
 		#endregion
 
-		#region Add Control
-		public void AddControl(UserControl controller)
-		{
-			controller.Dock = DockStyle.Fill;
-			panelContainer.Controls.Clear();
-			panelContainer.Controls.Add(controller);
-			controller.BringToFront();
-		}
-		#endregion
-
 		#region Home DropDown
 		private void homeDropDown_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -321,19 +311,58 @@ namespace Authentication.Home
 		}
 		#endregion
 
+		#region Notification Button
 		private void btnNotification_Click(object sender, EventArgs e)
 		{
+			string headerName = "Notification";
+			this.headerTitle.Text = headerName;
 
+			Notification.NotificationController notification = new Notification.NotificationController();
+			notification.SetCurrentUser(this.oCurrentUser);
+			AddControl(notification);
 		}
+		#endregion
 
+		#region Approval Pending Button
 		private void btnApproval_Click(object sender, EventArgs e)
 		{
+			string headerName = "Approval Pending";
+			this.headerTitle.Text = headerName;
 
+			Notification.ApprovalPendingController approvalController = new Notification.ApprovalPendingController();
+			approvalController.SetCurrentUser(this.oCurrentUser);
+			AddControl(approvalController);
 		}
+		#endregion
 
+		#region Message Button
 		private void btnMessage_Click(object sender, EventArgs e)
+		{
+			string headerName = "Message";
+			this.headerTitle.Text = headerName;
+
+			Notification.MessageController messageController = new Notification.MessageController();
+			messageController.SetCurrentUser(this.oCurrentUser);
+			AddControl(messageController);
+		}
+		#endregion
+
+		#region Add Control
+		public void AddControl(UserControl controller)
+		{
+			controller.Dock = DockStyle.Fill;
+			panelContainer.Controls.Clear();
+			panelContainer.Controls.Add(controller);
+			controller.BringToFront();
+		}
+		#endregion
+
+		#region Get Notification
+
+		public void Notification()
 		{
 
 		}
+		#endregion
 	}
 }
