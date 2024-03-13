@@ -331,6 +331,9 @@ namespace Authentication.Login
 
 								#region Set CurrentUser
 								oCurrentUser.ID = oUser.ID;
+								oCurrentUser.UserID = oUser.ID;
+								oCurrentUser.UserType = EnumUserType.User;
+								oCurrentUser.EmployeeID = 0;
 								oCurrentUser.LoginID = oUser.LoginID;
 								oCurrentUser.UserName = oUser.UserName;
 								oCurrentUser.UserNo = oUser.UserNo;

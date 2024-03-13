@@ -67,6 +67,12 @@
 		PasswordExpired = 4,
 	}
 
+	public enum EnumUserType : short
+	{
+		User = 1,
+		Employee = 2
+	}
+
 	public enum EnumWeek : short
 	{
 		Sunday = 1,
