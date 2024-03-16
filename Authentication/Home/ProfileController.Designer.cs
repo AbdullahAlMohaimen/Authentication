@@ -35,7 +35,17 @@
 			this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
 			this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.txt_UserLoginID = new Guna.UI2.WinForms.Guna2Panel();
+			this.EditProfile = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.panel8 = new System.Windows.Forms.Panel();
@@ -67,17 +77,15 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_UserName = new System.Windows.Forms.Label();
-			this.EditProfile = new Guna.UI2.WinForms.Guna2Button();
-			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
+			this.guna2Panel7.SuspendLayout();
+			this.guna2Panel4.SuspendLayout();
+			this.guna2Panel3.SuspendLayout();
+			this.guna2Panel2.SuspendLayout();
 			this.txt_UserLoginID.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -141,6 +149,135 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 109;
 			// 
+			// guna2Panel8
+			// 
+			this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(34)))), ((int)(((byte)(38)))));
+			this.guna2Panel8.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel8.BorderThickness = 1;
+			this.guna2Panel8.Location = new System.Drawing.Point(720, 465);
+			this.guna2Panel8.Name = "guna2Panel8";
+			this.guna2Panel8.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel8.ShadowDecoration.Color = System.Drawing.Color.SaddleBrown;
+			this.guna2Panel8.ShadowDecoration.Depth = 50;
+			this.guna2Panel8.ShadowDecoration.Enabled = true;
+			this.guna2Panel8.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel8.TabIndex = 9;
+			// 
+			// guna2Panel9
+			// 
+			this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(191)))), ((int)(((byte)(163)))));
+			this.guna2Panel9.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel9.BorderThickness = 1;
+			this.guna2Panel9.Location = new System.Drawing.Point(365, 465);
+			this.guna2Panel9.Name = "guna2Panel9";
+			this.guna2Panel9.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel9.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+			this.guna2Panel9.ShadowDecoration.Depth = 50;
+			this.guna2Panel9.ShadowDecoration.Enabled = true;
+			this.guna2Panel9.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel9.TabIndex = 8;
+			// 
+			// guna2Panel10
+			// 
+			this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(62)))), ((int)(((byte)(3)))));
+			this.guna2Panel10.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel10.BorderThickness = 1;
+			this.guna2Panel10.Location = new System.Drawing.Point(10, 465);
+			this.guna2Panel10.Name = "guna2Panel10";
+			this.guna2Panel10.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel10.ShadowDecoration.Depth = 50;
+			this.guna2Panel10.ShadowDecoration.Enabled = true;
+			this.guna2Panel10.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel10.TabIndex = 7;
+			// 
+			// guna2Panel5
+			// 
+			this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(65)))));
+			this.guna2Panel5.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel5.BorderThickness = 1;
+			this.guna2Panel5.Location = new System.Drawing.Point(720, 345);
+			this.guna2Panel5.Name = "guna2Panel5";
+			this.guna2Panel5.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.ForestGreen;
+			this.guna2Panel5.ShadowDecoration.Depth = 50;
+			this.guna2Panel5.ShadowDecoration.Enabled = true;
+			this.guna2Panel5.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel5.TabIndex = 6;
+			// 
+			// guna2Panel6
+			// 
+			this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(75)))), ((int)(((byte)(81)))));
+			this.guna2Panel6.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel6.BorderThickness = 1;
+			this.guna2Panel6.Location = new System.Drawing.Point(365, 345);
+			this.guna2Panel6.Name = "guna2Panel6";
+			this.guna2Panel6.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.Salmon;
+			this.guna2Panel6.ShadowDecoration.Depth = 50;
+			this.guna2Panel6.ShadowDecoration.Enabled = true;
+			this.guna2Panel6.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel6.TabIndex = 5;
+			// 
+			// guna2Panel7
+			// 
+			this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
+			this.guna2Panel7.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel7.BorderThickness = 1;
+			this.guna2Panel7.Controls.Add(this.label18);
+			this.guna2Panel7.Location = new System.Drawing.Point(10, 345);
+			this.guna2Panel7.Name = "guna2Panel7";
+			this.guna2Panel7.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.guna2Panel7.ShadowDecoration.Depth = 50;
+			this.guna2Panel7.ShadowDecoration.Enabled = true;
+			this.guna2Panel7.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel7.TabIndex = 4;
+			// 
+			// guna2Panel4
+			// 
+			this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(189)))));
+			this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel4.BorderThickness = 1;
+			this.guna2Panel4.Controls.Add(this.label17);
+			this.guna2Panel4.Location = new System.Drawing.Point(720, 225);
+			this.guna2Panel4.Name = "guna2Panel4";
+			this.guna2Panel4.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SteelBlue;
+			this.guna2Panel4.ShadowDecoration.Depth = 50;
+			this.guna2Panel4.ShadowDecoration.Enabled = true;
+			this.guna2Panel4.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel4.TabIndex = 3;
+			// 
+			// guna2Panel3
+			// 
+			this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(147)))), ((int)(((byte)(150)))));
+			this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel3.BorderThickness = 1;
+			this.guna2Panel3.Controls.Add(this.label6);
+			this.guna2Panel3.Location = new System.Drawing.Point(365, 225);
+			this.guna2Panel3.Name = "guna2Panel3";
+			this.guna2Panel3.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.guna2Panel3.ShadowDecoration.Depth = 50;
+			this.guna2Panel3.ShadowDecoration.Enabled = true;
+			this.guna2Panel3.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel3.TabIndex = 2;
+			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(115)))));
+			this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
+			this.guna2Panel2.BorderThickness = 1;
+			this.guna2Panel2.Controls.Add(this.label3);
+			this.guna2Panel2.Location = new System.Drawing.Point(10, 225);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.ShadowDecoration.BorderRadius = 0;
+			this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkSlateGray;
+			this.guna2Panel2.ShadowDecoration.Depth = 50;
+			this.guna2Panel2.ShadowDecoration.Enabled = true;
+			this.guna2Panel2.Size = new System.Drawing.Size(330, 100);
+			this.guna2Panel2.TabIndex = 1;
+			// 
 			// txt_UserLoginID
 			// 
 			this.txt_UserLoginID.BorderColor = System.Drawing.Color.Black;
@@ -183,6 +320,23 @@
 			this.txt_UserLoginID.ShadowDecoration.Enabled = true;
 			this.txt_UserLoginID.Size = new System.Drawing.Size(1040, 192);
 			this.txt_UserLoginID.TabIndex = 0;
+			// 
+			// EditProfile
+			// 
+			this.EditProfile.BorderRadius = 8;
+			this.EditProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.EditProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.EditProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.EditProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.EditProfile.FillColor = System.Drawing.Color.Brown;
+			this.EditProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.EditProfile.ForeColor = System.Drawing.Color.Wheat;
+			this.EditProfile.Image = ((System.Drawing.Image)(resources.GetObject("EditProfile.Image")));
+			this.EditProfile.Location = new System.Drawing.Point(894, 13);
+			this.EditProfile.Name = "EditProfile";
+			this.EditProfile.Size = new System.Drawing.Size(128, 29);
+			this.EditProfile.TabIndex = 106;
+			this.EditProfile.Text = "Edit Profile";
 			// 
 			// panel6
 			// 
@@ -500,147 +654,49 @@
 			this.txt_UserName.TabIndex = 34;
 			this.txt_UserName.Text = "Name";
 			// 
-			// EditProfile
+			// label3
 			// 
-			this.EditProfile.BorderRadius = 8;
-			this.EditProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.EditProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.EditProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.EditProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.EditProfile.FillColor = System.Drawing.Color.Brown;
-			this.EditProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.EditProfile.ForeColor = System.Drawing.Color.Wheat;
-			this.EditProfile.Image = ((System.Drawing.Image)(resources.GetObject("EditProfile.Image")));
-			this.EditProfile.Location = new System.Drawing.Point(894, 13);
-			this.EditProfile.Name = "EditProfile";
-			this.EditProfile.Size = new System.Drawing.Size(128, 29);
-			this.EditProfile.TabIndex = 106;
-			this.EditProfile.Text = "Edit Profile";
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+			this.label3.Location = new System.Drawing.Point(93, 4);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(140, 28);
+			this.label3.TabIndex = 55;
+			this.label3.Text = "Total Login";
 			// 
-			// guna2Panel2
+			// label6
 			// 
-			this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(115)))));
-			this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel2.BorderThickness = 1;
-			this.guna2Panel2.Location = new System.Drawing.Point(10, 225);
-			this.guna2Panel2.Name = "guna2Panel2";
-			this.guna2Panel2.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkSlateGray;
-			this.guna2Panel2.ShadowDecoration.Depth = 50;
-			this.guna2Panel2.ShadowDecoration.Enabled = true;
-			this.guna2Panel2.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel2.TabIndex = 1;
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+			this.label6.Location = new System.Drawing.Point(73, 1);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(192, 28);
+			this.label6.TabIndex = 56;
+			this.label6.Text = "Total Bad Login";
 			// 
-			// guna2Panel3
+			// label17
 			// 
-			this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(147)))), ((int)(((byte)(150)))));
-			this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel3.BorderThickness = 1;
-			this.guna2Panel3.Location = new System.Drawing.Point(365, 225);
-			this.guna2Panel3.Name = "guna2Panel3";
-			this.guna2Panel3.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.guna2Panel3.ShadowDecoration.Depth = 50;
-			this.guna2Panel3.ShadowDecoration.Enabled = true;
-			this.guna2Panel3.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel3.TabIndex = 2;
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.ForeColor = System.Drawing.Color.Maroon;
+			this.label17.Location = new System.Drawing.Point(17, 2);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(302, 28);
+			this.label17.TabIndex = 57;
+			this.label17.Text = "Total Password Changed";
 			// 
-			// guna2Panel4
+			// label18
 			// 
-			this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(189)))));
-			this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel4.BorderThickness = 1;
-			this.guna2Panel4.Location = new System.Drawing.Point(720, 225);
-			this.guna2Panel4.Name = "guna2Panel4";
-			this.guna2Panel4.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SteelBlue;
-			this.guna2Panel4.ShadowDecoration.Depth = 50;
-			this.guna2Panel4.ShadowDecoration.Enabled = true;
-			this.guna2Panel4.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel4.TabIndex = 3;
-			// 
-			// guna2Panel5
-			// 
-			this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(103)))), ((int)(((byte)(2)))));
-			this.guna2Panel5.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel5.BorderThickness = 1;
-			this.guna2Panel5.Location = new System.Drawing.Point(720, 345);
-			this.guna2Panel5.Name = "guna2Panel5";
-			this.guna2Panel5.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.DarkRed;
-			this.guna2Panel5.ShadowDecoration.Depth = 50;
-			this.guna2Panel5.ShadowDecoration.Enabled = true;
-			this.guna2Panel5.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel5.TabIndex = 6;
-			// 
-			// guna2Panel6
-			// 
-			this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(155)))), ((int)(((byte)(0)))));
-			this.guna2Panel6.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel6.BorderThickness = 1;
-			this.guna2Panel6.Location = new System.Drawing.Point(365, 345);
-			this.guna2Panel6.Name = "guna2Panel6";
-			this.guna2Panel6.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.Chocolate;
-			this.guna2Panel6.ShadowDecoration.Depth = 50;
-			this.guna2Panel6.ShadowDecoration.Enabled = true;
-			this.guna2Panel6.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel6.TabIndex = 5;
-			// 
-			// guna2Panel7
-			// 
-			this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(216)))), ((int)(((byte)(166)))));
-			this.guna2Panel7.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel7.BorderThickness = 1;
-			this.guna2Panel7.Location = new System.Drawing.Point(10, 345);
-			this.guna2Panel7.Name = "guna2Panel7";
-			this.guna2Panel7.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.guna2Panel7.ShadowDecoration.Depth = 50;
-			this.guna2Panel7.ShadowDecoration.Enabled = true;
-			this.guna2Panel7.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel7.TabIndex = 4;
-			// 
-			// guna2Panel8
-			// 
-			this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(34)))), ((int)(((byte)(38)))));
-			this.guna2Panel8.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel8.BorderThickness = 1;
-			this.guna2Panel8.Location = new System.Drawing.Point(720, 465);
-			this.guna2Panel8.Name = "guna2Panel8";
-			this.guna2Panel8.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel8.ShadowDecoration.Color = System.Drawing.Color.SaddleBrown;
-			this.guna2Panel8.ShadowDecoration.Depth = 50;
-			this.guna2Panel8.ShadowDecoration.Enabled = true;
-			this.guna2Panel8.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel8.TabIndex = 9;
-			// 
-			// guna2Panel9
-			// 
-			this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
-			this.guna2Panel9.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel9.BorderThickness = 1;
-			this.guna2Panel9.Location = new System.Drawing.Point(365, 465);
-			this.guna2Panel9.Name = "guna2Panel9";
-			this.guna2Panel9.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel9.ShadowDecoration.Color = System.Drawing.Color.DarkRed;
-			this.guna2Panel9.ShadowDecoration.Depth = 50;
-			this.guna2Panel9.ShadowDecoration.Enabled = true;
-			this.guna2Panel9.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel9.TabIndex = 8;
-			// 
-			// guna2Panel10
-			// 
-			this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(62)))), ((int)(((byte)(3)))));
-			this.guna2Panel10.BorderColor = System.Drawing.Color.Black;
-			this.guna2Panel10.BorderThickness = 1;
-			this.guna2Panel10.Location = new System.Drawing.Point(10, 465);
-			this.guna2Panel10.Name = "guna2Panel10";
-			this.guna2Panel10.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel10.ShadowDecoration.Depth = 50;
-			this.guna2Panel10.ShadowDecoration.Enabled = true;
-			this.guna2Panel10.Size = new System.Drawing.Size(330, 100);
-			this.guna2Panel10.TabIndex = 7;
+			this.label18.AutoSize = true;
+			this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label18.Location = new System.Drawing.Point(21, 1);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(293, 28);
+			this.label18.TabIndex = 57;
+			this.label18.Text = "Last Password Changed";
 			// 
 			// ProfileController
 			// 
@@ -651,6 +707,14 @@
 			this.Name = "ProfileController";
 			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
+			this.guna2Panel7.ResumeLayout(false);
+			this.guna2Panel7.PerformLayout();
+			this.guna2Panel4.ResumeLayout(false);
+			this.guna2Panel4.PerformLayout();
+			this.guna2Panel3.ResumeLayout(false);
+			this.guna2Panel3.PerformLayout();
+			this.guna2Panel2.ResumeLayout(false);
+			this.guna2Panel2.PerformLayout();
 			this.txt_UserLoginID.ResumeLayout(false);
 			this.txt_UserLoginID.PerformLayout();
 			this.ResumeLayout(false);
@@ -706,5 +770,9 @@
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+		public System.Windows.Forms.Label label3;
+		public System.Windows.Forms.Label label18;
+		public System.Windows.Forms.Label label17;
+		public System.Windows.Forms.Label label6;
 	}
 }
