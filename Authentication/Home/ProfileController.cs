@@ -25,6 +25,7 @@ namespace Authentication.Home
 		List<BO.Employee> employeeList = new List<BO.Employee>();
 
 		BO.Users oUser = new BO.Users();
+		List<BO.LoginInfo> useLoginInfos = new List<BO.LoginInfo>();
 		#endregion
 
 		public ProfileController()
@@ -44,6 +45,7 @@ namespace Authentication.Home
 			if(oCurrentUser != null)
 			{
 				LoadUserData();
+				LoadDashboardData();
 			}
 		}
 		#endregion
@@ -69,6 +71,15 @@ namespace Authentication.Home
 				else
 					txt_UserMaster.Text = "";
 			}
+		}
+		#endregion
+
+		#region Load User Dashboard Data
+		public void LoadDashboardData()
+		{
+			useLoginInfos = new LoginInfoService().GetLoginInfoByLoginID(oUser.LoginID);
+
+
 		}
 		#endregion
 	}
