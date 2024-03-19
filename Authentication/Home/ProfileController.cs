@@ -26,6 +26,8 @@ namespace Authentication.Home
 
 		BO.Users oUser = new BO.Users();
 		List<BO.LoginInfo> useLoginInfos = new List<BO.LoginInfo>();
+		List<BO.BadLoginAttemptInfo> badLoginInfos = new List<BO.BadLoginAttemptInfo>();
+		List<BO.UserPasswordHistory> userPasswordHistories = new List<BO.UserPasswordHistory>();
 		#endregion
 
 		public ProfileController()
@@ -77,9 +79,14 @@ namespace Authentication.Home
 		#region Load User Dashboard Data
 		public void LoadDashboardData()
 		{
-			useLoginInfos = new LoginInfoService().GetLoginInfoByLoginID(oUser.LoginID);
+			useLoginInfos = new LoginInfoService().GetLoginInfoByUserID(oUser.ID);
+			badLoginInfos = new BadLoginAttemptInfoService().GetBadLogin(oUser.ID);
+			userPasswordHistories = new UserPasswordHistoryService().GetUserAllPasswordHistories(oUser.ID);
 
-
+			txt_TotalLogin.Text = useLoginInfos.Count.ToString();
+			txt_TotalBadLogin.Text = badLoginInfos.Count.ToString();
+			txt_TotalPasswordCanged.Text = userPasswordHistories.Count.ToString();
+			txt_lastChangeDate.Text = oUser.LastChangeDate.ToString("dd MMM yy  |  hh:mm tt");
 		}
 		#endregion
 	}

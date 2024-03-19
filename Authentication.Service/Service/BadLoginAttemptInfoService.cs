@@ -68,9 +68,46 @@ namespace Authentication.Service
 				DataReader dr = new DataReader(BadLoginAttemptInfoDA.GetBadLoginAttempt(loginID, userID));
 				badLoginAttemptInfos = this.CreateObjects<BadLoginAttemptInfo>(dr);
 				dr.Close();
+			}
+			catch (Exception e)
+			{
+				#region Handle Exception
+				#endregion
+			}
+			return badLoginAttemptInfos;
+		}
+		#endregion
 
-				//DataTable dt = BadLoginAttemptInfoDA.GetBadLoginAttemptCount(tc, userID);
-				//int.TryParse(dt.Rows[0][0].ToString(), out totalCount);
+		#region GetBadLoginAttempt
+		public List<BadLoginAttemptInfo> GetBadLogin(string loginID)
+		{
+			int nCount = 0;
+			List<BadLoginAttemptInfo> badLoginAttemptInfos = new List<BadLoginAttemptInfo>();
+			badLoginAttemptInfos = null;
+			try
+			{
+				DataReader dr = new DataReader(BadLoginAttemptInfoDA.GetBadLogin(loginID));
+				badLoginAttemptInfos = this.CreateObjects<BadLoginAttemptInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception e)
+			{
+				#region Handle Exception
+				#endregion
+			}
+			return badLoginAttemptInfos;
+		}
+
+		public List<BadLoginAttemptInfo> GetBadLogin(int UserID)
+		{
+			int nCount = 0;
+			List<BadLoginAttemptInfo> badLoginAttemptInfos = new List<BadLoginAttemptInfo>();
+			badLoginAttemptInfos = null;
+			try
+			{
+				DataReader dr = new DataReader(BadLoginAttemptInfoDA.GetBadLogin(UserID));
+				badLoginAttemptInfos = this.CreateObjects<BadLoginAttemptInfo>(dr);
+				dr.Close();
 			}
 			catch (Exception e)
 			{

@@ -41,12 +41,16 @@
 			this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_lastChangeDate = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_TotalPasswordCanged = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_TotalBadLogin = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.txt_TotalLogin = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txt_UserLoginID = new Guna.UI2.WinForms.Guna2Panel();
 			this.EditProfile = new Guna.UI2.WinForms.Guna2Button();
@@ -81,14 +85,6 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txt_UserName = new System.Windows.Forms.Label();
-			this.panel10 = new System.Windows.Forms.Panel();
-			this.panel11 = new System.Windows.Forms.Panel();
-			this.panel12 = new System.Windows.Forms.Panel();
-			this.panel13 = new System.Windows.Forms.Panel();
-			this.txt_TotalBadLogin = new System.Windows.Forms.Label();
-			this.txt_TotalLogin = new System.Windows.Forms.Label();
-			this.txt_TotalPasswordCanged = new System.Windows.Forms.Label();
-			this.lastChangeDate = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel7.SuspendLayout();
 			this.guna2Panel4.SuspendLayout();
@@ -228,11 +224,10 @@
 			// 
 			// guna2Panel7
 			// 
-			this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
+			this.guna2Panel7.BackColor = System.Drawing.Color.DarkGreen;
 			this.guna2Panel7.BorderColor = System.Drawing.Color.Black;
 			this.guna2Panel7.BorderThickness = 1;
-			this.guna2Panel7.Controls.Add(this.lastChangeDate);
-			this.guna2Panel7.Controls.Add(this.panel13);
+			this.guna2Panel7.Controls.Add(this.txt_lastChangeDate);
 			this.guna2Panel7.Controls.Add(this.label18);
 			this.guna2Panel7.Location = new System.Drawing.Point(10, 345);
 			this.guna2Panel7.Name = "guna2Panel7";
@@ -243,11 +238,22 @@
 			this.guna2Panel7.Size = new System.Drawing.Size(330, 100);
 			this.guna2Panel7.TabIndex = 4;
 			// 
+			// txt_lastChangeDate
+			// 
+			this.txt_lastChangeDate.AutoSize = true;
+			this.txt_lastChangeDate.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_lastChangeDate.ForeColor = System.Drawing.Color.Black;
+			this.txt_lastChangeDate.Location = new System.Drawing.Point(38, 45);
+			this.txt_lastChangeDate.Name = "txt_lastChangeDate";
+			this.txt_lastChangeDate.Size = new System.Drawing.Size(26, 29);
+			this.txt_lastChangeDate.TabIndex = 59;
+			this.txt_lastChangeDate.Text = "0";
+			// 
 			// label18
 			// 
 			this.label18.AutoSize = true;
 			this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
 			this.label18.Location = new System.Drawing.Point(21, 1);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(293, 28);
@@ -256,26 +262,37 @@
 			// 
 			// guna2Panel4
 			// 
-			this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(210)))), ((int)(((byte)(189)))));
+			this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
 			this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
 			this.guna2Panel4.BorderThickness = 1;
 			this.guna2Panel4.Controls.Add(this.txt_TotalPasswordCanged);
-			this.guna2Panel4.Controls.Add(this.panel12);
 			this.guna2Panel4.Controls.Add(this.label17);
 			this.guna2Panel4.Location = new System.Drawing.Point(720, 225);
 			this.guna2Panel4.Name = "guna2Panel4";
 			this.guna2Panel4.ShadowDecoration.BorderRadius = 0;
-			this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.SteelBlue;
+			this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.Maroon;
 			this.guna2Panel4.ShadowDecoration.Depth = 50;
 			this.guna2Panel4.ShadowDecoration.Enabled = true;
 			this.guna2Panel4.Size = new System.Drawing.Size(330, 100);
 			this.guna2Panel4.TabIndex = 3;
 			// 
+			// txt_TotalPasswordCanged
+			// 
+			this.txt_TotalPasswordCanged.AutoSize = true;
+			this.txt_TotalPasswordCanged.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_TotalPasswordCanged.ForeColor = System.Drawing.Color.Black;
+			this.txt_TotalPasswordCanged.Location = new System.Drawing.Point(126, 38);
+			this.txt_TotalPasswordCanged.Name = "txt_TotalPasswordCanged";
+			this.txt_TotalPasswordCanged.Size = new System.Drawing.Size(40, 44);
+			this.txt_TotalPasswordCanged.TabIndex = 59;
+			this.txt_TotalPasswordCanged.Text = "0";
+			// 
 			// label17
 			// 
 			this.label17.AutoSize = true;
+			this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
 			this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.ForeColor = System.Drawing.Color.Maroon;
+			this.label17.ForeColor = System.Drawing.Color.Wheat;
 			this.label17.Location = new System.Drawing.Point(17, 2);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(302, 28);
@@ -288,7 +305,6 @@
 			this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
 			this.guna2Panel3.BorderThickness = 1;
 			this.guna2Panel3.Controls.Add(this.txt_TotalBadLogin);
-			this.guna2Panel3.Controls.Add(this.panel11);
 			this.guna2Panel3.Controls.Add(this.label6);
 			this.guna2Panel3.Location = new System.Drawing.Point(365, 225);
 			this.guna2Panel3.Name = "guna2Panel3";
@@ -298,6 +314,17 @@
 			this.guna2Panel3.ShadowDecoration.Enabled = true;
 			this.guna2Panel3.Size = new System.Drawing.Size(330, 100);
 			this.guna2Panel3.TabIndex = 2;
+			// 
+			// txt_TotalBadLogin
+			// 
+			this.txt_TotalBadLogin.AutoSize = true;
+			this.txt_TotalBadLogin.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_TotalBadLogin.ForeColor = System.Drawing.Color.Black;
+			this.txt_TotalBadLogin.Location = new System.Drawing.Point(126, 37);
+			this.txt_TotalBadLogin.Name = "txt_TotalBadLogin";
+			this.txt_TotalBadLogin.Size = new System.Drawing.Size(40, 44);
+			this.txt_TotalBadLogin.TabIndex = 58;
+			this.txt_TotalBadLogin.Text = "0";
 			// 
 			// label6
 			// 
@@ -316,7 +343,6 @@
 			this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
 			this.guna2Panel2.BorderThickness = 1;
 			this.guna2Panel2.Controls.Add(this.txt_TotalLogin);
-			this.guna2Panel2.Controls.Add(this.panel10);
 			this.guna2Panel2.Controls.Add(this.label3);
 			this.guna2Panel2.Location = new System.Drawing.Point(10, 225);
 			this.guna2Panel2.Name = "guna2Panel2";
@@ -327,16 +353,27 @@
 			this.guna2Panel2.Size = new System.Drawing.Size(330, 100);
 			this.guna2Panel2.TabIndex = 1;
 			// 
+			// txt_TotalLogin
+			// 
+			this.txt_TotalLogin.AutoSize = true;
+			this.txt_TotalLogin.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_TotalLogin.ForeColor = System.Drawing.Color.Black;
+			this.txt_TotalLogin.Location = new System.Drawing.Point(129, 37);
+			this.txt_TotalLogin.Name = "txt_TotalLogin";
+			this.txt_TotalLogin.Size = new System.Drawing.Size(40, 44);
+			this.txt_TotalLogin.TabIndex = 59;
+			this.txt_TotalLogin.Text = "0";
+			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-			this.label3.Location = new System.Drawing.Point(93, 4);
+			this.label3.Location = new System.Drawing.Point(67, 4);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(140, 28);
+			this.label3.Size = new System.Drawing.Size(202, 28);
 			this.label3.TabIndex = 55;
-			this.label3.Text = "Total Login";
+			this.label3.Text = "User Total Login";
 			// 
 			// txt_UserLoginID
 			// 
@@ -713,86 +750,6 @@
 			this.txt_UserName.Size = new System.Drawing.Size(0, 43);
 			this.txt_UserName.TabIndex = 34;
 			// 
-			// panel10
-			// 
-			this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
-			this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel10.Location = new System.Drawing.Point(2, 33);
-			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(67, 66);
-			this.panel10.TabIndex = 56;
-			// 
-			// panel11
-			// 
-			this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
-			this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel11.Location = new System.Drawing.Point(2, 33);
-			this.panel11.Name = "panel11";
-			this.panel11.Size = new System.Drawing.Size(67, 66);
-			this.panel11.TabIndex = 57;
-			// 
-			// panel12
-			// 
-			this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
-			this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel12.Location = new System.Drawing.Point(2, 33);
-			this.panel12.Name = "panel12";
-			this.panel12.Size = new System.Drawing.Size(67, 66);
-			this.panel12.TabIndex = 58;
-			// 
-			// panel13
-			// 
-			this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
-			this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.panel13.Location = new System.Drawing.Point(2, 33);
-			this.panel13.Name = "panel13";
-			this.panel13.Size = new System.Drawing.Size(67, 66);
-			this.panel13.TabIndex = 58;
-			// 
-			// txt_TotalBadLogin
-			// 
-			this.txt_TotalBadLogin.AutoSize = true;
-			this.txt_TotalBadLogin.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_TotalBadLogin.ForeColor = System.Drawing.Color.Black;
-			this.txt_TotalBadLogin.Location = new System.Drawing.Point(145, 35);
-			this.txt_TotalBadLogin.Name = "txt_TotalBadLogin";
-			this.txt_TotalBadLogin.Size = new System.Drawing.Size(40, 44);
-			this.txt_TotalBadLogin.TabIndex = 58;
-			this.txt_TotalBadLogin.Text = "0";
-			// 
-			// txt_TotalLogin
-			// 
-			this.txt_TotalLogin.AutoSize = true;
-			this.txt_TotalLogin.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_TotalLogin.ForeColor = System.Drawing.Color.Black;
-			this.txt_TotalLogin.Location = new System.Drawing.Point(145, 35);
-			this.txt_TotalLogin.Name = "txt_TotalLogin";
-			this.txt_TotalLogin.Size = new System.Drawing.Size(40, 44);
-			this.txt_TotalLogin.TabIndex = 59;
-			this.txt_TotalLogin.Text = "0";
-			// 
-			// txt_TotalPasswordCanged
-			// 
-			this.txt_TotalPasswordCanged.AutoSize = true;
-			this.txt_TotalPasswordCanged.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_TotalPasswordCanged.ForeColor = System.Drawing.Color.Black;
-			this.txt_TotalPasswordCanged.Location = new System.Drawing.Point(145, 36);
-			this.txt_TotalPasswordCanged.Name = "txt_TotalPasswordCanged";
-			this.txt_TotalPasswordCanged.Size = new System.Drawing.Size(40, 44);
-			this.txt_TotalPasswordCanged.TabIndex = 59;
-			this.txt_TotalPasswordCanged.Text = "0";
-			// 
-			// lastChangeDate
-			// 
-			this.lastChangeDate.AutoSize = true;
-			this.lastChangeDate.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lastChangeDate.ForeColor = System.Drawing.Color.Black;
-			this.lastChangeDate.Location = new System.Drawing.Point(81, 40);
-			this.lastChangeDate.Name = "lastChangeDate";
-			this.lastChangeDate.Size = new System.Drawing.Size(40, 44);
-			this.lastChangeDate.TabIndex = 59;
-			this.lastChangeDate.Text = "0";
-			// 
 			// ProfileController
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,13 +826,9 @@
 		public System.Windows.Forms.Label label18;
 		public System.Windows.Forms.Label label17;
 		public System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label lastChangeDate;
-		private System.Windows.Forms.Panel panel13;
+		private System.Windows.Forms.Label txt_lastChangeDate;
 		private System.Windows.Forms.Label txt_TotalPasswordCanged;
-		private System.Windows.Forms.Panel panel12;
 		private System.Windows.Forms.Label txt_TotalBadLogin;
-		private System.Windows.Forms.Panel panel11;
 		private System.Windows.Forms.Label txt_TotalLogin;
-		private System.Windows.Forms.Panel panel10;
 	}
 }

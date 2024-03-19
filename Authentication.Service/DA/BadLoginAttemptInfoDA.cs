@@ -54,7 +54,7 @@ namespace Authentication.Service
 		}
 		#endregion
 
-		#region GET
+		#region GET Bad Logins
 		internal static IDataReader GetBadLoginAttempt(string loginID, int UserID)
 		{
 			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
@@ -70,6 +70,51 @@ namespace Authentication.Service
 			try
 			{
 				getCommand = new SqlCommand("Select * from BadLoginAttemptInfo where (UserID = '"+ UserID +"' and LoginID = '" + loginID + "') and AttemptTime between '"+ fromTime + "' and '"+ toTime + "'", conn);
+				dr = getCommand.ExecuteReader();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+		#endregion
+
+		#region GET User Bad Login
+		internal static IDataReader GetBadLogin(string loginID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+
+			try
+			{
+				getCommand = new SqlCommand("Select * from BadLoginAttemptInfo where LoginID = '"+loginID+"'", conn);
+				dr = getCommand.ExecuteReader();
+				conn.Close();
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+			}
+			return dr;
+		}
+
+		internal static IDataReader GetBadLogin(int userID)
+		{
+			string connectionString = "Data Source=DESKTOP-3K3POSS\\SQLEXPRESS;Initial Catalog=AuthenticationDB;Persist Security Info=True;User ID=sa;Password=123456";
+			SqlConnection conn = new SqlConnection(connectionString);
+			conn.Close();
+			SqlCommand getCommand = null;
+			SqlDataReader dr = null;
+			conn.Open();
+
+			try
+			{
+				getCommand = new SqlCommand("Select * from BadLoginAttemptInfo where UserID = '" + userID + "'", conn);
 				dr = getCommand.ExecuteReader();
 			}
 			catch (Exception ex)

@@ -145,8 +145,7 @@ namespace Authentication.Home
 
 			TreeNode passwordNode = authenticationNode.Nodes.Add("Password Management");
 			passwordNode.Nodes.Add("Password Policy");
-			passwordNode.Nodes.Add("Password Reset Options");
-			passwordNode.Nodes.Add("Forgotten Password Recovery");
+			passwordNode.Nodes.Add("Password Reset");
 
 			TreeNode accessControlNode = authenticationNode.Nodes.Add("Access Control");
 			accessControlNode.Nodes.Add("User Permissions");

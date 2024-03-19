@@ -182,6 +182,26 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region GetLoginInfoByUserID
+		public List<LoginInfo> GetLoginInfoByUserID(int userID)
+		{
+			List<LoginInfo> loginInfos = new List<LoginInfo>();
+			loginInfos = null;
+			bool isLogout;
+			try
+			{
+				isLogout = true;
+				DataReader dr = new DataReader(LoginInfoDA.GetLoginInfoByUserID(userID));
+				loginInfos = this.CreateObjects<LoginInfo>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return loginInfos;
+		}
+		#endregion
 		#region GetNoOFLogin
 		public int NoOfLoginInfo(string loginID)
 		{

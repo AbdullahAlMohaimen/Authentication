@@ -98,6 +98,22 @@ namespace Authentication
 			}
 			return oUserPasswordHistory;
 		}
+
+		public List<UserPasswordHistory> GetUserAllPasswordHistories(int userID)
+		{
+			List<UserPasswordHistory> oUserPasswordHistory = new List<UserPasswordHistory>();
+			try
+			{
+				DataReader dr = new DataReader(UserPasswordHistoryDA.GetAllPasswordHistory(userID));
+				oUserPasswordHistory = this.CreateObjects<UserPasswordHistory>(dr);
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return oUserPasswordHistory;
+		}
 		#endregion
 
 		#region Save

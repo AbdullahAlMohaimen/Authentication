@@ -223,10 +223,10 @@ namespace Authentication.Login
 								loginInfos = loginInfoService.GetLoginInfoByLoginID(oUser.LoginID);
 								if (loginInfos.Count != 0)
 								{
-									foreach (LoginInfo li in loginInfos)
-									{
+									//foreach (LoginInfo li in loginInfos)
+									//{
 
-									}
+									//}
 								}
 								else
 								{
