@@ -118,6 +118,7 @@
 			this.PasswordReset.Size = new System.Drawing.Size(159, 29);
 			this.PasswordReset.TabIndex = 136;
 			this.PasswordReset.Text = "Password Reset";
+			this.PasswordReset.Visible = false;
 			this.PasswordReset.Click += new System.EventHandler(this.PasswordReset_Click);
 			// 
 			// total
@@ -167,6 +168,7 @@
 			this.changeStatus.Size = new System.Drawing.Size(160, 29);
 			this.changeStatus.TabIndex = 132;
 			this.changeStatus.Text = "Change Status";
+			this.changeStatus.Visible = false;
 			this.changeStatus.Click += new System.EventHandler(this.changeStatus_Click);
 			// 
 			// deleteButton_Click

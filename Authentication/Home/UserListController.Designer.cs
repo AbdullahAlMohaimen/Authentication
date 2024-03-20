@@ -138,6 +138,7 @@ namespace Authentication.Home
 			this.changeStatus.Size = new System.Drawing.Size(160, 29);
 			this.changeStatus.TabIndex = 129;
 			this.changeStatus.Text = "Change Status";
+			this.changeStatus.Visible = false;
 			this.changeStatus.Click += new System.EventHandler(this.changeStatus_Click);
 			// 
 			// total
@@ -187,6 +188,7 @@ namespace Authentication.Home
 			this.passwordReset_btnClick.Size = new System.Drawing.Size(159, 29);
 			this.passwordReset_btnClick.TabIndex = 125;
 			this.passwordReset_btnClick.Text = "Password Reset";
+			this.passwordReset_btnClick.Visible = false;
 			this.passwordReset_btnClick.Click += new System.EventHandler(this.passwordReset_btnClick_Click);
 			// 
 			// editButton_click

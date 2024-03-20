@@ -440,6 +440,12 @@
     <Compile Include="Notification\NotificationController.Designer.cs">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password\PasswordController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Password\PasswordController.Designer.cs">
+      <DependentUpon>PasswordController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role\RoleEntry.cs">
@@ -549,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Notification\NotificationController.resx">
       <DependentUpon>NotificationController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password\PasswordController.resx">
+      <DependentUpon>PasswordController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
