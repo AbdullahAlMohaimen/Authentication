@@ -345,16 +345,21 @@ namespace Authentication.SearchUser
 						oUserLoginInfo.SetSelectedUser(oUser);
 						oUserLoginInfo.Show();
 					}
+					if (callingController is Password.PasswordController oPasswordController)
+					{
+						oPasswordController.SetSelectedUser(oUser);
+						oPasswordController.Show();
+					}
 					this.Close();
 				}
 				else
 				{
-					MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show("Please find an User first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 			else
 			{
-				MessageBox.Show("Please find an employee first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show("Please find an User first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 		#endregion

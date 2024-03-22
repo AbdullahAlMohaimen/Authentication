@@ -1,4 +1,5 @@
 ﻿using Authentication.BO;
+using Authentication.Password;
 using Authentication.Service;
 using System;
 using System.Collections.Generic;
@@ -266,6 +267,11 @@ namespace Authentication.Home
 					EmployeeInformationCOntroller employeeInformationCOntroller = new EmployeeInformationCOntroller();
 					employeeInformationCOntroller.SetCurrentUser(this.oCurrentUser);
 					AddControl(employeeInformationCOntroller);
+					break;
+				case "Password Reset":
+					PasswordController oPasswordController = new PasswordController();
+					oPasswordController.SetCurrentUser(this.oCurrentUser);
+					AddControl(oPasswordController);
 					break;
 				default:
 					break;
