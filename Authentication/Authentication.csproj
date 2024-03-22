@@ -440,11 +440,17 @@
     <Compile Include="Notification\NotificationController.Designer.cs">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password\PasswordController.cs">
+    <Compile Include="Password\EmployeePasswordController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Password\PasswordController.Designer.cs">
-      <DependentUpon>PasswordController.cs</DependentUpon>
+    <Compile Include="Password\EmployeePasswordController.Designer.cs">
+      <DependentUpon>EmployeePasswordController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password\UserPasswordController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Password\UserPasswordController.Designer.cs">
+      <DependentUpon>UserPasswordController.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -556,8 +562,8 @@
     <EmbeddedResource Include="Notification\NotificationController.resx">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Password\PasswordController.resx">
-      <DependentUpon>PasswordController.cs</DependentUpon>
+    <EmbeddedResource Include="Password\UserPasswordController.resx">
+      <DependentUpon>UserPasswordController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

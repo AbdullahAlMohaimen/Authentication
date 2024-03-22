@@ -345,7 +345,7 @@ namespace Authentication.SearchUser
 						oUserLoginInfo.SetSelectedUser(oUser);
 						oUserLoginInfo.Show();
 					}
-					if (callingController is Password.PasswordController oPasswordController)
+					if (callingController is Password.UserPasswordController oPasswordController)
 					{
 						oPasswordController.SetSelectedUser(oUser);
 						oPasswordController.Show();

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Authentication.Password
 {
-	public partial class PasswordController : UserControl
+	public partial class UserPasswordController : UserControl
 	{
 		#region property / Variable
 		BO.CurrentUser oCurrentUser = new BO.CurrentUser();
@@ -29,7 +29,7 @@ namespace Authentication.Password
 		#endregion
 
 		#region Load
-		public PasswordController()
+		public UserPasswordController()
 		{
 			InitializeComponent();
 			oSelectedUser = null;
@@ -82,7 +82,7 @@ namespace Authentication.Password
 			if (oSelectedUser != null)
 			{
 				txt_UserNo.Text = oSelectedUser.UserNo;
-				txt_UserName.Text = oSelectedUser.LoginID;
+				txt_UserName.Text = oSelectedUser.UserName;
 				txt_UserRole.Text = roleList.Where(x => x.ID == oSelectedUser.RoleID).FirstOrDefault() == null ? "" : roleList.Where(x => x.ID == oSelectedUser.RoleID).FirstOrDefault().Name;
 				txt_UserEmail.Text = oSelectedUser.Email;
 				txt_UserStatus.Text = oSelectedUser.Status.ToString();
@@ -133,6 +133,47 @@ namespace Authentication.Password
 			else
 			{
 				SetSelectedUser(null);
+			}
+		}
+		#endregion
+
+		#region Password Reset Button
+		private void passwordReset_btnClick_Click(object sender, EventArgs e)
+		{
+			if (oSelectedUser != null)
+			{
+				if (oSelectedUser.ID == oCurrentUser.ID)
+				{
+					MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+
+				if (oSelectedUser.Status != EnumStatus.Active)
+				{
+					MessageBox.Show("This user is now " + oSelectedUser.Status.ToString()+ "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+
+				DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (result == DialogResult.Yes)
+				{
+					oSelectedUser.PasswordResetByAdmin = true;
+					oSelectedUser.PasswordResetBy = oCurrentUser.ID;
+					oSelectedUser.PasswordResetDate = DateTime.Now;
+
+					string passwordResetStatus = userService.PasswordResetByAdmin(oSelectedUser);
+
+					if (passwordResetStatus == "Ok")
+					{
+						MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					}
+					return;
+				}
+			}
+			else
+			{
+				MessageBox.Show("Please select an User.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
 			}
 		}
 		#endregion

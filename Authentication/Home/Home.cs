@@ -146,7 +146,9 @@ namespace Authentication.Home
 
 			TreeNode passwordNode = authenticationNode.Nodes.Add("Password Management");
 			passwordNode.Nodes.Add("Password Policy");
-			passwordNode.Nodes.Add("Password Reset");
+			TreeNode passwordReset = passwordNode.Nodes.Add("Password Reset");
+			passwordReset.Nodes.Add("User Password Reset");
+			passwordReset.Nodes.Add("Employee Password Reset");
 
 			TreeNode accessControlNode = authenticationNode.Nodes.Add("Access Control");
 			accessControlNode.Nodes.Add("User Permissions");
@@ -268,8 +270,8 @@ namespace Authentication.Home
 					employeeInformationCOntroller.SetCurrentUser(this.oCurrentUser);
 					AddControl(employeeInformationCOntroller);
 					break;
-				case "Password Reset":
-					PasswordController oPasswordController = new PasswordController();
+				case "User Password Reset":
+					UserPasswordController oPasswordController = new UserPasswordController();
 					oPasswordController.SetCurrentUser(this.oCurrentUser);
 					AddControl(oPasswordController);
 					break;

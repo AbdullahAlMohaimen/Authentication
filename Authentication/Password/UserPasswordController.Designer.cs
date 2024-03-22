@@ -1,6 +1,6 @@
 ﻿namespace Authentication.Password
 {
-	partial class PasswordController
+	partial class UserPasswordController
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordController));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPasswordController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
@@ -65,6 +65,7 @@
 			this.txt_FindUser = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label33 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
+			this.passwordReset_btnClick = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -76,6 +77,7 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.passwordReset_btnClick);
 			this.guna2Panel1.Controls.Add(this.panel1);
 			this.guna2Panel1.Controls.Add(this.panel7);
 			this.guna2Panel1.Controls.Add(this.panel8);
@@ -504,13 +506,31 @@
 			this.label14.TabIndex = 179;
 			this.label14.Text = "Select User";
 			// 
-			// PasswordController
+			// passwordReset_btnClick
+			// 
+			this.passwordReset_btnClick.BorderRadius = 8;
+			this.passwordReset_btnClick.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.passwordReset_btnClick.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.passwordReset_btnClick.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.passwordReset_btnClick.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.passwordReset_btnClick.FillColor = System.Drawing.Color.Crimson;
+			this.passwordReset_btnClick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.passwordReset_btnClick.ForeColor = System.Drawing.Color.Wheat;
+			this.passwordReset_btnClick.Image = ((System.Drawing.Image)(resources.GetObject("passwordReset_btnClick.Image")));
+			this.passwordReset_btnClick.Location = new System.Drawing.Point(892, 223);
+			this.passwordReset_btnClick.Name = "passwordReset_btnClick";
+			this.passwordReset_btnClick.Size = new System.Drawing.Size(159, 29);
+			this.passwordReset_btnClick.TabIndex = 167;
+			this.passwordReset_btnClick.Text = "Password Reset";
+			this.passwordReset_btnClick.Click += new System.EventHandler(this.passwordReset_btnClick_Click);
+			// 
+			// UserPasswordController
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.Controls.Add(this.guna2Panel1);
-			this.Name = "PasswordController";
+			this.Name = "UserPasswordController";
 			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
@@ -558,5 +578,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label txt_UserName;
+		private Guna.UI2.WinForms.Guna2Button passwordReset_btnClick;
 	}
 }
