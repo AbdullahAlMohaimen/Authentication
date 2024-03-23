@@ -275,6 +275,11 @@ namespace Authentication.Home
 					oPasswordController.SetCurrentUser(this.oCurrentUser);
 					AddControl(oPasswordController);
 					break;
+				case "Employee Password Reset":
+					EmployeePasswordController oEmployeePasswordController = new EmployeePasswordController();
+					oEmployeePasswordController.SetCurrentUser(this.oCurrentUser);
+					AddControl(oEmployeePasswordController);
+					break;
 				default:
 					break;
 			}

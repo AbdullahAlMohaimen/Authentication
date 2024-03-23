@@ -87,6 +87,7 @@ namespace Authentication.Password
 				txt_UserEmail.Text = oSelectedUser.Email;
 				txt_UserStatus.Text = oSelectedUser.Status.ToString();
 				txt_UserIsApprover.Text = oSelectedUser.IsApprover == true ? "Yes" : "No";
+				txt_LastPasswordChangeDate.Text = oSelectedUser.LastChangeDate == DateTime.MinValue ? "" : oSelectedUser.LastChangeDate.ToString("dd MMM yyyy | hh:mm tt");
 
 				BO.Employee oMaster = employeeList.Where(x => x.ID == oSelectedUser.MasterID).FirstOrDefault();
 				if (oMaster != null)
@@ -148,11 +149,11 @@ namespace Authentication.Password
 					return;
 				}
 
-				if (oSelectedUser.Status != EnumStatus.Active)
-				{
-					MessageBox.Show("This user is now " + oSelectedUser.Status.ToString()+ "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					return;
-				}
+				//if (oSelectedUser.Status != EnumStatus.Active)
+				//{
+				//	MessageBox.Show("This user is now " + oSelectedUser.Status.ToString()+ "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				//	return;
+				//}
 
 				DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (result == DialogResult.Yes)

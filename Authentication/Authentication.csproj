@@ -562,6 +562,9 @@
     <EmbeddedResource Include="Notification\NotificationController.resx">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Password\EmployeePasswordController.resx">
+      <DependentUpon>EmployeePasswordController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Password\UserPasswordController.resx">
       <DependentUpon>UserPasswordController.cs</DependentUpon>
     </EmbeddedResource>

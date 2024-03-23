@@ -174,6 +174,11 @@ namespace Authentication.SearchEmployee
 						empInfo.SetSelectedEmployee(employee);
 						empInfo.Show();
 					}
+					if (callingController is Password.EmployeePasswordController empPasswordController)
+					{
+						empPasswordController.SetSelectedEmployee(employee);
+						empPasswordController.Show();
+					}
 					this.Close();
 				}
 				else

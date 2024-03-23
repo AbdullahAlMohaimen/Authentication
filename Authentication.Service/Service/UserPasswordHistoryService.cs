@@ -17,15 +17,15 @@ namespace Authentication
 	[Serializable]
 	public class UserPasswordHistoryService : ServiceTemplate, IUserPasswordHistory
 	{
-		#region User Data Mapping
+		#region UserPasswordHistory Data Mapping
 		public UserPasswordHistoryService() { }
 
 		private void MapObject(UserPasswordHistory oUserPasswordHistory, DataReader oReader)
 		{
 			base.SetObjectID(oUserPasswordHistory, oReader.GetInt32("UPHID").Value);
 			oUserPasswordHistory.UserID = oReader.GetInt32("UserID").Value;
-			oUserPasswordHistory.UserPassword = oReader.GetString("UserID",string.Empty);
-			oUserPasswordHistory.Salt = oReader.GetString("UserID",string.Empty);
+			oUserPasswordHistory.UserPassword = oReader.GetString("UserPassword", string.Empty);
+			oUserPasswordHistory.Salt = oReader.GetString("Salt", string.Empty);
 			oUserPasswordHistory.EntryDate = oReader.GetDateTime("EntryDate",DateTime.MinValue);
 			this.SetObjectState(oUserPasswordHistory, Authentication.BO.ObjectState.Saved);
 		}
