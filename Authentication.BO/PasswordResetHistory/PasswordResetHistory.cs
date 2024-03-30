@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Authentication.BO
 {
 	#region PasswordResetHistory
-	public class PasswordResetHistory
+	public class PasswordResetHistory : BasicBaseObject
 	{
 		#region Constructor
 		public PasswordResetHistory() { }

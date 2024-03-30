@@ -20,7 +20,31 @@ namespace Authentication
 		#region UserPasswordHistory Data Mapping
 		public PasswordResetHistoryService() { }
 
-		
+		private void MapObject(PasswordResetHistory oPasswordResetHistory, DataReader oReader)
+		{
+			base.SetObjectID(oPasswordResetHistory, oReader.GetInt32("PasswordResetID").Value);
+			oPasswordResetHistory.LoginID = oReader.GetString("LoginID");
+			oPasswordResetHistory.Type = (EnumUserType)oReader.GetInt32("Type");
+			oPasswordResetHistory.Password = oReader.GetString("Password");
+			oPasswordResetHistory.Salt = oReader.GetString("Salt");
+			oPasswordResetHistory.PasswordResetBy = oReader.GetInt32("PasswordResetBy").Value;
+			oPasswordResetHistory.PasswordResetDate = oReader.GetDateTime("PasswordResetDate",DateTime.MinValue);
+			oPasswordResetHistory.Reason = oReader.GetString("Reason");
+			this.SetObjectState(oPasswordResetHistory, Authentication.BO.ObjectState.Saved);
+		}
+
+		protected override T CreateObject<T>(DataReader oReader)
+		{
+			PasswordResetHistory oPasswordResetHistory = new PasswordResetHistory();
+			MapObject(oPasswordResetHistory, oReader);
+			return oPasswordResetHistory as T;
+		}
+		protected PasswordResetHistory CreateObject(DataReader oReader)
+		{
+			PasswordResetHistory oPasswordResetHistory = new PasswordResetHistory();
+			MapObject(oPasswordResetHistory, oReader);
+			return oPasswordResetHistory;
+		}
 		#endregion
 	}
 }
