@@ -51,7 +51,7 @@ namespace Authentication.BO
 		}
 		#endregion
 
-		#region PasswordResetBy INT
+		#region PasswordResetBy : INT
 		public int _passwordResetBy;
 		public int PasswordResetBy
 		{
@@ -60,7 +60,7 @@ namespace Authentication.BO
 		}
 		#endregion
 
-		#region PasswordResetDate DateTime
+		#region PasswordResetDate : DateTime
 		public DateTime _passwordResetDate;
 		public DateTime PasswordResetDate
 		{
@@ -69,7 +69,7 @@ namespace Authentication.BO
 		}
 		#endregion
 
-		#region Reason string
+		#region Reason : string
 		public string _reason;
 		public string Reason
 		{

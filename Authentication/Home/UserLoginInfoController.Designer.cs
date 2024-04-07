@@ -29,14 +29,13 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserLoginInfoController));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.txt_week = new Guna.UI2.WinForms.Guna2ComboBox();
+			this.IsToDay = new Guna.UI2.WinForms.Guna2CheckBox();
+			this.label11 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txt_toDate = new MetroFramework.Controls.MetroDateTime();
 			this.label4 = new System.Windows.Forms.Label();
@@ -45,12 +44,13 @@
 			this.EmpSearch = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.label5 = new System.Windows.Forms.Label();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.label6 = new System.Windows.Forms.Label();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.txt_week = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.allUserLoginInfoListTable = new System.Windows.Forms.DataGridView();
 			this.txt_UserLoginInfoSearch = new Guna.UI2.WinForms.Guna2TextBox();
-			this.IsToDay = new Guna.UI2.WinForms.Guna2CheckBox();
-			this.label11 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			this.guna2Panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.allUserLoginInfoListTable)).BeginInit();
@@ -98,61 +98,33 @@
 			this.guna2Panel2.Size = new System.Drawing.Size(1047, 52);
 			this.guna2Panel2.TabIndex = 136;
 			// 
-			// label5
+			// IsToDay
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label5.Location = new System.Drawing.Point(788, 73);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(19, 21);
-			this.label5.TabIndex = 153;
-			this.label5.Text = ":";
+			this.IsToDay.AutoSize = true;
+			this.IsToDay.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.IsToDay.CheckedState.BorderRadius = 0;
+			this.IsToDay.CheckedState.BorderThickness = 0;
+			this.IsToDay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.IsToDay.Location = new System.Drawing.Point(370, 20);
+			this.IsToDay.Name = "IsToDay";
+			this.IsToDay.Size = new System.Drawing.Size(15, 14);
+			this.IsToDay.TabIndex = 155;
+			this.IsToDay.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.IsToDay.UncheckedState.BorderRadius = 0;
+			this.IsToDay.UncheckedState.BorderThickness = 0;
+			this.IsToDay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.IsToDay.CheckedChanged += new System.EventHandler(this.IsSamePassword_CheckedChanged);
 			// 
-			// label6
+			// label11
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label6.Location = new System.Drawing.Point(743, 73);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(46, 21);
-			this.label6.TabIndex = 152;
-			this.label6.Text = "Week";
-			// 
-			// txt_week
-			// 
-			this.txt_week.BackColor = System.Drawing.Color.Wheat;
-			this.txt_week.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_week.BorderRadius = 8;
-			this.txt_week.BorderThickness = 0;
-			this.txt_week.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txt_week.DisabledState.BorderColor = System.Drawing.Color.Black;
-			this.txt_week.DisabledState.FillColor = System.Drawing.Color.Wheat;
-			this.txt_week.DisabledState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_week.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.txt_week.DropDownHeight = 150;
-			this.txt_week.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.txt_week.DropDownWidth = 120;
-			this.txt_week.FillColor = System.Drawing.Color.Wheat;
-			this.txt_week.FocusedColor = System.Drawing.Color.Empty;
-			this.txt_week.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_week.FocusedState.ForeColor = System.Drawing.Color.Black;
-			this.txt_week.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_week.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_week.HoverState.FillColor = System.Drawing.Color.Brown;
-			this.txt_week.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-			this.txt_week.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_week.IntegralHeight = false;
-			this.txt_week.ItemHeight = 28;
-			this.txt_week.Location = new System.Drawing.Point(813, 63);
-			this.txt_week.MaxDropDownItems = 5;
-			this.txt_week.Name = "txt_week";
-			this.txt_week.ShadowDecoration.Color = System.Drawing.Color.Gray;
-			this.txt_week.Size = new System.Drawing.Size(238, 34);
-			this.txt_week.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-			this.txt_week.TabIndex = 151;
-			this.txt_week.SelectedIndexChanged += new System.EventHandler(this.txt_week_SelectedIndexChanged);
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label11.Location = new System.Drawing.Point(392, 15);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(55, 21);
+			this.label11.TabIndex = 154;
+			this.label11.Text = "Today";
 			// 
 			// label3
 			// 
@@ -258,6 +230,17 @@
 			this.total.TabIndex = 135;
 			this.total.Text = "0";
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label5.Location = new System.Drawing.Point(788, 73);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(19, 21);
+			this.label5.TabIndex = 153;
+			this.label5.Text = ":";
+			// 
 			// guna2HtmlLabel2
 			// 
 			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -267,6 +250,17 @@
 			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
 			this.guna2HtmlLabel2.TabIndex = 134;
 			this.guna2HtmlLabel2.Text = ":";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label6.Location = new System.Drawing.Point(743, 73);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(46, 21);
+			this.label6.TabIndex = 152;
+			this.label6.Text = "Week";
 			// 
 			// guna2HtmlLabel1
 			// 
@@ -278,31 +272,65 @@
 			this.guna2HtmlLabel1.TabIndex = 133;
 			this.guna2HtmlLabel1.Text = "Total";
 			// 
+			// txt_week
+			// 
+			this.txt_week.BackColor = System.Drawing.Color.Wheat;
+			this.txt_week.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_week.BorderRadius = 8;
+			this.txt_week.BorderThickness = 0;
+			this.txt_week.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_week.DisabledState.BorderColor = System.Drawing.Color.Black;
+			this.txt_week.DisabledState.FillColor = System.Drawing.Color.Wheat;
+			this.txt_week.DisabledState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_week.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.txt_week.DropDownHeight = 150;
+			this.txt_week.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.txt_week.DropDownWidth = 120;
+			this.txt_week.FillColor = System.Drawing.Color.Wheat;
+			this.txt_week.FocusedColor = System.Drawing.Color.Empty;
+			this.txt_week.FocusedState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_week.FocusedState.ForeColor = System.Drawing.Color.Black;
+			this.txt_week.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_week.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_week.HoverState.FillColor = System.Drawing.Color.Brown;
+			this.txt_week.HoverState.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+			this.txt_week.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.txt_week.IntegralHeight = false;
+			this.txt_week.ItemHeight = 28;
+			this.txt_week.Location = new System.Drawing.Point(813, 63);
+			this.txt_week.MaxDropDownItems = 5;
+			this.txt_week.Name = "txt_week";
+			this.txt_week.ShadowDecoration.Color = System.Drawing.Color.Gray;
+			this.txt_week.Size = new System.Drawing.Size(238, 34);
+			this.txt_week.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+			this.txt_week.TabIndex = 151;
+			this.txt_week.SelectedIndexChanged += new System.EventHandler(this.txt_week_SelectedIndexChanged);
+			// 
 			// allUserLoginInfoListTable
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
-			this.allUserLoginInfoListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.allUserLoginInfoListTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.allUserLoginInfoListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.allUserLoginInfoListTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.allUserLoginInfoListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.allUserLoginInfoListTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.allUserLoginInfoListTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.allUserLoginInfoListTable.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.allUserLoginInfoListTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.allUserLoginInfoListTable.EnableHeadersVisualStyles = false;
 			this.allUserLoginInfoListTable.Location = new System.Drawing.Point(7, 103);
 			this.allUserLoginInfoListTable.Name = "allUserLoginInfoListTable";
@@ -334,34 +362,6 @@
 			this.txt_UserLoginInfoSearch.Size = new System.Drawing.Size(469, 29);
 			this.txt_UserLoginInfoSearch.TabIndex = 124;
 			this.txt_UserLoginInfoSearch.TextChanged += new System.EventHandler(this.txt_UserLoginInfoSearch_TextChanged);
-			// 
-			// IsToDay
-			// 
-			this.IsToDay.AutoSize = true;
-			this.IsToDay.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsToDay.CheckedState.BorderRadius = 0;
-			this.IsToDay.CheckedState.BorderThickness = 0;
-			this.IsToDay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.IsToDay.Location = new System.Drawing.Point(370, 20);
-			this.IsToDay.Name = "IsToDay";
-			this.IsToDay.Size = new System.Drawing.Size(15, 14);
-			this.IsToDay.TabIndex = 155;
-			this.IsToDay.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.IsToDay.UncheckedState.BorderRadius = 0;
-			this.IsToDay.UncheckedState.BorderThickness = 0;
-			this.IsToDay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-			this.IsToDay.CheckedChanged += new System.EventHandler(this.IsSamePassword_CheckedChanged);
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(392, 15);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(55, 21);
-			this.label11.TabIndex = 154;
-			this.label11.Text = "Today";
 			// 
 			// UserLoginInfoController
 			// 

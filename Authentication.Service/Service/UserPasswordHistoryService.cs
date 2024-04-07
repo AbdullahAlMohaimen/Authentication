@@ -128,7 +128,6 @@ namespace Authentication
 			{
 				return "Failed";
 			}
-
 			return result;
 		}
 		#endregion

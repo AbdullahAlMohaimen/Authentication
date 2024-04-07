@@ -201,7 +201,7 @@ Add PasswordPolicyNo int null;
 -- USER PasswordHistory TABLE
 Create Table PasswordResetHistory(
 	PasswordResetID INT IDENTITY(1,1) not null PRIMARY KEY,
-	LoginID INT not null,
+	LoginID varchar(15) not null,
 	Type int not null,
 	Password VARCHAR(100) not null,
 	Salt VARCHAR(255) not null,

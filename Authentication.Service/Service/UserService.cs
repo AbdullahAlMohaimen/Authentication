@@ -491,6 +491,72 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Password Reset By Administrator
+		public string PasswordResetByAdminNew(Users oUser, string passwordResetReason)
+		{
+			Password password = new Password();
+			PasswordResetHistory oPasswordResetHistory = new PasswordResetHistory();
+
+			string result = null;
+			string randomPassword = null;
+			try
+			{
+				if (oUser != null)
+				{
+					if (oUser.RoleID == 1 || oUser.RoleID == 5 || oUser.RoleID == 20)
+						randomPassword = password.GenerateRandomPassword(14, 16);
+					else
+						randomPassword = password.GenerateRandomPassword(10);
+
+					oUser.Salt = password.CreateSalt(128);
+					oUser.Password = password.GenerateHash(randomPassword, oUser.Salt);
+
+					oPasswordResetHistory.LoginID = oUser.LoginID;
+					oPasswordResetHistory.Type = EnumUserType.User;
+					oPasswordResetHistory.Salt = oUser.Salt;
+					oPasswordResetHistory.Password = oUser.Password;
+					oPasswordResetHistory.PasswordResetBy = oUser.PasswordResetBy;
+					oPasswordResetHistory.PasswordResetDate = DateTime.Now;
+					oPasswordResetHistory.Reason = passwordResetReason;
+
+					SqlConnection conn = new SqlConnection(connectionString);
+					conn.Open();
+					using (SqlTransaction tc = conn.BeginTransaction())
+					{
+						UsersDA.UpdatePasswordByAdminNew(conn, tc, oUser);
+						new PasswordResetHistoryService().Save(conn, tc, oPasswordResetHistory);
+						result == "Ok";
+						tc.Commit();
+					}
+					conn.Close();
+
+					if (result == "Ok")
+					{
+						SendEmail sendEmail = new SendEmail();
+						sendEmail.To = oUser.Email;
+						sendEmail.Subject = "Admin Reset Password (Do not replay this mail)";
+						sendEmail.Body = $@"<html><body><p><b>Dear</b> {oUser.UserName},</p>
+								 <p><b>An admin can reset your password.</p>
+			                     <p><b>This is system generated password : </b>{randomPassword}</p>
+								 <p><b>This password is valid within 24 hours. Please change your password now.</p>
+			                     <p>Regards,</p>
+			                     <p>Authentication Team</p></body></html>";
+						sendEmail.SendigEmail(sendEmail);
+					}
+					else
+					{
+						result = "failed";
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				result = "failed";
+			}
+			return result;
+		}
+		#endregion
+
 		#region SearchUser 
 		public Users SearchUser(string UserNo, string UserName, string searchText)
 		{

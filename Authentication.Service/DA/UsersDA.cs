@@ -235,6 +235,22 @@ namespace Authentication.Service
 		}
 		#endregion
 
+		#region Update Password By Admin New
+		internal static void UpdatePasswordByAdminNew(SqlConnection conn, SqlTransaction tc, Users oUser)
+		{
+			try
+			{
+				SqlCommand updateCommand = new SqlCommand("Update Users set Password = '" + oUser.Password + "'," +
+						"Salt = '" + oUser.Salt + "', PasswordResetByAdmin = '" + oUser.PasswordResetByAdmin + "'," +
+						"PasswordResetBy = '" + oUser.PasswordResetBy + "', PasswordResetDate = '" + oUser.PasswordResetDate + "' where UserID = '" + oUser.ID + "'", conn, tc);
+				updateCommand.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+
+			}
+		}
+		#endregion
 		#region Update UpdateUserPassword
 		internal static string UpdateUserPassword(Users oUser)
 		{

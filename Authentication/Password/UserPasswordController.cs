@@ -26,6 +26,7 @@ namespace Authentication.Password
 		List<BO.Employee> employeeList = new List<BO.Employee>();
 		BO.Users oSelectedUser = new BO.Users();
 		EmployeeService employeeService = new EmployeeService();
+		List<PasswordResetHistory> _passwordResetHistories = new List<PasswordResetHistory>();
 		#endregion
 
 		#region Load
@@ -35,8 +36,11 @@ namespace Authentication.Password
 			oSelectedUser = null;
 			Clear_User_Button.Visible = false;
 
+			userList = userService.GetUsers();
 			employeeList = employeeService.GetEmployees();
 			roleList = roleService.GetAllRole();
+
+			LoadUserPasswordResetHistoryData();
 		}
 		#endregion
 
@@ -64,6 +68,7 @@ namespace Authentication.Password
 				txt_FindUser.Text = "(" + oUser.UserNo + ") - " + oUser.UserName;
 				oSelectedUser = oUser;
 				LoadUserData();
+				LoadUserPasswordResetHistoryData();
 			}
 			if (oSelectedUser != null)
 			{
@@ -98,9 +103,62 @@ namespace Authentication.Password
 		}
 		#endregion
 
+		#region Load User Password Reset History Data
+		public void LoadUserPasswordResetHistoryData()
+		{
+			if (oSelectedUser != null)
+			{
+				_passwordResetHistories = new PasswordResetHistoryService().GetByUserID(oSelectedUser.ID);
+				this.ProcessData();
+			}
+		}
+		#endregion
+
+		#region ProcessData
+		public void ProcessData()
+		{
+			total.Text = _passwordResetHistories.Count().ToString();
+			DataRow dr = null;
+			DataTable passwordResetHistoryList = new DataTable();
+			passwordResetHistoryList.TableName = "User Password Reset History List";
+			passwordResetHistoryList.Columns.Add("ID", typeof(int));
+			passwordResetHistoryList.Columns.Add("User No", typeof(string));
+			passwordResetHistoryList.Columns.Add("Password Reset By", typeof(string));
+			passwordResetHistoryList.Columns.Add("Password Reset Date", typeof(string));
+			passwordResetHistoryList.Columns.Add("Reason", typeof(string));
+
+			userPasswordResetTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			userPasswordResetTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			foreach (BO.PasswordResetHistory oPasswordResetHistory in _passwordResetHistories)
+			{
+				dr = passwordResetHistoryList.NewRow();
+				dr["ID"] = oPasswordResetHistory.ID;
+				dr["User No"] = oSelectedUser.UserNo;
+				BO.Users oUser = userList.Where(x => x.ID == oPasswordResetHistory.PasswordResetBy).FirstOrDefault();
+				dr["Password Reset By"] = oUser == null ? "" : "["+ oUser.UserNo + "] " + oUser.UserName;
+				dr["Password Reset Date"] = oPasswordResetHistory.PasswordResetDate.ToString("dd MMM yyyy");
+				dr["Reason"] = oPasswordResetHistory.Reason;
+				passwordResetHistoryList.Rows.Add(dr);
+			}
+			userPasswordResetTable.DataSource = passwordResetHistoryList;
+
+			foreach (DataGridViewColumn column in userPasswordResetTable.Columns)
+			{
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			}
+			userPasswordResetTable.Columns["Password Reset By"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			userPasswordResetTable.Columns["Reason"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+			userPasswordResetTable.RowHeadersVisible = false;
+			userPasswordResetTable.Columns["ID"].Visible = false;
+		}
+		#endregion
+
 		#region User Clear Button
 		private void Clear_User_Button_Click(object sender, EventArgs e)
 		{
+			oSelectedUser = null;
 			txt_FindUser.Text = string.Empty;
 			Clear_User_Button.Visible = false;
 
@@ -111,6 +169,8 @@ namespace Authentication.Password
 			txt_UserStatus.Text = "";
 			txt_UserIsApprover.Text = "";
 			txt_UserMaster.Text = "";
+			txt_LastPasswordChangeDate.Text = "";
+			this.LoadUserPasswordResetHistoryData();
 		}
 		#endregion
 
@@ -141,40 +201,61 @@ namespace Authentication.Password
 		#region Password Reset Button
 		private void passwordReset_btnClick_Click(object sender, EventArgs e)
 		{
-			if (oSelectedUser != null)
+			string passwordResetReason = "";
+			try
 			{
-				if (oSelectedUser.ID == oCurrentUser.ID)
+				if (oSelectedUser != null)
 				{
-					MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					return;
-				}
-
-				//if (oSelectedUser.Status != EnumStatus.Active)
-				//{
-				//	MessageBox.Show("This user is now " + oSelectedUser.Status.ToString()+ "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				//	return;
-				//}
-
-				DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if (result == DialogResult.Yes)
-				{
-					oSelectedUser.PasswordResetByAdmin = true;
-					oSelectedUser.PasswordResetBy = oCurrentUser.ID;
-					oSelectedUser.PasswordResetDate = DateTime.Now;
-
-					string passwordResetStatus = userService.PasswordResetByAdmin(oSelectedUser);
-
-					if (passwordResetStatus == "Ok")
+					if (oSelectedUser.ID == oCurrentUser.ID)
 					{
-						MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
 					}
+
+					if (oSelectedUser.Status != EnumStatus.Active)
+					{
+						MessageBox.Show("This user is now " + oSelectedUser.Status.ToString() + "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
+					}
+
+					if (oSelectedUser.PasswordResetByAdmin == true)
+					{
+						MessageBox.Show("Already a new password reset to this User's email.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						return;
+					}
+
+					if (string.IsNullOrEmpty(txt_PasswordResetReason.Text))
+					{
+						MessageBox.Show("Please write a reason for Password Reset", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
+					}
+
+					passwordResetReason = txt_PasswordResetReason.Text;
+					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (result == DialogResult.Yes)
+					{
+						oSelectedUser.PasswordResetByAdmin = true;
+						oSelectedUser.PasswordResetBy = oCurrentUser.ID;
+						oSelectedUser.PasswordResetDate = DateTime.Now;
+
+						string passwordResetStatus = userService.PasswordResetByAdminNew(oSelectedUser, passwordResetReason);
+
+						if (passwordResetStatus == "Ok")
+						{
+							MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						}
+						LoadUserPasswordResetHistoryData();
+					}
+				}
+				else
+				{
+					MessageBox.Show("Please select an User.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					return;
 				}
 			}
-			else
+			catch (Exception ex)
 			{
-				MessageBox.Show("Please select an User.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
+				MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		#endregion
