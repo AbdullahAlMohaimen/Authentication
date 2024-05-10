@@ -94,8 +94,6 @@ namespace Authentication.Password
 			{
 				txt_EmployeeNo.Text = SelectedEmployee.EmployeeNo;
 				txt_EmployeeName.Text = SelectedEmployee.Name;
-				txt_EmployeeGender.Text = SelectedEmployee.Gender;
-				txt_EmployeeReligion.Text = SelectedEmployee.Religion;
 				txt_EmployeeDepartment.Text = SelectedEmployee.Department;
 				txt_EmployeeDesignation.Text = SelectedEmployee.Designation;
 				txt_EmployeeMaritalStatus.Text = SelectedEmployee.MaritalStatus;
@@ -135,8 +133,6 @@ namespace Authentication.Password
 		{
 			txt_EmployeeNo.Text = "";
 			txt_EmployeeName.Text = "";
-			txt_EmployeeGender.Text = "";
-			txt_EmployeeReligion.Text = "";
 			txt_EmployeeDepartment.Text = "";
 			txt_EmployeeDesignation.Text = "";
 			txt_EmployeeMaritalStatus.Text = "";

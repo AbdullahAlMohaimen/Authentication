@@ -48,7 +48,6 @@
 	}
 	#endregion
 
-
 	public enum ColumnDataTypeEnum : byte
 	{
 		Fixed = 0,
@@ -107,8 +106,6 @@
 		Supervisor = 18,
 		Password_Manager = 19,
 	}
-
-
 	public enum EnumAdministrator
 	{
 		User = 1,

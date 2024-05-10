@@ -111,6 +111,11 @@ namespace Authentication.Password
 				_passwordResetHistories = new PasswordResetHistoryService().GetByUserID(oSelectedUser.ID);
 				this.ProcessData();
 			}
+			else
+			{
+				_passwordResetHistories = new List<PasswordResetHistory>();
+				this.ProcessData();
+			}
 		}
 		#endregion
 
@@ -211,25 +216,21 @@ namespace Authentication.Password
 						MessageBox.Show("Current user and selected user can't be the same.\nThe current user can't reset his own password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
-
 					if (oSelectedUser.Status != EnumStatus.Active)
 					{
 						MessageBox.Show("This user is now " + oSelectedUser.Status.ToString() + "\nYou can't reset a new password to this user.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
-
 					if (oSelectedUser.PasswordResetByAdmin == true)
 					{
 						MessageBox.Show("Already a new password reset to this User's email.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-
 					if (string.IsNullOrEmpty(txt_PasswordResetReason.Text))
 					{
 						MessageBox.Show("Please write a reason for Password Reset", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
-
 					passwordResetReason = txt_PasswordResetReason.Text;
 					DialogResult result = MessageBox.Show($"Are you sure to reset the password to this User?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 					if (result == DialogResult.Yes)
@@ -237,12 +238,10 @@ namespace Authentication.Password
 						oSelectedUser.PasswordResetByAdmin = true;
 						oSelectedUser.PasswordResetBy = oCurrentUser.ID;
 						oSelectedUser.PasswordResetDate = DateTime.Now;
-
 						string passwordResetStatus = userService.PasswordResetByAdminNew(oSelectedUser, passwordResetReason);
-
 						if (passwordResetStatus == "Ok")
 						{
-							MessageBox.Show("You have successfully reset a new password to this user email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							MessageBox.Show("Password reset successfully.\n A system generated password sent to this user's email.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						}
 						LoadUserPasswordResetHistoryData();
 					}

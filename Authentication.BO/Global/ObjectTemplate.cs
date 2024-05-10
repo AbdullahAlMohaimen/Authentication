@@ -44,10 +44,10 @@ namespace Authentication.BO
 			}
 		}
 
-		//public bool IsModified
-		//{
-		//	get { return _objectState == ObjectState.Modified; }
-		//}
+		public bool IsModified
+		{
+			get { return _objectState == ObjectState.Modified; }
+		}
 
 		public int SortOrder
 		{
@@ -57,8 +57,6 @@ namespace Authentication.BO
 
 		protected void SetObjectStateModified()
 		{
-			//if (_objectState == ObjectState.Saved)
-			//    _objectState = ObjectState.Modified;
 			_objectState = ObjectState.Modified;
 		}
 

@@ -28,11 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPasswordController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.txt_PasswordResetReason = new Guna.UI2.WinForms.Guna2TextBox();
 			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -77,9 +80,6 @@
 			this.txt_FindUser = new Guna.UI2.WinForms.Guna2TextBox();
 			this.label33 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
-			this.txt_PasswordResetReason = new Guna.UI2.WinForms.Guna2TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPasswordResetTable)).BeginInit();
 			this.guna2Panel2.SuspendLayout();
@@ -139,6 +139,52 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 112;
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label6.Location = new System.Drawing.Point(96, 233);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(15, 23);
+			this.label6.TabIndex = 198;
+			this.label6.Text = ":";
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label17.Location = new System.Drawing.Point(20, 236);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(62, 22);
+			this.label17.TabIndex = 197;
+			this.label17.Text = "Reason";
+			// 
+			// txt_PasswordResetReason
+			// 
+			this.txt_PasswordResetReason.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_PasswordResetReason.BorderRadius = 6;
+			this.txt_PasswordResetReason.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_PasswordResetReason.DefaultText = "";
+			this.txt_PasswordResetReason.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_PasswordResetReason.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_PasswordResetReason.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_PasswordResetReason.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_PasswordResetReason.FillColor = System.Drawing.Color.Wheat;
+			this.txt_PasswordResetReason.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_PasswordResetReason.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_PasswordResetReason.ForeColor = System.Drawing.Color.Black;
+			this.txt_PasswordResetReason.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_PasswordResetReason.Location = new System.Drawing.Point(117, 224);
+			this.txt_PasswordResetReason.Multiline = true;
+			this.txt_PasswordResetReason.Name = "txt_PasswordResetReason";
+			this.txt_PasswordResetReason.PasswordChar = '\0';
+			this.txt_PasswordResetReason.PlaceholderText = "";
+			this.txt_PasswordResetReason.SelectedText = "";
+			this.txt_PasswordResetReason.Size = new System.Drawing.Size(767, 46);
+			this.txt_PasswordResetReason.TabIndex = 196;
+			// 
 			// total
 			// 
 			this.total.BackColor = System.Drawing.Color.Transparent;
@@ -172,29 +218,29 @@
 			// 
 			// userPasswordResetTable
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
-			this.userPasswordResetTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.userPasswordResetTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.userPasswordResetTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.userPasswordResetTable.BackgroundColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.userPasswordResetTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.userPasswordResetTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.userPasswordResetTable.ColumnHeadersHeight = 30;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.userPasswordResetTable.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.userPasswordResetTable.DefaultCellStyle = dataGridViewCellStyle3;
 			this.userPasswordResetTable.EnableHeadersVisualStyles = false;
 			this.userPasswordResetTable.Location = new System.Drawing.Point(7, 277);
 			this.userPasswordResetTable.Name = "userPasswordResetTable";
@@ -653,52 +699,6 @@
 			this.label14.Size = new System.Drawing.Size(109, 21);
 			this.label14.TabIndex = 179;
 			this.label14.Text = "Select User";
-			// 
-			// txt_PasswordResetReason
-			// 
-			this.txt_PasswordResetReason.BorderColor = System.Drawing.Color.Maroon;
-			this.txt_PasswordResetReason.BorderRadius = 6;
-			this.txt_PasswordResetReason.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txt_PasswordResetReason.DefaultText = "";
-			this.txt_PasswordResetReason.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.txt_PasswordResetReason.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.txt_PasswordResetReason.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_PasswordResetReason.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.txt_PasswordResetReason.FillColor = System.Drawing.Color.Wheat;
-			this.txt_PasswordResetReason.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordResetReason.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_PasswordResetReason.ForeColor = System.Drawing.Color.Black;
-			this.txt_PasswordResetReason.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txt_PasswordResetReason.Location = new System.Drawing.Point(117, 224);
-			this.txt_PasswordResetReason.Multiline = true;
-			this.txt_PasswordResetReason.Name = "txt_PasswordResetReason";
-			this.txt_PasswordResetReason.PasswordChar = '\0';
-			this.txt_PasswordResetReason.PlaceholderText = "";
-			this.txt_PasswordResetReason.SelectedText = "";
-			this.txt_PasswordResetReason.Size = new System.Drawing.Size(767, 46);
-			this.txt_PasswordResetReason.TabIndex = 196;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label6.Location = new System.Drawing.Point(96, 233);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(15, 23);
-			this.label6.TabIndex = 198;
-			this.label6.Text = ":";
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label17.Location = new System.Drawing.Point(20, 236);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(62, 22);
-			this.label17.TabIndex = 197;
-			this.label17.Text = "Reason";
 			// 
 			// UserPasswordController
 			// 

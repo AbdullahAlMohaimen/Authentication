@@ -28,8 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePasswordController));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.total = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.employeePasswordResetTable = new System.Windows.Forms.DataGridView();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.txt_PasswordResetReason = new Guna.UI2.WinForms.Guna2TextBox();
 			this.PasswordReset = new Guna.UI2.WinForms.Guna2Button();
 			this.panel13 = new System.Windows.Forms.Panel();
 			this.txt_LastPasswordChangeDate = new System.Windows.Forms.Label();
@@ -55,8 +65,6 @@
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.txt_EmployeeEmail = new System.Windows.Forms.Label();
@@ -68,12 +76,6 @@
 			this.txt_EmployeeStatus = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
-			this.txt_EmployeeReligion = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.txt_EmployeeGender = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
 			this.txt_EmployeeName = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -87,6 +89,7 @@
 			this.label33 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.employeePasswordResetTable)).BeginInit();
 			this.guna2Panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -97,6 +100,13 @@
 			this.guna2Panel1.BorderRadius = 10;
 			this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
 			this.guna2Panel1.BorderThickness = 2;
+			this.guna2Panel1.Controls.Add(this.total);
+			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+			this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
+			this.guna2Panel1.Controls.Add(this.employeePasswordResetTable);
+			this.guna2Panel1.Controls.Add(this.label6);
+			this.guna2Panel1.Controls.Add(this.label7);
+			this.guna2Panel1.Controls.Add(this.txt_PasswordResetReason);
 			this.guna2Panel1.Controls.Add(this.PasswordReset);
 			this.guna2Panel1.Controls.Add(this.panel13);
 			this.guna2Panel1.Controls.Add(this.txt_LastPasswordChangeDate);
@@ -122,8 +132,6 @@
 			this.guna2Panel1.Controls.Add(this.panel7);
 			this.guna2Panel1.Controls.Add(this.panel8);
 			this.guna2Panel1.Controls.Add(this.panel9);
-			this.guna2Panel1.Controls.Add(this.panel5);
-			this.guna2Panel1.Controls.Add(this.panel4);
 			this.guna2Panel1.Controls.Add(this.panel3);
 			this.guna2Panel1.Controls.Add(this.panel2);
 			this.guna2Panel1.Controls.Add(this.txt_EmployeeEmail);
@@ -135,12 +143,6 @@
 			this.guna2Panel1.Controls.Add(this.txt_EmployeeStatus);
 			this.guna2Panel1.Controls.Add(this.label11);
 			this.guna2Panel1.Controls.Add(this.label12);
-			this.guna2Panel1.Controls.Add(this.txt_EmployeeReligion);
-			this.guna2Panel1.Controls.Add(this.label9);
-			this.guna2Panel1.Controls.Add(this.label10);
-			this.guna2Panel1.Controls.Add(this.txt_EmployeeGender);
-			this.guna2Panel1.Controls.Add(this.label7);
-			this.guna2Panel1.Controls.Add(this.label8);
 			this.guna2Panel1.Controls.Add(this.txt_EmployeeName);
 			this.guna2Panel1.Controls.Add(this.label4);
 			this.guna2Panel1.Controls.Add(this.label5);
@@ -153,6 +155,115 @@
 			this.guna2Panel1.Size = new System.Drawing.Size(1060, 585);
 			this.guna2Panel1.TabIndex = 113;
 			// 
+			// total
+			// 
+			this.total.BackColor = System.Drawing.Color.Transparent;
+			this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.total.ForeColor = System.Drawing.Color.DarkRed;
+			this.total.Location = new System.Drawing.Point(72, 560);
+			this.total.Name = "total";
+			this.total.Size = new System.Drawing.Size(11, 18);
+			this.total.TabIndex = 205;
+			this.total.Text = "0";
+			// 
+			// guna2HtmlLabel2
+			// 
+			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(57, 559);
+			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+			this.guna2HtmlLabel2.Size = new System.Drawing.Size(7, 18);
+			this.guna2HtmlLabel2.TabIndex = 204;
+			this.guna2HtmlLabel2.Text = ":";
+			// 
+			// guna2HtmlLabel1
+			// 
+			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(8, 560);
+			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+			this.guna2HtmlLabel1.Size = new System.Drawing.Size(39, 18);
+			this.guna2HtmlLabel1.TabIndex = 203;
+			this.guna2HtmlLabel1.Text = "Total";
+			// 
+			// employeePasswordResetTable
+			// 
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
+			this.employeePasswordResetTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.employeePasswordResetTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.employeePasswordResetTable.BackgroundColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.employeePasswordResetTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.employeePasswordResetTable.ColumnHeadersHeight = 30;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Wheat;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightCoral;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.employeePasswordResetTable.DefaultCellStyle = dataGridViewCellStyle3;
+			this.employeePasswordResetTable.EnableHeadersVisualStyles = false;
+			this.employeePasswordResetTable.Location = new System.Drawing.Point(7, 305);
+			this.employeePasswordResetTable.Name = "employeePasswordResetTable";
+			this.employeePasswordResetTable.ReadOnly = true;
+			this.employeePasswordResetTable.Size = new System.Drawing.Size(1046, 250);
+			this.employeePasswordResetTable.TabIndex = 202;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label6.Location = new System.Drawing.Point(124, 262);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(15, 23);
+			this.label6.TabIndex = 201;
+			this.label6.Text = ":";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label7.Location = new System.Drawing.Point(20, 264);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(62, 22);
+			this.label7.TabIndex = 200;
+			this.label7.Text = "Reason";
+			// 
+			// txt_PasswordResetReason
+			// 
+			this.txt_PasswordResetReason.BorderColor = System.Drawing.Color.Maroon;
+			this.txt_PasswordResetReason.BorderRadius = 6;
+			this.txt_PasswordResetReason.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txt_PasswordResetReason.DefaultText = "";
+			this.txt_PasswordResetReason.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txt_PasswordResetReason.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txt_PasswordResetReason.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_PasswordResetReason.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txt_PasswordResetReason.FillColor = System.Drawing.Color.Wheat;
+			this.txt_PasswordResetReason.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_PasswordResetReason.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_PasswordResetReason.ForeColor = System.Drawing.Color.Black;
+			this.txt_PasswordResetReason.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.txt_PasswordResetReason.Location = new System.Drawing.Point(145, 253);
+			this.txt_PasswordResetReason.Multiline = true;
+			this.txt_PasswordResetReason.Name = "txt_PasswordResetReason";
+			this.txt_PasswordResetReason.PasswordChar = '\0';
+			this.txt_PasswordResetReason.PlaceholderText = "";
+			this.txt_PasswordResetReason.SelectedText = "";
+			this.txt_PasswordResetReason.Size = new System.Drawing.Size(740, 46);
+			this.txt_PasswordResetReason.TabIndex = 199;
+			// 
 			// PasswordReset
 			// 
 			this.PasswordReset.BorderRadius = 8;
@@ -164,7 +275,7 @@
 			this.PasswordReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PasswordReset.ForeColor = System.Drawing.Color.Wheat;
 			this.PasswordReset.Image = ((System.Drawing.Image)(resources.GetObject("PasswordReset.Image")));
-			this.PasswordReset.Location = new System.Drawing.Point(889, 314);
+			this.PasswordReset.Location = new System.Drawing.Point(891, 260);
 			this.PasswordReset.Name = "PasswordReset";
 			this.PasswordReset.Size = new System.Drawing.Size(159, 29);
 			this.PasswordReset.TabIndex = 187;
@@ -257,7 +368,7 @@
 			// 
 			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel6.Location = new System.Drawing.Point(24, 295);
+			this.panel6.Location = new System.Drawing.Point(24, 233);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(498, 1);
 			this.panel6.TabIndex = 178;
@@ -266,7 +377,7 @@
 			// 
 			this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel10.Location = new System.Drawing.Point(24, 264);
+			this.panel10.Location = new System.Drawing.Point(24, 202);
 			this.panel10.Name = "panel10";
 			this.panel10.Size = new System.Drawing.Size(498, 1);
 			this.panel10.TabIndex = 177;
@@ -275,7 +386,7 @@
 			// 
 			this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel11.Location = new System.Drawing.Point(24, 232);
+			this.panel11.Location = new System.Drawing.Point(24, 170);
 			this.panel11.Name = "panel11";
 			this.panel11.Size = new System.Drawing.Size(498, 1);
 			this.panel11.TabIndex = 176;
@@ -285,7 +396,7 @@
 			this.txt_EmployeeMaritalStatus.AutoSize = true;
 			this.txt_EmployeeMaritalStatus.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmployeeMaritalStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeMaritalStatus.Location = new System.Drawing.Point(148, 271);
+			this.txt_EmployeeMaritalStatus.Location = new System.Drawing.Point(148, 209);
 			this.txt_EmployeeMaritalStatus.Name = "txt_EmployeeMaritalStatus";
 			this.txt_EmployeeMaritalStatus.Size = new System.Drawing.Size(0, 22);
 			this.txt_EmployeeMaritalStatus.TabIndex = 175;
@@ -295,7 +406,7 @@
 			this.label17.AutoSize = true;
 			this.label17.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label17.Location = new System.Drawing.Point(125, 269);
+			this.label17.Location = new System.Drawing.Point(125, 207);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(15, 23);
 			this.label17.TabIndex = 174;
@@ -306,7 +417,7 @@
 			this.label18.AutoSize = true;
 			this.label18.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label18.Location = new System.Drawing.Point(20, 271);
+			this.label18.Location = new System.Drawing.Point(20, 209);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(106, 22);
 			this.label18.TabIndex = 173;
@@ -317,7 +428,7 @@
 			this.txt_EmployeeDesignation.AutoSize = true;
 			this.txt_EmployeeDesignation.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmployeeDesignation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeDesignation.Location = new System.Drawing.Point(148, 239);
+			this.txt_EmployeeDesignation.Location = new System.Drawing.Point(148, 177);
 			this.txt_EmployeeDesignation.Name = "txt_EmployeeDesignation";
 			this.txt_EmployeeDesignation.Size = new System.Drawing.Size(0, 22);
 			this.txt_EmployeeDesignation.TabIndex = 172;
@@ -327,7 +438,7 @@
 			this.label20.AutoSize = true;
 			this.label20.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label20.Location = new System.Drawing.Point(125, 236);
+			this.label20.Location = new System.Drawing.Point(125, 174);
 			this.label20.Name = "label20";
 			this.label20.Size = new System.Drawing.Size(15, 23);
 			this.label20.TabIndex = 171;
@@ -338,7 +449,7 @@
 			this.label21.AutoSize = true;
 			this.label21.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label21.Location = new System.Drawing.Point(20, 239);
+			this.label21.Location = new System.Drawing.Point(20, 177);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(93, 22);
 			this.label21.TabIndex = 170;
@@ -349,7 +460,7 @@
 			this.txt_EmployeeDepartment.AutoSize = true;
 			this.txt_EmployeeDepartment.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txt_EmployeeDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeDepartment.Location = new System.Drawing.Point(148, 207);
+			this.txt_EmployeeDepartment.Location = new System.Drawing.Point(148, 145);
 			this.txt_EmployeeDepartment.Name = "txt_EmployeeDepartment";
 			this.txt_EmployeeDepartment.Size = new System.Drawing.Size(0, 22);
 			this.txt_EmployeeDepartment.TabIndex = 169;
@@ -359,7 +470,7 @@
 			this.label23.AutoSize = true;
 			this.label23.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label23.Location = new System.Drawing.Point(125, 204);
+			this.label23.Location = new System.Drawing.Point(125, 142);
 			this.label23.Name = "label23";
 			this.label23.Size = new System.Drawing.Size(15, 23);
 			this.label23.TabIndex = 168;
@@ -370,7 +481,7 @@
 			this.label24.AutoSize = true;
 			this.label24.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label24.Location = new System.Drawing.Point(20, 207);
+			this.label24.Location = new System.Drawing.Point(20, 145);
 			this.label24.Name = "label24";
 			this.label24.Size = new System.Drawing.Size(90, 22);
 			this.label24.TabIndex = 167;
@@ -380,7 +491,7 @@
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel1.Location = new System.Drawing.Point(3, 307);
+			this.panel1.Location = new System.Drawing.Point(3, 246);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1059, 1);
 			this.panel1.TabIndex = 166;
@@ -411,24 +522,6 @@
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(498, 1);
 			this.panel9.TabIndex = 162;
-			// 
-			// panel5
-			// 
-			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel5.Location = new System.Drawing.Point(23, 202);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(498, 1);
-			this.panel5.TabIndex = 161;
-			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.panel4.Location = new System.Drawing.Point(23, 170);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(498, 1);
-			this.panel4.TabIndex = 160;
 			// 
 			// panel3
 			// 
@@ -543,70 +636,6 @@
 			this.label12.Size = new System.Drawing.Size(54, 22);
 			this.label12.TabIndex = 149;
 			this.label12.Text = "Status";
-			// 
-			// txt_EmployeeReligion
-			// 
-			this.txt_EmployeeReligion.AutoSize = true;
-			this.txt_EmployeeReligion.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_EmployeeReligion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeReligion.Location = new System.Drawing.Point(148, 177);
-			this.txt_EmployeeReligion.Name = "txt_EmployeeReligion";
-			this.txt_EmployeeReligion.Size = new System.Drawing.Size(0, 22);
-			this.txt_EmployeeReligion.TabIndex = 148;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label9.Location = new System.Drawing.Point(125, 174);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(15, 23);
-			this.label9.TabIndex = 147;
-			this.label9.Text = ":";
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label10.Location = new System.Drawing.Point(19, 177);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(67, 22);
-			this.label10.TabIndex = 146;
-			this.label10.Text = "Religion";
-			// 
-			// txt_EmployeeGender
-			// 
-			this.txt_EmployeeGender.AutoSize = true;
-			this.txt_EmployeeGender.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_EmployeeGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.txt_EmployeeGender.Location = new System.Drawing.Point(148, 145);
-			this.txt_EmployeeGender.Name = "txt_EmployeeGender";
-			this.txt_EmployeeGender.Size = new System.Drawing.Size(0, 22);
-			this.txt_EmployeeGender.TabIndex = 145;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label7.Location = new System.Drawing.Point(125, 142);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(15, 23);
-			this.label7.TabIndex = 144;
-			this.label7.Text = ":";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label8.Location = new System.Drawing.Point(19, 145);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(61, 22);
-			this.label8.TabIndex = 143;
-			this.label8.Text = "Gender";
 			// 
 			// txt_EmployeeName
 			// 
@@ -779,6 +808,7 @@
 			this.Size = new System.Drawing.Size(1067, 590);
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.employeePasswordResetTable)).EndInit();
 			this.guna2Panel2.ResumeLayout(false);
 			this.guna2Panel2.PerformLayout();
 			this.ResumeLayout(false);
@@ -792,8 +822,6 @@
 		private System.Windows.Forms.Panel panel7;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label txt_EmployeeEmail;
@@ -805,12 +833,6 @@
 		private System.Windows.Forms.Label txt_EmployeeStatus;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label txt_EmployeeReligion;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label txt_EmployeeGender;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label txt_EmployeeName;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
@@ -837,12 +859,19 @@
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label txt_EmployeeDepartment;
-		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Panel panel13;
 		private System.Windows.Forms.Label txt_LastPasswordChangeDate;
 		private System.Windows.Forms.Label label29;
 		private System.Windows.Forms.Label label30;
 		private Guna.UI2.WinForms.Guna2Button PasswordReset;
+		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
+		private Guna.UI2.WinForms.Guna2TextBox txt_PasswordResetReason;
+		private Guna.UI2.WinForms.Guna2HtmlLabel total;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+		private System.Windows.Forms.DataGridView employeePasswordResetTable;
 	}
 }

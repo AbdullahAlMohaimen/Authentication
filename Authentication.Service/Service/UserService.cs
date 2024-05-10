@@ -525,7 +525,7 @@ namespace Authentication.Service
 					{
 						UsersDA.UpdatePasswordByAdminNew(conn, tc, oUser);
 						new PasswordResetHistoryService().Save(conn, tc, oPasswordResetHistory);
-						result == "Ok";
+						result = "Ok";
 						tc.Commit();
 					}
 					conn.Close();
