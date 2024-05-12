@@ -251,6 +251,7 @@ namespace Authentication.Service
 			}
 		}
 		#endregion
+
 		#region Update UpdateUserPassword
 		internal static string UpdateUserPassword(Users oUser)
 		{
