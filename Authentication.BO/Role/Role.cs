@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Authentication.BO
 {
-	#region Employee
+	#region Role
 	[Serializable]
 	public class Role : BasicBaseObject
 	{
@@ -118,7 +118,7 @@ namespace Authentication.BO
 	}
 	#endregion
 
-	#region IEmployee Service
+	#region IRoleService Service
 	public interface IRoleService
 	{
 		Role GetRoleByID(int ID);
